@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Project Title</title>
+  <title>ASI-401: Indoor Search Using Swarm of Drones</title>
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
@@ -35,18 +35,38 @@
 
 <body>
   <div class="content">
-    <h1>ASI-401 SAFMC Drone Project</h1>
+    <div class = "title">
+      <image-component tag="image" source="assets/title_page/nus_logo.png" subtitle=" ">
+      </image-component>
+
+      <h1>CDE4301 Innovation & Design Capstone</h1>
+
+      <h1>AY2024/2025 Semester 1</h1>
+
+      <h1>ASI-401: Indoor Search Using Swarm of Drones</h1>
+
+      <h1>Group Report</h1>
+    </div>
 
     <!-- This is the team member component use to display details about your team members -->
     <div class="team-member-wrapper">
-      <team-member avatar="assets/yellowranger.png" name="Foo Shu Hui" department="Engineering Science"
-        year="Year 4"></team-member>
-      <team-member avatar="assets/redranger.png" name="Low Yan Yew" department="Mechanical Engineering"
-        year="Year 4"></team-member>
-      <team-member avatar="assets/pinkranger.png" name="Govindanath Samuel Sudharsanan" department="Mehcanical Engineering"
-        year="Year 4"></team-member>
-      <team-member avatar="assets/blueranger.png" name="Matthew Yip Tze Herng" department="Mechanical Engineering"
-        year="Year 3"></team-member>
+
+      <team-member avatar="assets//title_page/shuhui.jpeg" name="Foo Shu Hui" department="Engineering Science Programme" 
+       matric_number="A0244238E">
+      </team-member>
+
+      <team-member avatar="assets//title_page/redranger.png" name="Low Yan Yew" department="Mechanical Engineering"
+        matric_number="A0245906Y">
+      </team-member>
+
+      <team-member avatar="assets//title_page/pinkranger.png" name="Govindanath Samuel Sudharsanan" department="Mehcanical Engineering"
+        matric_number="1234567890">
+      </team-member>
+
+      <team-member avatar="assets//title_page/blueranger.png" name="Matthew Yip Tze Herng" department="Mechanical Engineering"
+        matric_number="0123456789">
+      </team-member>
+
     </div>
 
     <!-- This is a divide from the shoelace library for aesthetic purpose -->
@@ -54,32 +74,159 @@
 
     <!-- This is the table-of-content component use to define all of the link directly to each section -->
     <div class="table-of-content">
+      
       <h2>Table of Contents</h2>
       <sl-tree>
+
         <sl-tree-item expanded>
-          <a href="#section-header-1">1. Section Header 1</a>
+          <a href="#section-header-1">1.0 SAFMC 2025</a>
+          
           <sl-tree-item>
-            <a href="#sub-section-1-header-1">1.1. Sub-section Header 1</a>
+            <a href="#sub-section-1-header-1">1.1 Mission</a>
           </sl-tree-item>
+
           <sl-tree-item>
-            <a href="#sub-section-1-header-2">1.2. Sub-section Header 2</a>
+            <a href="#sub-section-1-header-2">1.2 Scoring System</a>
           </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-1-header-3">1.3 Playing Field</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-1-header-4">1.4 SAFMC 2025 vs SAFMC 2024</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-1-header-5">1.5 Victim Marker</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-1-header-6">1.6 Danger Zone</a>
+          </sl-tree-item>
+          
         </sl-tree-item>
 
         <sl-tree-item expanded>
           <a href="#section-header-2">2. Section Header 1</a>
+          
+          <sl-tree-item expanded>
+            <a href="#sub-section-2-header-1">2.1 Hardware</a>
+          
+            <sl-tree-item>
+              <a href="#sub-section-2-header-1-header-1">2.1.1 Bitcraze Crazyflie</a>
+            </sl-tree-item>
+
+            <sl-tree-item>
+              <a href="#sub-section-2-header-1-header-2">2.1.2 Expansion Deck</a>
+            </sl-tree-item>
+
+            <sl-tree-item>
+              <a href="#sub-section-2-header-1-header-3">2.1.3 Upgraded Crazyflie</a>
+            </sl-tree-item>
+
+            </sl-tree-item>
+          
+            <sl-tree-item>
+              <a href="#sub-section-2-header-2">2.2 Software</a>
+            </sl-tree-item>
+
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#section-header-3">3.0 Approach</a>
+          
           <sl-tree-item>
-            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
+            <a href="#sub-section-3-header-1">3.1 Map vs Unmapped vs Hybrid</a>
           </sl-tree-item>
+          
           <sl-tree-item>
-            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
+            <a href="#sub-section-3-header-2">3.2 Map vs Unmapped vs Hybrid</a>
           </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-3-header-3">3.3 Use of Navigation Aids</a>
+          </sl-tree-item>
+          
+          <sl-tree-item>
+            <a href="#sub-section-3-header-4">3.4 Key Areas of Development</a>
+          </sl-tree-item>
+
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#section-header-4">4.0 Subsystem</a>
+          
+          <sl-tree-item>
+            <a href="#sub-section-4-header-1">4.1 Search Strategy</a>
+          </sl-tree-item>
+          
+          <sl-tree-item>
+            <a href="#sub-section-4-header-2">4.2 Object Detection</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-4-header-3">4.3 Obstacle Avoidance</a>
+          </sl-tree-item>
+          
+          <sl-tree-item>
+            <a href="#sub-section-4-header-4">4.4 Simulation</a>
+          </sl-tree-item>
+
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#section-header-5">5.0 Test</a>
+          
+          <sl-tree-item>
+            <a href="#sub-section-5-header-1">5.1 Suitability Test</a>
+          </sl-tree-item>
+          
+          <sl-tree-item>
+            <a href="#sub-section-5-header-2">5.2 System Integration Test</a>
+          </sl-tree-item>
+
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#section-header-6">6.0 Future Work</a>
+          
+          <sl-tree-item>
+            <a href="#sub-section-6-header-1">6.1 Search Strategy</a>
+          </sl-tree-item>
+          
+          <sl-tree-item>
+            <a href="#sub-section-6-header-2">6.2 Simulation</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-6-header-3">6.3 Collision Avoidance</a>
+          </sl-tree-item>
+          
+          <sl-tree-item>
+            <a href="#sub-section-6-header-4">6.4 Object Detection</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#sub-section-6-header-5">6.5 Mission Planning</a>
+          </sl-tree-item>
+
         </sl-tree-item>
 
         <sl-tree-item>
-          <a href="#references">References</a>
+          <a href="#section-header-7">7.0 Timeline</a>
         </sl-tree-item>
+
+        <sl-tree-item>
+          <a href="#section-header-8">8.0 Table of Contribution</a>
+        </sl-tree-item>
+
+        <sl-tree-item>
+          <a href="#references">9.0 References</a>
+        </sl-tree-item>
+
       </sl-tree>
+
     </div>
     <sl-divider></sl-divider>
 
@@ -506,7 +653,7 @@
       </div>
 
       <div id="sub-section-6-header-3">
-          <h3>6.3 Avoidance Collision</h3>
+          <h3>6.3 Collision Avoidance </h3>
           <p>
             Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
             Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
