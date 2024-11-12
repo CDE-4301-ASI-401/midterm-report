@@ -548,10 +548,20 @@
                 modelling the Pillar Area. To do so, we first sought to work with electrical
                 pipes bundled together to simulate the Pillar Area.
               </p>
+              <image-component tag="image" source="assets/matthew/oldPillar.png"
+                               subtitle="Image x: Pillar replicated with electrical pipes"></image-component>
               <p>
                 However, it was found that these pipes were too thin and did not accurately replicate
                 the pillars that would be used in the real setup (Figure 4.3.2). The Crazyflies were
                 not able to detect the pipes in flight and would often crash into it due to non-detection.
+              </p>
+              <video-component tag="video" source="assets/matthew/droneHoveringBetweenPillars.mp4"
+                               subtitle="Video: Drone successfully hovers between two pillars"></video-component>
+              <p>
+                Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
+                model the pillars (Figure 4.3.3). Being approximately 20 cm in diameter, this was an accurate scale
+                model of the pillars and provided a good representation of the cylindrical surface of the pillar area
+                that the Crazyflies would have to contend with in the actual arena.
               </p>
             </div>
             <div id="#sub-section-4-header-3-sub-section-3">
@@ -560,12 +570,15 @@
                 In conducting tests in the Pillar area, we were looking to validate two factors: 1. The Crazyflies
                 can fly in a stable manner between the pillars, and 2. The Crazyflies are able to navigate their way
                 around the pillars to move towards the victim both within and beyond the pillar area.
+                <br/><br/>
                 The test was conducted by allowing the Crazyflies flashed with the wall-following or bug algorithm used
                 in the rest of the area to fly within the pillar zone and observe its performance.
               </p>
+              <video-component tag="video" source="assets/matthew/droneFlyingBetweenPillars.mp4"
+                               subtitle="Video: Drone navigates between pillars"></video-component>
               <p>
                 The results show the following (Figure 4.3.4):
-                <br/><br/><br/>
+                <br/><br/>
                 <b>1</b>.	The Crazyflies can fly in a stable manner between pillars<br/><br/>
                 While in flight between the pillars, the presence of these obstacles to its left and right did not affect
                 the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
@@ -575,11 +588,13 @@
                 most of the time. However, at very specific angles, the multi-ranger deck would not be able to detect the pillars
                 and cause the Crazyflies to fly head-on towards it.
               </p>
+              <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png"
+                               subtitle="Image x: Line of Sight does not pick up Pillars"></image-component>
               <p>
                 This limitation arises from the fact that the multi-ranger deck has only 4 sensors used in the distance sensing in the
                 x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 4.3.5), none of
                 the sensors can pick up the pillar which results in the Crazyflie wrongly believing that it is in free space. It would
-                then plan its path based off this assumption and potentially crash head-on into the pillar.<br/>
+                then plan its path based off this assumption and potentially crash head-on into the pillar.<br/><br/>
                 Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the pillar area to allow it to
                 reliably detect the pillars and navigate around them without crashing into them.
               </p>
@@ -622,7 +637,7 @@
       <div id="sub-section-5-header-1">
           <h3>5.1 Suitability Test</h3>
           <!-- This is an example of how you might use the video component -->
-          <video-component tag="rick" source="assets/matthew/droneHoveringBetweenPillars.mp4"
+          <video-component tag="video" source="assets/matthew/droneHoveringBetweenPillars.mp4"
                          subtitle="Video: Drone successfully hovers between two pillars"></video-component>
           <p>
             Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
