@@ -167,6 +167,15 @@
 
           <sl-tree-item>
             <a href="#sub-section-4-header-3">4.3 Obstacle Avoidance</a>
+            <sl-tree-item>
+              <a href="#sub-section-4-header-3-sub-section-1">4.3.1 Addition of Pillar Area</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#sub-section-4-header-3-sub-section-2">4.3.2 Search for objects to replicate Pillars for testing</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#sub-section-4-header-3-sub-section-3">4.3.3 Test of Crazyflie drones in the Pillar Area</a>
+            </sl-tree-item>
           </sl-tree-item>
           
           <sl-tree-item>
@@ -521,13 +530,77 @@
       <div id="sub-section-4-header-3">
           <h3>4.3 Obstacle Avoidance</h3>
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac. <a href="#image">Link to the image above</a>
+            <div id="#sub-section-4-header-3-sub-section-1">
+              <h4>4.3.1 Addition of Pillar Area</h4>
+                <image-component tag="image" source="assets/matthew/arenaWithPillarZone.png"
+                  subtitle="Image x: Arena Setup"></image-component>
+              <p>
+                In SAFMC 2025, there is the addition of the “Pillar Area” which consists of only pillars (of 30 cm diameter) and no
+                additional walls placed in that area (Figure 4.3.1). Hence, a different approach from that used in the rest
+                of the playing field may have to be taken considering the differences in this area.
+              </p>
+            </div>
+            <div id="#sub-section-4-header-3-sub-section-2">
+              <h4>4.3.2 Search for objects to replicate Pillars for testing</h4>
+              <p>
+                To test the performance of our Crazyflies in the Pillar Area,
+                we had to carry out at-scale testing in our own arena that included
+                modelling the Pillar Area. To do so, we first sought to work with electrical
+                pipes bundled together to simulate the Pillar Area.
+              </p>
+              <image-component tag="image" source="assets/matthew/oldPillar.png"
+                               subtitle="Image x: Pillar replicated with electrical pipes"></image-component>
+              <p>
+                However, it was found that these pipes were too thin and did not accurately replicate
+                the pillars that would be used in the real setup (Figure 4.3.2). The Crazyflies were
+                not able to detect the pipes in flight and would often crash into it due to non-detection.
+              </p>
+              <video-component tag="video" source="assets/matthew/droneHoveringBetweenPillars.mp4"
+                               subtitle="Video: Drone successfully hovers between two pillars"></video-component>
+              <p>
+                Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
+                model the pillars (Figure 4.3.3). Being approximately 20 cm in diameter, this was an accurate scale
+                model of the pillars and provided a good representation of the cylindrical surface of the pillar area
+                that the Crazyflies would have to contend with in the actual arena.
+              </p>
+            </div>
+            <div id="#sub-section-4-header-3-sub-section-3">
+              <h4>4.3.3 Test of Crazyflie drones in the Pillar Area</h4>
+              <p>
+                In conducting tests in the Pillar area, we were looking to validate two factors: 1. The Crazyflies
+                can fly in a stable manner between the pillars, and 2. The Crazyflies are able to navigate their way
+                around the pillars to move towards the victim both within and beyond the pillar area.
+                <br/><br/>
+                The test was conducted by allowing the Crazyflies flashed with the wall-following or bug algorithm used
+                in the rest of the area to fly within the pillar zone and observe its performance.
+              </p>
+              <video-component tag="video" source="assets/matthew/droneFlyingBetweenPillars.mp4"
+                               subtitle="Video: Drone navigates between pillars"></video-component>
+              <p>
+                The results show the following (Figure 4.3.4):
+                <br/><br/>
+                <b>1</b>.	The Crazyflies can fly in a stable manner between pillars<br/><br/>
+                While in flight between the pillars, the presence of these obstacles to its left and right did not affect
+                the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
+                <br/><br/>
+                <b>2</b>.	The Crazyflies were not able to reliably detect the presence of pillars<br/><br/>
+                While the current bug algorithm was able to allow the Crazyflies to detect the pillars and fly around them
+                most of the time. However, at very specific angles, the multi-ranger deck would not be able to detect the pillars
+                and cause the Crazyflies to fly head-on towards it.
+              </p>
+              <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png"
+                               subtitle="Image x: Line of Sight does not pick up Pillars"></image-component>
+              <p>
+                This limitation arises from the fact that the multi-ranger deck has only 4 sensors used in the distance sensing in the
+                x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 4.3.5), none of
+                the sensors can pick up the pillar which results in the Crazyflie wrongly believing that it is in free space. It would
+                then plan its path based off this assumption and potentially crash head-on into the pillar.<br/><br/>
+                Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the pillar area to allow it to
+                reliably detect the pillars and navigate around them without crashing into them.
+              </p>
+        </div>
           </p>
+
   
       </div>
 
@@ -550,21 +623,35 @@
  
       <div id="section-header-5">
           <h2>5.0 Test</h2>
+          <image-component tag="image" source="assets/matthew/arena.png"
+                         subtitle="Fig 5.1: SAFMC 2025 Competition Playing Field"></image-component>
           <p>
-            Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-            eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-            tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-            eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-            lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-            id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-            aliquam sem.
+            The Competition Playing Field is a 20 m x 20 m space that comprises a Known Area, Unknown Area
+            and Pillar Area (Figure 5.1). While we would ideally have to test at a full-scale arena before
+            the actual competition, it would be more practical to have a smaller-scale arena that is more
+            accessible to conduct more regular testing.
+          </p>
+          <image-component tag="image" source="assets/matthew/tlabComputerRoom.png"
+                         subtitle="Fig 5.2: Computer Room in Temasek Laboratories"></image-component>
+          <p>
+            Testing was done by the SAFMC 2024 Team in a computer room in Temasek Laboratories (Figure 5.2).
+            However, as this room will be under renovation starting in January 2025, we had to search for a
+            new location to carry out our regular testing.
+          </p>
+          <image-component tag="image" source="assets/matthew/studio1.png"
+                         subtitle="Fig 5.3: iDP Studio 1"></image-component>
+          <p>
+            Innovation and Design Programme (iDP) Studio 1 (Figure 5.3) was chosen as a potential site due to
+            its convenience and ease of access to our team. However, we had to conduct a few tests to ascertain
+            the reliability of flying the Crazyflies in this area (with the given floor) as the Crazyflies have
+            been known to perform poorly in certain environments, especially when the floor is too smooth or uniform.
           </p>
       </div>
 
       <div id="sub-section-5-header-1">
           <h3>5.1 Suitability Test</h3>
           <!-- This is an example of how you might use the video component -->
-          <video-component tag="rick" source="assets/matthew/droneHoveringBetweenPillars.mp4"
+          <video-component tag="video" source="assets/matthew/droneHoveringBetweenPillars.mp4"
                          subtitle="Video: Drone successfully hovers between two pillars"></video-component>
           <p>
             Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
