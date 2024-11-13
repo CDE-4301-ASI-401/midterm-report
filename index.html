@@ -29,7 +29,9 @@
 
   <script type="module" src="./components/msba-configuration/msba-configuration.js"></script>
 
-  <script type="module" src="./components/drift-test/drift-test.js"></script
+  <script type="module" src="./components/drift-test/drift-test.js"></script>
+
+  <script type="module" src="./components/key-events/key-events.js"></script>
     >
   <script type="module" src="./components/image/image-component.js"></script>
 
@@ -341,7 +343,7 @@
       <div id="sub-section-1-header-1">
         <h3>1.1 Mission</h3>
         <image-component tag="image" source="assets/matthew/indoorArena.png"
-                         subtitle="Fig 1: Indoor Arena of SAFMC 2022"></image-component>
+                         subtitle="Figure 1.1: Indoor Arena of SAFMC 2022"></image-component>
         <p>
           The mission of SAFMC 2025 Category E involves the following: <br/><br/>
 
@@ -361,19 +363,16 @@
         <p>
         Table 1.0 shows the designation of roles for the development of the various sub-systems.
         </p>
-      </div>div>
+      </div>
       
       <div id="sub-section-1-header-3">
         <h3>1.3 Scoring System</h3>
         <image-component tag="image" source="assets/matthew/scoringTable.png"
-                         subtitle="Fig 2: Scoring Table for SAFMC 2025"></image-component>
+                         subtitle="Figure 1.3.1: Scoring System for SAFMC 2025"></image-component>
         <p>
           Figure 2 shows the scoring system for SAFMC 2025.
         </p>
 
-        <scope-of-work subtitle="Table 1.0 Scope of Work">
-          <div id="scope-of-work"></div>
-        </scope-of-work>
       </div>
 
       <div id="sub-section-1-header-4">
@@ -873,7 +872,7 @@
           not able to detect the pipes in flight and would often crash into it due to non-detection.
         </p>
         <video-component tag="video" source="assets/matthew/droneHoveringBetweenPillars.mp4"
-                          subtitle="Video: Drone successfully hovers between two pillars"></video-component>
+                          subtitle="Figure 5.1.1: Hovering Test"></video-component>
         <p>
           Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
           model the pillars (Figure 4.3.3). Being approximately 20 cm in diameter, this was an accurate scale
@@ -883,7 +882,7 @@
       </div>
       
       <div id="sub-section-4-header-3-header-3">
-        <h4>4.3.3 Test of Crazyflie drones in the Pillar Area</h4>
+        <h4>4.3.3 Test of Crazyflie in the Pillar Area</h4>
         <p>
           In conducting tests in the Pillar area, we were looking to validate two factors: 1. The Crazyflies
           can fly in a stable manner between the pillars, and 2. The Crazyflies are able to navigate their way
@@ -893,7 +892,7 @@
           in the rest of the area to fly within the pillar zone and observe its performance.
         </p>
         <video-component tag="video" source="assets/matthew/droneFlyingBetweenPillars.mp4"
-                          subtitle="Video: Drone navigates between pillars"></video-component>
+                          subtitle="Figure 4.3.4: Video of Results of Tests"></video-component>
         <p>
           The results show the following (Figure 4.3.4):
           <br/><br/>
@@ -968,7 +967,7 @@
       <div id="section-header-5">
           <h2>5.0 Test</h2>
           <image-component tag="image" source="assets/matthew/arena.png"
-                         subtitle="Fig 5.1: SAFMC 2025 Competition Playing Field"></image-component>
+                         subtitle="Figure 5.1: SAFMC 2025 Competition Playing Field"></image-component>
           <p>
             The Competition Playing Field is a 20 m x 20 m space that comprises a Known Area, Unknown Area
             and Pillar Area (Figure 5.1). While we would ideally have to test at a full-scale arena before
@@ -976,14 +975,14 @@
             accessible to conduct more regular testing.
           </p>
           <image-component tag="image" source="assets/matthew/tlabComputerRoom.png"
-                         subtitle="Fig 5.2: Computer Room in Temasek Laboratories"></image-component>
+                         subtitle="Figure 5.2: Computer Room in Temasek Laboratories"></image-component>
           <p>
             Testing was done by the SAFMC 2024 Team in a computer room in Temasek Laboratories (Figure 5.2).
             However, as this room will be under renovation starting in January 2025, we had to search for a
             new location to carry out our regular testing.
           </p>
           <image-component tag="image" source="assets/matthew/studio1.png"
-                         subtitle="Fig 5.3: iDP Studio 1"></image-component>
+                         subtitle="Figure 5.3: iDP Studio 1"></image-component>
           <p>
             Innovation and Design Programme (iDP) Studio 1 (Figure 5.3) was chosen as a potential site due to
             its convenience and ease of access to our team. However, we had to conduct a few tests to ascertain
@@ -996,7 +995,7 @@
           <h3>5.1 Suitability Test</h3>
           <!-- This is an example of how you might use the video component -->
           <video-component tag="video" source="assets/matthew/droneHoveringBetweenPillars.mp4"
-                         subtitle="Video: Drone successfully hovers between two pillars"></video-component>
+                         subtitle="Figure 5.1.1: Hovering Test"></video-component>
           <p>
             Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
             Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
@@ -1014,9 +1013,7 @@
 
       <div id="sub-section-5-header-2">
           <h3>5.2 System Integration Test</h3>
-          <!-- This is an example of how you might use the video component -->
-          <video-component tag="rick" source="assets/matthew/fullFlight.mp4"
-                         subtitle="Run 1: Full run"></video-component>
+
           <p>
             Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
             Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
@@ -1031,10 +1028,10 @@
       <div id="sub-section-5-header-2-header-1">
         <h4>5.2.1 Run 1</h4>
 
-        <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
+        <msba-configuration subtitle="Table 6.0: MSBA Configuration of Simulated Crazyflies in Webots">
           <div id="msba-configuration"></div>
         </msba-configuration>
-        
+
         <p>
           Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
           Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
@@ -1043,6 +1040,9 @@
           Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
           fames ac.
         </p>
+          <!-- This is an example of how you might use the video component -->
+          <video-component tag="rick" source="assets/matthew/fullFlight.mp4"
+                         subtitle="Figure 5.2.2: Video of Run 1"></video-component>
 
         <image-component tag="image" source="assets\section-5\figure_5_2_1_layout_of_run_1.png"
         subtitle="Figure 5.2.3: Successful Rescue of Crazyflie"></image-component>
@@ -1203,6 +1203,9 @@
             lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
             id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
             aliquam sem.
+            <key-events subtitle="Table 7.0: Key Events">
+              <div id="key-events"></div>
+            </key-events>
 
             <image-component tag="image" source="assets\section-7\figure_7_1_project_gantt_chart.png"
             subtitle="Figure 7.1: Project Gantt Chart"></image-component>
