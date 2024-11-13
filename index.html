@@ -31,6 +31,8 @@
 
   <script type="module" src="./components/drift-test/drift-test.js"></script>
 
+  <script type="module" src="./components/run1_params/run1_params.js"></script>
+
   <script type="module" src="./components/key-events/key-events.js"></script>
     >
   <script type="module" src="./components/image/image-component.js"></script>
@@ -993,7 +995,7 @@
 
       <div id="sub-section-5-header-1">
           <h3>5.1 Suitability Test</h3>
-          <!-- This is an example of how you might use the video component -->
+
           <video-component tag="video" source="assets/matthew/droneHoveringBetweenPillars.mp4"
                          subtitle="Figure 5.1.1: Hovering Test"></video-component>
           <p>
@@ -1028,10 +1030,6 @@
       <div id="sub-section-5-header-2-header-1">
         <h4>5.2.1 Run 1</h4>
 
-        <msba-configuration subtitle="Table 6.0: MSBA Configuration of Simulated Crazyflies in Webots">
-          <div id="msba-configuration"></div>
-        </msba-configuration>
-
         <p>
           Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
           Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
@@ -1040,8 +1038,9 @@
           Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
           fames ac.
         </p>
-          <!-- This is an example of how you might use the video component -->
-          <video-component tag="rick" source="assets/matthew/fullFlight.mp4"
+
+
+        <video-component tag="video" source="assets/matthew/fullFlight.mp4"
                          subtitle="Figure 5.2.2: Video of Run 1"></video-component>
 
         <image-component tag="image" source="assets\section-5\figure_5_2_1_layout_of_run_1.png"
@@ -1053,6 +1052,9 @@
         <image-component tag="image" source="assets/section-5/figure_5_2_3_2_successful_rescue_of_crazyflie.png"
         subtitle="Figure 5.2.3: Successful Rescue of Crazyflie"></image-component>
       
+        <run1_params subtitle="Table 6.0: Parameters of the Crazyflie Used">
+          <div id="run1_params"></div>
+        </run1_params>
       </div>
 
       <div id="sub-section-5-header-2-header-2">
@@ -1182,10 +1184,6 @@
             Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
             fames ac.
           </p>
-
-      <!-- This is an example of how you might use the video component -->
-        <!-- <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        subtitle="Video: Never gonna give you up?"></video-component> -->
   
       </div>
 
@@ -1203,14 +1201,16 @@
             lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
             id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
             aliquam sem.
+          </p>
+
             <key-events subtitle="Table 7.0: Key Events">
               <div id="key-events"></div>
             </key-events>
-
+ 
             <image-component tag="image" source="assets\section-7\figure_7_1_project_gantt_chart.png"
             subtitle="Figure 7.1: Project Gantt Chart"></image-component>
             
-          </p>
+          
       </div>
 
     <br />
