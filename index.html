@@ -27,6 +27,8 @@
   
   <script type="module" src="./components/comparison-raw-jpeg/comparison-raw-jpeg.js"></script>
 
+  <script type="module" src="./components/msba-configuration/msba-configuration.js"></script>
+
   <script type="module" src="./components/image/image-component.js"></script>
 
   <script type="module" src="./components/video/video.js"></script>
@@ -188,7 +190,6 @@
               <a href="#sub-section-4-header-1-header-2">4.1.2 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)t </a>
             </sl-tree-item>
 
-
           </sl-tree-item>
           
           <sl-tree-item>
@@ -218,7 +219,7 @@
 
           <sl-tree-item expanded>
             <a href="#sub-section-4-header-3">4.3 Obstacle Avoidance</a>
-<!-- the links here are broken why???? -->
+
             <sl-tree-item>
               <a href="#sub-section-4-header-3-header-1">4.3.1 Addition of Pillar Area</a>
             </sl-tree-item>
@@ -938,6 +939,10 @@
           Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
           fames ac.
         </p>
+
+        <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
+          <div id="msba-configuration"></div>
+        </msba-configuration>
       
       </div>
 
@@ -1220,11 +1225,6 @@
 </div>
 
 
- 
-
-  <!-- This is the code to display the scroll to top button for ergonomic -->
-  <!-- You can leave it as it is, or if you don't like its aesthetics you can also just delete it, -->
-  <!-- but it might reduce the user experience. -->
   <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
     <sl-icon name="arrow-up" label="Settings"></sl-icon>
   </sl-button>
