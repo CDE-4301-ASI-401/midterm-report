@@ -34,7 +34,7 @@
   <script type="module" src="./components/run1_params/run1_params.js"></script>
 
   <script type="module" src="./components/key-events/key-events.js"></script>
-    >
+  
   <script type="module" src="./components/image/image-component.js"></script>
 
   <script type="module" src="./components/video/video.js"></script>
@@ -76,7 +76,7 @@
       </team-member>
 
       <team-member avatar="assets//title_page/pinkranger.png" name="Govindanath Samuel Sudharsanan" department="Mehcanical Engineering"
-        matric_number="1234567890">
+        matric_number="A0239048Y">
       </team-member>
 
       <team-member avatar="assets/matthew/matthew.png" name="Matthew Yip Tze Herng" department="Mechanical Engineering"
@@ -198,7 +198,7 @@
 
           </sl-tree-item>
           
-          <sl-tree-item>
+          <sl-tree-item expanded>
             <a href="#sub-section-4-header-2">4.2 Object Detection</a>
 
             <sl-tree-item>
@@ -1047,12 +1047,20 @@
         <image-component tag="image" source="assets/section-5/figure_5_2_3_2_successful_rescue_of_crazyflie.png"
         subtitle="Figure 5.2.3: Successful Rescue of Crazyflie"></image-component>
 
-      <!-- subtitles not showing -->
+      <!--this is werid for the table cos i could only get the table to show for run1_params and only subtitle shown for msba configuration-->
         <run1_params subtitle="Table 6.0: Parameters of the Crazyflie Used">
           <div id="run1_params"></div>
         </run1_params>
+        <msba-configuration subtitle="Table 6.0: Parameters of the Crazyflie Used">
+          <div id="msba-configuration"></div>
+        </msba-configuration>
 
+        
 
+        <!-- <table-component subtitle="Table: Demo table">
+          <div id="table-1"></div>
+        </table-component> -->
+        
       </div>
 
       <div id="sub-section-5-header-2-header-2">
@@ -1140,7 +1148,6 @@
   
       </div>
 
-
       <div id="sub-section-6-header-3">
           <h3>6.3 Object Detection</h3>
           <p>
@@ -1194,7 +1201,8 @@
  
             <image-component tag="image" source="assets\section-7\figure_7_1_project_gantt_chart.png"
             subtitle="Figure 7.1: Project Gantt Chart"></image-component>
-            
+
+
           
       </div>
 
