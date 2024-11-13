@@ -10,7 +10,7 @@ new gridjs.Grid({
       ["CNN", "Convolutional Neural Networks"],
       ["iDP", "Innovation and Design Programme"],
     ],
-  }).render(document.getElementById("table-2"));
+  }).render(document.getElementById("table-of-abbreviation"));
   
   class TableOfAbbreviations extends HTMLElement {
     constructor() {
