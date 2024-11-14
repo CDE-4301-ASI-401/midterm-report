@@ -1,7 +1,7 @@
 new gridjs.Grid({
     columns: ["Subsystem", "Member(s)"],
     data: [
-      ["Search Strategy", "Govindanath Samuel Sudharsanan Low Yan Yew" ],
+      ["Search Strategy", "Govindanath Samuel Sudharsanan; Low Yan Yew" ],
       ["Simulation", "Low Yan Yew"],
       ["Object Detection", "Foo Shu Hui"],
       ["Collision Avoidance", "Matthew Yip Tze Heng"],
