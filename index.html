@@ -1015,54 +1015,64 @@
     <br />
     <sl-divider></sl-divider>
  
-      <div id="section-header-5">
-          <h2>5.0 Test</h2>
+      <div id="section-header-8">
+          <h2>8.0 Testing the Suitability of Arena</h2>
           <image-component tag="image" source="assets/matthew/arena.png"
-                         subtitle="Figure 5.1: SAFMC 2025 Competition Playing Field"></image-component>
+                         subtitle="Figure 8.1: SAFMC 2025 Competition Playing Field"></image-component>
           <p>
             The Competition Playing Field is a 20 m x 20 m space that comprises a Known Area, Unknown Area
-            and Pillar Area (Figure 5.1). While we would ideally have to test at a full-scale arena before
+            and Pillar Area (Figure 8.1). While we would ideally have to test at a full-scale arena before
             the actual competition, it would be more practical to have a smaller-scale arena that is more
             accessible to conduct more regular testing.
           </p>
           <image-component tag="image" source="assets/matthew/tlabComputerRoom.png"
-                         subtitle="Figure 5.2: Computer Room in Temasek Laboratories"></image-component>
+                         subtitle="Figure 8.2: Computer Room in Temasek Laboratories"></image-component>
           <p>
-            Testing was done by the SAFMC 2024 Team in a computer room in Temasek Laboratories (Figure 5.2).
+            Testing was done by the SAFMC 2024 Team in a computer room in Temasek Laboratories (Figure 8.2).
             However, as this room will be under renovation starting in January 2025, we had to search for a
             new location to carry out our regular testing.
           </p>
           <image-component tag="image" source="assets/matthew/studio1.png"
-                         subtitle="Figure 5.3: iDP Studio 1"></image-component>
+                         subtitle="Figure 8.3: iDP Studio 1"></image-component>
           <p>
-            Innovation and Design Programme (iDP) Studio 1 (Figure 5.3) was chosen as a potential site due to
+            Innovation and Design Programme (iDP) Studio 1 (Figure 8.3) was chosen as a potential site due to
             its convenience and ease of access to our team. However, we had to conduct a few tests to ascertain
             the reliability of flying the Crazyflies in this area (with the given floor) as the Crazyflies have
             been known to perform poorly in certain environments, especially when the floor is too smooth or uniform.
           </p>
       </div>
 
-      <div id="sub-section-5-header-1">
-          <h3>5.1 Suitability Test</h3>
-
+      <div id="sub-section-8-header-1">
+          <h3>8.1 Suitability Test</h3>
+          <p>
+            1.	Hovering Test
+            <br/><br/>
+          </p>
           <image-component tag="image" source="./assets/matthew/hoveringTest.png"
           subtitle="
-          Figure 5.1.1: Hovering Test
+          Figure 8.4: Drone undergoing Hovering Test
           "></image-component>
-  
-        
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac. <a href="#image">Link to the image above</a>
+            This test involved allowing the Crazyflie to hover at a fixed height of 0.3 m for 30 s. The Crazyflies proved to be able to hover well at this fixed height, demonstrating the ability of the Crazyflies to recognise its height off the ground using the Time of Flight (ToF) sensor and maintain a constant height while hovering.
+            <br/><br/>
+            2. Drift Test
+            <br/><br/>
           </p>
 
           <drift-test subtitle="Table 5.0: Results of Drift Test">
             <div id="drift-test"></div>
           </drift-test>
+          <p>
+            In this test, the Crazyflie took off, flew forward by 1 m using cfclient and then land. We would then determine how far it has drifted from the theoretical position of where it should land which should be 1 m away from the take-off position.
+            <br/><br/>
+            ∆x represents the horizontal distance of the Crazyflie’s forward or backward movement. ∆y represents the lateral distance of the Crazyflie’s rightward or leftward movement.
+            <br/><br/>
+            The issue of drifting due to changes in environment was reported by SAFMC 2024’s team which seems not significantly affect our team this year.
+            <br/><br/>
+            From the drift test, it was found that the average displacement of ∆x_average=12.6 cm and ∆y_average=9.17 cm shows that the Crazyflie tended to drift forward and to the right from their initial positions. This drift pattern is consistent with observations made in the Temasek Laboratories computer room. Both ∆x_average and ∆y_average values fall within an acceptable error margin, especially considering that the minimum wall-to-wall distance on competition day is 1 m—making these drift values relatively minor by comparison.
+            <br/><br/>
+            With the two tests providing valuable results, we conclude that iDP Studio 1 is a suitable place for Crazyflie testing and therefore our choice of venue to build our scale model of the arena.
+          </p>
   
       </div>
 
