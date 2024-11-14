@@ -1137,6 +1137,8 @@
  
       <div id="section-header-8">
           <h2>8.0 Testing Suitability of Arena</h2>
+      </div>
+
       <div id="section-header-8">
           <h2>8.0 Testing the Suitability of Arena</h2>
           <image-component tag="image" source="assets/matthew/arena.png"
@@ -1202,27 +1204,13 @@
           <h3>8.2 System Integration Test</h3>
 
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac.
-          </p>
+            The system integration test was carried out with 3 Crazyflies, 2 Victim Markers and 1 Danger Zones. The purpose of this test is to see how the various sub-systems will come together under a new set of Playing Field, rules and obstacles. This allowed us to adapt the SAFMC 2024 team’s code to our needs, adding new features for new obstacles, such as the Pillar Obstacles, which was not present in the previous years.
+            </p>
   
       </div>
 
       <div id="sub-section-8-header-2-header-1">
         <h4>8.2.1 Run 1</h4>
-
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
-        </p>
 
         <!--this is weird for the table cos i could only get the table to show for run1_params and only subtitle shown for msba configuration-->
         <run1_params subtitle="Table 6.0: Parameters of the Crazyflie Used">
@@ -1231,35 +1219,51 @@
         <msba-configuration subtitle="Table 6.0: Parameters of the Crazyflie Used">
           <div id="msba-configuration"></div>
         </msba-configuration>
-        <image-component tag="image" source="assets\section-5\figure_5_2_1_layout_of_run_1.png"
-        subtitle="Figure 5.2.1: Layout of Run 1"></image-component>
+        
+        <p>
+          In this test, the Crazyflies were flown at an attitude of 0.3 m, and a velocity of 0.5 m/s. Each Crazyflie had their own preferred direction, wall-following side and wall distance (Table 6.0).
+        </p>
 
-        <video-component tag="video" source="https://www.youtube.com/embed/htiBuillTQU?si=Ds-DbgeMn0HuN6nK" subtitle="Figure 5.2.2: Video of Run 1"></video-component>
+        <image-component tag="image" source="assets\section-8\figure_8_5_layout_of_run_1.png"
+        subtitle="Figure 8.5: Layout of Run 1"></image-component>
+        
+        <p>
+          Figure 8.5 shows the Layout of Run 1, where each Victim Markers were either placed in a narrow area or a wide area. The Crazyflies (labelled 1, 2 and 3) were placed in their allocated spots.
+        </p>
 
-        <image-component tag="image" source="assets/section-5/figure_5_2_3_1_successful_rescue_of_crazyflie.png"
-        subtitle="Figure 5.2.3: Successful Rescue of Crazyflie"></image-component>
+        <video-component tag="video" source="https://www.youtube.com/embed/htiBuillTQU?si=Ds-DbgeMn0HuN6nK" subtitle="Figure 8.6: Video of Run 1"></video-component>
+        
+        <p>
+          Figure 8.6 shows the video of the first run.
+        </p>
 
-        <image-component tag="image" source="assets/section-5/figure_5_2_3_2_successful_rescue_of_crazyflie.png"
-        subtitle="Figure 5.2.3: Successful Rescue of Crazyflie"></image-component>
+        <image-component tag="image" source="assets/section-8/figure_8_7_successful_rescue_of_crazyflie.png"
+        subtitle="Figure 8.7: Successful Rescue of Crazyflie"></image-component>
+
+        <p>
+        For the first run, all three Crazyflies took off successfully, though one had a slight delay. Two out of three Crazyflies landed on the Victim Marker, and two out of three Crazyflies detected the Danger Zone. Most importantly, none of the Crazyflies landed within the Danger Zone. In this run, our team observed effective object detection for both Victim Markers and Danger Zones in both wide (Absence of Inner Walls) and narrow areas (Areas enclosed by Inner Walls), which meant that the Crazyflies landed in front of the April Tag without colliding with any walls during landing (Figure 8.7).
+        </p>
 
       </div>
 
       <div id="sub-section-8-header-2-header-2">
         <h4>8.2.2 Run 2</h4>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
-        </p>
+          The same Crazyflie parameters were used as Table 6.0 for run 2.
+          </p>
 
-        <image-component tag="image" source="assets\section-5\figure_5_2_4_layout_of_run_2.png"
-        subtitle="Figure 5.2.4: Layout of Run 2"></image-component>
+        <image-component tag="image" source="assets\section-8\figure_8_8_layout_of_run_2.png"
+        subtitle="Figure 8.8: Layout of Run 2"></image-component>
 
+        <p>
+          For run 2, we modified the arena such that it is a smaller version of the actual Playing Field (Figure 8.8), where there is an Unknown Search Area in the centre of the Playing Field. In this run, the distance between Pillar Obstacle and Inner Wall is 1 m. 
+          </p>
+        
+          <p>
+          We observe that Crazyflie 2 did not pass through the area between the Pillar Obstacle and the Inner Wall, despite continuously approaching this area. Crazyflie 2 was not able to break out of this loop. As such, we conclude that we need to implement a loop detection in our search algorithm so that the other Crazyflies can break out of this loop in similar scenarios. However, the wall distance of 0.8 m for Crazyflie was too large for a 1 m pillar-to-wall distance. Furthermore, the Crazyflie did not enter the "Unknown Search Area”. This led us to the conclusion that our team requires a larger test arena (of 1:1 or 1:2 scale) for accurate testing.
+          </p>
         <video-component tag="video" source="https://www.youtube.com/embed/pSzdsZPPaq0?si=wisSBEOyDS_sFoSb"
-        subtitle="Figure 5.2.5: Video of Run 2"></video-component>
+        subtitle="Figure 8.9: Video of Run 2"></video-component>
       
       </div>
    
