@@ -64,7 +64,6 @@
       <h1>Group Report</h1>
     </div>
 
-    <!-- This is the team member component use to display details about your team members -->
     <div class="team-member-wrapper">
 
       <team-member avatar="assets//title_page/shuhui.jpeg" name="Foo Shu Hui" department="Engineering Science Programme" 
@@ -85,10 +84,22 @@
 
     </div>
 
-    <!-- This is a divide from the shoelace library for aesthetic purpose -->
+    <br />
+    <br />
+    <sl-divider></sl-divider>
+    
+    <div class ="acknowledgements">
+      <h2>Acknowledgements</h2>
+      
+      <p>We would like to express our sincere gratitude to Mr. Leong Wai Lun William, Mr. Chiun Wei Ming Jimmy, and Mr. Liew Yung Jun from the Centre for Flight Sciences at Temasek Laboratories for their invaluable expertise and support throughout this project.</p>
+    
+      <p> We are also deeply grateful to Dr. Elliot Law from the Engineering Design and Innovation Centre for his guidance and collaboration. This project would not have been possible without their dedication and encouragement.</p>
+    </div>
+
+    <br />
+    <br />
     <sl-divider></sl-divider>
 
-    <!-- This is the table-of-content component use to define all of the link directly to each section -->
     <div class="table-of-content">
       
       <h2>Table of Contents</h2>
@@ -319,13 +330,18 @@
       </sl-tree>
 
     </div>
+    
+    <br />
+    <br />
     <sl-divider></sl-divider>
    
     <div class="table-of-abbreviations">
       <h2>Table of Abbreviations</h2>
       <div id="table-of-abbreviation"></div>
     </div>
-
+    
+    <br />
+    <br />
     <sl-divider></sl-divider>
 
     <div>
@@ -407,9 +423,7 @@
         </p>
 
         <image-component tag="image" source="assets\section-1\figure_1_4_3_known_search_area.png"
-        subtitle="Figure 1.4.3: Known Search Area"></image-component>
-
-        
+        subtitle="Figure 1.4.3: Known Search Area"></image-component>        
 
       </div>
 
@@ -1232,7 +1246,6 @@
 
   </div>
 </div>
-
 
   <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
     <sl-icon name="arrow-up" label="Settings"></sl-icon>
