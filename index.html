@@ -807,143 +807,165 @@
       <div id="section-header-5">
         <h2>5.0 Object Detection</h2>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
+          The Object Detection Subsystem involves streaming the images collected by the camera over Wi-Fi and processing these images with the AI deck to detect AprilTags (Victim Markers and Danger Zones) on a central computer.
         </p>
   
       </div>
 
       <div id="sub-section-5-header-1">
         <h3>5.1 Hardware in Object Detection</h3>
+        
+        <image-component tag="image" source="./assets/section-5/figure_5_1_components_on_ai_deck.png"
+      subtitle="Figure 5.1: Components on AI Deck"></image-component>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
+          The AI deck contains the GAP8 and the Himax HM01B0-MNA monochrome camera module. The full resolution of the Himax HM01B0-MNA monochrome camera module full is 324 x 324 pixels and can capture images up to 60 Frames per second (FPS) [3]. The GAP8 Microcontroller (MCU) on the AI Deck processes the RAW files collected by the camera.
         </p>
       </div>
 
       <div id="sub-section-5-header-2">
         <h3>5.2 Target Type</h3>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
+          The target type used is AprilTags. (Figure 5.2). AprilTags are visual fiducial markers used in applications such as camera calibration. AprilTags are chosen because it is more accurate than other markers such as WhyCon [2] and easy to source. It allows calculating exact position, orientation and identity of a marker relative to a camera. Furthermore, it allows the user to specify a list of markers to detect and have existing ROS support.
+          </p>
+          <p>
+          AprilTags are used as Victim Markers for SAFMC 2024 and SAFMC 2025. For SAFMC 2025, they will also serve as markers for Danger Zones, forcing Crazyflies to fly past within its 1 m radius.          
         </p>
 
-        <image-component tag="image" source="assets\section-4\figure_4_2_1_AprilTags_as_our_target_type.png"
-      subtitle="Figure 4.2.1 AprilTags as Our Target Type"></image-component>
+        <image-component tag="image" source="assets\section-5\figure_5_2_AprilTags_as_our_target_type.png"
+      subtitle="Figure 5.2 AprilTags as Our Target Type"></image-component>
       
       </div>
 
       <div id="sub-section-5-header-3">
           <h3>5.3 Factors in Modifying the Angle of Camera Mount</h3>
-          <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac.
-          </p>
 
-          <image-component tag="image" source="assets\section-4\figure_4_2_2_camera_mount_at_0 °_45°_and_90°_with_respect_to_the_vertical_axis.png"
-          subtitle="Figure 4.2.2: Camera Mount At 0 °, 45° and 90° With Respect to the Vertical Axis"></image-component>
+          <image-component tag="image" source="./assets/section-5/figure_5_3_camera_mount_at_0 °_45°_and_90°_with_respect_to_the_vertical_axis.png"
+          subtitle="Figure 5.3: Camera Mount At 0 °, 45° and 90° With Respect to the Vertical Axis"></image-component>
+          <p>
+            The default configuration of the camera mount holding the Himax HM01B0-MNA monochrome camera module is 90°. 90° didn’t work for the camera mount because it only captured tall static obstacles like Inner Walls and Pillar Obstacles, missing the ground-level Victim Markers and Danger Zones. Meanwhile, 0° was not suitable due to noticeable latency during image streaming.
+            </p>
+          
+          <p>
+            After the image from the camera is processed, and a Victim Marker is detected, the Crazyflie will land further away from the Victim Marker (but within 1 m radius of LOS), which is not ideal. 
+            </p>
+          
+          <p>
+            From Figure 1.2, where a Danger Zone is located very near to a Regular Victim, it is ideal to land the Crazyflie as close as possible to the Victim Marker, to avoid it landing within the 1 m radius of the Danger Zone. Angling the camera mount is important to allow the Crazyflie to look ahead and account for the image processing delay. As such, any angles from 10° to 80° can be potentially considered.
+            </p>
+          
+          <p>
+            To determine the optimal camera mount angle for the Crazyflie, it is essential to balance several factors: velocity, flight attitude, and image resolution. The faster the Crazyflie flies, the “higher” it needs to look to detect the Victim Marker in time, which requires a steeper camera angle between 10° and 80° from the vertical axis. This ensures that the marker is detected early enough within the required LOS for a successful rescue.
+            </p>
+
+          <p>
+            Additionally, as the flight attitude increase, the angle of the camera mount must be adjusted downwards to allow the Crazyflie to maintain effective detection.
+            </p>
+
+          <p>
+            Lastly, image resolution decreases at higher speeds and altitudes due to motion blurs, impacting detection accuracy. Thus, to achieve clear and timely identification of the Victim Marker, the camera mount angle must be carefully adjusted in tandem with the Crazyflie’s speed, flight attitude, and image resolution.
+            </p>
+          
+          <p>
+            For SAFMC 2024, the angle of the camera mount used was 45°. 
+            </p>
+          
+          <p>
+            For SAFMC 2025, 45° camera mount proved to work well with a velocity of 0.5 m/s and an attitude of 0.3 m for the detection of a Victim Marker (Figure 5.3) for one Crazyflie. It makes sense to fly the Crazyflie at an attitude of 0.3 m as the depth of field of the camera module is 30 cm to infinity, which is the lowest attitude within the range [3]. 
+          </p>
 
       </div>
 
       <div id="sub-section-5-header-4">
         <h3>5.4 Image Streaming</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
-        </p>
 
         <comparison-raw-jpeg subtitle="Table 3.0: Comparison of Streaming RAW file and JPEG file">
           <div id="comparison-raw-jpeg"></div>
         </comparison-raw-jpeg>
 
-        <image-component tag="image" source="./assets/section-4/figure_4_2_3_original_image_streaming_firmware.png"
-        subtitle="Figure 4.2.3: Original Image streaming Firmware"></image-component>
+        <p>
+          Collecting RAW files presents several disadvantages. From Table 3.0, the RAW file is larger than the JPEG file format and needs to be processed by the AI deck, leading to processing time and visible lags.
+          </p>
+        
+        <p>    
+          As such, a repository was online which contained a modified image streaming firmware [4]. The modified firmware streams JPEG images and includes an autoexposure feature which improved image quality and streaming efficiency.
+          </p>
 
-        <image-component tag="image" source="./assets/section-4/figure_4_2_4_updated_image_streaming_firmware.png"
-        subtitle="Figure 4.2.4: Updated Image streaming Firmware"></image-component>
+        <image-component tag="image" source="./assets/section-5/figure_5_4_original_vs_updated_image_streaming_firmware.png"
+        subtitle="Figure 5.4: Original Image streaming Firmware (Left); Updated Image streaming Firmware (Right)"></image-component>
 
       </div>
 
       <div id="sub-section-5-header-5">
         <h3>5.5 Victim and Danger Zone Detection</h3>
+
+        <image-component tag="image" source="./assets/section-5/figure_5_5_victim_and_danger_zone_detection_chart.png"
+        subtitle="Figure 5.5: Victim and Danger Zone Detection Chart"></image-component>
+
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
-        </p>
+          Figure 5.5 shows how Victim and Danger Zone Detection is conducted for SAFMC 2025. In this year’s competition, the take-off command is issued via a central computer, followed by checking the Crazyflie’s status to see if its ready for the Competition Mission. Thereafter, in the air, the Crazyflie will continuously scan its surroundings using the camera on the AI-Deck. When an AprilTag is detected (which can be found in the detected Tags and the Danger Zone dictionary), the AprilTag will be identified as either a Victim Marker or a Danger Zone.
+          </p>
+
+        <p>
+          If a Victim Marker is detected, a land command is issued, and the Crazyflie sets itself as inactive upon landing. In doing so, if the Crazyflie rescues the Victim within a 1 m LOS of the Victim Marker, a successful rescue has taken place.
+          </p>
+        
+        <p>
+          Conversely, if a Danger Zone is detected, the Crazyflie will take note of the AprilTag ID by storing it within a variable that can be reused. Thereafter, the Crazyflie will fly past the Danger Zone, never landing within its 1 m radius. 
+          </p>
 
       </div>
 
       <div id="sub-section-5-header-6">
         <h3>5.6 Victim and Danger Zone Detection for One Crazyflie</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
-        </p>
-
-        <image-component tag="image" source="assets\section-4\figure_4_2_5_victim_and_danger_zone_detection_chart.png"
-        subtitle="Figure 4.2.5: Victim and Danger Zone Detection Chart"></image-component>
 
         <video-component tag="video" source="https://www.youtube.com/embed/7XYIzGDzUfc?si=Lv9ohnfTVAj5mW1s"
-        subtitle="Figure 4.2.6: Video of Object Detection for One Crazyflie"></video-component>
+        subtitle="Figure 5.6: Video of Object Detection for One Crazyflie"></video-component>
 
-      </div>
-
-      <div id="sub-section-4-header-3">
-          <h2>6.0 Obstacle Avoidance</h2>
-          <p>
-            In the Playing Field, the Crazyflies encounter a mixture of Inner Walls and Pillar Obstacles. The Known and Unknown Search Areas contain only Inner Walls as obstacles, while the Pillar Zone includes only Pillar Obstacles and no Inner Walls.
-          </p>
-      </div>
-
-      <div id="sub-section-4-header-3-header-0">
-        <h3>6.1 Known and Unknown Search Area</h3>
         <p>
-          In the Known and Unknown Search Area, the SGBA path-finding algorithm allows the Crazyflie to adhere to the walls that it detects as part of its path-finding strategy. The Crazyflie is programmed to follow a set distance from the wall and follow along it once a wall is detected. The algorithm would then allow the Crazyflie to avoid crashing into the walls that it encounters. Hence, no additional steps are required to avoid the walls and can be used as-is with the current implementation.
+          The test (Figure 5.6) was conducted in the Computer Vision room at Temasek Laboratories. In this test, the Crazyflie takes off to search for one Victim Marker autonomously. The Crazyflie flies over the Danger Zone (AprilTag in the middle of the room) and rescuing the victim (AprilTag at the end of the room). The Search Algorithm used in this test was MSBA. The angle of the camera mount was 45°.
+          </p>
+
+        <p>
+          This test confirms that the Crazyflie successfully maintains a distance within the 1 m radius of the Victim Marker, achieves a successful rescue by landing near the Victim Marker, and accurately detects the Danger Zone without landing within it.
+          </p>
+
+        <p> 
+          However, we acknowledge a limitation: there remains a possibility for the Crazyflie to inadvertently land within an area where radius of Victim Markers and Danger Zones overlap. This scenario was not addressed in the current test and represents an area for future work.
+        </p>
+
+      </div>
+      <div id="sub-section-5-header-7">
+        <h3>5.7 Future Work in Object Detection</h3>
+        <p>
+        One possible future direction Objection Detection can take involves detecting Navigation Aids using Convolutional Neural Networks (CNN) and successfully segmenting the field layout based on Navigation Aids. This approach could help address overlapping zones by enabling more precise navigation and allowing for the implementation of various search strategies throughout the entire Playing Field.
+        </p>
+
+        <image-component tag="image" source="./assets/section-5/figure_5_7_segmentation_of_playing_field.png"
+        subtitle="Figure 5.7: Segmentation of Playing Field"></image-component>
+
+        <p>
+        As shown in Figure 5.7, the Playing Field is divided into three distinct areas: the Known Search Area, the Unknown Search Area, and the Pillar Area. Each of these areas presents unique challenges, requiring different approaches as a single search algorithm is insufficient for all scenarios. To address these challenges, the SAFMC 2024 team implemented multiple search strategies, including wall-following, wall-following with obstacle avoidance, and the bug algorithm, tailored to the specific needs of each area. We believe that the SAFMC 2025 team should take a similar approach. 
         </p>
       </div>
-
+        
       <br />
       <br />
       <sl-divider></sl-divider>
 
       <div id="section-header-6">
           <h2>6.0 Obstacle Avoidance</h2>
+
           <p>
+            In the Playing Field, the Crazyflies encounter a mixture of Inner Walls and Pillar Obstacles. The Known and Unknown Search Areas contain only Inner Walls as obstacles, while the Pillar Zone includes only Pillar Obstacles and no Inner Walls.
+            </p>
+
       </div>
 
       <div id="sub-section-6-header-1">
         <h3>6.1 Known and Unknown Search Area</h3>
 
         <p>
-          abcdefghi
+          In the Known and Unknown Search Area, the SGBA path-finding algorithm allows the Crazyflie to adhere to the walls that it detects as part of its path-finding strategy. The Crazyflie is programmed to follow a set distance from the wall and follow along it once a wall is detected. The algorithm would then allow the Crazyflie to avoid crashing into the walls that it encounters. Hence, no additional steps are required to avoid the walls and can be used as-is with the current implementation.
         </p>
       </div>
 
@@ -1020,7 +1042,7 @@
           reliably detect the pillars and navigate around them without crashing into them.
         </p>
       </div>
-      <div id="sub-section-4-header-3-header-4">
+      <div id="sub-section-6-header-5">
         <h3>6.5 Future Work in Collision Avoidance</h3>
         <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
                          subtitle="Figure 6.5.1: Possible Zig-Zag flight path to counter non-detection of Pillars"></image-component>
@@ -1031,11 +1053,6 @@
         </p>
       </div>
 
-
-      <div id="sub-section-6-header-5">
-        <h3>6.5 Future Work in Collision Avoidance</h3>
-          <p> abcdefg</p>
-        </div>
 
       <div id="section-header-7">
           <h2>7.0 Simulation</h2>
