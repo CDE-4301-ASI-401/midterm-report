@@ -166,9 +166,8 @@
     <sl-divider></sl-divider>
 
     <div class ="acknowledgements">
-      
-      <h2>Acknowledgements</h2>
       <div id="acknowledgements"></div>
+      <h2>Acknowledgements</h2>
       
       <p>We would like to express our sincere gratitude to Mr. Leong Wai Lun William, Mr. Chiun Wei Ming Jimmy, and Mr. Liew Yung Jun from the Centre for Flight Sciences at Temasek Laboratories for their invaluable expertise and support throughout this project.</p>
     
@@ -178,11 +177,14 @@
 
     <br />
     <br />
+    <sl-divider></sl-divider> 
+
     <sl-divider></sl-divider>
    
     <div class="table-of-abbreviations">
       <h2>Table of Abbreviations</h2>
       <div id="table-of-abbreviation"></div>
+
     </div>
     
     <br />
@@ -655,20 +657,28 @@
       <div id="sub-section-4-header-3">
         <h3>4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</h3>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
+          MSBA is an unmapped decentralized search strategy that was adapted from the Swarm Gradient Bug Algorithm (SGBA) developed by TU Delft (McGuire et al., 2019). This was the strategy developed and implemented by the previous team in SAFMC 2024. It a heuristic algorithm governed by a few simple rule-based behaviour. From Figure 4.1.1, The drone would have a preferred direction of flying, 
+          it will continue to fly in that direction till it encounters an obstacle. After that, it would perform wall-following. Once its preferred direction is freed up, it will then continue to fly in that direction. To prevent the drone from travelling in an indefinite loop, there is a loop detection mechanism that would modify the preferred direction. When the drone encounters an obstacle and start performing wall-following, 
+          it will keep track of the hit point using odometry information from the flow deck. If the drone heads toward the hit point again, the loop detection would be initiated to modify the loop detection mechanism.
         </p>
 
-        <image-component tag="image" source="assets\section-4\figure_4_1_1_illustration_of_MSBA.png"
-        subtitle="Figure 4.1.2: Illustration of MSBA"></image-component>
-  
-        <image-component tag="image" source="assets\section-4\figure_4_1_2_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
-        subtitle="Figure 4.1.3: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-component>
-
+        <image-component tag="image" source="assets\section-4\figure_4_3_illustration_of_MSBA.png"
+        subtitle="Figure 4.3: Illustration of MSBA"></image-component>
+        <p>
+          Each drone requires the initialization of several parameters beyond just the preferred direction. These include the altitude, flight speed, preferred direction, wall-following direction, and wall-following distance. In a known area, properly setting these parameters ensures that each drone can navigate effectively for maximum coverage in the arena. These configurations are essential for coordinated behaviour and for achieving consistent performance in tasks like obstacle avoidance and path-following.
+        </p>
+        <p>
+          To implement custom code onto the Crazyflie, the code must be built in the app layer, which operates on top of the firmware. This layer provides an organized structure to add custom functionalities like performing the MSBA. It facilitates integration with the firmware’s control and sensor systems. The navigation architecture diagram of a Crazyflie running MSBA onboard is in Figure 4.3. 
+        </p>
+        <image-component tag="image" source="assets\section-4\figure_4_4_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
+        subtitle="Figure 4.4: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-component>
+        <p>
+          The MSBA app layer was adapted from the SGBA app layer repository created by Bitcraze developers according to the original SGBA paper by TU Delft. A swarm of 3 Crazyflies was tested to run the MSBA without the loop detection mechanism in a 5m x5 m physical arena and was proven to be reliable as all Crazyflies maneuverer the arena and changes state as intended. 
+          The performance of MSBA specific to the runs are in <a  href="#sub-section-8-header-2">Section 8.2</a>. 
+        </p>
+        <p>
+          The app layer flashed to drones to conduct the test above can be found in this <a href="https://github.com/CDE-4301-ASI-401/SGBA_CF2_App_layer" target="_blank">GitHub repository</a>. The drone_variables.c script contains key static parameters such as flight speed, altitude, left wall-distance, and right wall-distance. The SGBA.c script contains core logic for the bug algorithm, including the management of the preferred direction parameter for the drones, and wall-following parameters. In this test, loop detection was not implemented, and the preferred direction remained static. However, in future iterations, the preferred direction will become a dynamic parameter, requiring real-time reassignment as loop detection is introduced to the script to enhance the algorithm's efficiency and adaptability.
+        </p>
       </div>
 
       <div id="sub-section-4-header-4">
@@ -703,12 +713,11 @@
       <div id="sub-section-4-header-4-header-2">
         <h4>4.4.2 Future Work in Unmapped Decentralized Strategy</h4>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
+          For an unmapped decentralized strategy, MSBA is a solution with great potential given its track record of robustness and reliability. A critical aspect of the algorithm is loop detection. It ensures each Crazyflie cover the area more efficiently, minimizing redundant movements. Current MSBA deployed to the Crazyflie lacked such feature. In future implementations, integrating loop detection will be essential. Additionally, testing the optimum angles for preferred direction modification will also contribute to the effectiveness of the algorithm.
+        </p>
+        <p>
+          Another important aspect of the strategy involves configurations for maximum coverage. Given the layout of the arena, it’s possible to trace MSBA paths for all the Crazyflies for a maximum coverage, and then derive corresponding configuration to achieve these paths. Initial validation of these configurations can be conducted through simulation tests using Webots, 
+          which allows parameter fine-tuning (the state of simulation subsystem for this project is elaborated in <a href="#section-header-7">Section 7</a>). Ultimately, the strategy should be further validated through a full-scale, real-world test to ensure the Crazyflies can collectively achieve the desired coverage in practice.
         </p>
       </div>
 
