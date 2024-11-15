@@ -30,8 +30,8 @@ class TableComponent extends HTMLElement {
   render() {
     const div = document.createElement("div");
     div.innerHTML = `
-    <slot></slot>
     <sub>${this.subtitle}</sub>
+    <slot></slot>
     <style>
       :host {
         display: block;
