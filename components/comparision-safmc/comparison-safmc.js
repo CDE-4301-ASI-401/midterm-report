@@ -1,11 +1,11 @@
 new gridjs.Grid({
   columns: ["", "SAFMC 2024", "SAFMC 2025"],
   data: [
-    ["Field layout", "Unknown layout prior to Competition Day Mission Disclosed layout on Competition Day Mission", "Unknown layout prior to Competition Day Mission Disclosed layout for Known Search Area on Competition Day Mission Undisclosed layout for Unknown Search Area on Competition Day Mission"],
-    ["Pillar Obstacle", "No Pillar Obstacles", "8 Pillar Obstacles"],
-    ["Rescue Victim", "Maximum 4 Single-Rescue Victims Maximum 4 Double-Rescue Victims", "Total 8 Victims (Includes Regular and Bonus Victims)."],
-    ["Danger Zone", "No Danger Zones", "Maximum 4 Danger Zones"],
-    ["Navigation Aid", "Maximum 10 Navigation Aids within Search Area Unlimited Navigation Aids within Start Area", "Maximum 10 Navigation Aids within Known Search Area. Unlimited Navigation Aids within Start Area. No Navigation Aids allowed within Unknown Search Area."],
+    ["Field layout", "Unknown layout prior to Competition Day Mission. Disclosed layout on Competition Day Mission", "Unknown layout prior to Competition Day Mission. Disclosed layout for Known Search Area on Competition Day Mission. Undisclosed layout for Unknown Search Area on Competition Day Mission."],
+    ["Pillar Obstacle", "No Pillar Obstacles.", "8 Pillar Obstacles."],
+    ["Rescue Victim", "Maximum 4 Single-Rescue Victims Maximum 4 Double-Rescue Victims.", "Total 8 Victims (Includes Regular and Bonus Victims)."],
+    ["Danger Zone", "No Danger Zones.", "Maximum 4 Danger Zones."],
+    ["Navigation Aid", "Maximum 10 Navigation Aids within Search Area. Unlimited Navigation Aids within Start Area.", "Maximum 10 Navigation Aids within Known Search Area. Unlimited Navigation Aids within Start Area. No Navigation Aids allowed within Unknown Search Area."],
   ],
 }).render(document.getElementById("comparison-safmc"));
 

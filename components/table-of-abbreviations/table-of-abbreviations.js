@@ -2,6 +2,7 @@ new gridjs.Grid({
     columns: ["Abbreviation", "Description"],
     data: [
       ["SAFMC", "Singapore Amazing Flying Machine Competition"],
+      ["DSO", "Defence Science Organisation"],
       ["LOS", "Line of Sight"],
       ["MSBA", "Modified Swarm Bug Algorithm"],
       ["ToF", "Time-of-Flight"],
