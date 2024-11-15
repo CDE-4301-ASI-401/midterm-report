@@ -739,14 +739,14 @@
         <image-component tag="image" source="./assets/section-5/figure_5_1_components_on_ai_deck.png"
       subtitle="Figure 5.1: Components on AI Deck"></image-component>
         <p>
-          The AI deck contains the GAP8 and the Himax HM01B0-MNA monochrome camera module. The full resolution of the Himax HM01B0-MNA monochrome camera module full is 324 x 324 pixels and can capture images up to 60 Frames per second (FPS) [3]. The GAP8 Microcontroller (MCU) on the AI Deck processes the RAW files collected by the camera.
+          The AI deck contains the GAP8 and the Himax HM01B0-MNA monochrome camera module. The full resolution of the Himax HM01B0-MNA monochrome camera module full is 324 x 324 pixels and can capture images up to 60 Frames per second (FPS) (Bitcraze, 2021). The GAP8 Microcontroller (MCU) on the AI Deck processes the RAW files collected by the camera.
         </p>
       </div>
 
       <div id="sub-section-5-header-2">
         <h3>5.2 Target Type</h3>
         <p>
-          The target type used is AprilTags. (Figure 5.2). AprilTags are visual fiducial markers used in applications such as camera calibration. AprilTags are chosen because it is more accurate than other markers such as WhyCon [2] and easy to source. It allows calculating exact position, orientation and identity of a marker relative to a camera. Furthermore, it allows the user to specify a list of markers to detect and have existing ROS support.
+          The target type used is AprilTags. (Figure 5.2). AprilTags are visual fiducial markers used in applications such as camera calibration. AprilTags are chosen because it is more accurate than other markers such as WhyCon (Robotics Knowledgebase, 2022) and easy to source. It allows calculating exact position, orientation and identity of a marker relative to a camera. Furthermore, it allows the user to specify a list of markers to detect and have existing ROS support.
           </p>
           <p>
           AprilTags are used as Victim Markers for SAFMC 2024 and SAFMC 2025. For SAFMC 2025, they will also serve as markers for Danger Zones, forcing Crazyflies to fly past within its 1 m radius.          
@@ -791,7 +791,7 @@
             </p>
           
           <p>
-            For SAFMC 2025, 45° camera mount proved to work well with a velocity of 0.5 m/s and an attitude of 0.3 m for the detection of a Victim Marker (Figure 5.3) for one Crazyflie. It makes sense to fly the Crazyflie at an attitude of 0.3 m as the depth of field of the camera module is 30 cm to infinity, which is the lowest attitude within the range [3]. 
+            For SAFMC 2025, 45° camera mount proved to work well with a velocity of 0.5 m/s and an attitude of 0.3 m for the detection of a Victim Marker (Figure 5.3) for one Crazyflie. It makes sense to fly the Crazyflie at an attitude of 0.3 m as the depth of field of the camera module is 30 cm to infinity, which is the lowest attitude within the range (Bitcraze, 2021). 
           </p>
 
       </div>
@@ -808,7 +808,7 @@
           </p>
         
         <p>    
-          As such, a repository was online which contained a modified image streaming firmware [4]. The modified firmware streams JPEG images and includes an autoexposure feature which improved image quality and streaming efficiency.
+          As such, a repository was online which contained a modified image streaming firmware (Leong, 2023). The modified firmware streams JPEG images and includes an autoexposure feature which improved image quality and streaming efficiency.
           </p>
 
         <image-component tag="image" source="./assets/section-5/figure_5_4_original_vs_updated_image_streaming_firmware.png"
