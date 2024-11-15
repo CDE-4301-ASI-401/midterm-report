@@ -151,7 +151,7 @@
         matric_number="A0245906Y">
       </team-member>
 
-      <team-member avatar="assets//title_page/pinkranger.png" name="Govindanath Samuel Sudharsanan" department="Mehcanical Engineering"
+      <team-member avatar="assets//title_page/pinkranger.png" name="Govindanath Samuel Sudharsanan" department="Mechanical Engineering"
         matric_number="A0239048Y">
       </team-member>
 
@@ -179,6 +179,7 @@
     <br />
     <sl-divider></sl-divider> 
 
+    <sl-divider></sl-divider>
    
     <div class="table-of-abbreviations">
       <h2>Table of Abbreviations</h2>
@@ -422,60 +423,50 @@
       <div id="section-header-2">
         <h2>2.0 Hardware and Software </h2>
         <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
+          With the objective of developing swarm drones for autonomous search and rescue mission prescribed by the competition rulebook, the Bitcraze Crazyflie was selected as the primary hardware for the swarm, because of its open-source modular design. Additionally, the Crazyflie is widely used in T-lab’s research projects, and using a similar platform allows us to leverage shared knowledge, expertise, and resources.
         </p>
       </div>
 
       <div id="sub-section-2-header-1">
         <h3>2.1 Hardware: BitCraze Crazyflie</h3>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
+          Crazyflie is a nano-quadcopter weighing 27 g with a size of 92 mm x 92 mm x39 mm. It is an open source flying development platform that is highly modular as Bitcraze offers an extensive ecosystem of software and hardware. The Crazyflie is also compatible with Robot Operating System (ROS) 
+          through the Crazyswarm ROS package. The basic Crazyflie comes with an STM32F405 microcontroller and an 
+          Inertial Measurement Unit (IMU) onboard (Figure 2.1).
         </p>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_1_basic_bitcraze_crazyflie_without_add_ons.png"
-        subtitle="Figure 2.1.1: Basic Bitcraze Crazyflie Without Add-ons"></image-component>
+        <image-component tag="image" source="assets\section-2\figure_2_1_basic_bitcraze_crazyflie_without_add_ons.png"
+        subtitle="Figure 2.1: Basic Bitcraze Crazyflie Without Add-ons"></image-component>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_2_1_expansion_decks_left_ai_deck_middle_flow_deck_right_multi_ranger_deck.png"
-        subtitle="Figure 2.1.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
+        <p>
+          To enhance the Crazyflie’s capabilities for autonomous operation, they will be equipped with additional sensors, and expansion decks from Bitcraze (Figure 2.2). The AI deck includes a camera and an onboard AI chip (GAP8), which allows for onboard image processing, along with Wi-Fi connectivity for real-time data transfer and remote communication. This enables the Crazyflie to handle complex image-based tasks directly. Paired with this is the Flow deck, which integrates a high-precision Time-of-Flight (ToF) sensor for measuring distance to the ground and an optical flow sensor to track lateral movements, contributing to stable and controlled flight. 
+        </p>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_2_2_expansion_decks_left_ai_deck_middle_flow_deck_right_multi_ranger_deck.png"
-        subtitle="Figure 2.1.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
+        <p>
+          Furthermore, the Multi-ranger deck complements these features with five ToF sensors positioned to measure distances in five directions: front, back, left, right, and top. These sensors detect objects up to 4 m away, giving the Crazyflie enhanced spatial awareness and allowing it to avoid obstacles from multiple angles. Together, these decks equip the Crazyflie with robust navigation, obstacle avoidance, and image processing capabilities.
+        </p>
+        <image-component tag="image" source="assets\section-2\figure_2_2_expansion_decks.png"
+        subtitle="Figure 2.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
+        <br><br>
+        <image-component tag="image" source="assets\section-2\figure_2_3_configuration_of_upgraded_crazyflie_with_expansion_decks.png"
+        subtitle="Figure 2.3: Configuration of Upgraded Crazyflie with Expansion Decks"></image-component>
+        <br><br>
+        <image-component tag="image" source="assets\section-2\figure_2_4_upgraded_crazyflie_used_as_the_development_platform_in_this_project.png"
+        subtitle="Figure 2.4: Upgraded Crazyflie Used as the Development Platform in This Project"></image-component>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_2_3_expansion_decks_left_ai_deck_middle_flow_deck_right_multi_ranger_deck.png"
-        subtitle="Figure 2.1.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
-      
-        <image-component tag="image" source="assets\section-2\figure_2_1_3_configuration_of_upgraded_crazyflie_with_expansion_decks.png"
-        subtitle="Figure 2.1.3: Configuration of Upgraded Crazyflie with Expansion Decks"></image-component>
-
-        <image-component tag="image" source="assets\section-2\figure_2_1_4_upgraded_crazyflie_used_as_the_development_platform_in_this_project.png"
-        subtitle="Figure 2.1.4: Upgraded Crazyflie Used as the Development Platform in This Project"></image-component>
-
+        <p>
+          With the addition of these expansion decks (Figure 2.3), which increase the overall weight, the Crazyflie will also be equipped with a thrust upgrade bundle and an upgraded battery to support the added load. The thrust upgrade bundle includes enhanced brushless motors and lighter propellers, boosting the maximum thrust from 60 g to 80 g. These enhancements transform the basic Crazyflie into a highly capable, upgraded drone suitable for complex tasks (Figure 2.4). This enhanced Crazyflie will serve as the platform for developing and executing solutions tailored to meet the demands of the competition's prescribed mission.
+        </p>
       </div>
 
       <div id="sub-section-2-header-2">
         <h3>2.2 Software</h3>
         <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
+          Depending on system requirements, the Crazyflie can be interfaced through multiple frameworks, including the native Bitcraze Crazyflie framework, ROS, or a range of external frameworks developed by the open-source community. Each option offers unique capabilities, allowing flexibility based on the project’s specific needs. In this project, Ubuntu 22.04 and ROS2 Humble (Figure 2.5) are used to develop the subsystems as they are the most widely supported development environments.
         </p>
 
-        <image-component tag="image" source="assets\section-2\figure_2_2_1_ROS2_humble.png"
-        subtitle="Figure 2.2.1: ROS2 Humble"></image-component>
+        <image-component tag="image" source="assets\section-2\figure_2_5_ROS2_humble.png"
+        subtitle="Figure 2.5: ROS2 Humble"></image-component>
       </div>
    
     <br />
@@ -483,53 +474,56 @@
     <sl-divider></sl-divider>
 
       <div id="section-header-3">
-          <h2>3.0 Approach</h2>
+          <h2>3.0 Mission Strategy</h2>
           <p>
-            Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-            eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-            tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-            eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-            lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-            id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-            aliquam sem.
+            With the vastly different arena layout this year, our mission strategy also must change accordingly. The main 
+            areas of consideration are the search strategy to use, object detection methods and use of navigation aids. 
           </p>
       </div>
 
       <div id="sub-section-3-header-1">
-          <h3>3.1 Map vs Unmapped vs Hybrid</h3>
+          <h3>3.1 Search Strategy</h3>
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac. <a href="#image">Link to the image above</a>
+            With the introduction of an entirely new Playing Field which can be split into 3 main areas – namely the Known Area,
+            Unknown Area and Pillar Area, there is a need to test and decide what search strategies to opt for. Last year’s search 
+            strategy was an unmapped, decentralized strategy (differences between strategies will be elaborated on in section 4.1), 
+            and it did work and were able to complete the search the fastest amongst the teams that participated last year.  
+          </p>
+
+          <p>
+            However, they did not win the first place as their approach lacked novelty, and did not use the hardware available to 
+            them to its fullest potential. Therefore, they lost marks in the team live presentation and eventually came in second.
+          </p>
+           
+          <p>
+          Hence, we will be exploring both mapped and unmapped strategies and possibly use a combination of them due to the variety 
+          of obstacles present, to improve the overall efficiency and novelty of the search strategy employed.
           </p>
   
       </div>
 
       <div id="sub-section-3-header-2">
-          <h3>3.2 Arena</h3>
+          <h3>3.2 Object Detection</h3>
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac.
+            The introduction of new obstacles does not only require a revamp of the search strategy, but also a revised approach on the 
+            object detection methods. With the presence of an Unknown Area, Danger Zones and Pillars, we will need to re-evalute our current 
+            object detection method and explore other methods before finalising on the method that is best suited for our use case. 
           </p>
   
       </div>
 
       <div id="sub-section-3-header-3">
-          <h3>3.3 Use of Navigation Aids</h3>
+          <h3>3.3 Navigation Aids</h3>
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac. <a href="#image">Link to the image above</a>
+            With the presence of new obstacles, the use of Navigation Aids to help us in our search of the Victims Markers varies significantly. 
+            There are many more use cases for navigations aids this year, especially in more tricky areas like the unknown area and the pillar 
+            area. 
+          </p>
+
+          <p>
+            However, the number of Navigation Aids remain the same as last year, despite there being 3 distinct challenges unlike only 1 last year. 
+            We will evaluate on the most effective way to use the navigation aids, as well as what kind of items are we using. We will then need to 
+            test and decide the most effective way to use these Navigation Aids. 
           </p>
   
       </div>
@@ -537,12 +531,8 @@
       <div id="sub-section-3-header-4">
           <h3>3.4 Key Areas of Development</h3>
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac. <a href="#image">Link to the image above</a>
+            Our goal is to complete the mission in the quickest time possible while using novel and superior methods for our mission. Therefore, we have 
+            split the key areas of development into the 4 roles below.  
           </p>
 
           <scope-of-work subtitle="Table 2.0: Scope of Work">
@@ -551,6 +541,24 @@
   
           <p>
           Table 2.0 shows the designation of roles for the development of the various sub-systems.
+          </p>
+
+          <p>
+            The search strategy sub team will be exploring 2 mapping strategies while enhancing the unmapped strategy used last year as we the mapped approach 
+            is more difficult to implement and hence will be awarded more marks in the team presentation.  
+          </p>
+
+          <p>
+            The object detection sub team will be improving on the object detection method used last year as it was inaccurate and slow. Exploration of new methods 
+            such as object classification using neural networks will be done simultaneously.   
+          </p>
+
+          <p>
+            The obstacle detection and avoidance sub team will investigate strategies used to detect and avoid the new obstacles present, which are the pillars.   
+          </p>
+
+          <p>
+            The simulation sub team will investigate the use of simulation to simulate various search algorithms to improve testing efficiency.   
           </p>
   
       </div>
@@ -562,54 +570,92 @@
       <div id="section-header-4">
           <h2>4.0 Search Strategy</h2>
           <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac. <a href="#image">Link to the image above</a>
+            Search strategies can be broadly classified into two main categories: mapped centralized and unmapped decentralized. A detailed list of differences is shown below.  
+          </p>
+
+          <image-component tag="image" source="assets/section-4/figure 4_1_search_strat_differences.png"
+        subtitle="Figure 4.1: Comparison between Mapped Centralised and Unmapped Decentralised Strategies"></image-component>
+
+          <p>
+            There are 3 main differences that play a key role in helping us determine the best strategy to use for our challenge.  
+          </p>
+
+          <p>
+            1. Processing Requirements 
+          </p>
+
+          <p>
+            Unmapped strategies require minimal processing as drones rely solely on obstacle detection to adjust their paths. This makes them ideal for large, dynamic environments with low computational needs. 
+            However, they lack awareness of other drones and previously explored areas, necessitating additional collision-avoidance algorithms and risking inefficiencies or missed victims in obscure locations  
+          </p>
+
+          <p>
+            Mapped strategies, while computationally intensive, enable drones to localize, track explored areas, and optimize search efficiency using virtual maps. This approach requires detection, classification, and mapping but ensures better resource allocation. 
+          </p>
+
+          <p>
+            2. Speed
+          </p>
+
+          <p>
+            Unmapped strategies perform faster since drones handle calculations onboard, with compact algorithms enabling quick adjustments. Conversely, mapped strategies rely on external processing, introducing potential delays in path updates and risks of central computer failure, particularly with large-scale deployments.
+          </p>
+
+          <p>
+            3. Algorithm Complexity
+          </p>
+
+          <p>
+            Unmapped strategies are simpler but may underutilize drone capabilities, such as the AI deck's advanced processing power, leading to less innovative solutions. Mapped strategies allow for more complex algorithms that maximize hardware potential, offering an edge in challenging environments.
+          </p>
+
+          <p>
+            We will evaluate both strategies, considering their respective strengths and weaknesses, to determine the optimal approach for specific areas in the mission.
           </p>
   
       </div>
 
       <div id="sub-section-4-header-1">
-        <h3>4.1 {Placeholder 1}</h3>
+        <h3>4.1 Mapping using Multiranger Deck</h3>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
+          The first mapping method uses the ToF sensors on the multiranger deck. The Crazyflie uses the Multi-Ranger Deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or SLAM algorithms) to construct a map. As the drone moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the drone to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
         </p>
 
+        <image-component tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
+        subtitle="Figure 4.2: Map produced using Multiranger Deck"></image-component>
 
-        <image-component tag="image" source="./assets/section-4/figure_4_1_1_comparison_between_mapped_centralised_and_unmapped_decentralised.png"
-        subtitle="Figure 4.1.1: Comparison between Mapped Centralised and Unmapped Decentralised"></image-component>
+        <p>
+          The figure above shows one of the map produced during one of our test runs. The drone crashed during the first test as it did not detect the pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as pillars. 
+        </p>
+
+        <p>
+          On top of that, the map produced was inaccurate. As can be seen in the figure, some of the area was not mapped, and the wall furthest away from the drone was slanted. This is due to both the limitations of the range and resolution of the sensor, as well as the drift of the drone 
+        </p>
+
+        <p>
+          Despite these shortcomings, we believe that we can improve on the issues faced by using multiple drones. Using multiple drones improves mapping by enabling faster and more efficient coverage, as they can explore different areas simultaneously and avoid redundancy. Collaborative efforts allow drones to validate each other's data, enhancing accuracy and resilience against individual errors. Multiple perspectives and dynamic sensor fusion provide greater detail and resolution, while relative positioning and shared data improve localization and the performance of SLAM algorithms. This approach is scalable for larger or more complex environments, though it requires effective communication, collision avoidance, and robust processing to handle the increased data volume. 
+        </p>
+
+        
 
       </div>
 
       <div id="sub-section-4-header-2">
-      <h3>4.2 {Placeholder 2}</h3>
+      <h3>4.2 Mapping using Camera on AI Deck</h3>
       <p>
-        Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-        Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-        etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-        vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-        Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-        fames ac.
+        The second mapping method will utilize the camera on the AI deck and OpenCV's ORB (Oriented FAST and rotated BRIEF). To use ORB for SLAM with the AI deck's camera, capture frames and extract keypoints and descriptors using the ORB algorithm. Match features between consecutive frames to calculate the drone's relative motion (translation and rotation) through visual odometry. Incrementally build a map by integrating the extracted features and positional data into a point cloud or occupancy grid. Use loop closure detection to identify revisited areas, correcting accumulated errors with graph optimization. For robust performance, fuse camera data with other onboard sensors like the IMU or Multi-Ranger Deck, and optimize computations for real-time processing on the AI deck. 
       </p>
 
-      <image-component tag="image" source="assets\section-4\figure_4_1_1_illustration_of_MSBA.png"
-      subtitle="Figure 4.1.2: Illustration of MSBA"></image-component>
+      <p>
+        We are unable to produce any results for this method just yet but will continue to explore further as ORB is widely used and results shown are promising. 
+      </p>
 
-      <image-component tag="image" source="assets\section-4\figure_4_1_2_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
-      subtitle="Figure 4.1.3: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-component>
+
 
       </div>
 
       <div id="sub-section-4-header-3">
-        <h3>4.3 {Placeholder 3}</h3>
+        <h3>4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</h3>
         <p>
           Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
           Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
@@ -618,30 +664,42 @@
           Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
           fames ac.
         </p>
+
+        <image-component tag="image" source="assets\section-4\figure_4_1_1_illustration_of_MSBA.png"
+        subtitle="Figure 4.1.2: Illustration of MSBA"></image-component>
+  
+        <image-component tag="image" source="assets\section-4\figure_4_1_2_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
+        subtitle="Figure 4.1.3: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-component>
+
       </div>
 
       <div id="sub-section-4-header-4">
         <h3>4.4 Future Work In Search Strategy</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
-        </p>
+        
       </div>
 
       <div id="sub-section-4-header-4-header-1">
         <h4>4.4.1 Future Work In Mapped Centralised Strategy</h4>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
+          For the mapping using the Multiranger Deck, we will employ the use of multiple drones to see if we are able to obtain a more accurate representation of the arena. We will need to work on the integration and superimposing of maps from different drones, as well as the localization of the drones 
         </p>
+
+        <p>
+          For the camera mapping, we will try to produce a map using a singular drone first, and then move on to implementing multiple drones. Once successful, we will try combining both methods as mapping with a camera provides detailed, high-resolution maps but requires significant processing and consistent lighting. The multiranger deck is lightweight and reliable in low-feature or dark environments, offering obstacle detection but produces less detailed maps. Combining both balances detail, efficiency, and robustness for versatile mapping. leveraging their strengths while mitigating their weaknesses. 
+        </p>
+
+        <p>
+          If the merging of both is unsuccessful, we will then weigh each strategy depending on its speed and accuracy. Speed means how fast does it take for the drones to produce a complete map while taking the same path, and accuracy means how accurate the map is in its virtual representation, ie does it spot all obstacles etc. 
+        </p>
+
+        <p>
+          We will then explore the different mapped search strategies such as Theta* and frontier search and weigh them based on efficiency. 
+        </p>
+
+        <p>
+          Finally, we will be testing the completed strategy (mapping along with search algorithm) in the 3 distinct areas and compare them to the unmapped decentralized strategies. From there we will decide what kind of combination to go with so that we have a good balance of speed and novelty, maximising the points we can obtain in both the search mission and team presentation. 
+        </p>
+
       </div>
 
       <div id="sub-section-4-header-4-header-2">
