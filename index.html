@@ -14,6 +14,8 @@
 
   <link rel="stylesheet" href="./index.css">
 
+  <link rel="stylesheet" href="./components/left-nav-tab/left-nav-tab.css">
+
   <link rel="stylesheet" href="./components/team-member/team-member.css">
   <script type="module" src="./components/team-member/team-member.js"></script>
 
@@ -47,11 +49,86 @@
   <script src="./components/table-component/table-component.js"></script>
 
   <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  
+
 </head>
 
 <body>
+
+  <div class="sidenav">
+    <a href="#title">Title</a>
+    <a href="#acknowledgements">Acknowledgements</a>
+    <a href="#table-of-abbreviation">Table Of Abbreviations</a>
+
+    <a href="#section-header-1">1.0 SAFMC 2025</a>
+    <a href="#sub-section-1-header-2">1.2 Scoring System</a>
+    <a href="#sub-section-1-header-3">1.3 Playing Field</a>
+    <a href="#sub-section-1-header-3-header-1">1.3.1 Known Search Area</a>
+    <a href="#sub-section-1-header-3-header-2">1.3.2 Unknown Search Area</a>
+    <a href="#sub-section-1-header-3-header-3">1.3.3 Pillar Area</a>
+    <a href="#sub-section-1-header-4">1.4 Victim Marker</a>
+    <a href="#sub-section-1-header-5">1.5 Danger Zone</a>
+    <a href="#sub-section-1-header-6">1.6 Navigation Aid</a>
+    <a href="#sub-section-1-header-7">1.7 Pillar Obstacle</a>
+    <a href="#sub-section-1-header-8">1.8 SAFMC 2025 vs SAFMC 2024</a>
+
+    <a href="#section-header-2">2.0 Hardware and Software</a>
+    <a href="#sub-section-2-header-1">2.1 Hardware: Bitcraze Crazyflie</a>
+    <a href="#sub-section-2-header-2">2.2 Software</a>
+
+    <a href="#section-header-3">3.0 Mission Strategy</a>
+    <a href="#sub-section-3-header-1">3.1 Map vs Unmapped vs Hybrid</a>
+    <a href="#sub-section-3-header-2">3.2 Arena</a>
+    <a href="#sub-section-3-header-3">3.3 Use of Navigation Aids</a>
+    <a href="#sub-section-3-header-4">3.4 Key Areas of Development</a>
+
+    <a href="#section-header-4">4.0 Search Strategy</a>
+    <a href="#sub-section-4-header-1">4.1 Mapping Using Multiranger Deck</a>
+    <a href="#sub-section-4-header-2">4.2 Mapping using AI Deck Camera</a>
+    <a href="#sub-section-4-header-3">4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</a>
+    <a href="#sub-section-4-header-4">4.4 Future Work in Search Strategy</a>
+    <a href="#sub-section-4-header-4-header-1">4.4.1 Future Work in Mapped Centralized Strategy</a>
+    <a href="#sub-section-4-header-4-header-2">4.4.2 Unmapped Decentralized Strategy/a>
+
+    <a href="#section-header-5">5.0 Object Detection</a>
+    <a href="#sub-section-5-header-1">5.1 Hardware In Object Detection</a>
+    <a href="#sub-section-5-header-2">5.2 Target Type</a>
+    <a href="#sub-section-5-header-3">5.3 Factors in Modifying the Angle of Camera Mount</a>
+    <a href="#sub-section-5-header-4">5.4 Image Streaming</a>
+    <a href="#sub-section-5-header-5">5.5 Victim and Danger Zone Detection</a>
+    <a href="#sub-section-5-header-6">5.6 Victim and Danger Zone Detection for One Crazyflie</a>
+    <a href="#sub-section-5-header-7">5.7 Future Work For Object Detection</a>
+
+    <a href="#section-header-6">6.0 Obstacle Avoidance</a>
+    <a href="#sub-section-6-header-1">6.1 Known and Unknown Search Area</a>
+    <a href="#sub-section-6-header-2">6.2 Addition of Pillar Area</a>
+    <a href="#sub-section-6-header-3">6.3 Search for Objects to Replicate Pillars for Testing</a>
+    <a href="#sub-section-6-header-4">6.4 Test of Crazyflie Drones in the Pillar Area</a>
+    <a href="#sub-section-6-header-5">6.5 Future Work In Collision Avoidance</a>
+
+
+    <a href="#section-header-7">7.0 Simulation</a>
+    <a href="#sub-section-7-header-1">7.1 Simulation Architecture Diagram for Decentralized Algorithm</a>
+    <a href="#sub-section-7-header-2">7.2 Webot Simulation of Crazyflies Performing MSBA</a>
+    <a href="#sub-section-7-header-3">7.3 Future Work in Simulation</a>
+
+    <a href="#section-header-8">8.0 Testing the Suitability of Arena</a>
+    <a href="#sub-section-8-header-1">8.1 Suitability Test</a>
+    <a href="#sub-section-8-header-2">8.2 System Integration Test</a>
+    <a href="#sub-section-8-header-2-header-1">8.2.1 Run 1</a>
+    <a href="#sub-section-8-header-2-header-2">8.2.2 Run 2</a>
+
+    <a href="#section-header-9">9.0 Future Work</a>
+    <a href="#sub-section-9-header-1">9.1 Mission Planning</a>
+
+    <a href="#section-header-10">10.0 Timeline</a>
+    <a href="#section-header-11">11.0 References</a>
+  </div>
+
   <div class="content">
+    
     <div class = "title">
+      <div id="title"></div>
       <image-component tag="image" source="assets/title_page/nus_logo.png" subtitle=" ">
       </image-component>
 
@@ -87,9 +164,11 @@
     <br />
     <br />
     <sl-divider></sl-divider>
-    
+
     <div class ="acknowledgements">
+      
       <h2>Acknowledgements</h2>
+      <div id="acknowledgements"></div>
       
       <p>We would like to express our sincere gratitude to Mr. Leong Wai Lun William, Mr. Chiun Wei Ming Jimmy, and Mr. Liew Yung Jun from the Centre for Flight Sciences at Temasek Laboratories for their invaluable expertise and support throughout this project.</p>
     
@@ -97,247 +176,6 @@
 
     </div>
 
-    <br />
-    <br />
-    <sl-divider></sl-divider>
-
-    <div class="table-of-content">
-      
-      <h2>Table of Contents</h2>
-      <sl-tree>
-
-        <sl-tree-item expanded>
-          <a href="#section-header-1">1.0 SAFMC 2025</a>
-          
-            <sl-tree-item>
-              <a href="#sub-section-1-header-1">1.1 Mission</a>
-            </sl-tree-item>
-
-            <sl-tree-item>
-              <a href="#sub-section-1-header-2">1.2 Scoring System</a>
-            </sl-tree-item>
-
-
-            <sl-tree-item expanded>
-              <a href="#sub-section-1-header-3">1.3 Playing Field</a>
-            
-                <sl-tree-item>
-                  <a href="#sub-section-1-header-3-header-1">1.3.1 Known Search Area</a>
-                </sl-tree-item>
-
-                <sl-tree-item>
-                  <a href="#sub-section-1-header-3-header-2">1.3.2 Unknown Search Area</a>
-                </sl-tree-item>
-
-                <sl-tree-item>
-                  <a href="#sub-section-1-header-3-header-3">1.3.3 Pillar Area</a>
-                </sl-tree-item>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-1-header-4">1.4 Victim Marker</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-1-header-5">1.5 Danger Zone</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-1-header-6">1.6 Navigation Aid</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-1-header-7">1.7 Pillar Obstacle</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-1-header-8">1.8 SAFMC 2025 vs SAFMC 2024</a>
-          </sl-tree-item>
-          
-        </sl-tree-item>
-
-        <sl-tree-item expanded>
-          <a href="#section-header-2">2.0 Hardware and Software</a>
-          
-            <sl-tree-item>
-              <a href="#sub-section-2-header-1">2.1 Hardware: Bitcraze Crazyflie</a>
-            </sl-tree-item>
-          
-            <sl-tree-item>
-              <a href="#sub-section-2-header-2">2.2 Software</a>
-            </sl-tree-item>
-
-        </sl-tree-item>
-
-        <sl-tree-item expanded>
-          <a href="#section-header-3">3.0 Mission Strategy</a>
-          
-          <sl-tree-item>
-            <a href="#sub-section-3-header-1">3.1 Search Strategy</a>
-          </sl-tree-item>
-          
-          <sl-tree-item>
-            <a href="#sub-section-3-header-2">3.2 Object Detection</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-3-header-3">3.3 Navigation Aids</a>
-          </sl-tree-item>
-          
-          <sl-tree-item>
-            <a href="#sub-section-3-header-4">3.4 Key Areas of Development</a>
-          </sl-tree-item>
-
-        </sl-tree-item>
-
-        <sl-tree-item expanded>
-          <a href="#section-header-4">4.0 Search Strategy</a>
-          
-          <sl-tree-item>
-            <a href="#sub-section-4-header-1">4.1 Mapping using Multiranger Deck</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-4-header-2">4.2 Mapping using Camera on AI Deck </a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-4-header-3">4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</a>
-          </sl-tree-item>
-
-          <sl-tree-item expanded>
-            <a href="#sub-section-4-header-4">4.4 Future Work in Search Strategy</a>
-            <sl-tree-item>
-              <a href="#sub-section-4-header-4-header-1">4.4.1 Future Work in Mapped Centralised Strategy</a>
-            </sl-tree-item>
-  
-            <sl-tree-item>
-              <a href="#sub-section-4-header-4-header-2">4.4.2 Future Work in Unmapped Decentralised Strategy</a>
-            </sl-tree-item>
-
-
-          </sl-tree-item>
-
-        </sl-tree-item>
-          
-        <sl-tree-item expanded>
-          <a href="#section-header-5">5.0 Object Detection</a>
-
-          <sl-tree-item>
-            <a href="#sub-section-5-header-1">5.1 Hardware In Object Detection </a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-5-header-2">5.2 Target Type</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-5-header-3">5.3 Factors in Modifying the Angle of Camera Mount </a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-5-header-4">5.4 Image Streaming</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-5-header-5">5.5 Victim and Danger Zone Detection</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-5-header-6">5.6 Victim and Danger Zone Detection for One Crazyflie</a>
-          </sl-tree-item>
-
-          <sl-tree-item>
-            <a href="#sub-section-5-header-7">5.7 Future Work For Object Detection</a>
-          </sl-tree-item>
-
-        </sl-tree-item>
-
-        <sl-tree-item expanded>
-            <a href="#section-header-6">6.0 Obstacle Avoidance</a>
-
-            <sl-tree-item>
-              <a href="#sub-section-6-header-1">6.1 Known and Unknown Search Area</a>
-            </sl-tree-item>
-
-            <sl-tree-item>
-              <a href="#sub-section-6-header-2">6.2 Addition of Pillar Area</a>
-            </sl-tree-item>
-
-            <sl-tree-item>
-              <a href="#sub-section-6-header-3">6.3 Search for objects to replicate Pillars for testing</a>
-            </sl-tree-item>
-
-            <sl-tree-item>
-              <a href="#sub-section-6-header-4">6.4 Test of Crazyflie drones in the Pillar Area</a>
-            </sl-tree-item>
-
-            <sl-tree-item>
-              <a href="#sub-section-6-header-5">6.5 Future Work In Collision Avoidance</a>
-            </sl-tree-item>
-            
-        </sl-tree-item>
-          
-        <sl-tree-item expanded>
-            <a href="#section-header-7">7.0 Simulation</a>
-
-            <sl-tree-item>
-              <a href="#sub-section-7-header-1">7.1 Simulation Architecture Diagram for Decentralized Algorithm </a>
-            </sl-tree-item>
-
-            <sl-tree-item>
-              <a href="#sub-section-7-header-2">7.2 Webot Simulation of Crazyflies Performing MSBA </a>
-            </sl-tree-item>
-
-            <sl-tree-item>
-              <a href="#sub-section-7-header-3">7.3 Future Work in Simulation</a>
-            </sl-tree-item>
-
-        </sl-tree-item>
-
-        <sl-tree-item expanded>
-          <a href="#section-header-8">8.0 Testing the Suitability of Arena</a>
-          
-          <sl-tree-item>
-            <a href="#sub-section-8-header-1">8.1 Suitability Test</a>
-          </sl-tree-item>
-          
-          <sl-tree-item expanded>
-            <a href="#sub-section-8-header-2">8.2 System Integration Test</a>
-
-            <sl-tree-item>
-              <a href="#sub-section-8-header-2-header-1">8.2.1 Run 1</a>
-            </sl-tree-item>
-            
-            <sl-tree-item>
-              <a href="#sub-section-8-header-2-header-2">8.2.2 Run 2</a>
-            </sl-tree-item>
-
-          </sl-tree-item>
-
-        </sl-tree-item>
-
-        <sl-tree-item expanded>
-          <a href="#section-header-9">9.0 Future Work</a>
-          
-          <sl-tree-item>
-            <a href="#sub-section-9-header-1">9.1 Mission Planning</a>
-          </sl-tree-item>
-
-        </sl-tree-item>
-
-        <sl-tree-item>
-          <a href="#section-header-10">10.0 Timeline</a>
-        </sl-tree-item>
-
-        <sl-tree-item>
-          <a href="#references">11.0 References</a>
-        </sl-tree-item>
-
-      </sl-tree>
-
-    </div>
-    
     <br />
     <br />
     <sl-divider></sl-divider>
@@ -351,7 +189,7 @@
     <br />
     <sl-divider></sl-divider>
 
-    <div>
+    <div id = "main-content">
 
       <div id="section-header-1">
         <h2>1.0 SAFMC 2025</h2>
@@ -1127,6 +965,9 @@
         </p>
       </div>
 
+      <br />
+      <br />
+      <sl-divider></sl-divider>  
 
       <div id="section-header-7">
           <h2>7.0 Simulation</h2>
@@ -1396,14 +1237,16 @@
     </div>
 
   </div>
-</div>
+  </div>
 
   <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
     <sl-icon name="arrow-up" label="Settings"></sl-icon>
   </sl-button>
 
   <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+  
   <script type="module" src="./components/table-component/table-component.js"></script>
+
 </body>
 
 </html>

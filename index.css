@@ -10,10 +10,13 @@ body {
   max-width: 800px;
   margin: auto;
   padding: 10%;
+  margin-left: 160px;
 }
+
 .title {
   text-align: center;
 }
+
 p {
   text-align: justify;
   font-size: 1.1rem;
