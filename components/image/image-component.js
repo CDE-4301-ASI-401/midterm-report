@@ -19,16 +19,25 @@ class ImageComponent extends HTMLElement {
   render() {
     const div = document.createElement("div");
     div.innerHTML = `
-    <img id="${this.tag}" src="${this.source}" alt="${this.subtitle}">
-    <sub>${this.subtitle}</sub>
+    <div class="container">
+      <img id="${this.tag}" src="${this.source}" alt="${this.subtitle}">
+      <sub>${this.subtitle}</sub>
+    </div>
     <style>
       :host {
         display: block;
         text-align: center;
       }
 
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
       img {
-        width: 100%;
+        width: 50%;
       }
 
       sub {
@@ -38,6 +47,7 @@ class ImageComponent extends HTMLElement {
     </style>
   `;
 
+    this.shadowRoot.innerHTML = ""; // Clear previous content
     this.shadowRoot.appendChild(div);
   }
 }
