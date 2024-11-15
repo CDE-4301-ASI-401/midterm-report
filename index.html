@@ -979,64 +979,70 @@
       <sl-divider></sl-divider>  
 
       <div id="section-header-7">
-          <h2>7.0 Simulation</h2>
-          <p>
-            Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-            Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-            etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-            vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-            fames ac. <a href="#image">Link to the image above</a>
-          </p>
-  
-      </div>
-
-      <div id="sub-section-7-header-1">
-        <h3>7.1 Simulation Architecture Diagram for Decentralized Algorithm</h3>
+        <h2>7.0 Simulation</h2>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
+          Simulation enables testing of the actual code intended for Crazyflie deployment within the simulation environment. This saves time by allowing rapid development iterations and troubleshooting of search algorithms without the need to deploy them to the Crazyflie itself. This approach facilitates quick identification and resolution of issues, streamlining the development process. Additionally, simulation provides the versatility to test the code across various environments and with different Crazyflie configurations, all without being constrained by physical space or the risks associated with real-world testing.
         </p>
+        <p>
+          Webots is used as simulator for multi-agent swarm testing because it enables both the testing of decentralized search algorithms that would be developed and deployed on top of the Crazyflie firmware, and centralized search algorithms that require single point of control typically implemented through ROS. This is possible because Webots offers the flexibility to run direct onboard code, accurately simulating real deployment, while also supporting ROS integration by acting as a ROS node.
+        </p>
+    </div>
 
-        <image-component tag="image" source="./assets/section-4/figure_4_4_1_navigation_architecture_diagram_of_simulated_crazyflie.png"
-        subtitle="Figure 4.4.1: Navigation Architecture Diagram of Simulated Crazyflie"></image-component>
+    <div id="sub-section-7-header-1">
+      <h3>7.1 Simulation Architecture Diagram for Decentralized Algorithm</h3>
+      <p>
+        Using Webots, a swarm of Crazyflie was simulated to run the identical MSBA code used in the actual deployment. Since Webots does not support software-in-the-loop and integration with Crazyflie firmware, a few modifications were made to allow the testing of the actual code intended for Crazyflie deployment within the simulation environment.
+      </p>
+
+      <p>
+        A Webots controller was developed to interface the simulated hardware, including sensors and motors, with the MSBA algorithm. The navigation architecture of the simulated Crazyflie is shown in Figure 7.1. 
+        The controller code, available in this <a href="https://github.com/CDE-4301-ASI-401/Webots_CF2/blob/main/controllers/SGBA_Controller/SGBA_Controller.c" target="_blank">GitHub repository</a>, processes sensor data from the simulated Crazyflie and feeds it to the MSBA algorithm. Using these inputs, the MSBA script calculates the necessary velocity in the x and y directions and the yaw rate required to achieve the desired motion. This information is then passed back to the Webots controller, which initializes the Bitcraze-developed PID flight controller to determine the required individual motor velocities. Finally, the Webots controller applies these motor velocities to control the Crazyflie's movement, allowing it to execute the MSBA strategy in the simulated environment.
+      </p>
+
+      <image-component tag="image" source="./assets/section-7/figure_7_1_navigation_architecture_diagram_of_simulated_crazyflie.png"
+      subtitle="Figure 7.1: Navigation Architecture Diagram of Simulated Crazyflie"></image-component>
+    
+    </div>
+
+    <div id="sub-section-7-header-2">
+      <h3>7.2 Webot Simulation of Crazyflies Performing MSBA</h3>
+      <p>
+        A swarm with 3 Crazyflies are simulated to perform MSBA in a 5 m x 6 m environment that was representative of the 
+        physical arena used to perform the interim system integration test (CF2_SGBA_demo.wbt) in <a href="#sub-section-8-header-2">Section 8.2</a>. In this test, the three Crazyflies have the following configuration. Within the arena, the bottom 5 m x 1 m area was designated.
+      </p>
+      <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
+        <div id="msba-configuration"></div>
+      </msba-configuration>
+      <br><br>
+      <image-component tag="image" source="./assets/section-7/figure_7_2_path_of_3_crazyflie_simulated_in_webots.png"
+      subtitle="
+      Figure 7.2: Path of 3 Crazyflie Simulated in Webots Using the Configuration in Table 4.0 (Green) Crazyflie 1 Path; (Pink) Crazyflie 2 Path; (Blue) Crazyflie 3 Path
+      "></image-component>
+      <br><br>
+      <video-component tag="video" source="https://www.youtube.com/embed/nrzu8jDMEnc?si=CZcKq72jN3VzLVef"
+      subtitle="Figure 7.3: Video of Swarm of 3 Crazyflies performing MSBA in Webots"></video-component>
       
-      </div>
+      <p>
+        The simulation ran successfully, with each Crazyflie demonstrating motion patterns consistent with the expected MSBA behaviour. The Crazyflies navigated the environment according to their designated configurations, with clear adherence to their preferred directions and wall-following rules.
+      </p>
 
-      <div id="sub-section-7-header-2">
-        <h3>7.2 Webot Simulation of Crazyflies Performing MSBA</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac.
-        </p>
-        <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
-          <div id="msba-configuration"></div>
-        </msba-configuration>
+      <p>
+        With this simulation environment, the development of search algorithms is significantly expedited, as the code can be easily deployed and tested in Webots. Without this setup, the process would take considerably longer, requiring the code to be flashed onto the actual drone hardware, where extracting error outputs would be more challenging.
+      </p>
+    </div>
 
-        <image-component tag="image" source="./assets/section-4/figure_4_4_2_path_of_3_crazyflie_simulated_in_webots.png"
-        subtitle="
-        Figure 4.4.2: Path of 3 Crazyflie Simulated in Webots Using the Configuration in Table 4.0 (Green) Crazyflie 1 Path; (Pink) Crazyflie 2 Path; (Blue) Crazyflie 3 Path
-        "></image-component>
-
-        <video-component tag="video" source="https://www.youtube.com/embed/nrzu8jDMEnc?si=CZcKq72jN3VzLVef"
-        subtitle="Figure 4.4.3: Video of Swarm of 3 Crazyflies performing MSBA in Webots"></video-component>
-      
-      </div>
-
-      <div id="sub-section-7-header-3">
-        <h3>7.3 Future Work in Simulation</h3>
-        <p>
-          abcdefg
-        </p>
-      </div>
+    <div id="sub-section-7-header-3">
+      <h3>7.3 Future Work in Simulation</h3>
+      <p>
+        The current simulation allows for testing the decentralized search algorithm used onboard the Crazyflie. Looking ahead, the simulator should undergo validation to ensure the accurate simulation of Crazyflie movements. To achieve this, a Crazyflie data logging solution will be developed to capture real-time sensor data, as well as the onboard MSBA output from the Crazyflies. This logging solution will provide a comprehensive dataset that can be used for further analysis, allowing for a more in-depth validation of the simulation’s performance and the accuracy of the Crazyflie’s behaviour in both simulated and real-world environments. 
+      </p>
+      <p>
+        To ensure the accuracy of the simulator, path deviation analysis and state transition analysis will be performed on the simulated and real-world Crazyflie. Path deviation analysis involves the comparison of multi-ranger distance readings from the simulation with real-world data. The goal is to keep the deviation within 10% of real-world measurements to ensure accurate representation of real-world behaviour. State transition analysis is the tracking of sequence and timing of each MSBA state of Crazyflies in simulation and real-world. This will help confirm that the Crazyflies are transitioning correctly between states as they navigate.
+      </p>
+      <p>
+        Depending on the search strategy developed in the future, Webots controllers would have to be developed to simulate additional search algorithms. 
+      </p>
+    </div>
    
     <br />
     <br />
