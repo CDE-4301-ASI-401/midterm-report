@@ -2,8 +2,8 @@ new gridjs.Grid({
     columns: ["Drone ID", "1", "2", "3"],
     data: [
       ["Preferred Direction", "-60 deg", "0 deg", "60 deg"],
-      ["Wall-Following Direction", "Left", "Right", "Left"],
-      ["Wall Distance", "0.3m [Left]", "0.6 m [Right]", "0.3m [Left]"],
+      ["Wall-Following Direction", "Left", "Right", "Right"],
+      ["Wall Distance", "0.3m [Left]", "0.6 m [Right]", "0.6m [Right]"],
       ["Altitude", "0.3 m", "0.3 m", "0.3 m"],
       ["Flight Speed", "0.5 m/s", "0.5 m/s", "0.5 m/s"],
     ],
