@@ -739,7 +739,7 @@
         <image-component tag="image" source="./assets/section-5/figure_5_1_components_on_ai_deck.png"
       subtitle="Figure 5.1: Components on AI Deck"></image-component>
         <p>
-          The AI deck contains the GAP8 and the Himax HM01B0-MNA monochrome camera module. The full resolution of the Himax HM01B0-MNA monochrome camera module full is 324 x 324 pixels and can capture images up to 60 Frames per second (FPS) (Bitcraze, 2021). The GAP8 Microcontroller (MCU) on the AI Deck processes the RAW files collected by the camera.
+          The AI deck contains the GAP8 and the Himax HM01B0-MNA monochrome camera module. The full resolution of the Himax HM01B0-MNA monochrome camera module full is 324 x 324 pixels and can capture images up to 60 Frames per second (FPS) (Bitcraze, 2021). The GAP8 Microcontroller Unit (MCU) on the AI Deck processes the RAW files collected by the camera.
         </p>
       </div>
 
@@ -855,6 +855,7 @@
         </p>
 
       </div>
+
       <div id="sub-section-5-header-7">
         <h3>5.7 Future Work in Object Detection</h3>
         <p>
@@ -963,10 +964,11 @@
           reliably detect the pillars and navigate around them without crashing into them.
         </p>
       </div>
+
       <div id="sub-section-6-header-5">
         <h3>6.5 Future Work in Collision Avoidance</h3>
         <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
-                         subtitle="Figure 6.5.1: Possible Zig-Zag flight path to counter non-detection of Pillars"></image-component>
+                         subtitle="Figure 6.5.1: Possible Zig-Zag flight Path to Counter Non-Detection of Pillars"></image-component>
         <p>
           In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the pillars and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
           <br/><br/>
@@ -978,14 +980,14 @@
       <br />
       <sl-divider></sl-divider>  
 
-      <div id="section-header-7">
-        <h2>7 Simulation</h2>
-        <p>
-          Simulation enables testing of the actual code intended for Crazyflie deployment within the simulation environment. This saves time by allowing rapid development iterations and troubleshooting of search algorithms without the need to deploy them to the Crazyflie itself. This approach facilitates quick identification and resolution of issues, streamlining the development process. Additionally, simulation provides the versatility to test the code across various environments and with different Crazyflie configurations, all without being constrained by physical space or the risks associated with real-world testing.
-        </p>
-        <p>
-          Webots is used as simulator for multi-agent swarm testing because it enables both the testing of decentralized search algorithms that would be developed and deployed on top of the Crazyflie firmware, and centralized search algorithms that require single point of control typically implemented through ROS. This is possible because Webots offers the flexibility to run direct onboard code, accurately simulating real deployment, while also supporting ROS integration by acting as a ROS node.
-        </p>
+    <div id="section-header-7">
+      <h2>7 Simulation</h2>
+      <p>
+        Simulation enables testing of the actual code intended for Crazyflie deployment within the simulation environment. This saves time by allowing rapid development iterations and troubleshooting of search algorithms without the need to deploy them to the Crazyflie itself. This approach facilitates quick identification and resolution of issues, streamlining the development process. Additionally, simulation provides the versatility to test the code across various environments and with different Crazyflie configurations, all without being constrained by physical space or the risks associated with real-world testing.
+      </p>
+      <p>
+        Webots is used as simulator for multi-agent swarm testing because it enables both the testing of decentralized search algorithms that would be developed and deployed on top of the Crazyflie firmware, and centralized search algorithms that require single point of control typically implemented through ROS. This is possible because Webots offers the flexibility to run direct onboard code, accurately simulating real deployment, while also supporting ROS integration by acting as a ROS node.
+      </p>
     </div>
 
     <div id="sub-section-7-header-1">
@@ -1048,10 +1050,6 @@
     <br />
     <sl-divider></sl-divider>
  
-      <div id="section-header-8">
-          <h2>8 Testing Suitability of Arena</h2>
-      </div>
-
       <div id="section-header-8">
           <h2>8 Testing the Suitability of Arena</h2>
           <image-component tag="image" source="assets/matthew/arena.png"
@@ -1125,14 +1123,13 @@
       <div id="sub-section-8-header-2-header-1">
         <h4>8.2.1 Run 1</h4>
 
-        <!--this is weird for the table cos i could only get the table to show for run1_params and only subtitle shown for msba configuration-->
-        <run1_params subtitle="Table 6.0: Parameters of the Crazyflie Used">
-          <div id="run1_params"></div>
-        </run1_params>
         <msba-configuration subtitle="Table 6.0: Parameters of the Crazyflie Used">
           <div id="msba-configuration"></div>
         </msba-configuration>
-        
+        <run1_params subtitle="Table 6.0: Parameters of the Crazyflie Used">
+          <div id="run1_params"></div>
+        </run1_params>
+
         <p>
           In this test, the Crazyflies were flown at an attitude of 0.3 m, and a velocity of 0.5 m/s. Each Crazyflie had their own preferred direction, wall-following side and wall distance (Table 6.0).
         </p>
@@ -1253,6 +1250,7 @@
 
   </div>
   </div>
+  <sl-divider></sl-divider>
 
   <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
     <sl-icon name="arrow-up" label="Settings"></sl-icon>

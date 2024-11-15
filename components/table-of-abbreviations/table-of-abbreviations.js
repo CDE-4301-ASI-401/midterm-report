@@ -7,6 +7,7 @@ new gridjs.Grid({
       ["MSBA", "Modified Swarm Bug Algorithm"],
       ["ToF", "Time-of-Flight"],
       ["ROS", "Robot Operating System"],
+      ["MCU", "Microcontroller Unit"],
       ["FPS", "Frames Per Second"],
       ["CNN", "Convolutional Neural Networks"],
       ["iDP", "Innovation and Design Programme"],

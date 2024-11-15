@@ -36,6 +36,7 @@ class TableComponent extends HTMLElement {
       :host {
         display: block;
         text-align: center;
+  
       }
 
       sub {
