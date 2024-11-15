@@ -583,60 +583,50 @@
       <div id="section-header-2">
         <h2>2.0 Hardware and Software </h2>
         <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
+          With the objective of developing swarm drones for autonomous search and rescue mission prescribed by the competition rulebook, the Bitcraze Crazyflie was selected as the primary hardware for the swarm, because of its open-source modular design. Additionally, the Crazyflie is widely used in T-lab’s research projects, and using a similar platform allows us to leverage shared knowledge, expertise, and resources.
         </p>
       </div>
 
       <div id="sub-section-2-header-1">
         <h3>2.1 Hardware: BitCraze Crazyflie</h3>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
+          Crazyflie is a nano-quadcopter weighing 27 g with a size of 92 mm x 92 mm x39 mm. It is an open source flying development platform that is highly modular as Bitcraze offers an extensive ecosystem of software and hardware. The Crazyflie is also compatible with Robot Operating System (ROS) 
+          through the Crazyswarm ROS package. The basic Crazyflie comes with an STM32F405 microcontroller and an 
+          Inertial Measurement Unit (IMU) onboard (Figure 2.1).
         </p>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_1_basic_bitcraze_crazyflie_without_add_ons.png"
-        subtitle="Figure 2.1.1: Basic Bitcraze Crazyflie Without Add-ons"></image-component>
+        <image-component tag="image" source="assets\section-2\figure_2_1_basic_bitcraze_crazyflie_without_add_ons.png"
+        subtitle="Figure 2.1: Basic Bitcraze Crazyflie Without Add-ons"></image-component>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_2_1_expansion_decks_left_ai_deck_middle_flow_deck_right_multi_ranger_deck.png"
-        subtitle="Figure 2.1.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
+        <p>
+          To enhance the Crazyflie’s capabilities for autonomous operation, they will be equipped with additional sensors, and expansion decks from Bitcraze (Figure 2.2). The AI deck includes a camera and an onboard AI chip (GAP8), which allows for onboard image processing, along with Wi-Fi connectivity for real-time data transfer and remote communication. This enables the Crazyflie to handle complex image-based tasks directly. Paired with this is the Flow deck, which integrates a high-precision Time-of-Flight (ToF) sensor for measuring distance to the ground and an optical flow sensor to track lateral movements, contributing to stable and controlled flight. 
+        </p>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_2_2_expansion_decks_left_ai_deck_middle_flow_deck_right_multi_ranger_deck.png"
-        subtitle="Figure 2.1.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
+        <p>
+          Furthermore, the Multi-ranger deck complements these features with five ToF sensors positioned to measure distances in five directions: front, back, left, right, and top. These sensors detect objects up to 4 m away, giving the Crazyflie enhanced spatial awareness and allowing it to avoid obstacles from multiple angles. Together, these decks equip the Crazyflie with robust navigation, obstacle avoidance, and image processing capabilities.
+        </p>
+        <image-component tag="image" source="assets\section-2\figure_2_2_expansion_decks.png"
+        subtitle="Figure 2.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
+        <br><br>
+        <image-component tag="image" source="assets\section-2\figure_2_3_configuration_of_upgraded_crazyflie_with_expansion_decks.png"
+        subtitle="Figure 2.3: Configuration of Upgraded Crazyflie with Expansion Decks"></image-component>
+        <br><br>
+        <image-component tag="image" source="assets\section-2\figure_2_4_upgraded_crazyflie_used_as_the_development_platform_in_this_project.png"
+        subtitle="Figure 2.4: Upgraded Crazyflie Used as the Development Platform in This Project"></image-component>
 
-        <image-component tag="image" source="assets\section-2\figure_2_1_2_3_expansion_decks_left_ai_deck_middle_flow_deck_right_multi_ranger_deck.png"
-        subtitle="Figure 2.1.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
-      
-        <image-component tag="image" source="assets\section-2\figure_2_1_3_configuration_of_upgraded_crazyflie_with_expansion_decks.png"
-        subtitle="Figure 2.1.3: Configuration of Upgraded Crazyflie with Expansion Decks"></image-component>
-
-        <image-component tag="image" source="assets\section-2\figure_2_1_4_upgraded_crazyflie_used_as_the_development_platform_in_this_project.png"
-        subtitle="Figure 2.1.4: Upgraded Crazyflie Used as the Development Platform in This Project"></image-component>
-
+        <p>
+          With the addition of these expansion decks (Figure 2.3), which increase the overall weight, the Crazyflie will also be equipped with a thrust upgrade bundle and an upgraded battery to support the added load. The thrust upgrade bundle includes enhanced brushless motors and lighter propellers, boosting the maximum thrust from 60 g to 80 g. These enhancements transform the basic Crazyflie into a highly capable, upgraded drone suitable for complex tasks (Figure 2.4). This enhanced Crazyflie will serve as the platform for developing and executing solutions tailored to meet the demands of the competition's prescribed mission.
+        </p>
       </div>
 
       <div id="sub-section-2-header-2">
         <h3>2.2 Software</h3>
         <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
+          Depending on system requirements, the Crazyflie can be interfaced through multiple frameworks, including the native Bitcraze Crazyflie framework, ROS, or a range of external frameworks developed by the open-source community. Each option offers unique capabilities, allowing flexibility based on the project’s specific needs. In this project, Ubuntu 22.04 and ROS2 Humble (Figure 2.5) are used to develop the subsystems as they are the most widely supported development environments.
         </p>
 
-        <image-component tag="image" source="assets\section-2\figure_2_2_1_ROS2_humble.png"
-        subtitle="Figure 2.2.1: ROS2 Humble"></image-component>
+        <image-component tag="image" source="assets\section-2\figure_2_5_ROS2_humble.png"
+        subtitle="Figure 2.5: ROS2 Humble"></image-component>
       </div>
    
     <br />
