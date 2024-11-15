@@ -1,0 +1,53 @@
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+    overflow: hidden;
+    transition: width 0.3s;
+  }
+  
+  .sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    background-color: #575757;
+  }
+  
+  .sidebar.collapsed {
+    width: 0;
+    padding-top: 20px;
+    padding-left: 0;
+    visibility: hidden;
+  }
+  
+  .main-content {
+    margin-left: 260px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+  }
+  
+  .main-content.collapsed {
+    margin-left: 10px;
+  }
+  
+  .toggle-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
