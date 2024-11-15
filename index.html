@@ -74,7 +74,7 @@
         matric_number="A0245906Y">
       </team-member>
 
-      <team-member avatar="assets//title_page/pinkranger.png" name="Govindanath Samuel Sudharsanan" department="Mehcanical Engineering"
+      <team-member avatar="assets//title_page/pinkranger.png" name="Govindanath Samuel Sudharsanan" department="Mechanical Engineering"
         matric_number="A0239048Y">
       </team-member>
 
@@ -194,15 +194,15 @@
           <a href="#section-header-4">4.0 Search Strategy</a>
           
           <sl-tree-item>
-            <a href="#sub-section-4-header-1">4.1 {PLACEHOLDER 1}</a>
+            <a href="#sub-section-4-header-1">4.1 Mapping using Multiranger Deck</a>
           </sl-tree-item>
 
           <sl-tree-item>
-            <a href="#sub-section-4-header-2">4.2 {PLACEHOLDER 2}</a>
+            <a href="#sub-section-4-header-2">4.2 Mapping using Camera on AI Deck </a>
           </sl-tree-item>
 
           <sl-tree-item>
-            <a href="#sub-section-4-header-3">4.3 {PLACEHOLDER 3}</a>
+            <a href="#sub-section-4-header-3">4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</a>
           </sl-tree-item>
 
           <sl-tree-item expanded>
@@ -657,7 +657,7 @@
             With the introduction of an entirely new Playing Field which can be split into 3 main areas – namely the Known Area,
             Unknown Area and Pillar Area, there is a need to test and decide what search strategies to opt for. Last year’s search 
             strategy was an unmapped, decentralized strategy (differences between strategies will be elaborated on in section 4.1), 
-            and it did work and were able to complete the search the fastest amongst the teams that participated last year.  <a href="#image">Link to the image above</a>
+            and it did work and were able to complete the search the fastest amongst the teams that participated last year.  
           </p>
 
           <p>
@@ -687,13 +687,13 @@
           <p>
             With the presence of new obstacles, the use of Navigation Aids to help us in our search of the Victims Markers varies significantly. 
             There are many more use cases for navigations aids this year, especially in more tricky areas like the unknown area and the pillar 
-            area. <a href="#image">Link to the image above</a>
+            area. 
           </p>
 
           <p>
             However, the number of Navigation Aids remain the same as last year, despite there being 3 distinct challenges unlike only 1 last year. 
             We will evaluate on the most effective way to use the navigation aids, as well as what kind of items are we using. We will then need to 
-            test and decide the most effective way to use these Navigation Aids. <a href="#image">Link to the image above</a>
+            test and decide the most effective way to use these Navigation Aids. 
           </p>
   
       </div>
@@ -702,7 +702,7 @@
           <h3>3.4 Key Areas of Development</h3>
           <p>
             Our goal is to complete the mission in the quickest time possible while using novel and superior methods for our mission. Therefore, we have 
-            split the key areas of development into the 4 roles below.  <a href="#image">Link to the image above</a>
+            split the key areas of development into the 4 roles below.  
           </p>
 
           <scope-of-work subtitle="Table 2.0: Scope of Work">
@@ -715,12 +715,12 @@
 
           <p>
             The search strategy sub team will be exploring 2 mapping strategies while enhancing the unmapped strategy used last year as we the mapped approach 
-            is more difficult to implement and hence will be awarded more marks in the team presentation.  <a href="#image">Link to the image above</a>
+            is more difficult to implement and hence will be awarded more marks in the team presentation.  
           </p>
 
           <p>
             The object detection sub team will be improving on the object detection method used last year as it was inaccurate and slow. Exploration of new methods 
-            such as object classification using neural networks will be done simultaneously.   <a href="#image">Link to the image above</a>
+            such as object classification using neural networks will be done simultaneously.   
           </p>
 
           <p>
@@ -743,8 +743,8 @@
             Search strategies can be broadly classified into two main categories: mapped centralized and unmapped decentralized. A detailed list of differences is shown below.  
           </p>
 
-          <image-component tag="image" source="./assets/section-4/figure_4_1_1_comparison_between_mapped_centralised_and_unmapped_decentralised.png"
-        subtitle="Figure 4.1.1: Comparison between Mapped Centralised and Unmapped Decentralised"></image-component>
+          <image-component tag="image" source="assets/section-4/figure 4_1_search_strat_differences.png"
+        subtitle="Figure 4.1: Comparison between Mapped Centralised and Unmapped Decentralised Strategies"></image-component>
 
           <p>
             There are 3 main differences that play a key role in helping us determine the best strategy to use for our challenge.  
@@ -791,6 +791,9 @@
           The first mapping method uses the ToF sensors on the multiranger deck. The Crazyflie uses the Multi-Ranger Deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or SLAM algorithms) to construct a map. As the drone moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the drone to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
         </p>
 
+        <image-component tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
+        subtitle="Figure 4.2: Map produced using Multiranger Deck"></image-component>
+
         <p>
           The figure above shows one of the map produced during one of our test runs. The drone crashed during the first test as it did not detect the pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as pillars. 
         </p>
@@ -817,16 +820,12 @@
         We are unable to produce any results for this method just yet but will continue to explore further as ORB is widely used and results shown are promising. 
       </p>
 
-      <image-component tag="image" source="assets\section-4\figure_4_1_1_illustration_of_MSBA.png"
-      subtitle="Figure 4.1.2: Illustration of MSBA"></image-component>
 
-      <image-component tag="image" source="assets\section-4\figure_4_1_2_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
-      subtitle="Figure 4.1.3: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-component>
 
       </div>
 
       <div id="sub-section-4-header-3">
-        <h3>4.3 {Placeholder 3}</h3>
+        <h3>4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</h3>
         <p>
           Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
           Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
@@ -835,6 +834,13 @@
           Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
           fames ac.
         </p>
+
+        <image-component tag="image" source="assets\section-4\figure_4_1_1_illustration_of_MSBA.png"
+        subtitle="Figure 4.1.2: Illustration of MSBA"></image-component>
+  
+        <image-component tag="image" source="assets\section-4\figure_4_1_2_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
+        subtitle="Figure 4.1.3: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-component>
+
       </div>
 
       <div id="sub-section-4-header-4">
