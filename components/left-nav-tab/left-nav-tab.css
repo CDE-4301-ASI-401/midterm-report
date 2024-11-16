@@ -9,8 +9,15 @@
   overflow-x: hidden; 
   padding-top: 20px;
 }
+ 
+.sidenav ul {
+  padding-left: 0;
+  margin-left: 0; 
+}
 
-  
+.sidenav ul ul {
+  padding-left: 15px;
+}
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;

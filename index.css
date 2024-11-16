@@ -11,6 +11,9 @@ body {
   margin: auto;
   padding: 10%;
   margin-left: 300px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding-left: 5%; /* Optional: Add spacing from the edge */
   
 }
 
@@ -24,12 +27,6 @@ p {
 }
 
 .sidenav {
-  width: 200px; /* Fixed width for sidenav */
+  width: 200px; 
   background-color: lightgray;
-}
-
-.content {
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  padding-left: 250px; /* Optional: Add spacing from the edge */
 }
