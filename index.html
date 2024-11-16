@@ -330,7 +330,7 @@
         subtitle="Figure 1.6: Unknown Search Area"></image-component>
 
         <p>
-          The Unknown Search Area have the size of 8 m x 8 m and is situated in the centre of the Arena. The Unknown Search Area (Figure 1.5) contains Danger Zones, Inner Walls and Bonus Victims. There are two floor-to-ceiling entrances/exits to the Unknown Search Area.
+          The Unknown Search Area have the size of 8 m x 8 m and is situated in the centre of the Arena. The Unknown Search Area (Figure 1.6) contains Danger Zones, Inner Walls and Bonus Victims. There are two floor-to-ceiling entrances/exits to the Unknown Search Area.
           </p>
         
         <p>
@@ -391,7 +391,7 @@
         <image-component tag="image" source="assets\section-1\figure_1_10_specifications_of_danger_zones.png"
         subtitle="Figure 1.10: Specifications of Danger Zones"></image-component>
         <p>
-          For SAFMC 2025, four non-electronic markers will be used as Danger Zones. Figure 1.9 shows the general specifications of the Danger Zones, which must not exceed 30 cm x 30 cm x 1 m. Figure 1.9 does not show the actual Danger Zones we are using for the competition.
+          For SAFMC 2025, four non-electronic markers will be used as Danger Zones. Figure 1.10 shows the general specifications of the Danger Zones, which must not exceed 30 cm x 30 cm x 1 m. Figure 1.10 does not show the actual Danger Zones we are using for the competition.
           </p>
         
         <p>
@@ -432,7 +432,7 @@
         subtitle="Figure 1.14: Specifications of Pillar Obstacles"></image-component>
 
         <p>
-          Eight Pillar Obstacles will be presented in the Pillar Area. The Pillar Obstacles have the dimensions of 0.3 m diameter and 2 m height, inclusive of a weighted circular base of 0.5 m diameter and 0.15 m height. Figure 1.13 does not show the actual Pillar Obstacles used for the competition.
+          Eight Pillar Obstacles will be presented in the Pillar Area. The Pillar Obstacles have the dimensions of 0.3 m diameter and 2 m height, inclusive of a weighted circular base of 0.5 m diameter and 0.15 m height. Figure 1.14 does not show the actual Pillar Obstacles used for the competition.
         </p>
 
         <image-component tag="image" source="assets\section-1\figure_1_15_potential_pillar_obstacles.png"
@@ -507,7 +507,7 @@
         subtitle="Figure 2.4: Upgraded Crazyflie Used as the Development Platform in This Project"></image-component>
 
         <p>
-          With the addition of these expansion decks (Figure 2.3), which increase the overall weight, the Crazyflie will also be equipped with a thrust upgrade bundle and an upgraded battery to support the added load. The thrust upgrade bundle includes enhanced brushless motors and lighter propellers, boosting the maximum thrust from 60 g to 80 g. These enhancements transform the basic Crazyflie into a highly capable, upgraded drone suitable for complex tasks (Figure 2.4). This enhanced Crazyflie will serve as the platform for developing and executing solutions tailored to meet the demands of the competition's prescribed mission.
+          With the addition of these expansion decks (Figure 2.3), which increase the overall weight, the Crazyflie will also be equipped with a thrust upgrade bundle and an upgraded battery to support the added load. The thrust upgrade bundle includes enhanced brushless motors and lighter propellers, boosting the maximum thrust from 60 g to 80 g. These enhancements transform the basic Crazyflie into a highly capable, upgraded Crazyflie suitable for complex tasks (Figure 2.4). This enhanced Crazyflie will serve as the platform for developing and executing solutions tailored to meet the demands of the competition's prescribed mission.
         </p>
       </div>
 
@@ -640,12 +640,12 @@
           </p>
 
           <p>
-            Unmapped strategies require minimal processing as drones rely solely on obstacle detection to adjust their paths. This makes them ideal for large, dynamic environments with low computational needs. 
-            However, they lack awareness of other drones and previously explored areas, necessitating additional collision-avoidance algorithms and risking inefficiencies or missed victims in obscure locations  
+            Unmapped strategies require minimal processing as the Crazyflies rely solely on obstacle detection to adjust their paths. This makes them ideal for large, dynamic environments with low computational needs. 
+            However, they lack awareness of other Crazyflies and previously explored areas, necessitating additional collision-avoidance algorithms and risking inefficiencies or missed victims in obscure locations  
           </p>
 
           <p>
-            Mapped strategies, while computationally intensive, enable drones to localize, track explored areas, and optimize search efficiency using virtual maps. This approach requires detection, classification, and mapping but ensures better resource allocation. 
+            Mapped strategies, while computationally intensive, enable the Crazyflies to localize, track explored areas, and optimize search efficiency using virtual maps. This approach requires detection, classification, and mapping but ensures better resource allocation. 
           </p>
 
           <p>
@@ -653,7 +653,7 @@
           </p>
 
           <p>
-            Unmapped strategies perform faster since drones handle calculations onboard, with compact algorithms enabling quick adjustments. Conversely, mapped strategies rely on external processing, introducing potential delays in path updates and risks of central computer failure, particularly with large-scale deployments.
+            Unmapped strategies perform faster since the Crazyflies handle calculations onboard, with compact algorithms enabling quick adjustments. Conversely, mapped strategies rely on external processing, introducing potential delays in path updates and risks of central computer failure, particularly with large-scale deployments.
           </p>
 
           <p>
@@ -661,7 +661,7 @@
           </p>
 
           <p>
-            Unmapped strategies are simpler but may underutilize drone capabilities, such as the AI deck's advanced processing power, leading to less innovative solutions. Mapped strategies allow for more complex algorithms that maximize hardware potential, offering an edge in challenging environments.
+            Unmapped strategies are simpler but may underutilize the Crazyflie's capabilities, such as the AI deck's advanced processing power, leading to less innovative solutions. Mapped strategies allow for more complex algorithms that maximize hardware potential, offering an edge in challenging environments.
           </p>
 
           <p>
@@ -673,22 +673,22 @@
       <div id="sub-section-4-header-1">
         <h3>4.1 Mapping Using Multiranger Deck</h3>
         <p>
-          The first mapping method uses the ToF sensors on the Multi-ranger deck. The Crazyflie uses the Multi-ranger deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or Simultaneous Localisation and Mapping (SLAM) algorithms) to construct a map. As the drone moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the drone to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
+          The first mapping method uses the ToF sensors on the Multi-ranger deck. The Crazyflie uses the Multi-ranger deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or Simultaneous Localisation and Mapping (SLAM) algorithms) to construct a map. As the Crazyflie moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the Crazyflie to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
         </p>
 
         <image-full tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
         subtitle="Figure 4.2: Map Produced Using Multiranger Deck"></image-full>
 
         <p>
-          The figure above shows one of the map produced during one of our test runs. The drone crashed during the first test as it did not detect the Pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as the Pillar Obstacles. 
+          Figure 4.2 above shows one of the map produced during one of our test runs. The Crazyflie crashed during the first test as it did not detect the Pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as the Pillar Obstacles. 
         </p>
 
         <p>
-          On top of that, the map produced was inaccurate. As can be seen in the figure, some of the area was not mapped, and the wall furthest away from the drone was slanted. This is due to both the limitations of the range and resolution of the sensor, as well as the drift of the drone 
+          On top of that, the map produced was inaccurate. As can be seen in the figure, some of the area was not mapped, and the wall furthest away from the Crazyflie was slanted. This is due to both the limitations of the range and resolution of the sensor, as well as the drift of the Crazyflie.
         </p>
 
         <p>
-          Despite these shortcomings, we believe that we can improve on the issues faced by using multiple drones. Using multiple drones improves mapping by enabling faster and more efficient coverage, as they can explore different areas simultaneously and avoid redundancy. Collaborative efforts allow drones to validate each other's data, enhancing accuracy and resilience against individual errors. Multiple perspectives and dynamic sensor fusion provide greater detail and resolution, while relative positioning and shared data improve localization and the performance of SLAM algorithms. This approach is scalable for larger or more complex environments, though it requires effective communication, collision avoidance, and robust processing to handle the increased data volume. 
+          Despite these shortcomings, we believe that we can improve on the issues faced by using multiple Crazyflies. Using multiple Crazyflies improves mapping by enabling faster and more efficient coverage, as they can explore different areas simultaneously and avoid redundancy. Collaborative efforts allow Crazyflies to validate each other's data, enhancing accuracy and resilience against individual errors. Multiple perspectives and dynamic sensor fusion provide greater detail and resolution, while relative positioning and shared data improve localization and the performance of SLAM algorithms. This approach is scalable for larger or more complex environments, though it requires effective communication, collision avoidance, and robust processing to handle the increased data volume. 
         </p>
 
         
@@ -698,7 +698,7 @@
       <div id="sub-section-4-header-2">
       <h3>4.2 Mapping Using Camera on AI Deck</h3>
       <p>
-        The second mapping method will utilize the camera on the AI deck and OpenCV's ORB (Oriented FAST and rotated BRIEF). To use ORB for SLAM with the AI deck's camera, capture frames and extract keypoints and descriptors using the ORB algorithm. Match features between consecutive frames to calculate the drone's relative motion (translation and rotation) through visual odometry. Incrementally build a map by integrating the extracted features and positional data into a point cloud or occupancy grid. Use loop closure detection to identify revisited areas, correcting accumulated errors with graph optimization. For robust performance, fuse camera data with other onboard sensors like the IMU or Multi-ranger deck, and optimize computations for real-time processing on the AI deck. 
+        The second mapping method will utilize the camera on the AI deck and OpenCV's ORB (Oriented FAST and rotated BRIEF). To use ORB for SLAM with the AI deck's camera, capture frames and extract keypoints and descriptors using the ORB algorithm. Match features between consecutive frames to calculate the Crazyflie's relative motion (translation and rotation) through visual odometry. Incrementally build a map by integrating the extracted features and positional data into a point cloud or occupancy grid. Use loop closure detection to identify revisited areas, correcting accumulated errors with graph optimization. For robust performance, fuse camera data with other onboard sensors like the IMU or Multi-ranger deck, and optimize computations for real-time processing on the AI deck. 
       </p>
 
       <p>
@@ -711,16 +711,19 @@
 
       <div id="sub-section-4-header-3">
         <h3>4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</h3>
+        
         <p>
-          MSBA is an unmapped decentralized search strategy that was adapted from the Swarm Gradient Bug Algorithm (SGBA) developed by TU Delft (McGuire et al., 2019). This was the strategy developed and implemented by the previous team in SAFMC 2024. It a heuristic algorithm governed by a few simple rule-based behaviour. From Figure 4.1.1, The drone would have a preferred direction of flying, 
-          it will continue to fly in that direction till it encounters an obstacle. After that, it would perform wall-following. Once its preferred direction is freed up, it will then continue to fly in that direction. To prevent the drone from travelling in an indefinite loop, there is a loop detection mechanism that would modify the preferred direction. When the drone encounters an obstacle and start performing wall-following, 
-          it will keep track of the hit point using odometry information from the Flow deck. If the drone heads toward the hit point again, the loop detection would be initiated to modify the loop detection mechanism.
+          MSBA is an unmapped decentralized search strategy that was adapted from the Swarm Gradient Bug Algorithm (SGBA) developed by TU Delft (McGuire et al., 2019). This was the strategy developed and implemented by the previous team in SAFMC 2024. It a heuristic algorithm governed by a few simple rule-based behaviour.
+        </p>
+
+        <p>
+          From Figure 4.1.1, The Crazyflie would have a preferred direction of flying, it will continue to fly in that direction till it encounters an obstacle. After that, it would perform wall-following. Once its preferred direction is freed up, it will then continue to fly in that direction. To prevent the Crazyflie from travelling in an indefinite loop, there is a loop detection mechanism that would modify the preferred direction. When the Crazyflie encounters an obstacle and start performing wall-following, it will keep track of the hit point using odometry information from the Flow deck. If the Crazyflie heads toward the hit point again, the loop detection would be initiated to modify the loop detection mechanism.
         </p>
 
         <image-full tag="image" source="assets\section-4\figure_4_3_illustration_of_MSBA.png"
         subtitle="Figure 4.3: Illustration of MSBA"></image-full>
         <p>
-          Each drone requires the initialization of several parameters beyond just the preferred direction. These include the altitude, flight speed, preferred direction, wall-following direction, and wall-following distance. In a Known Search Area, properly setting these parameters ensures that each drone can navigate effectively for maximum coverage in the Arena. These configurations are essential for coordinated behaviour and for achieving consistent performance in tasks like obstacle avoidance and path-following.
+          Each Crazyflie requires the initialization of several parameters beyond just the preferred direction. These include the altitude, flight speed, preferred direction, wall-following direction, and wall-following distance. In a Known Search Area, properly setting these parameters ensures that each Crazyflie can navigate effectively for maximum coverage in the Arena. These configurations are essential for coordinated behaviour and for achieving consistent performance in tasks like obstacle avoidance and path-following.
         </p>
         <p>
           To implement custom code onto the Crazyflie, the code must be built in the app layer, which operates on top of the firmware. This layer provides an organized structure to add custom functionalities like performing the MSBA. It facilitates integration with the firmware’s control and sensor systems. The navigation architecture diagram of a Crazyflie running MSBA onboard is in Figure 4.3. 
@@ -732,7 +735,7 @@
           The performance of MSBA specific to the runs are in <a  href="#sub-section-8-header-2">Section 8.2</a>. 
         </p>
         <p>
-          The app layer flashed to drones to conduct the test above can be found in this <a href="https://github.com/CDE-4301-ASI-401/SGBA_CF2_App_layer" target="_blank">GitHub repository</a>. The drone_variables.c script contains key static parameters such as flight speed, altitude, left wall-distance, and right wall-distance. The SGBA.c script contains core logic for the bug algorithm, including the management of the preferred direction parameter for the drones, and wall-following parameters. In this test, loop detection was not implemented, and the preferred direction remained static. However, in future iterations, the preferred direction will become a dynamic parameter, requiring real-time reassignment as loop detection is introduced to the script to enhance the algorithm's efficiency and adaptability.
+          The app layer flashed to Crazyflies to conduct the test above can be found in this <a href="https://github.com/CDE-4301-ASI-401/SGBA_CF2_App_layer" target="_blank">GitHub repository</a>. The Crazyflie_variables.c script contains key static parameters such as flight speed, altitude, left wall-distance, and right wall-distance. The SGBA.c script contains core logic for the bug algorithm, including the management of the preferred direction parameter for the Crazyflies, and wall-following parameters. In this test, loop detection was not implemented, and the preferred direction remained static. However, in future iterations, the preferred direction will become a dynamic parameter, requiring real-time reassignment as loop detection is introduced to the script to enhance the algorithm's efficiency and adaptability.
         </p>
       </div>
 
@@ -744,15 +747,15 @@
       <div id="sub-section-4-header-4-header-1">
         <h4>4.4.1 Future Work In Mapped Centralised Strategy</h4>
         <p>
-          For the mapping using the Multi-ranger deck, we will employ the use of multiple drones to see if we are able to obtain a more accurate representation of the Arena. We will need to work on the integration and superimposing of maps from different drones, as well as the localization of the drones 
+          For the mapping using the Multi-ranger deck, we will employ the use of multiple Crazyflies to see if we are able to obtain a more accurate representation of the Arena. We will need to work on the integration and superimposing of maps from different Crazyflies, as well as the localization of the Crazyflies 
         </p>
 
         <p>
-          For the camera mapping, we will try to produce a map using a singular drone first, and then move on to implementing multiple drones. Once successful, we will try combining both methods as mapping with a camera provides detailed, high-resolution maps but requires significant processing and consistent lighting. The Multi-ranger deck is lightweight and reliable in low-feature or dark environments, offering obstacle detection but produces less detailed maps. Combining both balances detail, efficiency, and robustness for versatile mapping. leveraging their strengths while mitigating their weaknesses. 
+          For the camera mapping, we will try to produce a map using a singular Crazyflie first, and then move on to implementing multiple Crazyflies. Once successful, we will try combining both methods as mapping with a camera provides detailed, high-resolution maps but requires significant processing and consistent lighting. The Multi-ranger deck is lightweight and reliable in low-feature or dark environments, offering obstacle detection but produces less detailed maps. Combining both balances detail, efficiency, and robustness for versatile mapping. leveraging their strengths while mitigating their weaknesses. 
         </p>
 
         <p>
-          If the merging of both is unsuccessful, we will then weigh each strategy depending on its speed and accuracy. Speed means how fast does it take for the drones to produce a complete map while taking the same path, and accuracy means how accurate the map is in its virtual representation, ie does it spot all obstacles etc. 
+          If the merging of both is unsuccessful, we will then weigh each strategy depending on its speed and accuracy. Speed means how fast does it take for the Crazyflies to produce a complete map while taking the same path, and accuracy means how accurate the map is in its virtual representation, ie does it spot all obstacles etc. 
         </p>
 
         <p>
@@ -972,7 +975,7 @@
           the Pillar Obstacles that would be used in the real setup (Figure 4.3.2). The Crazyflies were
           not able to detect the pipes in flight and would often crash into it due to non-detection.
         </p>
-        <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Drones Hovering Between New Styrofoam Blocks"></video-component>
+        <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Crazyflies Hovering Between New Styrofoam Blocks"></video-component>
 
         <p>
           Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
@@ -1027,7 +1030,7 @@
         <p>
           In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the Pillar Obstacless and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
           <br/><br/>
-          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar in its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the Multi-ranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.5.1, a change in direction can allow it to move towards a state of detection as seen on the right.
+          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar in its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the Multi-ranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.6, a change in direction can allow it to move towards a state of detection as seen on the right.
         </p>
       </div>
 
@@ -1084,7 +1087,7 @@
       </p>
 
       <p>
-        With this simulation environment, the development of search algorithms is significantly expedited, as the code can be easily deployed and tested in Webots. Without this setup, the process would take considerably longer, requiring the code to be flashed onto the actual drone hardware, where extracting error outputs would be more challenging.
+        With this simulation environment, the development of search algorithms is significantly expedited, as the code can be easily deployed and tested in Webots. Without this setup, the process would take considerably longer, requiring the code to be flashed onto the actual Crazyflie hardware, where extracting error outputs would be more challenging.
       </p>
     </div>
 
@@ -1140,10 +1143,10 @@
           </p>
           <image-component tag="image" source="./assets/matthew/hoveringTest.png"
           subtitle="
-          Figure 8.4: Drone Undergoing Hovering Test
+          Figure 8.4: Crazyflie Undergoing Hovering Test
           "></image-component>
           <p>
-            This test involved allowing the Crazyflie to hover at a fixed height of 0.3 m for 30 s. The Crazyflies proved to be able to hover well at this fixed height, demonstrating the ability of the Crazyflies to recognise its height off the ground using the Time of Flight (ToF) sensor and maintain a constant height while hovering.
+            This test involved allowing the Crazyflie to hover at a fixed height of 0.3 m for 30 s. The Crazyflies proved to be able to hover well at this fixed height, demonstrating the ability of the Crazyflies to recognise its height off the ground using the ToF sensor and maintain a constant height while hovering.
             <br/><br/>
             2. Drift Test
             <br/><br/>
