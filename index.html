@@ -673,7 +673,7 @@
       <div id="sub-section-4-header-1">
         <h3>4.1 Mapping Using Multiranger Deck</h3>
         <p>
-          The first mapping method uses the ToF sensors on the multiranger deck. The Crazyflie uses the Multi-Ranger Deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or SLAM algorithms) to construct a map. As the drone moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the drone to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
+          The first mapping method uses the ToF sensors on the Multi-ranger deck. The Crazyflie uses the Multi-ranger deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or Simultaneous Localisation and Mapping (SLAM) algorithms) to construct a map. As the drone moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the drone to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
         </p>
 
         <image-full tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
@@ -698,7 +698,7 @@
       <div id="sub-section-4-header-2">
       <h3>4.2 Mapping Using Camera on AI Deck</h3>
       <p>
-        The second mapping method will utilize the camera on the AI deck and OpenCV's ORB (Oriented FAST and rotated BRIEF). To use ORB for SLAM with the AI deck's camera, capture frames and extract keypoints and descriptors using the ORB algorithm. Match features between consecutive frames to calculate the drone's relative motion (translation and rotation) through visual odometry. Incrementally build a map by integrating the extracted features and positional data into a point cloud or occupancy grid. Use loop closure detection to identify revisited areas, correcting accumulated errors with graph optimization. For robust performance, fuse camera data with other onboard sensors like the IMU or Multi-Ranger Deck, and optimize computations for real-time processing on the AI deck. 
+        The second mapping method will utilize the camera on the AI deck and OpenCV's ORB (Oriented FAST and rotated BRIEF). To use ORB for SLAM with the AI deck's camera, capture frames and extract keypoints and descriptors using the ORB algorithm. Match features between consecutive frames to calculate the drone's relative motion (translation and rotation) through visual odometry. Incrementally build a map by integrating the extracted features and positional data into a point cloud or occupancy grid. Use loop closure detection to identify revisited areas, correcting accumulated errors with graph optimization. For robust performance, fuse camera data with other onboard sensors like the IMU or Multi-ranger deck, and optimize computations for real-time processing on the AI deck. 
       </p>
 
       <p>
@@ -714,7 +714,7 @@
         <p>
           MSBA is an unmapped decentralized search strategy that was adapted from the Swarm Gradient Bug Algorithm (SGBA) developed by TU Delft (McGuire et al., 2019). This was the strategy developed and implemented by the previous team in SAFMC 2024. It a heuristic algorithm governed by a few simple rule-based behaviour. From Figure 4.1.1, The drone would have a preferred direction of flying, 
           it will continue to fly in that direction till it encounters an obstacle. After that, it would perform wall-following. Once its preferred direction is freed up, it will then continue to fly in that direction. To prevent the drone from travelling in an indefinite loop, there is a loop detection mechanism that would modify the preferred direction. When the drone encounters an obstacle and start performing wall-following, 
-          it will keep track of the hit point using odometry information from the flow deck. If the drone heads toward the hit point again, the loop detection would be initiated to modify the loop detection mechanism.
+          it will keep track of the hit point using odometry information from the Flow deck. If the drone heads toward the hit point again, the loop detection would be initiated to modify the loop detection mechanism.
         </p>
 
         <image-full tag="image" source="assets\section-4\figure_4_3_illustration_of_MSBA.png"
@@ -744,11 +744,11 @@
       <div id="sub-section-4-header-4-header-1">
         <h4>4.4.1 Future Work In Mapped Centralised Strategy</h4>
         <p>
-          For the mapping using the Multiranger Deck, we will employ the use of multiple drones to see if we are able to obtain a more accurate representation of the Arena. We will need to work on the integration and superimposing of maps from different drones, as well as the localization of the drones 
+          For the mapping using the Multi-ranger deck, we will employ the use of multiple drones to see if we are able to obtain a more accurate representation of the Arena. We will need to work on the integration and superimposing of maps from different drones, as well as the localization of the drones 
         </p>
 
         <p>
-          For the camera mapping, we will try to produce a map using a singular drone first, and then move on to implementing multiple drones. Once successful, we will try combining both methods as mapping with a camera provides detailed, high-resolution maps but requires significant processing and consistent lighting. The multiranger deck is lightweight and reliable in low-feature or dark environments, offering obstacle detection but produces less detailed maps. Combining both balances detail, efficiency, and robustness for versatile mapping. leveraging their strengths while mitigating their weaknesses. 
+          For the camera mapping, we will try to produce a map using a singular drone first, and then move on to implementing multiple drones. Once successful, we will try combining both methods as mapping with a camera provides detailed, high-resolution maps but requires significant processing and consistent lighting. The Multi-ranger deck is lightweight and reliable in low-feature or dark environments, offering obstacle detection but produces less detailed maps. Combining both balances detail, efficiency, and robustness for versatile mapping. leveraging their strengths while mitigating their weaknesses. 
         </p>
 
         <p>
@@ -794,7 +794,7 @@
         <image-component tag="image" source="./assets/section-5/figure_5_1_components_on_ai_deck.png"
       subtitle="Figure 5.1: Components on AI Deck"></image-component>
         <p>
-          The AI deck contains the GAP8 and the Himax HM01B0-MNA monochrome camera module. The full resolution of the Himax HM01B0-MNA monochrome camera module full is 324 x 324 pixels and can capture images up to 60 Frames per second (FPS) (Bitcraze, 2021). The GAP8 Microcontroller Unit (MCU) on the AI Deck processes the RAW files collected by the camera.
+          The AI deck contains the GAP8 and the Himax HM01B0-MNA monochrome camera module. The full resolution of the Himax HM01B0-MNA monochrome camera module full is 324 x 324 pixels and can capture images up to 60 Frames per second (FPS) (Bitcraze, 2021). The GAP8 Microcontroller Unit (MCU) on the AI deck processes the RAW files collected by the camera.
         </p>
       </div>
 
@@ -878,7 +878,7 @@
         subtitle="Figure 5.5: Victim and Danger Zone Detection Chart"></image-full>
 
         <p>
-          Figure 5.5 shows how Victim and Danger Zone Detection is conducted for SAFMC 2025. In this year’s competition, the take-off command is issued via a central computer, followed by checking the Crazyflie’s status to see if its ready for the Competition Mission. Thereafter, in the air, the Crazyflie will continuously scan its surroundings using the camera on the AI-Deck. When an AprilTag is detected (which can be found in the detected Tags and the Danger Zone dictionary), the AprilTag will be identified as either a Victim Marker or a Danger Zone.
+          Figure 5.5 shows how Victim and Danger Zone Detection is conducted for SAFMC 2025. In this year’s competition, the take-off command is issued via a central computer, followed by checking the Crazyflie’s status to see if its ready for the Competition Mission. Thereafter, in the air, the Crazyflie will continuously scan its surroundings using the camera on the AI deck. When an AprilTag is detected (which can be found in the detected Tags and the Danger Zone dictionary), the AprilTag will be identified as either a Victim Marker or a Danger Zone.
           </p>
 
         <p>
@@ -1004,14 +1004,14 @@
           <br/><br/>
           <b>2</b>.	The Crazyflies were not able to reliably detect the presence of Pillars Obstacles<br/><br/>
           While the current bug algorithm was able to allow the Crazyflies to detect the Pillar Obstacless and fly around them
-          most of the time. However, at very specific angles, the multi-ranger deck would not be able to detect the Pillar Obstacles
+          most of the time. However, at very specific angles, the Multi-ranger deck would not be able to detect the Pillar Obstacles
           and cause the Crazyflies to fly head-on towards it.
         </p>
 
         <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up Pillars"></image-component>
 
         <p>
-          This limitation arises from the fact that the multi-ranger deck has only 4 sensors used in the distance sensing in the
+          This limitation arises from the fact that the Multi-ranger deck has only 4 sensors used in the distance sensing in the
           x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 4.3.5), none of
           the sensors can pick up the Pillar which results in the Crazyflie wrongly believing that it is in free space. It would
           then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
@@ -1027,7 +1027,7 @@
         <p>
           In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the Pillar Obstacless and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
           <br/><br/>
-          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar in its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the multiranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.5.1, a change in direction can allow it to move towards a state of detection as seen on the right.
+          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar in its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the Multi-ranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.5.1, a change in direction can allow it to move towards a state of detection as seen on the right.
         </p>
       </div>
 
