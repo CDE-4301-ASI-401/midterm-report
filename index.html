@@ -50,6 +50,8 @@
 
   <script src="./components/table-component/table-component.js"></script>
 
+  <script src="showhidefunction.js"></script>
+
   <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
   
 
@@ -92,17 +94,17 @@
       </li>
   
       <li>
-        <a href="#section-header-3">3 Mission Strategy</a>
+        <a href="#section-header-3" onclick="showSection('section-header-3')">3 Mission Strategy</a>
         <ul type="none">
-          <li><a href="#sub-section-3-header-1">3.1 Map vs Unmapped vs Hybrid</a></li>
-          <li><a href="#sub-section-3-header-2">3.2 Arena</a></li>
-          <li><a href="#sub-section-3-header-3">3.3 Use of Navigation Aids</a></li>
+          <li><a href="#sub-section-3-header-1">3.1 Search Strategy</a></li>
+          <li><a href="#sub-section-3-header-2">3.2 Object Detection</a></li>
+          <li><a href="#sub-section-3-header-3">3.3 Navigation Aids</a></li>
           <li><a href="#sub-section-3-header-4">3.4 Key Areas of Development</a></li>
         </ul>
       </li>
   
       <li>
-        <a href="#section-header-4">4 Search Strategy</a>
+        <a href="#section-header-4" >4 Search Strategy</a>
         <ul type="none">
           <li><a href="#sub-section-4-header-1">4.1 Mapping Using Multiranger Deck</a></li>
           <li><a href="#sub-section-4-header-2">4.2 Mapping Using AI Deck Camera</a></li>
@@ -399,7 +401,7 @@
         </p>
 
         <image-component tag="image" source="assets\section-1\figure_1_11_penalty_process_avoid_danger_zones.png"
-        subtitle="Figure 1.11: Penalty Process (Avoid Danger Zones"></image-component>
+        subtitle="Figure 1.11: Penalty Process (Avoid Danger Zones)"></image-component>
 
         <p>
           Crazyflies must not land within a 1 m radius of the Danger Zone. If they do, a penalty of 2 points will be removed from the total score (Figure 1.11). However, Crazyflies are allowed to fly over the Danger Zone, without landing within the 1 m radius.
@@ -525,96 +527,93 @@
     <br />
     <sl-divider></sl-divider>
 
-      <div id="section-header-3">
+      <div id="section-header-3" class="section" style="display: none;">
           <h2>3 Mission Strategy</h2>
           <p>
             With the vastly different Arena layout this year, our mission strategy also must change accordingly. The main 
             areas of consideration are the search strategy to use, object detection methods and use of navigation aids. 
           </p>
-      </div>
 
-      <div id="sub-section-3-header-1">
-          <h3>3.1 Search Strategy</h3>
-          <p>
-            With the introduction of an entirely new Arena which can be split into 3 main areas – namely the Known Search Area,
-            Unknown Search Area and Pillar Area, there is a need to test and decide what search strategies to opt for. 
-            </p>
-          
-          <p>
-            Last year’s search strategy was an unmapped, decentralized strategy (differences between strategies will be elaborated on in section 4.1), 
-            and it did work and were able to complete the search the fastest amongst the teams that participated last year.  
-          </p>
+          <div id="sub-section-3-header-1">
+              <h3>3.1 Search Strategy</h3>
+              <p>
+                With the introduction of an entirely new Arena which can be split into 3 main areas – namely the Known Search Area,
+                Unknown Search Area and Pillar Area, there is a need to test and decide what search strategies to opt for. 
+                </p>
+            
+              <p>
+                Last year’s search strategy was an unmapped, decentralized strategy (differences between strategies will be elaborated on in section 4.1), 
+                and it did work and were able to complete the search the fastest amongst the teams that participated last year.  
+              </p>
 
-          <p>
-            However, they did not win the first place as their approach lacked novelty, and did not use the hardware available to 
-            them to its fullest potential. Therefore, they lost marks in the team live presentation and eventually came in second.
-          </p>
-           
-          <p>
-          Hence, we will be exploring both mapped and unmapped strategies and possibly use a combination of them due to the variety 
-          of obstacles present, to improve the overall efficiency and novelty of the search strategy employed.
-          </p>
-  
-      </div>
+              <p>
+                However, they did not win the first place as their approach lacked novelty, and did not use the hardware available to 
+                them to its fullest potential. Therefore, they lost marks in the team live presentation and eventually came in second.
+              </p>
+            
+              <p>
+              Hence, we will be exploring both mapped and unmapped strategies and possibly use a combination of them due to the variety 
+              of obstacles present, to improve the overall efficiency and novelty of the search strategy employed.
+              </p>
+          </div>
 
-      <div id="sub-section-3-header-2">
-          <h3>3.2 Object Detection</h3>
-          <p>
-            The introduction of new obstacles does not only require a revamp of the search strategy, but also a revised approach on the 
-            object detection methods. With the presence of an Unknown Search Area, Danger Zones and Pillar Obstacles, we will need to re-evalute our current 
-            object detection method and explore other methods before finalising on the method that is best suited for our use case. 
-          </p>
-  
-      </div>
+          <div id="sub-section-3-header-2">
+              <h3>3.2 Object Detection</h3>
+              <p>
+                The introduction of new obstacles does not only require a revamp of the search strategy, but also a revised approach on the 
+                object detection methods. With the presence of an Unknown Search Area, Danger Zones and Pillar Obstacles, we will need to re-evalute our current 
+                object detection method and explore other methods before finalising on the method that is best suited for our use case. 
+              </p>    
+          </div>
 
-      <div id="sub-section-3-header-3">
-          <h3>3.3 Navigation Aids</h3>
-          <p>
-            With the presence of new obstacles, the use of Navigation Aids to help us in our search of the Victims Markers varies significantly. 
-            There are many more use cases for navigations aids this year, especially in more tricky areas like the Unknown Seach Area and the Pillar Area. 
-          </p>
+          <div id="sub-section-3-header-3">
+              <h3>3.3 Navigation Aids</h3>
+              <p>
+                With the presence of new obstacles, the use of Navigation Aids to help us in our search of the Victims Markers varies significantly. 
+                There are many more use cases for navigations aids this year, especially in more tricky areas like the Unknown Seach Area and the Pillar Area. 
+              </p>
 
-          <p>
-            However, the number of Navigation Aids remain the same as last year, despite there being 3 distinct challenges unlike only 1 last year. 
-            We will evaluate on the most effective way to use the navigation aids, as well as what kind of items are we using. We will then need to 
-            test and decide the most effective way to use these Navigation Aids. 
-          </p>
-  
-      </div>
+              <p>
+                However, the number of Navigation Aids remain the same as last year, despite there being 3 distinct challenges unlike only 1 last year. 
+                We will evaluate on the most effective way to use the navigation aids, as well as what kind of items are we using. We will then need to 
+                test and decide the most effective way to use these Navigation Aids. 
+              </p>    
+          </div>
 
-      <div id="sub-section-3-header-4">
-          <h3>3.4 Key Areas of Development</h3>
-          <p>
-            Our goal is to complete the mission in the quickest time possible while using novel and superior methods for our mission. Therefore, we have 
-            split the key areas of development into the 4 roles below.  
-          </p>
+          <div id="sub-section-3-header-4">
+              <h3>3.4 Key Areas of Development</h3>
+              <p>
+                Our goal is to complete the mission in the quickest time possible while using novel and superior methods for our mission. Therefore, we have 
+                split the key areas of development into the 4 roles below.  
+              </p>
 
-          <scope-of-work subtitle="Table 2.0: Scope of Work">
-            <div id="scope-of-work"></div>
-          </scope-of-work>
-  
-          <p>
-          Table 2.0 shows the designation of roles for the development of the various sub-systems.
-          </p>
+              <scope-of-work subtitle="Table 2.0: Scope of Work">
+                <div id="scope-of-work"></div>
+              </scope-of-work>
+      
+              <p>
+              Table 2.0 shows the designation of roles for the development of the various sub-systems.
+              </p>
 
-          <p>
-            The search strategy sub team will be exploring 2 mapping strategies while enhancing the unmapped strategy used last year as we the mapped approach 
-            is more difficult to implement and hence will be awarded more marks in the team presentation.  
-          </p>
+              <p>
+                The search strategy sub team will be exploring 2 mapping strategies while enhancing the unmapped strategy used last year as we the mapped approach 
+                is more difficult to implement and hence will be awarded more marks in the team presentation.  
+              </p>
 
-          <p>
-            The object detection sub team will be improving on the object detection method used last year as it was inaccurate and slow. Exploration of new methods 
-            such as object classification using neural networks will be done simultaneously.   
-          </p>
+              <p>
+                The object detection sub team will be improving on the object detection method used last year as it was inaccurate and slow. Exploration of new methods 
+                such as object classification using neural networks will be done simultaneously.   
+              </p>
 
-          <p>
-            The obstacle detection and avoidance sub team will investigate strategies used to detect and avoid the new obstacles present, which are the Pillar Obstacles.   
-          </p>
+              <p>
+                The obstacle detection and avoidance sub team will investigate strategies used to detect and avoid the new obstacles present, which are the Pillar Obstacles.   
+              </p>
 
-          <p>
-            The simulation sub team will investigate the use of simulation to simulate various search algorithms to improve testing efficiency.   
-          </p>
-  
+              <p>
+                The simulation sub team will investigate the use of simulation to simulate various search algorithms to improve testing efficiency.   
+              </p>
+          </div>
+
       </div>
 
     <br />
