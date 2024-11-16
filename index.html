@@ -411,14 +411,14 @@
         <h3>1.6 Navigation Aid</h3>
 
         <image-component tag="image" source="assets\section-1\figure_1_12_specifications_of_navigation_aids.png"
-        subtitle="Figure 1.: Specifications of Navigation Aids"></image-component>
+        subtitle="Figure 1.12: Specifications of Navigation Aids"></image-component>
         
         <p>
           For SAFMC 2025, a total of ten Navigation Aids can be used within the Known Search Area and Pillar Area. Figure 1.12 shows the general specifications of the Navigation Aids, which must not exceed 1 m x 1 m x an unspecified height. Figure 1.12 does not show the actual Navigation Aids we are using for the competition.
           </p>
 
-        <image-component tag="image" source="assets\section-1\figure_1_13_potential_navigation_aids.png"
-        subtitle="Figure 1.13: Potential Navigation Aids"></image-component>
+        <image-full tag="image" source="assets\section-1\figure_1_13_potential_navigation_aids.png"
+        subtitle="Figure 1.13: Potential Navigation Aids"></image-full>
 
         <p>
           Figure 1.13 shows the types of Navigation Aids the team is currently exploring. These physical aids can vary in colour and shape and may include electronic options.
@@ -497,11 +497,11 @@
         <p>
           Furthermore, the Multi-ranger deck complements these features with five ToF sensors positioned to measure distances in five directions: front, back, left, right, and top. These sensors detect objects up to 4 m away, giving the Crazyflie enhanced spatial awareness and allowing it to avoid obstacles from multiple angles. Together, these decks equip the Crazyflie with robust navigation, obstacle avoidance, and image processing capabilities.
         </p>
-        <image-component tag="image" source="assets\section-2\figure_2_2_expansion_decks.png"
-        subtitle="Figure 2.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-component>
+        <image-full tag="image" source="assets\section-2\figure_2_2_expansion_decks.png"
+        subtitle="Figure 2.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-full>
         <br><br>
-        <image-component tag="image" source="assets\section-2\figure_2_3_configuration_of_upgraded_crazyflie_with_expansion_decks.png"
-        subtitle="Figure 2.3: Configuration of Upgraded Crazyflie with Expansion Decks"></image-component>
+        <image-full tag="image" source="assets\section-2\figure_2_3_configuration_of_upgraded_crazyflie_with_expansion_decks.png"
+        subtitle="Figure 2.3: Configuration of Upgraded Crazyflie with Expansion Decks"></image-full>
         <br><br>
         <image-component tag="image" source="assets\section-2\figure_2_4_upgraded_crazyflie_used_as_the_development_platform_in_this_project.png"
         subtitle="Figure 2.4: Upgraded Crazyflie Used as the Development Platform in This Project"></image-component>
@@ -625,8 +625,8 @@
             Search strategies can be broadly classified into two main categories: mapped centralized and unmapped decentralized. A detailed list of differences is shown below.  
           </p>
 
-          <image-component tag="image" source="assets/section-4/figure 4_1_search_strat_differences.png"
-        subtitle="Figure 4.1: Comparison between Mapped Centralised and Unmapped Decentralised Strategies"></image-component>
+          <image-full tag="image" source="assets/section-4/figure 4_1_search_strat_differences.png"
+        subtitle="Figure 4.1: Comparison between Mapped Centralised and Unmapped Decentralised Strategies"></image-full>
 
           <p>
             There are 3 main differences that play a key role in helping us determine the best strategy to use for our challenge.  
@@ -673,8 +673,8 @@
           The first mapping method uses the ToF sensors on the multiranger deck. The Crazyflie uses the Multi-Ranger Deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or SLAM algorithms) to construct a map. As the drone moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the drone to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
         </p>
 
-        <image-component tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
-        subtitle="Figure 4.2: Map produced using Multiranger Deck"></image-component>
+        <image-full tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
+        subtitle="Figure 4.2: Map produced using Multiranger Deck"></image-full>
 
         <p>
           The figure above shows one of the map produced during one of our test runs. The drone crashed during the first test as it did not detect the pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as pillars. 
@@ -714,16 +714,16 @@
           it will keep track of the hit point using odometry information from the flow deck. If the drone heads toward the hit point again, the loop detection would be initiated to modify the loop detection mechanism.
         </p>
 
-        <image-component tag="image" source="assets\section-4\figure_4_3_illustration_of_MSBA.png"
-        subtitle="Figure 4.3: Illustration of MSBA"></image-component>
+        <image-full tag="image" source="assets\section-4\figure_4_3_illustration_of_MSBA.png"
+        subtitle="Figure 4.3: Illustration of MSBA"></image-full>
         <p>
           Each drone requires the initialization of several parameters beyond just the preferred direction. These include the altitude, flight speed, preferred direction, wall-following direction, and wall-following distance. In a known area, properly setting these parameters ensures that each drone can navigate effectively for maximum coverage in the arena. These configurations are essential for coordinated behaviour and for achieving consistent performance in tasks like obstacle avoidance and path-following.
         </p>
         <p>
           To implement custom code onto the Crazyflie, the code must be built in the app layer, which operates on top of the firmware. This layer provides an organized structure to add custom functionalities like performing the MSBA. It facilitates integration with the firmware’s control and sensor systems. The navigation architecture diagram of a Crazyflie running MSBA onboard is in Figure 4.3. 
         </p>
-        <image-component tag="image" source="assets\section-4\figure_4_4_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
-        subtitle="Figure 4.4: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-component>
+        <image-full tag="image" source="assets\section-4\figure_4_4_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
+        subtitle="Figure 4.4: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-full>
         <p>
           The MSBA app layer was adapted from the SGBA app layer repository created by Bitcraze developers according to the original SGBA paper by TU Delft. A swarm of 3 Crazyflies was tested to run the MSBA without the loop detection mechanism in a 5m x5 m physical arena and was proven to be reliable as all Crazyflies maneuverer the arena and changes state as intended. 
           The performance of MSBA specific to the runs are in <a  href="#sub-section-8-header-2">Section 8.2</a>. 
@@ -871,8 +871,8 @@
       <div id="sub-section-5-header-5">
         <h3>5.5 Victim and Danger Zone Detection</h3>
 
-        <image-component tag="image" source="./assets/section-5/figure_5_5_victim_and_danger_zone_detection_chart.png"
-        subtitle="Figure 5.5: Victim and Danger Zone Detection Chart"></image-component>
+        <image-full tag="image" source="./assets/section-5/figure_5_5_victim_and_danger_zone_detection_chart.png"
+        subtitle="Figure 5.5: Victim and Danger Zone Detection Chart"></image-full>
 
         <p>
           Figure 5.5 shows how Victim and Danger Zone Detection is conducted for SAFMC 2025. In this year’s competition, the take-off command is issued via a central computer, followed by checking the Crazyflie’s status to see if its ready for the Competition Mission. Thereafter, in the air, the Crazyflie will continuously scan its surroundings using the camera on the AI-Deck. When an AprilTag is detected (which can be found in the detected Tags and the Danger Zone dictionary), the AprilTag will be identified as either a Victim Marker or a Danger Zone.
@@ -1053,8 +1053,8 @@
         The controller code, available in this <a href="https://github.com/CDE-4301-ASI-401/Webots_CF2/blob/main/controllers/SGBA_Controller/SGBA_Controller.c" target="_blank">GitHub repository</a>, processes sensor data from the simulated Crazyflie and feeds it to the MSBA algorithm. Using these inputs, the MSBA script calculates the necessary velocity in the x and y directions and the yaw rate required to achieve the desired motion. This information is then passed back to the Webots controller, which initializes the Bitcraze-developed PID flight controller to determine the required individual motor velocities. Finally, the Webots controller applies these motor velocities to control the Crazyflie's movement, allowing it to execute the MSBA strategy in the simulated environment.
       </p>
 
-      <image-component tag="image" source="./assets/section-7/figure_7_1_navigation_architecture_diagram_of_simulated_crazyflie.png"
-      subtitle="Figure 7.1: Navigation Architecture Diagram of Simulated Crazyflie"></image-component>
+      <image-full tag="image" source="./assets/section-7/figure_7_1_navigation_architecture_diagram_of_simulated_crazyflie.png"
+      subtitle="Figure 7.1: Navigation Architecture Diagram of Simulated Crazyflie"></image-full>
     
     </div>
 
