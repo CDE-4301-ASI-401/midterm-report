@@ -3,7 +3,7 @@ new gridjs.Grid({
     data: [
       ["Must be processed to become a viewable image.", "Ready to view immediately without additional processing."],
       ["File size is 2 to 6 times larger than JPEG.", ""],
-      ["Higher quality than JPEG due to uncompressed data.", "Lossy format with lower quality than raw files due to compression.m"],
+      ["Higher quality than JPEG due to uncompressed data.", "Lossy format with lower quality than raw files due to compression."],
       ["Visible lags", "Smoother stream"],
     ],
   }).render(document.getElementById("comparison-raw-jpeg"));

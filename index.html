@@ -105,7 +105,7 @@
         <a href="#section-header-4">4 Search Strategy</a>
         <ul type="none">
           <li><a href="#sub-section-4-header-1">4.1 Mapping Using Multiranger Deck</a></li>
-          <li><a href="#sub-section-4-header-2">4.2 Mapping using AI Deck Camera</a></li>
+          <li><a href="#sub-section-4-header-2">4.2 Mapping Using AI Deck Camera</a></li>
           <li><a href="#sub-section-4-header-3">4.3 Unmapped Decentralized: Modified Swarm Bug Algorithm (MSBA)</a></li>
           <li>
             <a href="#sub-section-4-header-4">4.4 Future Work in Search Strategy</a>
@@ -626,7 +626,7 @@
           </p>
 
           <image-full tag="image" source="assets/section-4/figure 4_1_search_strat_differences.png"
-        subtitle="Figure 4.1: Comparison between Mapped Centralised and Unmapped Decentralised Strategies"></image-full>
+        subtitle="Figure 4.1: Comparison Between Mapped Centralised and Unmapped Decentralised Strategies"></image-full>
 
           <p>
             There are 3 main differences that play a key role in helping us determine the best strategy to use for our challenge.  
@@ -668,13 +668,13 @@
       </div>
 
       <div id="sub-section-4-header-1">
-        <h3>4.1 Mapping using Multiranger Deck</h3>
+        <h3>4.1 Mapping Using Multiranger Deck</h3>
         <p>
           The first mapping method uses the ToF sensors on the multiranger deck. The Crazyflie uses the Multi-Ranger Deck to measure distances to obstacles in five directions (forward, backward, left, right, and up), allowing it to detect and avoid obstacles. These distance measurements are combined with localization data (e.g., from optical flow sensors or SLAM algorithms) to construct a map. As the drone moves, it updates the map by correlating new sensor readings with the existing data, refining the environment's representation. This iterative process enables the drone to navigate autonomously, plan paths, and avoid collisions while building a 2D or 3D map of its surroundings.
         </p>
 
         <image-full tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
-        subtitle="Figure 4.2: Map produced using Multiranger Deck"></image-full>
+        subtitle="Figure 4.2: Map Produced Using Multiranger Deck"></image-full>
 
         <p>
           The figure above shows one of the map produced during one of our test runs. The drone crashed during the first test as it did not detect the pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as pillars. 
@@ -693,7 +693,7 @@
       </div>
 
       <div id="sub-section-4-header-2">
-      <h3>4.2 Mapping using Camera on AI Deck</h3>
+      <h3>4.2 Mapping Using Camera on AI Deck</h3>
       <p>
         The second mapping method will utilize the camera on the AI deck and OpenCV's ORB (Oriented FAST and rotated BRIEF). To use ORB for SLAM with the AI deck's camera, capture frames and extract keypoints and descriptors using the ORB algorithm. Match features between consecutive frames to calculate the drone's relative motion (translation and rotation) through visual odometry. Incrementally build a map by integrating the extracted features and positional data into a point cloud or occupancy grid. Use loop closure detection to identify revisited areas, correcting accumulated errors with graph optimization. For robust performance, fuse camera data with other onboard sensors like the IMU or Multi-Ranger Deck, and optimize computations for real-time processing on the AI deck. 
       </p>
@@ -864,7 +864,7 @@
           </p>
 
         <image-component tag="image" source="./assets/section-5/figure_5_4_original_vs_updated_image_streaming_firmware.png"
-        subtitle="Figure 5.4: Original Image streaming Firmware (Left); Updated Image streaming Firmware (Right)"></image-component>
+        subtitle="Figure 5.4: Original Image Streaming Firmware (Left); Updated Image Streaming Firmware (Right)"></image-component>
 
       </div>
 
@@ -969,7 +969,7 @@
           the pillars that would be used in the real setup (Figure 4.3.2). The Crazyflies were
           not able to detect the pipes in flight and would often crash into it due to non-detection.
         </p>
-        <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Drones hovering between new styrofoam blocks"></video-component>
+        <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Drones Hovering Between New Styrofoam Blocks"></video-component>
 
         <p>
           Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
@@ -1005,7 +1005,7 @@
           and cause the Crazyflies to fly head-on towards it.
         </p>
 
-        <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight does not Pick-up Pillars"></image-component>
+        <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up Pillars"></image-component>
 
         <p>
           This limitation arises from the fact that the multi-ranger deck has only 4 sensors used in the distance sensing in the
@@ -1020,7 +1020,7 @@
       <div id="sub-section-6-header-5">
         <h3>6.5 Future Work in Collision Avoidance</h3>
         <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
-                         subtitle="Figure 6.6: Possible Zig-Zag flight Path to Counter Non-Detection of Pillars"></image-component>
+                         subtitle="Figure 6.6: Possible Zig-Zag Flight Path to Counter Non-Detection of Pillars"></image-component>
         <p>
           In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the pillars and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
           <br/><br/>
@@ -1074,7 +1074,7 @@
       "></image-component>
       <br><br>
       <video-component tag="video" source="https://www.youtube.com/embed/nrzu8jDMEnc?si=CZcKq72jN3VzLVef"
-      subtitle="Figure 7.3: Video of Swarm of 3 Crazyflies performing MSBA in Webots"></video-component>
+      subtitle="Figure 7.3: Video of Swarm of 3 Crazyflies Performing MSBA in Webots"></video-component>
       
       <p>
         The simulation ran successfully, with each Crazyflie demonstrating motion patterns consistent with the expected MSBA behaviour. The Crazyflies navigated the environment according to their designated configurations, with clear adherence to their preferred directions and wall-following rules.
@@ -1137,7 +1137,7 @@
           </p>
           <image-component tag="image" source="./assets/matthew/hoveringTest.png"
           subtitle="
-          Figure 8.4: Drone undergoing Hovering Test
+          Figure 8.4: Drone Undergoing Hovering Test
           "></image-component>
           <p>
             This test involved allowing the Crazyflie to hover at a fixed height of 0.3 m for 30 s. The Crazyflies proved to be able to hover well at this fixed height, demonstrating the ability of the Crazyflies to recognise its height off the ground using the Time of Flight (ToF) sensor and maintain a constant height while hovering.
