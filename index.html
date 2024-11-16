@@ -61,12 +61,12 @@
 
   <div class="sidenav">
     <ul type="none">
-      <li><a href="#title">Title</a></li>
-      <li><a href="#acknowledgements">Acknowledgements</a></li>
+      <li><a href="#title"onclick="showSection('title')">Title</a></li>
+      <li><a href="#acknowledgements"onclick="showSection('acknowledgements')">Acknowledgements</a></li>
       <li><a href="#table-of-abbreviation">Table Of Abbreviations</a></li>
   
       <li>
-        <a href="#section-header-1">1 SAFMC 2025</a>
+        <a href="#section-header-1" onclick="showSection('section-header-1')">1 SAFMC 2025</a>
         <ul type="none">
           <li><a href="#sub-section-1-header-2">1.2 Scoring System</a></li>
           <li>
@@ -86,7 +86,7 @@
       </li>
   
       <li>
-        <a href="#section-header-2">2 Hardware and Software</a>
+        <a href="#section-header-2" onclick="showSection('section-header-2')">2 Hardware and Software</a>
         <ul type="none">
           <li><a href="#sub-section-2-header-1">2.1 Hardware: Bitcraze Crazyflie</a></li>
           <li><a href="#sub-section-2-header-2">2.2 Software</a></li>
@@ -104,7 +104,7 @@
       </li>
   
       <li>
-        <a href="#section-header-4" >4 Search Strategy</a>
+        <a href="#section-header-4" onclick="showSection('section-header-4')">4 Search Strategy</a>
         <ul type="none">
           <li><a href="#sub-section-4-header-1">4.1 Mapping Using Multiranger Deck</a></li>
           <li><a href="#sub-section-4-header-2">4.2 Mapping Using AI Deck Camera</a></li>
@@ -120,7 +120,7 @@
       </li>
   
       <li>
-        <a href="#section-header-5">5 Object Detection</a>
+        <a href="#section-header-5" onclick="showSection('section-header-5')">5 Object Detection</a>
         <ul type="none">
           <li><a href="#sub-section-5-header-1">5.1 Hardware In Object Detection</a></li>
           <li><a href="#sub-section-5-header-2">5.2 Target Type</a></li>
@@ -133,7 +133,7 @@
       </li>
   
       <li>
-        <a href="#section-header-6">6 Obstacle Avoidance</a>
+        <a href="#section-header-6" onclick="showSection('section-header-6')">6 Obstacle Avoidance</a>
         <ul type="none">
           <li><a href="#sub-section-6-header-1">6.1 Known and Unknown Search Area</a></li>
           <li><a href="#sub-section-6-header-2">6.2 Addition of Pillar Area</a></li>
@@ -144,7 +144,7 @@
       </li>
   
       <li>
-        <a href="#section-header-7">7 Simulation</a>
+        <a href="#section-header-7" onclick="showSection('section-header-7')">7 Simulation</a>
         <ul type="none">
           <li><a href="#sub-section-7-header-1">7.1 Simulation Architecture Diagram for Decentralized Algorithm</a></li>
           <li><a href="#sub-section-7-header-2">7.2 Webot Simulation of Crazyflies Performing MSBA</a></li>
@@ -153,7 +153,7 @@
       </li>
   
       <li>
-        <a href="#section-header-8">8 Testing the Suitability of Arena</a>
+        <a href="#section-header-8" onclick="showSection('section-header-8')">8 Testing the Suitability of Arena</a>
         <ul type="none">
           <li><a href="#sub-section-8-header-1">8.1 Suitability Test</a></li>
           <li>
@@ -167,14 +167,14 @@
       </li>
   
       <li>
-        <a href="#section-header-9">9 Future Work</a>
+        <a href="#section-header-9" onclick="showSection('section-header-9')">9 Future Work</a>
         <ul type="none">
           <li><a href="#sub-section-9-header-1">9.1 Mission Planning</a></li>
         </ul>
       </li>
   
-      <li><a href="#section-header-10">10 Timeline</a></li>
-      <li><a href="#references">11 References</a></li>
+      <li><a href="#section-header-10" onclick="showSection('section-header-10')">10 Timeline</a></li>
+      <li><a href="#references" onclick="showSection('section-header-11')">11 References</a></li>
     </ul>
   </div>
   
@@ -247,14 +247,14 @@
 
     <div id = "main-content">
 
-      <div id="section-header-1">
+      <div id="section-header-1" class="section" style="display: none;">
         <h2>1 SAFMC 2025</h2>
         <p>
           Our group is participating in Singapore Amazing Flying Machine Competition (SAFMC) 2025 Open Category (Category E). In this category, we are required to design an autonomous drone swarm to search and rescue for victims in a given area.
           <br/><br/>
           Drone swarms have been used in a variety of real-world implementations, including environmental mapping and search and rescue. Defence Science Organisation (DSO), the organiser of the competition, stands to gain technical know-how from organising this competition. This can be applied in their development of drone systems for defence.
         </p>
-      </div>
+      
 
       <div id="sub-section-1-header-1">
         <h3>1.1 Mission</h3>
@@ -469,17 +469,18 @@
           </p>
 
       </div>
+    </div>
 
     <br />
     <br />
     <sl-divider></sl-divider>
 
-      <div id="section-header-2">
+      <div id="section-header-2" class="section" style="display: none;">
         <h2>2 Hardware and Software </h2>
         <p>
           With the objective of developing swarm drones for autonomous search and rescue mission prescribed by the competition rulebook, the Bitcraze Crazyflie was selected as the primary hardware for the swarm, because of its open-source modular design. Additionally, the Crazyflie is widely used in Temasek Laboratories’s research projects, and using a similar platform allows us to leverage shared knowledge, expertise, and resources.
         </p>
-      </div>
+      
 
       <div id="sub-section-2-header-1">
         <h3>2.1 Hardware: BitCraze Crazyflie</h3>
@@ -522,6 +523,7 @@
         <image-component tag="image" source="assets\section-2\figure_2_5_ROS2_humble.png"
         subtitle="Figure 2.5: ROS2 Humble"></image-component>
       </div>
+    </div>
    
     <br />
     <br />
@@ -620,7 +622,7 @@
     <br />
     <sl-divider></sl-divider>
 
-      <div id="section-header-4">
+      <div id="section-header-4" class="section" style="display: none;">
           <h2>4 Search Strategy</h2>
           <p>
             Search strategies can be broadly classified into two main categories: mapped centralized and unmapped decentralized. A detailed list of differences is shown below.  
@@ -666,7 +668,7 @@
             We will evaluate both strategies, considering their respective strengths and weaknesses, to determine the optimal approach for specific areas in the mission.
           </p>
   
-      </div>
+      
 
       <div id="sub-section-4-header-1">
         <h3>4.1 Mapping Using Multiranger Deck</h3>
@@ -776,18 +778,19 @@
           which allows parameter fine-tuning (the state of simulation subsystem for this project is elaborated in <a href="#section-header-7">Section 7</a>). Ultimately, the strategy should be further validated through a full-scale, real-world test to ensure the Crazyflies can collectively achieve the desired coverage in practice.
         </p>
       </div>
+    </div>
 
       <br />
       <br />
       <sl-divider></sl-divider>
 
-      <div id="section-header-5">
+      <div id="section-header-5" class="section" style="display: none;">
         <h2>5 Object Detection</h2>
         <p>
           The Object Detection Subsystem involves streaming the images collected by the camera over Wi-Fi and processing these images with the AI deck to detect AprilTags (Victim Markers and Danger Zones) on a central computer.
         </p>
   
-      </div>
+      
 
       <div id="sub-section-5-header-1">
         <h3>5.1 Hardware in Object Detection</h3>
@@ -925,107 +928,109 @@
         As shown in Figure 5.7, the Arena is divided into three distinct areas: the Known Search Area, the Unknown Search Area, and the Pillar Area. Each of these areas presents unique challenges, requiring different approaches as a single search algorithm is insufficient for all scenarios. To address these challenges, the SAFMC 2024 team implemented multiple search strategies, including wall-following, wall-following with obstacle avoidance, and the bug algorithm, tailored to the specific needs of each area. We believe that the SAFMC 2025 team should take a similar approach. 
         </p>
       </div>
+    </div>
         
       <br />
       <br />
       <sl-divider></sl-divider>
 
-      <div id="section-header-6">
+      <div id="section-header-6" class="section" style="display: none;">
           <h2>6 Obstacle Avoidance</h2>
 
           <p>
             In the Arena, the Crazyflies encounter a mixture of Inner Walls and Pillar Obstacles. The Known and Unknown Search Areas contain only Inner Walls as obstacles, while the Pillar Area includes only Pillar Obstacles and no Inner Walls.
             </p>
 
-      </div>
-
-      <div id="sub-section-6-header-1">
-        <h3>6.1 Known and Unknown Search Area</h3>
-
-        <p>
-          In the Known and Unknown Search Area, the SGBA path-finding algorithm allows the Crazyflie to adhere to the walls that it detects as part of its path-finding strategy. The Crazyflie is programmed to follow a set distance from the wall and follow along it once a wall is detected. The algorithm would then allow the Crazyflie to avoid crashing into the walls that it encounters. Hence, no additional steps are required to avoid the walls and can be used as-is with the current implementation.
-        </p>
-      </div>
-
-      <div id="sub-section-6-header-2">
-        <h3>6.2 Addition of Pillar Area</h3>
-          <image-component tag="image" source="assets/matthew/arenaWithPillarZone.png"
-            subtitle="Figure 6.1: SAFMC 2025 Arena"></image-component>
-        <p>
-          In SAFMC 2025, there is the addition of the Pillar Area which consists of only Pillars (of 30 cm diameter) and no additional walls placed in that area (Figure 6.1). Hence, a different approach from that used in the rest of the Arena may have to be taken considering the differences in this area.
-        </p>
-      </div>
-
-      <div id="sub-section-6-header-3">
-        <h3>6.3 Search for Objects to replicate Pillars for Testing</h3>
-        <p>
-          To test the performance of our Crazyflies in the Pillar Area,
-          we had to carry out at-scale testing in our own Arena that included
-          modelling the Pillar Area. To do so, we first sought to work with electrical
-          pipes bundled together to simulate the Pillar Area.
-        </p>
-        <image-component tag="image" source="assets/matthew/oldPillar.png"
-                          subtitle="Figure 6.2: Electrical Pipes Used to Simulate Pillar Area"></image-component>
-        <p>
-          However, it was found that these pipes were too thin and did not accurately replicate
-          the Pillar Obstacles that would be used in the real setup (Figure 6.2). The Crazyflies were
-          not able to detect the pipes in flight and would often crash into it due to non-detection.
-        </p>
-        <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Crazyflies Hovering Between New Styrofoam Blocks"></video-component>
-
-        <p>
-          Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
-          model the Pillar Obstacless (Figure 6.3). Being approximately 20 cm in diameter, this was an accurate scale model of the Pillar Obstacles and provided a good representation of the cylindrical surface of the Pillar Area that the Crazyflies would have to contend with in the actual Arena.
-        </p>
-      </div>
       
-      <div id="sub-section-6-header-4">
-        <h3>6.4 Test of Crazyflie in the Pillar Area</h3>
-        <p>
-          In conducting tests in the Pillar Area, we were looking to validate two factors: 1. The Crazyflies
-          can fly in a stable manner between the Pillar Obstacles, and 2. The Crazyflies are able to navigate their way
-          around the Pillar Obstacles to move towards the victim both within and beyond the Pillar Area.
-          <br/><br/>
-          The test was conducted by allowing the Crazyflies flashed with the wall-following or bug algorithm used
-          in the rest of the area to fly within the Pillar Area and observe its performance.
-        </p>
 
-        <video-component tag="video" source="https://www.youtube.com/embed/-OyrP666mzA?si=ktmBxre95ZHss4CD" subtitle="Figure 6.4: Video of Results of Tests"></video-component>
+        <div id="sub-section-6-header-1">
+          <h3>6.1 Known and Unknown Search Area</h3>
 
-        <p>
-          The results show the following (Figure 6.4):
-          <br/><br/>
-          1.	The Crazyflies can fly in a stable manner between Pillar Obstacless<br/><br/>
-          While in flight between the Pillar Obstacles, the presence of these obstacles to its left and right did not affect the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
-          <br/><br/>
-          2.	The Crazyflies were not able to reliably detect the presence of Pillar Obstacles<br/><br/>
-          While the current bug algorithm was able to allow the Crazyflies to detect the Pillar Obstacless and fly around them most of the time. However, at very specific angles, the Multi-ranger deck would not be able to detect the Pillar Obstacles and cause the Crazyflies to fly head-on towards it.
-        </p>
+          <p>
+            In the Known and Unknown Search Area, the SGBA path-finding algorithm allows the Crazyflie to adhere to the walls that it detects as part of its path-finding strategy. The Crazyflie is programmed to follow a set distance from the wall and follow along it once a wall is detected. The algorithm would then allow the Crazyflie to avoid crashing into the walls that it encounters. Hence, no additional steps are required to avoid the walls and can be used as-is with the current implementation.
+          </p>
+        </div>
 
-        <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up the Pillar Obstacles"></image-component>
+        <div id="sub-section-6-header-2">
+          <h3>6.2 Addition of Pillar Area</h3>
+            <image-component tag="image" source="assets/matthew/arenaWithPillarZone.png"
+              subtitle="Figure 6.1: SAFMC 2025 Arena"></image-component>
+          <p>
+            In SAFMC 2025, there is the addition of the Pillar Area which consists of only Pillars (of 30 cm diameter) and no additional walls placed in that area (Figure 6.1). Hence, a different approach from that used in the rest of the Arena may have to be taken considering the differences in this area.
+          </p>
+        </div>
 
-        <p>
-          This limitation arises from the fact that the Multi-ranger deck has only 4 sensors used in the distance sensing in the x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 6.5), none of the sensors can pick up the Pillar Obstacles which results in the Crazyflie wrongly believing that it is in free space. It would then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
-          Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the Pillar Area to allow it to reliably detect the Pillar Obstacles and navigate around them without crashing into them.
-        </p>
-      </div>
+        <div id="sub-section-6-header-3">
+          <h3>6.3 Search for Objects to replicate Pillars for Testing</h3>
+          <p>
+            To test the performance of our Crazyflies in the Pillar Area,
+            we had to carry out at-scale testing in our own Arena that included
+            modelling the Pillar Area. To do so, we first sought to work with electrical
+            pipes bundled together to simulate the Pillar Area.
+          </p>
+          <image-component tag="image" source="assets/matthew/oldPillar.png"
+                            subtitle="Figure 6.2: Electrical Pipes Used to Simulate Pillar Area"></image-component>
+          <p>
+            However, it was found that these pipes were too thin and did not accurately replicate
+            the Pillar Obstacles that would be used in the real setup (Figure 6.2). The Crazyflies were
+            not able to detect the pipes in flight and would often crash into it due to non-detection.
+          </p>
+          <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Crazyflies Hovering Between New Styrofoam Blocks"></video-component>
 
-      <div id="sub-section-6-header-5">
-        <h3>6.5 Future Work in Collision Avoidance</h3>
-        <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
-                         subtitle="Figure 6.6: Possible Zig-Zag Flight Path to Counter Non-Detection of Pillars"></image-component>
-        <p>
-          In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the Pillar Obstacles and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
-          <br/><br/>
-          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar Obstacles within its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the Multi-ranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.6, a change in direction can allow it to move towards a state of detection as seen on the right.
-        </p>
+          <p>
+            Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
+            model the Pillar Obstacless (Figure 6.3). Being approximately 20 cm in diameter, this was an accurate scale model of the Pillar Obstacles and provided a good representation of the cylindrical surface of the Pillar Area that the Crazyflies would have to contend with in the actual Arena.
+          </p>
+        </div>
+        
+        <div id="sub-section-6-header-4">
+          <h3>6.4 Test of Crazyflie in the Pillar Area</h3>
+          <p>
+            In conducting tests in the Pillar Area, we were looking to validate two factors: 1. The Crazyflies
+            can fly in a stable manner between the Pillar Obstacles, and 2. The Crazyflies are able to navigate their way
+            around the Pillar Obstacles to move towards the victim both within and beyond the Pillar Area.
+            <br/><br/>
+            The test was conducted by allowing the Crazyflies flashed with the wall-following or bug algorithm used
+            in the rest of the area to fly within the Pillar Area and observe its performance.
+          </p>
+
+          <video-component tag="video" source="https://www.youtube.com/embed/-OyrP666mzA?si=ktmBxre95ZHss4CD" subtitle="Figure 6.4: Video of Results of Tests"></video-component>
+
+          <p>
+            The results show the following (Figure 6.4):
+            <br/><br/>
+            1.	The Crazyflies can fly in a stable manner between Pillar Obstacless<br/><br/>
+            While in flight between the Pillar Obstacles, the presence of these obstacles to its left and right did not affect the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
+            <br/><br/>
+            2.	The Crazyflies were not able to reliably detect the presence of Pillar Obstacles<br/><br/>
+            While the current bug algorithm was able to allow the Crazyflies to detect the Pillar Obstacless and fly around them most of the time. However, at very specific angles, the Multi-ranger deck would not be able to detect the Pillar Obstacles and cause the Crazyflies to fly head-on towards it.
+          </p>
+
+          <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up the Pillar Obstacles"></image-component>
+
+          <p>
+            This limitation arises from the fact that the Multi-ranger deck has only 4 sensors used in the distance sensing in the x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 6.5), none of the sensors can pick up the Pillar Obstacles which results in the Crazyflie wrongly believing that it is in free space. It would then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
+            Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the Pillar Area to allow it to reliably detect the Pillar Obstacles and navigate around them without crashing into them.
+          </p>
+        </div>
+
+        <div id="sub-section-6-header-5">
+          <h3>6.5 Future Work in Collision Avoidance</h3>
+          <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
+                          subtitle="Figure 6.6: Possible Zig-Zag Flight Path to Counter Non-Detection of Pillars"></image-component>
+          <p>
+            In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the Pillar Obstacles and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
+            <br/><br/>
+            One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar Obstacles within its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the Multi-ranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.6, a change in direction can allow it to move towards a state of detection as seen on the right.
+          </p>
+        </div>
       </div>
 
       <br />
       <br />
       <sl-divider></sl-divider>  
 
-    <div id="section-header-7">
+    <div id="section-header-7" class="section" style="display: none;">
       <h2>7 Simulation</h2>
       <p>
         Simulation enables testing of the actual code intended for Crazyflie deployment within the simulation environment. This saves time by allowing rapid development iterations and troubleshooting of search algorithms without the need to deploy them to the Crazyflie itself. This approach facilitates quick identification and resolution of issues, streamlining the development process. Additionally, simulation provides the versatility to test the code across various environments and with different Crazyflie configurations, all without being constrained by physical space or the risks associated with real-world testing.
@@ -1033,69 +1038,71 @@
       <p>
         Webots is used as simulator for multi-agent swarm testing because it enables both the testing of decentralized search algorithms that would be developed and deployed on top of the Crazyflie firmware, and centralized search algorithms that require single point of control typically implemented through ROS. This is possible because Webots offers the flexibility to run direct onboard code, accurately simulating real deployment, while also supporting ROS integration by acting as a ROS node.
       </p>
-    </div>
-
-    <div id="sub-section-7-header-1">
-      <h3>7.1 Simulation Architecture Diagram for Decentralized Algorithm</h3>
-      <p>
-        Using Webots, a swarm of Crazyflie was simulated to run the identical MSBA code used in the actual deployment. Since Webots does not support software-in-the-loop and integration with Crazyflie firmware, a few modifications were made to allow the testing of the actual code intended for Crazyflie deployment within the simulation environment.
-      </p>
-
-      <p>
-        A Webots controller was developed to interface the simulated hardware, including sensors and motors, with the MSBA algorithm. The navigation architecture of the simulated Crazyflie is shown in Figure 7.1. 
-        The controller code, available in this <a href="https://github.com/CDE-4301-ASI-401/Webots_CF2/blob/main/controllers/SGBA_Controller/SGBA_Controller.c" target="_blank">GitHub repository</a>, processes sensor data from the simulated Crazyflie and feeds it to the MSBA algorithm. Using these inputs, the MSBA script calculates the necessary velocity in the x and y directions and the yaw rate required to achieve the desired motion. This information is then passed back to the Webots controller, which initializes the Bitcraze-developed PID flight controller to determine the required individual motor velocities. Finally, the Webots controller applies these motor velocities to control the Crazyflie's movement, allowing it to execute the MSBA strategy in the simulated environment.
-      </p>
-
-      <image-full tag="image" source="./assets/section-7/figure_7_1_navigation_architecture_diagram_of_simulated_crazyflie.png"
-      subtitle="Figure 7.1: Navigation Architecture Diagram of Simulated Crazyflie"></image-full>
     
-    </div>
 
-    <div id="sub-section-7-header-2">
-      <h3>7.2 Webot Simulation of Crazyflies Performing MSBA</h3>
-      <p>
-        A swarm with 3 Crazyflies are simulated to perform MSBA in a 5 m x 6 m environment that was representative of the 
-        physical Arena used to perform the interim system integration test (CF2_SGBA_demo.wbt) in <a href="#sub-section-8-header-2">Section 8.2</a>. In this test, the three Crazyflies have the following configuration. Within the Arena, the bottom 5 m x 1 m area was designated.
-      </p>
-      <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
-        <div id="msba-configuration"></div>
-      </msba-configuration>
-      <br><br>
-      <image-component tag="image" source="./assets/section-7/figure_7_2_path_of_3_crazyflie_simulated_in_webots.png"
-      subtitle="
-      Figure 7.2: Path of 3 Crazyflie Simulated in Webots Using the Configuration in Table 4.0 (Green) Crazyflie 1 Path; (Pink) Crazyflie 2 Path; (Blue) Crazyflie 3 Path
-      "></image-component>
-      <br><br>
-      <video-component tag="video" source="https://www.youtube.com/embed/nrzu8jDMEnc?si=CZcKq72jN3VzLVef"
-      subtitle="Figure 7.3: Video of Swarm of 3 Crazyflies Performing MSBA in Webots"></video-component>
+      <div id="sub-section-7-header-1">
+        <h3>7.1 Simulation Architecture Diagram for Decentralized Algorithm</h3>
+        <p>
+          Using Webots, a swarm of Crazyflie was simulated to run the identical MSBA code used in the actual deployment. Since Webots does not support software-in-the-loop and integration with Crazyflie firmware, a few modifications were made to allow the testing of the actual code intended for Crazyflie deployment within the simulation environment.
+        </p>
+
+        <p>
+          A Webots controller was developed to interface the simulated hardware, including sensors and motors, with the MSBA algorithm. The navigation architecture of the simulated Crazyflie is shown in Figure 7.1. 
+          The controller code, available in this <a href="https://github.com/CDE-4301-ASI-401/Webots_CF2/blob/main/controllers/SGBA_Controller/SGBA_Controller.c" target="_blank">GitHub repository</a>, processes sensor data from the simulated Crazyflie and feeds it to the MSBA algorithm. Using these inputs, the MSBA script calculates the necessary velocity in the x and y directions and the yaw rate required to achieve the desired motion. This information is then passed back to the Webots controller, which initializes the Bitcraze-developed PID flight controller to determine the required individual motor velocities. Finally, the Webots controller applies these motor velocities to control the Crazyflie's movement, allowing it to execute the MSBA strategy in the simulated environment.
+        </p>
+
+        <image-full tag="image" source="./assets/section-7/figure_7_1_navigation_architecture_diagram_of_simulated_crazyflie.png"
+        subtitle="Figure 7.1: Navigation Architecture Diagram of Simulated Crazyflie"></image-full>
       
-      <p>
-        The simulation ran successfully, with each Crazyflie demonstrating motion patterns consistent with the expected MSBA behaviour. The Crazyflies navigated the environment according to their designated configurations, with clear adherence to their preferred directions and wall-following rules.
-      </p>
+      </div>
 
-      <p>
-        With this simulation environment, the development of search algorithms is significantly expedited, as the code can be easily deployed and tested in Webots. Without this setup, the process would take considerably longer, requiring the code to be flashed onto the actual Crazyflie hardware, where extracting error outputs would be more challenging.
-      </p>
-    </div>
+      <div id="sub-section-7-header-2">
+        <h3>7.2 Webot Simulation of Crazyflies Performing MSBA</h3>
+        <p>
+          A swarm with 3 Crazyflies are simulated to perform MSBA in a 5 m x 6 m environment that was representative of the 
+          physical Arena used to perform the interim system integration test (CF2_SGBA_demo.wbt) in <a href="#sub-section-8-header-2">Section 8.2</a>. In this test, the three Crazyflies have the following configuration. Within the Arena, the bottom 5 m x 1 m area was designated.
+        </p>
+        <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
+          <div id="msba-configuration"></div>
+        </msba-configuration>
+        <br><br>
+        <image-component tag="image" source="./assets/section-7/figure_7_2_path_of_3_crazyflie_simulated_in_webots.png"
+        subtitle="
+        Figure 7.2: Path of 3 Crazyflie Simulated in Webots Using the Configuration in Table 4.0 (Green) Crazyflie 1 Path; (Pink) Crazyflie 2 Path; (Blue) Crazyflie 3 Path
+        "></image-component>
+        <br><br>
+        <video-component tag="video" source="https://www.youtube.com/embed/nrzu8jDMEnc?si=CZcKq72jN3VzLVef"
+        subtitle="Figure 7.3: Video of Swarm of 3 Crazyflies Performing MSBA in Webots"></video-component>
+        
+        <p>
+          The simulation ran successfully, with each Crazyflie demonstrating motion patterns consistent with the expected MSBA behaviour. The Crazyflies navigated the environment according to their designated configurations, with clear adherence to their preferred directions and wall-following rules.
+        </p>
 
-    <div id="sub-section-7-header-3">
-      <h3>7.3 Future Work in Simulation</h3>
-      <p>
-        The current simulation allows for testing the decentralized search algorithm used onboard the Crazyflie. Looking ahead, the simulator should undergo validation to ensure the accurate simulation of Crazyflie movements. To achieve this, a Crazyflie data logging solution will be developed to capture real-time sensor data, as well as the onboard MSBA output from the Crazyflies. This logging solution will provide a comprehensive dataset that can be used for further analysis, allowing for a more in-depth validation of the simulation’s performance and the accuracy of the Crazyflie’s behaviour in both simulated and real-world environments. 
-      </p>
-      <p>
-        To ensure the accuracy of the simulator, path deviation analysis and state transition analysis will be performed on the simulated and real-world Crazyflie. Path deviation analysis involves the comparison of multi-ranger distance readings from the simulation with real-world data. The goal is to keep the deviation within 10% of real-world measurements to ensure accurate representation of real-world behaviour. State transition analysis is the tracking of sequence and timing of each MSBA state of Crazyflies in simulation and real-world. This will help confirm that the Crazyflies are transitioning correctly between states as they navigate.
-      </p>
-      <p>
-        Depending on the search strategy developed in the future, Webots controllers would have to be developed to simulate additional search algorithms. 
-      </p>
+        <p>
+          With this simulation environment, the development of search algorithms is significantly expedited, as the code can be easily deployed and tested in Webots. Without this setup, the process would take considerably longer, requiring the code to be flashed onto the actual Crazyflie hardware, where extracting error outputs would be more challenging.
+        </p>
+      </div>
+
+      <div id="sub-section-7-header-3">
+        <h3>7.3 Future Work in Simulation</h3>
+        <p>
+          The current simulation allows for testing the decentralized search algorithm used onboard the Crazyflie. Looking ahead, the simulator should undergo validation to ensure the accurate simulation of Crazyflie movements. To achieve this, a Crazyflie data logging solution will be developed to capture real-time sensor data, as well as the onboard MSBA output from the Crazyflies. This logging solution will provide a comprehensive dataset that can be used for further analysis, allowing for a more in-depth validation of the simulation’s performance and the accuracy of the Crazyflie’s behaviour in both simulated and real-world environments. 
+        </p>
+        <p>
+          To ensure the accuracy of the simulator, path deviation analysis and state transition analysis will be performed on the simulated and real-world Crazyflie. Path deviation analysis involves the comparison of multi-ranger distance readings from the simulation with real-world data. The goal is to keep the deviation within 10% of real-world measurements to ensure accurate representation of real-world behaviour. State transition analysis is the tracking of sequence and timing of each MSBA state of Crazyflies in simulation and real-world. This will help confirm that the Crazyflies are transitioning correctly between states as they navigate.
+        </p>
+        <p>
+          Depending on the search strategy developed in the future, Webots controllers would have to be developed to simulate additional search algorithms. 
+        </p>
+      </div>
+
     </div>
    
     <br />
     <br />
     <sl-divider></sl-divider>
  
-      <div id="section-header-8">
+      <div id="section-header-8" class="section" style="display: none;">
           <h2>8 Testing the Suitability of Arena</h2>
           <image-component tag="image" source="assets/matthew/arena.png"
                          subtitle="Figure 8.1: SAFMC 2025 Competition Arena"></image-component>
@@ -1120,7 +1127,7 @@
             the reliability of flying the Crazyflies in this area (with the given floor) as the Crazyflies have
             been known to perform poorly in certain environments, especially when the floor is too smooth or uniform.
           </p>
-      </div>
+      
 
       <div id="sub-section-8-header-1">
           <h3>8.1 Suitability Test</h3>
@@ -1221,37 +1228,39 @@
         subtitle="Figure 8.9: Video of Run 2"></video-component>
       
       </div>
+    </div>
    
     <br />
     <br />
     <sl-divider></sl-divider>
 
-      <div id="section-header-9">
+      <div id="section-header-9" class="section" style="display: none;">
           <h2>9 Team Future Work</h2>
-      </div>
+      
 
-      <div id="sub-section-9-header-1">
-          <h3>9.1 Mission Planning</h3>
+        <div id="sub-section-9-header-1">
+            <h3>9.1 Mission Planning</h3>
 
-          <p>
-            Mission Planning integrates the development of all subsystems described in previous sections. Its goal is to design and organize the Crazyflies and strategies needed to achieve the fastest and safest run during the Competition Day Mission. Full-scale testing, covered in the next section, will assess mission planning strategies for the Crazyflies' attitude, velocity, and search algorithms within a 20 m x 20 m Arena.
-            </p>
+            <p>
+              Mission Planning integrates the development of all subsystems described in previous sections. Its goal is to design and organize the Crazyflies and strategies needed to achieve the fastest and safest run during the Competition Day Mission. Full-scale testing, covered in the next section, will assess mission planning strategies for the Crazyflies' attitude, velocity, and search algorithms within a 20 m x 20 m Arena.
+              </p>
 
-          <p>
-            Additionally, we propose to segment the Arena into specific areas as part of our strategy, and each area is assigned a group of Crazyflies. The Known Search Area, the largest section, will have six Crazyflies assigned, while the Unknown Search Area will be covered by four Crazyflies, and the smallest section, the Pillar Area, will have three Crazyflies. Overloading the Pillar Area with Crazyflies could lead to collisions due to its narrow and restricted paths. Additionally, the Crazyflies’ multi-ranger sensors have a limited detection angle, further restricting their ability to detect obstacles.
-            </p>
+            <p>
+              Additionally, we propose to segment the Arena into specific areas as part of our strategy, and each area is assigned a group of Crazyflies. The Known Search Area, the largest section, will have six Crazyflies assigned, while the Unknown Search Area will be covered by four Crazyflies, and the smallest section, the Pillar Area, will have three Crazyflies. Overloading the Pillar Area with Crazyflies could lead to collisions due to its narrow and restricted paths. Additionally, the Crazyflies’ multi-ranger sensors have a limited detection angle, further restricting their ability to detect obstacles.
+              </p>
 
-          <p>
-            Furthermore, to ensure safe operation, it is critical to address the risk of collisions within the drone swarm, which can pose a serious safety hazard. To mitigate this, we proposed an algorithm as part of the future work that allows Crazyflies to share their positions and other relevant information in real-time, enabling effective drone-to-drone avoidance and coordination throughout the mission.  
-            </p>
-  
+            <p>
+              Furthermore, to ensure safe operation, it is critical to address the risk of collisions within the drone swarm, which can pose a serious safety hazard. To mitigate this, we proposed an algorithm as part of the future work that allows Crazyflies to share their positions and other relevant information in real-time, enabling effective drone-to-drone avoidance and coordination throughout the mission.  
+              </p>
+    
+        </div>
       </div>
 
     <br />
     <br />
     <sl-divider></sl-divider>
 
-      <div id="section-header-10">
+      <div id="section-header-10" class="section" style="display: none;">
           <h2>10 Timeline</h2>
           <p>
             Moving forward, the team will work towards further developing the subsystems to achieve the key event milestones in Table 7.0. The team plans to perform three full-scale test in Utown Indoor Sports Hall in the upcoming semester. The date of the competition has yet to be announced but it was expected to take place at the end of March. Therefore, all major activities will be planned before the third week of March.
@@ -1273,7 +1282,7 @@
     <br />
     <br />
  
-    <div id="references" class="references">
+    <div id="references" class="section" style="display: none;">
       <sl-divider></sl-divider>
       <h2>11 References</h2>
       <ul>
