@@ -726,7 +726,7 @@
           Each Crazyflie requires the initialization of several parameters beyond just the preferred direction. These include the altitude, flight speed, preferred direction, wall-following direction, and wall-following distance. In a Known Search Area, properly setting these parameters ensures that each Crazyflie can navigate effectively for maximum coverage in the Arena. These configurations are essential for coordinated behaviour and for achieving consistent performance in tasks like obstacle avoidance and path-following.
         </p>
         <p>
-          To implement custom code onto the Crazyflie, the code must be built in the app layer, which operates on top of the firmware. This layer provides an organized structure to add custom functionalities like performing the MSBA. It facilitates integration with the firmware’s control and sensor systems. The navigation architecture diagram of a Crazyflie running MSBA onboard is in Figure 4.3. 
+          To implement custom code onto the Crazyflie, the code must be built in the app layer, which operates on top of the firmware. This layer provides an organized structure to add custom functionalities like performing the MSBA. It facilitates integration with the firmware’s control and sensor systems. The navigation architecture diagram of a Crazyflie running MSBA onboard is in Figure 4.4. 
         </p>
         <image-full tag="image" source="assets\section-4\figure_4_4_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
         subtitle="Figure 4.4: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-full>
@@ -954,9 +954,7 @@
           <image-component tag="image" source="assets/matthew/arenaWithPillarZone.png"
             subtitle="Figure 6.1: SAFMC 2025 Arena"></image-component>
         <p>
-          In SAFMC 2025, there is the addition of the “Pillar Area” which consists of only Pillars (of 30 cm diameter) and no
-          additional walls placed in that area (Figure 4.3.1). Hence, a different approach from that used in the rest
-          of the Arena may have to be taken considering the differences in this area.
+          In SAFMC 2025, there is the addition of the “Pillar Area” which consists of only Pillars (of 30 cm diameter) and no additional walls placed in that area (Figure 6.1). Hence, a different approach from that used in the rest of the Arena may have to be taken considering the differences in this area.
         </p>
       </div>
 
@@ -972,16 +970,14 @@
                           subtitle="Figure 6.2: Electrical Pipes Used to Simulate Pillar Area"></image-component>
         <p>
           However, it was found that these pipes were too thin and did not accurately replicate
-          the Pillar Obstacles that would be used in the real setup (Figure 4.3.2). The Crazyflies were
+          the Pillar Obstacles that would be used in the real setup (Figure 6.2). The Crazyflies were
           not able to detect the pipes in flight and would often crash into it due to non-detection.
         </p>
         <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Crazyflies Hovering Between New Styrofoam Blocks"></video-component>
 
         <p>
           Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
-          model the Pillar Obstacless (Figure 6.3.2). Being approximately 20 cm in diameter, this was an accurate scale
-          model of the Pillar Obstacles and provided a good representation of the cylindrical surface of the Pillar Area
-          that the Crazyflies would have to contend with in the actual Arena.
+          model the Pillar Obstacless (Figure 6.3). Being approximately 20 cm in diameter, this was an accurate scale model of the Pillar Obstacles and provided a good representation of the cylindrical surface of the Pillar Area that the Crazyflies would have to contend with in the actual Arena.
         </p>
       </div>
       
@@ -999,27 +995,20 @@
         <video-component tag="video" source="https://www.youtube.com/embed/-OyrP666mzA?si=ktmBxre95ZHss4CD" subtitle="Figure 6.4: Video of Results of Tests"></video-component>
 
         <p>
-          The results show the following (Figure 6.4.1):
+          The results show the following (Figure 6.4):
           <br/><br/>
           <b>1</b>.	The Crazyflies can fly in a stable manner between Pillar Obstacless<br/><br/>
-          While in flight between the Pillar Obstacles, the presence of these obstacles to its left and right did not affect
-          the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
+          While in flight between the Pillar Obstacles, the presence of these obstacles to its left and right did not affect the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
           <br/><br/>
           <b>2</b>.	The Crazyflies were not able to reliably detect the presence of Pillars Obstacles<br/><br/>
-          While the current bug algorithm was able to allow the Crazyflies to detect the Pillar Obstacless and fly around them
-          most of the time. However, at very specific angles, the Multi-ranger deck would not be able to detect the Pillar Obstacles
-          and cause the Crazyflies to fly head-on towards it.
+          While the current bug algorithm was able to allow the Crazyflies to detect the Pillar Obstacless and fly around them most of the time. However, at very specific angles, the Multi-ranger deck would not be able to detect the Pillar Obstacles and cause the Crazyflies to fly head-on towards it.
         </p>
 
         <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up Pillars"></image-component>
 
         <p>
-          This limitation arises from the fact that the Multi-ranger deck has only 4 sensors used in the distance sensing in the
-          x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 4.3.5), none of
-          the sensors can pick up the Pillar which results in the Crazyflie wrongly believing that it is in free space. It would
-          then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
-          Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the Pillar Area to allow it to
-          reliably detect the Pillar Obstacles and navigate around them without crashing into them.
+          This limitation arises from the fact that the Multi-ranger deck has only 4 sensors used in the distance sensing in the x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 6.5), none of the sensors can pick up the Pillar which results in the Crazyflie wrongly believing that it is in free space. It would then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
+          Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the Pillar Area to allow it to reliably detect the Pillar Obstacles and navigate around them without crashing into them.
         </p>
       </div>
 
