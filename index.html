@@ -346,7 +346,7 @@
         subtitle="Figure 1.7: Pillar Area"></image-component>
 
         <p>
-          The Pillar Area (Figure 1.7) is the smallest area in the Arena. It consists of Eight pillars, with narrow paths (about 1 m wide) between the pillars. The Inner Wall-to-Pillar distance and the Pillar-to-Pillar distance is at least 1 m.
+          The Pillar Area (Figure 1.7) is the smallest area in the Arena. It consists of Eight Pillars Obstacles, with narrow paths (about 1 m wide) between the Pillar Obstacles. The Inner Wall-to-Pillar distance and the Pillar-to-Pillar distance is at least 1 m.
           </p>
 
         <p>
@@ -528,7 +528,7 @@
       <div id="section-header-3">
           <h2>3 Mission Strategy</h2>
           <p>
-            With the vastly different arena layout this year, our mission strategy also must change accordingly. The main 
+            With the vastly different Arena layout this year, our mission strategy also must change accordingly. The main 
             areas of consideration are the search strategy to use, object detection methods and use of navigation aids. 
           </p>
       </div>
@@ -537,8 +537,11 @@
           <h3>3.1 Search Strategy</h3>
           <p>
             With the introduction of an entirely new Arena which can be split into 3 main areas – namely the Known Area,
-            Unknown Area and Pillar Area, there is a need to test and decide what search strategies to opt for. Last year’s search 
-            strategy was an unmapped, decentralized strategy (differences between strategies will be elaborated on in section 4.1), 
+            Unknown Area and Pillar Area, there is a need to test and decide what search strategies to opt for. 
+            </p>
+          
+          <p>
+            Last year’s search strategy was an unmapped, decentralized strategy (differences between strategies will be elaborated on in section 4.1), 
             and it did work and were able to complete the search the fastest amongst the teams that participated last year.  
           </p>
 
@@ -568,8 +571,8 @@
           <h3>3.3 Navigation Aids</h3>
           <p>
             With the presence of new obstacles, the use of Navigation Aids to help us in our search of the Victims Markers varies significantly. 
-            There are many more use cases for navigations aids this year, especially in more tricky areas like the unknown area and the pillar 
-            area. 
+            There are many more use cases for navigations aids this year, especially in more tricky areas like the Unknown Seach Area and the Pillar 
+            Area. 
           </p>
 
           <p>
@@ -606,7 +609,7 @@
           </p>
 
           <p>
-            The obstacle detection and avoidance sub team will investigate strategies used to detect and avoid the new obstacles present, which are the pillars.   
+            The obstacle detection and avoidance sub team will investigate strategies used to detect and avoid the new obstacles present, which are the Pillar Obstacles.   
           </p>
 
           <p>
@@ -677,7 +680,7 @@
         subtitle="Figure 4.2: Map Produced Using Multiranger Deck"></image-full>
 
         <p>
-          The figure above shows one of the map produced during one of our test runs. The drone crashed during the first test as it did not detect the pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as pillars. 
+          The figure above shows one of the map produced during one of our test runs. The drone crashed during the first test as it did not detect the Pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as the Pillar Obstacles. 
         </p>
 
         <p>
@@ -717,7 +720,7 @@
         <image-full tag="image" source="assets\section-4\figure_4_3_illustration_of_MSBA.png"
         subtitle="Figure 4.3: Illustration of MSBA"></image-full>
         <p>
-          Each drone requires the initialization of several parameters beyond just the preferred direction. These include the altitude, flight speed, preferred direction, wall-following direction, and wall-following distance. In a known area, properly setting these parameters ensures that each drone can navigate effectively for maximum coverage in the arena. These configurations are essential for coordinated behaviour and for achieving consistent performance in tasks like obstacle avoidance and path-following.
+          Each drone requires the initialization of several parameters beyond just the preferred direction. These include the altitude, flight speed, preferred direction, wall-following direction, and wall-following distance. In a Known Search Area, properly setting these parameters ensures that each drone can navigate effectively for maximum coverage in the Arena. These configurations are essential for coordinated behaviour and for achieving consistent performance in tasks like obstacle avoidance and path-following.
         </p>
         <p>
           To implement custom code onto the Crazyflie, the code must be built in the app layer, which operates on top of the firmware. This layer provides an organized structure to add custom functionalities like performing the MSBA. It facilitates integration with the firmware’s control and sensor systems. The navigation architecture diagram of a Crazyflie running MSBA onboard is in Figure 4.3. 
@@ -725,7 +728,7 @@
         <image-full tag="image" source="assets\section-4\figure_4_4_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
         subtitle="Figure 4.4: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-full>
         <p>
-          The MSBA app layer was adapted from the SGBA app layer repository created by Bitcraze developers according to the original SGBA paper by TU Delft. A swarm of 3 Crazyflies was tested to run the MSBA without the loop detection mechanism in a 5m x5 m physical arena and was proven to be reliable as all Crazyflies maneuverer the arena and changes state as intended. 
+          The MSBA app layer was adapted from the SGBA app layer repository created by Bitcraze developers according to the original SGBA paper by TU Delft. A swarm of 3 Crazyflies was tested to run the MSBA without the loop detection mechanism in a 5 m x 5 m physical Arena and was proven to be reliable as all Crazyflies maneuverer the Arena and changes state as intended. 
           The performance of MSBA specific to the runs are in <a  href="#sub-section-8-header-2">Section 8.2</a>. 
         </p>
         <p>
@@ -741,7 +744,7 @@
       <div id="sub-section-4-header-4-header-1">
         <h4>4.4.1 Future Work In Mapped Centralised Strategy</h4>
         <p>
-          For the mapping using the Multiranger Deck, we will employ the use of multiple drones to see if we are able to obtain a more accurate representation of the arena. We will need to work on the integration and superimposing of maps from different drones, as well as the localization of the drones 
+          For the mapping using the Multiranger Deck, we will employ the use of multiple drones to see if we are able to obtain a more accurate representation of the Arena. We will need to work on the integration and superimposing of maps from different drones, as well as the localization of the drones 
         </p>
 
         <p>
@@ -768,7 +771,7 @@
           For an unmapped decentralized strategy, MSBA is a solution with great potential given its track record of robustness and reliability. A critical aspect of the algorithm is loop detection. It ensures each Crazyflie cover the area more efficiently, minimizing redundant movements. Current MSBA deployed to the Crazyflie lacked such feature. In future implementations, integrating loop detection will be essential. Additionally, testing the optimum angles for preferred direction modification will also contribute to the effectiveness of the algorithm.
         </p>
         <p>
-          Another important aspect of the strategy involves configurations for maximum coverage. Given the layout of the arena, it’s possible to trace MSBA paths for all the Crazyflies for a maximum coverage, and then derive corresponding configuration to achieve these paths. Initial validation of these configurations can be conducted through simulation tests using Webots, 
+          Another important aspect of the strategy involves configurations for maximum coverage. Given the layout of the Arena, it’s possible to trace MSBA paths for all the Crazyflies for a maximum coverage, and then derive corresponding configuration to achieve these paths. Initial validation of these configurations can be conducted through simulation tests using Webots, 
           which allows parameter fine-tuning (the state of simulation subsystem for this project is elaborated in <a href="#section-header-7">Section 7</a>). Ultimately, the strategy should be further validated through a full-scale, real-world test to ensure the Crazyflies can collectively achieve the desired coverage in practice.
         </p>
       </div>
@@ -948,7 +951,7 @@
           <image-component tag="image" source="assets/matthew/arenaWithPillarZone.png"
             subtitle="Figure 6.1: SAFMC 2025 Arena"></image-component>
         <p>
-          In SAFMC 2025, there is the addition of the “Pillar Area” which consists of only pillars (of 30 cm diameter) and no
+          In SAFMC 2025, there is the addition of the “Pillar Area” which consists of only Pillars (of 30 cm diameter) and no
           additional walls placed in that area (Figure 4.3.1). Hence, a different approach from that used in the rest
           of the Arena may have to be taken considering the differences in this area.
         </p>
@@ -958,7 +961,7 @@
         <h3>6.3 Search for Objects to replicate Pillars for Testing</h3>
         <p>
           To test the performance of our Crazyflies in the Pillar Area,
-          we had to carry out at-scale testing in our own arena that included
+          we had to carry out at-scale testing in our own Arena that included
           modelling the Pillar Area. To do so, we first sought to work with electrical
           pipes bundled together to simulate the Pillar Area.
         </p>
@@ -966,28 +969,28 @@
                           subtitle="Figure 6.2: Electrical Pipes Used to Simulate Pillar Area"></image-component>
         <p>
           However, it was found that these pipes were too thin and did not accurately replicate
-          the pillars that would be used in the real setup (Figure 4.3.2). The Crazyflies were
+          the Pillar Obstacles that would be used in the real setup (Figure 4.3.2). The Crazyflies were
           not able to detect the pipes in flight and would often crash into it due to non-detection.
         </p>
         <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Drones Hovering Between New Styrofoam Blocks"></video-component>
 
         <p>
           Looking for alternatives, we were able to secure these Styrofoam blocks from Temasek Laboratories to
-          model the pillars (Figure 6.3.2). Being approximately 20 cm in diameter, this was an accurate scale
-          model of the pillars and provided a good representation of the cylindrical surface of the pillar area
-          that the Crazyflies would have to contend with in the actual arena.
+          model the Pillar Obstacless (Figure 6.3.2). Being approximately 20 cm in diameter, this was an accurate scale
+          model of the Pillar Obstacles and provided a good representation of the cylindrical surface of the Pillar Area
+          that the Crazyflies would have to contend with in the actual Arena.
         </p>
       </div>
       
       <div id="sub-section-6-header-4">
         <h3>6.4 Test of Crazyflie in the Pillar Area</h3>
         <p>
-          In conducting tests in the Pillar area, we were looking to validate two factors: 1. The Crazyflies
-          can fly in a stable manner between the pillars, and 2. The Crazyflies are able to navigate their way
-          around the pillars to move towards the victim both within and beyond the pillar area.
+          In conducting tests in the Pillar Area, we were looking to validate two factors: 1. The Crazyflies
+          can fly in a stable manner between the Pillars, and 2. The Crazyflies are able to navigate their way
+          around the Pillars to move towards the victim both within and beyond the Pillar Area.
           <br/><br/>
           The test was conducted by allowing the Crazyflies flashed with the wall-following or bug algorithm used
-          in the rest of the area to fly within the pillar zone and observe its performance.
+          in the rest of the area to fly within the Pillar Area and observe its performance.
         </p>
 
         <video-component tag="video" source="https://www.youtube.com/embed/-OyrP666mzA?si=ktmBxre95ZHss4CD" subtitle="Figure 6.4: Video of Results of Tests"></video-component>
@@ -995,13 +998,13 @@
         <p>
           The results show the following (Figure 6.4.1):
           <br/><br/>
-          <b>1</b>.	The Crazyflies can fly in a stable manner between pillars<br/><br/>
-          While in flight between the pillars, the presence of these obstacles to its left and right did not affect
+          <b>1</b>.	The Crazyflies can fly in a stable manner between Pillar Obstacless<br/><br/>
+          While in flight between the Pillar Obstacles, the presence of these obstacles to its left and right did not affect
           the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
           <br/><br/>
-          <b>2</b>.	The Crazyflies were not able to reliably detect the presence of pillars<br/><br/>
-          While the current bug algorithm was able to allow the Crazyflies to detect the pillars and fly around them
-          most of the time. However, at very specific angles, the multi-ranger deck would not be able to detect the pillars
+          <b>2</b>.	The Crazyflies were not able to reliably detect the presence of Pillars Obstacles<br/><br/>
+          While the current bug algorithm was able to allow the Crazyflies to detect the Pillar Obstacless and fly around them
+          most of the time. However, at very specific angles, the multi-ranger deck would not be able to detect the Pillar Obstacles
           and cause the Crazyflies to fly head-on towards it.
         </p>
 
@@ -1010,10 +1013,10 @@
         <p>
           This limitation arises from the fact that the multi-ranger deck has only 4 sensors used in the distance sensing in the
           x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 4.3.5), none of
-          the sensors can pick up the pillar which results in the Crazyflie wrongly believing that it is in free space. It would
-          then plan its path based off this assumption and potentially crash head-on into the pillar.<br/><br/>
-          Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the pillar area to allow it to
-          reliably detect the pillars and navigate around them without crashing into them.
+          the sensors can pick up the Pillar which results in the Crazyflie wrongly believing that it is in free space. It would
+          then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
+          Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the Pillar Area to allow it to
+          reliably detect the Pillar Obstacles and navigate around them without crashing into them.
         </p>
       </div>
 
@@ -1022,9 +1025,9 @@
         <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
                          subtitle="Figure 6.6: Possible Zig-Zag Flight Path to Counter Non-Detection of Pillars"></image-component>
         <p>
-          In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the pillars and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
+          In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the Pillar Obstacless and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
           <br/><br/>
-          One such path-finding strategy would involve the use of a zig-zag flight path in the pillar area. This would increase the chance of the drone picking up the pillar in its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the multiranger deck as seen in testing. This would mean that even where the drones are in the state of non-detection as seen on the left in Figure 6.5.1, a change in direction can allow it to move towards a state of detection as seen on the right.
+          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar in its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the multiranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.5.1, a change in direction can allow it to move towards a state of detection as seen on the right.
         </p>
       </div>
 
@@ -1062,7 +1065,7 @@
       <h3>7.2 Webot Simulation of Crazyflies Performing MSBA</h3>
       <p>
         A swarm with 3 Crazyflies are simulated to perform MSBA in a 5 m x 6 m environment that was representative of the 
-        physical arena used to perform the interim system integration test (CF2_SGBA_demo.wbt) in <a href="#sub-section-8-header-2">Section 8.2</a>. In this test, the three Crazyflies have the following configuration. Within the arena, the bottom 5 m x 1 m area was designated.
+        physical Arena used to perform the interim system integration test (CF2_SGBA_demo.wbt) in <a href="#sub-section-8-header-2">Section 8.2</a>. In this test, the three Crazyflies have the following configuration. Within the Arena, the bottom 5 m x 1 m area was designated.
       </p>
       <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
         <div id="msba-configuration"></div>
@@ -1108,8 +1111,8 @@
                          subtitle="Figure 8.1: SAFMC 2025 Competition Arena"></image-component>
           <p>
             The Competition Arena is a 20 m x 20 m space that comprises a Known Area, Unknown Area
-            and Pillar Area (Figure 8.1). While we would ideally have to test at a full-scale arena before
-            the actual competition, it would be more practical to have a smaller-scale arena that is more
+            and Pillar Area (Figure 8.1). While we would ideally have to test at a full-scale Arena before
+            the actual competition, it would be more practical to have a smaller-scale Arena that is more
             accessible to conduct more regular testing.
           </p>
           <image-component tag="image" source="assets/matthew/tlabComputerRoom.png"
@@ -1158,7 +1161,7 @@
             <br/><br/>
             From the drift test, it was found that the average displacement of ∆x_average=12.6 cm and ∆y_average=9.17 cm shows that the Crazyflie tended to drift forward and to the right from their initial positions. This drift pattern is consistent with observations made in the Temasek Laboratories computer room. Both ∆x_average and ∆y_average values fall within an acceptable error margin, especially considering that the minimum wall-to-wall distance on competition day is 1 m—making these drift values relatively minor by comparison.
             <br/><br/>
-            With the two tests providing valuable results, we conclude that iDP Studio 1 is a suitable place for Crazyflie testing and therefore our choice of venue to build our scale model of the arena.
+            With the two tests providing valuable results, we conclude that iDP Studio 1 is a suitable place for Crazyflie testing and therefore our choice of venue to build our scale model of the Arena.
           </p>
   
       </div>
@@ -1218,11 +1221,11 @@
         subtitle="Figure 8.8: Layout of Run 2"></image-component>
 
         <p>
-          For run 2, we modified the arena such that it is a smaller version of the actual Arena (Figure 8.8), where there is an Unknown Search Area in the centre of the Arena. In this run, the distance between Pillar Obstacle and Inner Wall is 1 m. 
+          For run 2, we modified the Arena such that it is a smaller version of the actual Arena (Figure 8.8), where there is an Unknown Search Area in the centre of the Arena. In this run, the distance between Pillar Obstacle and Inner Wall is 1 m. 
           </p>
         
           <p>
-          We observe that Crazyflie 2 did not pass through the area between the Pillar Obstacle and the Inner Wall, despite continuously approaching this area. Crazyflie 2 was not able to break out of this loop. As such, we conclude that we need to implement a loop detection in our search algorithm so that the other Crazyflies can break out of this loop in similar scenarios. However, the wall distance of 0.8 m for Crazyflie was too large for a 1 m pillar-to-wall distance. Furthermore, the Crazyflie did not enter the "Unknown Search Area”. This led us to the conclusion that our team requires a larger test arena (of 1:1 or 1:2 scale) for accurate testing.
+          We observe that Crazyflie 2 did not pass through the area between the Pillar Obstacle and the Inner Wall, despite continuously approaching this area. Crazyflie 2 was not able to break out of this loop. As such, we conclude that we need to implement a loop detection in our search algorithm so that the other Crazyflies can break out of this loop in similar scenarios. However, the wall distance of 0.8 m for Crazyflie was too large for a 1 m Pillar-to-Wall distance. Furthermore, the Crazyflie did not enter the "Unknown Search Area”. This led us to the conclusion that our team requires a larger test Arena (of 1:1 or 1:2 scale) for accurate testing.
           </p>
         <video-component tag="video" source="https://www.youtube.com/embed/pSzdsZPPaq0?si=wisSBEOyDS_sFoSb"
         subtitle="Figure 8.9: Video of Run 2"></video-component>
@@ -1241,11 +1244,11 @@
           <h3>9.1 Mission Planning</h3>
 
           <p>
-            Mission Planning integrates the development of all subsystems described in previous sections. Its goal is to design and organize the Crazyflies and strategies needed to achieve the fastest and safest run during the Competition Day Mission. Full-scale testing, covered in the next section, will assess mission planning strategies for the Crazyflies' attitude, velocity, and search algorithms within a 20m x 20m arena.
+            Mission Planning integrates the development of all subsystems described in previous sections. Its goal is to design and organize the Crazyflies and strategies needed to achieve the fastest and safest run during the Competition Day Mission. Full-scale testing, covered in the next section, will assess mission planning strategies for the Crazyflies' attitude, velocity, and search algorithms within a 20 m x 20 m Arena.
             </p>
 
           <p>
-            Additionally, we propose to segment the arena into specific areas as part of our strategy, and each area is assigned a group of Crazyflies. The Known Search Area, the largest section, will have six Crazyflies assigned, while the Unknown Search Area will be covered by four Crazyflies, and the smallest section, the Pillar Area, will have three Crazyflies. Overloading the Pillar Area with Crazyflies could lead to collisions due to its narrow and restricted paths. Additionally, the Crazyflies’ multi-ranger sensors have a limited detection angle, further restricting their ability to detect obstacles.
+            Additionally, we propose to segment the Arena into specific areas as part of our strategy, and each area is assigned a group of Crazyflies. The Known Search Area, the largest section, will have six Crazyflies assigned, while the Unknown Search Area will be covered by four Crazyflies, and the smallest section, the Pillar Area, will have three Crazyflies. Overloading the Pillar Area with Crazyflies could lead to collisions due to its narrow and restricted paths. Additionally, the Crazyflies’ multi-ranger sensors have a limited detection angle, further restricting their ability to detect obstacles.
             </p>
 
           <p>
