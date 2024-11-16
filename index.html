@@ -136,7 +136,7 @@
           <li><a href="#sub-section-6-header-1">6.1 Known and Unknown Search Area</a></li>
           <li><a href="#sub-section-6-header-2">6.2 Addition of Pillar Area</a></li>
           <li><a href="#sub-section-6-header-3">6.3 Search for Objects to Replicate Pillars for Testing</a></li>
-          <li><a href="#sub-section-6-header-4">6.4 Test of Crazyflie Drones in the Pillar Area</a></li>
+          <li><a href="#sub-section-6-header-4">6.4 Test of Crazyflie in the Pillar Area</a></li>
           <li><a href="#sub-section-6-header-5">6.5 Future Work In Collision Avoidance</a></li>
         </ul>
       </li>
@@ -561,7 +561,7 @@
           <h3>3.2 Object Detection</h3>
           <p>
             The introduction of new obstacles does not only require a revamp of the search strategy, but also a revised approach on the 
-            object detection methods. With the presence of an Unknown Area, Danger Zones and Pillars, we will need to re-evalute our current 
+            object detection methods. With the presence of an Unknown Search Area, Danger Zones and Pillar Obstacles, we will need to re-evalute our current 
             object detection method and explore other methods before finalising on the method that is best suited for our use case. 
           </p>
   
@@ -571,8 +571,7 @@
           <h3>3.3 Navigation Aids</h3>
           <p>
             With the presence of new obstacles, the use of Navigation Aids to help us in our search of the Victims Markers varies significantly. 
-            There are many more use cases for navigations aids this year, especially in more tricky areas like the Unknown Seach Area and the Pillar 
-            Area. 
+            There are many more use cases for navigations aids this year, especially in more tricky areas like the Unknown Seach Area and the Pillar Area. 
           </p>
 
           <p>
@@ -680,7 +679,7 @@
         subtitle="Figure 4.2: Map Produced Using Multiranger Deck"></image-full>
 
         <p>
-          Figure 4.2 above shows one of the map produced during one of our test runs. The Crazyflie crashed during the first test as it did not detect the Pillar. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as the Pillar Obstacles. 
+          Figure 4.2 above shows one of the map produced during one of our test runs. The Crazyflie crashed during the first test as it did not detect the Pillar Obstacles. This highlights the key limitation of the sensor in that its view is small and so may not be able to detect slim obstacles such as the Pillar Obstacles. 
         </p>
 
         <p>
@@ -936,7 +935,7 @@
           <h2>6 Obstacle Avoidance</h2>
 
           <p>
-            In the Arena, the Crazyflies encounter a mixture of Inner Walls and Pillar Obstacles. The Known and Unknown Search Areas contain only Inner Walls as obstacles, while the Pillar Zone includes only Pillar Obstacles and no Inner Walls.
+            In the Arena, the Crazyflies encounter a mixture of Inner Walls and Pillar Obstacles. The Known and Unknown Search Areas contain only Inner Walls as obstacles, while the Pillar Area includes only Pillar Obstacles and no Inner Walls.
             </p>
 
       </div>
@@ -954,7 +953,7 @@
           <image-component tag="image" source="assets/matthew/arenaWithPillarZone.png"
             subtitle="Figure 6.1: SAFMC 2025 Arena"></image-component>
         <p>
-          In SAFMC 2025, there is the addition of the “Pillar Area” which consists of only Pillars (of 30 cm diameter) and no additional walls placed in that area (Figure 6.1). Hence, a different approach from that used in the rest of the Arena may have to be taken considering the differences in this area.
+          In SAFMC 2025, there is the addition of the Pillar Area which consists of only Pillars (of 30 cm diameter) and no additional walls placed in that area (Figure 6.1). Hence, a different approach from that used in the rest of the Arena may have to be taken considering the differences in this area.
         </p>
       </div>
 
@@ -985,8 +984,8 @@
         <h3>6.4 Test of Crazyflie in the Pillar Area</h3>
         <p>
           In conducting tests in the Pillar Area, we were looking to validate two factors: 1. The Crazyflies
-          can fly in a stable manner between the Pillars, and 2. The Crazyflies are able to navigate their way
-          around the Pillars to move towards the victim both within and beyond the Pillar Area.
+          can fly in a stable manner between the Pillar Obstacles, and 2. The Crazyflies are able to navigate their way
+          around the Pillar Obstacles to move towards the victim both within and beyond the Pillar Area.
           <br/><br/>
           The test was conducted by allowing the Crazyflies flashed with the wall-following or bug algorithm used
           in the rest of the area to fly within the Pillar Area and observe its performance.
@@ -997,17 +996,17 @@
         <p>
           The results show the following (Figure 6.4):
           <br/><br/>
-          <b>1</b>.	The Crazyflies can fly in a stable manner between Pillar Obstacless<br/><br/>
+          1.	The Crazyflies can fly in a stable manner between Pillar Obstacless<br/><br/>
           While in flight between the Pillar Obstacles, the presence of these obstacles to its left and right did not affect the stability of flight nor did it affect its ability to maintain a constant altitude off the ground.
           <br/><br/>
-          <b>2</b>.	The Crazyflies were not able to reliably detect the presence of Pillars Obstacles<br/><br/>
+          2.	The Crazyflies were not able to reliably detect the presence of Pillar Obstacles<br/><br/>
           While the current bug algorithm was able to allow the Crazyflies to detect the Pillar Obstacless and fly around them most of the time. However, at very specific angles, the Multi-ranger deck would not be able to detect the Pillar Obstacles and cause the Crazyflies to fly head-on towards it.
         </p>
 
-        <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up Pillars"></image-component>
+        <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up the Pillar Obstacles"></image-component>
 
         <p>
-          This limitation arises from the fact that the Multi-ranger deck has only 4 sensors used in the distance sensing in the x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 6.5), none of the sensors can pick up the Pillar which results in the Crazyflie wrongly believing that it is in free space. It would then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
+          This limitation arises from the fact that the Multi-ranger deck has only 4 sensors used in the distance sensing in the x-y plane which include the forward, backwards, left and right sensors. At this angle as shown (Figure 6.5), none of the sensors can pick up the Pillar Obstacles which results in the Crazyflie wrongly believing that it is in free space. It would then plan its path based off this assumption and potentially crash head-on into the Pillar.<br/><br/>
           Hence, more work needs to be done to optimise the search algorithm of the Crazyflies in the Pillar Area to allow it to reliably detect the Pillar Obstacles and navigate around them without crashing into them.
         </p>
       </div>
@@ -1017,9 +1016,9 @@
         <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
                          subtitle="Figure 6.6: Possible Zig-Zag Flight Path to Counter Non-Detection of Pillars"></image-component>
         <p>
-          In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the Pillar Obstacless and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
+          In the Pillar Area, the focus of the future work would be to optimise the algorithm to prevent it from colliding with the Pillar Obstacles and to navigate around them. This would likely involve the use of different path-finding algorithms from that used in the rest of the area and may require the use of dedicated Crazyflies to search this area.
           <br/><br/>
-          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar in its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the Multi-ranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.6, a change in direction can allow it to move towards a state of detection as seen on the right.
+          One such path-finding strategy would involve the use of a zig-zag flight path in the Pillar Area. This would increase the chance of the Crazyflie picking up the Pillar Obstacles within its line of sight by allowing it to continuously change its direction and minimise blind spots in its detection using the Multi-ranger deck as seen in testing. This would mean that even where the Crazyflies are in the state of non-detection as seen on the left in Figure 6.6, a change in direction can allow it to move towards a state of detection as seen on the right.
         </p>
       </div>
 
