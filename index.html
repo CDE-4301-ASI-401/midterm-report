@@ -32,6 +32,8 @@
   <script type="module" src="./components/msba-configuration/msba-configuration.js"></script>
 
   <script type="module" src="./components/drift-test/drift-test.js"></script>
+  
+  <script type="module" src="./components/drone_platform_selection/drone_platform_selection.js"></script>
 
   <script type="module" src="./components/run1_params/run1_params.js"></script>
 
@@ -189,7 +191,7 @@
         </ul>
       </li>
   
-      <li><a href="#appendices" onclick="showSection('appendices')">Appendix A</a></li>
+      <li><a href="#appendices" onclick="showSection('appendices')">Appendix A: Decision Matrix for Selection of Drone Development Platform</a></li>
 
       <li><a href="#references" onclick="showSection('references')">References</a></li>
     </ul>
@@ -497,7 +499,7 @@
     <br />
 
       <div id="section-header-2" class="section" style="display: none;">
-        <h2>2. Selected Drone PLatform </h2>
+        <h2>2. Selected Drone Platform </h2>
 
       <div id="sub-section-2-header-1">
         <h3>2.1 Hardware: BitCraze Crazyflie</h3>
@@ -942,9 +944,47 @@
     <br />
 
       <div id="appendices" class="section" style="display: none;">
-          <h2>Appendix A</h2>
+          <h2>Appendix A: Decision Matrix for Selection of Drone Development Platform</h2>
 
-          
+
+          <drone_platform_selection subtitle="Table 1.0: C5">
+            <div id="drone_platform_selection"></div>
+          </drone_platform_selection>    
+
+
+          <p> 
+            The selection of drone platform was based on six equal-weighed key factors, size and weight, hardware modularity, software modularity, sensor capability, cost, and parts availability. For each factor, the drone platform is given a score out of 5, the higher the better.           
+
+
+          </p>
+
+          <ul style="list-style-type: decimal; padding: 0; margin: 0; text-align: justify;">
+            <li>
+              A smaller and lighter drone enhances manoeuvrability, especially in confined spaces, and improves swarm scalability. Among the evaluated platforms, the Bitcraze Crazyflie is the smallest and lightest, followed by the DJI Tello, which has a slightly larger size and higher weight.
+              <br></br>
+            </li>
+            <li>
+              A modular hardware design allows for easy upgrades and component replacements. Higher scores indicate greater flexibility in adding or replacing components. Crazyflie and DEXI are highly modular, as both suppliers provide spare parts and easily swappable components. DEXI scores higher since certain parts, like its onboard computer (Raspberry Pi), are off-the-shelf, whereas Bitcraze relies on a custom PCB. DJI Tello, in contrast, only offers spare parts for specific components like propellers and propeller guards.
+              <br></br>
+            </li>
+            <li>
+              Open-source software and compatibility with frameworks like ROS are crucial to provide better software flexibility, developer support, and ease of integration. Crazyflie and DEXI both have high scores as both have open-source software. However, DEXI ranks higher as its on-board computer (Raspberry Pi) provides greater processing power and flexibility compared to Crazyflie’s STM microcontroller. DJI Tello has a low score of 2 due to it running on a proprietary software.
+              <br></br>
+            </li>
+            <li>
+              The drone must support onboard sensors for localization, obstacle detection, and avoidance. A higher score is given to platforms with more built-in or easily integrable sensors.  Crazyflie and DEXI have high scores as both offer the same sensor suite such as optical flow sensors, multi-TOF distance sensors, camera etc. On the other hand, DJI Tello only contains a camera module, limiting its capabilities to vision-based solutions.
+              <br></br>
+            </li>
+            <li>
+              The cost of each platform should be reasonable as they will be scaled up to form a swarm. In terms of pricing per unit, DJI Tello is the most affordable at USD 109, while Crazyflie, including the additional sensor decks cost USD 640. The DEXI Level III is the most expensive at USD 2000.
+              <br></br>
+            </li>
+            <li>
+              Readily available drones and spare parts ensure ease of maintenance. DJI and Bitcraze both have authorized retailers in Singapore, making their spare parts highly accessible. However, DEXI only operate in the United States, requiring international shipping for spare parts, which leads to increased lead time and cost.
+              <br></br>
+            </li>
+          </ul>
+
       </div>
 
     <br />
@@ -953,7 +993,7 @@
     <div id="references" class="section" style="display: none;">
       
       <h2>References</h2>
-      <ul>
+      <ul style="list-style-type: decimal; padding: 0; margin: 0; text-align: justify;">
         <li>
           Bitcraze. (2021). AI-deck monocrome camera module. Bitcraze Store. https://store.bitcraze.io/products/ai-deck-monocrome-camera-module
         </li>
