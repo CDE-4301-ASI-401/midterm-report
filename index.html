@@ -23,21 +23,15 @@
 
   <script type="module" src="./components/table-of-abbreviations/table-of-abbreviations.js"></script>
   
-  <script type="module" src="./components/scope-of-work/scope-of-work.js"></script>
-
   <script type="module" src="./components/comparision-safmc/comparison-safmc.js"></script>
-  
-  <script type="module" src="./components/comparison-raw-jpeg/comparison-raw-jpeg.js"></script>
 
+  <script type="module" src="./components/comparision-image-processing/comparison-image-processing.js"></script>
+  
   <script type="module" src="./components/msba-configuration/msba-configuration.js"></script>
 
-  <script type="module" src="./components/drift-test/drift-test.js"></script>
-  
   <script type="module" src="./components/drone_platform_selection/drone_platform_selection.js"></script>
 
   <script type="module" src="./components/run1_params/run1_params.js"></script>
-
-  <script type="module" src="./components/key-events/key-events.js"></script>
   
   <script type="module" src="./components/image/image-component.js"></script>
 
@@ -615,27 +609,30 @@
       <div id="section-header-4" class="section" style="display: none;">
       <h2>4. Object Detection (Shu Hui)</h2>
 
+      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_1_hardware.png"
+    subtitle="Figure 4.1: Hardware for Object Detection"></image-component>
+
     <div id="sub-section-4-header-1">
       <h3>4.1 Object Selection</h3>
-      
-      <image-component tag="image" source="./assets/section-5/figure_5_1_components_on_ai_deck.png"
-    subtitle="Figure 5.1: Components on AI Deck"></image-component>
+          <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_2_objects.png"
+    subtitle="Figure 4.2: Regular/Bonus Victims, Danger Markers and Navigation Aids"></image-component>
 
     </div>
 
     <div id="sub-section-4-header-2">
       <h3>4.2 Onboard Detection</h3>
 
-      <image-component tag="image" source="assets\section-5\figure_5_2_AprilTags_as_our_target_type.png"
-    subtitle="Figure 4.2 AprilTags as Our Target Type"></image-component>
+      <comparison-image-processing subtitle="Table 3.0: Advantages between On-board Processing and Off-board Processing (Bitcraze, n.d.)">
+        <div id="comparison-image-processing"></div>
+      </comparison-image-processing>    
     
     </div>
 
     <div id="sub-section-4-header-3">
         <h3>4.3 Offboard Detection</h3>
+    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_4_camera_mount_angles.png"
+    subtitle="Figure 4.3: Camera Mount Angles"></image-component>
 
-        <image-component tag="image" source="./assets/section-5/figure_5_3_camera_mount_at_0 °_45°_and_90°_with_respect_to_the_vertical_axis.png"
-        subtitle="Figure 5.3: Camera Mount At 0 °, 45° and 90° With Respect to the Vertical Axis"></image-component>
 
 
     </div>
@@ -643,16 +640,26 @@
     <div id="sub-section-4-header-4">
       <h3>4.4 Optimising Detection Distance for the Drone</h3>
 
-      <image-component tag="image" source="./assets/section-5/figure_5_4_original_vs_updated_image_streaming_firmware.png"
-      subtitle="Figure 5.4: Original Image Streaming Firmware (Left); Updated Image Streaming Firmware (Right)"></image-component>
+    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_5_graph_distance_vs_speed.png"
+    subtitle="Figure 4.5: Graph of Vertical Distance from AprilTag (cm) vs Speed (m/s)"></image-component>
+
+    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_6_graph_distance_vs_height.png"
+    subtitle="Figure 4.6: Graph of Vertical Distance from AprilTag (cm) vs Height (m)"></image-component>
+
+    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_7_landing_distance.png"
+    subtitle="Figure 4.7: Detection Distance With Delay Implemented"></image-component>
+
+    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_8_original_vs_updated_image_streaming.png"
+    subtitle="Figure 4.8: Original Image Streaming Firmware (Left)  and Updated Image streaming Firmware (Right)"></image-component>
 
     </div>
 
     <div id="sub-section-4-header-5">
       <h3>4.5 External System Optimisation</h3>
 
-      <image-full tag="image" source="./assets/section-5/figure_5_5_victim_and_danger_zone_detection_chart.png"
-      subtitle="Figure 5.5: Victim and Danger Zone Detection Chart"></image-full>
+    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_12_router.png"
+    subtitle="Figure 4.12: Old Router Setup and Modified Router Setup"></image-component>
+
 
     </div>
 
