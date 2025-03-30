@@ -31,8 +31,8 @@
 
   <script type="module" src="./components/drone_platform_selection/drone_platform_selection.js"></script>
 
-  <script type="module" src="./components/run1_params/run1_params.js"></script>
-  
+  <script type="module" src="./components/decision-matrix-pillar/decision-matrix-pillar.js"></script>
+
   <script type="module" src="./components/image/image-component.js"></script>
 
   <script type="module" src="components/image/image-full.js"></script>
@@ -754,7 +754,6 @@
           <video-component tag="video" source="https://www.youtube.com/embed/nrzu8jDMEnc?si=CZcKq72jN3VzLVef"
           subtitle="Figure 7.3: Video of Swarm of 3 Crazyflies Performing MSBA in Webots"></video-component>
           
-   
 
           <div id="sub-section-6-header-2-header-1">
             <h4>6.2.1 Drone Guidance to the Unknown Area</h4>
@@ -788,23 +787,39 @@
         <div id="sub-section-7-header-1">
           <h3>7.1 Introduction to the Pillar Area</h3>
 
-  
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_1_pillar_area.png"
+          subtitle="Figure 7.1: Pillar Area"></image-component>
+
         </div>
 
         <div id="sub-section-7-header-2">
-          <h3>7.2 Mock-Up of the Pillar Are</h3>
-            <image-component tag="image" source="assets/matthew/arenaWithPillarZone.png"
-              subtitle="Figure 6.1: SAFMC 2025 Arena"></image-component>
+          <h3>7.2 Mock-Up of the Pillar Area</h3>
+
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_2_mock_pillars.png"
+          subtitle="Figure 7.2: Mock Pillars Used in The Arena, Left Was Wrapped with Paper to Get the Right Pillar on The Right Image"></image-component>
+
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_3_testing_pillar_area.jpg"
+          subtitle="Figure 7.3: Testing Of Pillar Area in IDP Studio 1 (Mention Height of The Chair / Chair + Pillar Combo)"></image-component>
 
         </div>
 
         <div id="sub-section-7-header-3">
           <h3>7.3 Testing of Search Strategies Within</h3>
 
-          <image-component tag="image" source="assets/matthew/oldPillar.png"
-                            subtitle="Figure 6.2: Electrical Pipes Used to Simulate Pillar Area"></image-component>
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_4_strat_A.png"
+          subtitle="Figure 7.4: Description of Search Strategy A"></image-component>
+
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_5_strat_B.png"
+          subtitle="Figure 7.5: Description of Search Strategy B"></image-component>
+
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_6_strat_C.png"
+          subtitle="Figure 7.6: Description of Search Strategy C"></image-component>
 
           <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Crazyflies Hovering Between New Styrofoam Blocks"></video-component>
+
+          <decison-matrix-pillar subtitle="Table 4.0: Decision Matrix for Pillar Area Strategy">
+            <div id="decison-matrix-pillar"></div>
+          </decison-matrix-pillar>    
 
         </div>
         
@@ -813,7 +828,6 @@
 
           <video-component tag="video" source="https://www.youtube.com/embed/-OyrP666mzA?si=ktmBxre95ZHss4CD" subtitle="Figure 6.4: Video of Results of Tests"></video-component>
 
-          <image-component tag="image" source="assets/matthew/lineOfSightDoesNotPickUpPillar.png" subtitle="Figure 6.5: Line of Sight Does Not Pick Up the Pillar Obstacles"></image-component>
 
           <div id="sub-section-7-header-4-header-1">
             <h4>7.4.1 Sliding to the Side When Near a Pillar</h4>
@@ -821,13 +835,21 @@
 
           <div id="sub-section-7-header-4-header-2">
             <h4>7.4.2 Navigation Aid to Reverse at the End of the Pillar Area</h4>
+
+            <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_8_reverse.png"
+            subtitle="Figure 7.8: Reverse"></image-component>
+
           </div>
         </div>
 
         <div id="sub-section-7-header-5">
-          <h3>7.5 Future Algorithm</h3>
-          <image-component tag="image" source="assets/matthew/zigZagFlightPath.png"
-                          subtitle="Figure 6.6: Possible Zig-Zag Flight Path to Counter Non-Detection of Pillars"></image-component>
+          <h3>7.5 Full Algorithm</h3>
+
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_9_1_full_algo.png"
+          subtitle="Figure 7.9: Full Algorithm"></image-component>
+
+          <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_9_2_full_algo.png"
+          subtitle="Figure 7.9: Full Algorithm"></image-component>
 
         </div>
     </div>
