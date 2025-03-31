@@ -113,7 +113,9 @@
           <li><a href="#sub-section-5-header-2">5.2 Modified Swarm Bug Algorithm</a></li>
           <li><a href="#sub-section-5-header-3">5.3 Initial Proposal Strategy Using MSBA</a></li>
           <li><a href="#sub-section-5-header-4">5.4 Simulation to Evaluate Search Strategy</a></li>
-          <li><a href="#sub-section-5-header-5">5.5 Real Life Testing</a></li>
+          <li><a href="#sub-section-5-header-5">5.5 Improvements to MSBA</a></li>
+          <li><a href="#sub-section-5-header-6">5.6 Real Life Testing</a></li>
+          <li><a href="#sub-section-5-header-7">5.7 Final MSBA Parameters</a></li>
 
         </ul>
       </li>
@@ -198,7 +200,7 @@
 
       <h1>CDE4301 Innovation & Design Capstone</h1>
 
-      <h1>AY2024/2025 Semester 1</h1>
+      <h1>AY2024/2025 Semester 2</h1>
 
       <h1>ASI-401: Indoor Search Using Swarm of Drones</h1>
 
@@ -664,43 +666,82 @@
       <div id="section-header-5" class="section" style="display: none;">
           <h2>5. Known Search Area (Yan Yew)</h2>
 
-
       <div id="sub-section-5-header-1">
         <h3>5.1 Selection of Search Algorithms</h3>
 
-        <image-full tag="image" source="assets/section-4/figure 4_2_map_using_multiranger.png"
-        subtitle="Figure 4.2: Map Produced Using Multiranger Deck"></image-full>
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_1_parallel_sweep_search.png"
+          subtitle="Figure 5.1: Desired Paths of Two Drones Performing Parallel Sweep Search"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_2_pre_planned_flight_path.png"
+          subtitle="Figure 5.2: Pre-planned flight path strategy: Diagram illustrating the drone’s movement from the start area to point X. "></image-component>
 
       </div>
 
       <div id="sub-section-5-header-2">
       <h3>5.2 Modified Swarm Bug Algorithm</h3>
 
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_3_MSBA.png"
+          subtitle="Figure 5.3: Visualization of MSBA"></image-component>
+
       </div>
 
       <div id="sub-section-5-header-3">
-        <h3>5.3 Initial Proposal Strategy Using MSBA</h3>
+        <h3>5.3 Initial Proposal Strategy Using MSBA</h3>          
+        <image-component tag="image" source="./assets/section-5-known-area/figure_5_4_maximise_coverage.png"
+          subtitle="Figure 5.4: Strategy to maximise search coverage using 9 drones running MSBA"></image-component>
 
-        <image-full tag="image" source="assets\section-4\figure_4_3_illustration_of_MSBA.png"
-        subtitle="Figure 4.3: Illustration of MSBA"></image-full>
-
-        <image-full tag="image" source="assets\section-4\figure_4_4_navigation_architecture_diagram_of_MSBA_Running_onboard_of_crazyflie.png"
-        subtitle="Figure 4.4: Navigation Architecture Diagram of MSBA Running Onboard of Crazyflie"></image-full>
-
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_5_initial_configuration.png"
+          subtitle="Figure 5.5: Initial configurations of drones in the start area"></image-component>
       </div>
 
       <div id="sub-section-5-header-4">
         <h3>5.4 Simulation to Evaluate Search Strategy</h3>
-        
+
+
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_6_firmware_onboard.png"
+          subtitle="Figure 5.6: Architecture diagram of firmware on board of real Crazyflie"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_7_firmware_webots.png"
+          subtitle="Figure 5.7: Architecture diagram of simulated Crazyflie in Webots"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_8_webots_simulation_environment.png"
+          subtitle="Figure 5.8: Webots Simulation Environment"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_1_simulation.png"
+          subtitle="Figure 5.9: (a) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutes"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_2_simulation.png"
+          subtitle="Figure 5.9: (b) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutesp"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_3_simulation.png"
+          subtitle="Figure 5.9: (c) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutes"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_4_simulation.png"
+          subtitle="Figure 5.9:(d) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutes"></image-component>
       </div>
 
       <div id="sub-section-5-header-5">
-        <h3>5.5 Real Life Testing</h3>
+        <h3>5.5 Improvements to MSBA</h3>
         
-        </p>
       </div>
 
-   
+      <div id="sub-section-5-header-6">
+        <h3>5.6 Real Life Testing</h3>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_11_small_scale_test.png"
+          subtitle="Figure 5.11:. Small-scale test environment in E2A Studio 1"></image-component>
+
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_12_wall_guard.png"
+          subtitle="Figure 5.12: Wall-guard navigation aid used to increase thickness of wall edges"></image-component>
+
+      </div>
+
+      <div id="sub-section-5-header-7">
+        <h3>5.7 Final MSBA Configurations</h3>
+        
+      </div>
+
     </div>
 
       <br />
@@ -713,42 +754,39 @@
   
         <div id="sub-section-6-header-1">
           <h3>6.1  Feasibility Resting of Simulatanous Mapping and Localisation</h3>
-          <p>
-            Using Webots, a swarm of Crazyflie was simulated to run the identical MSBA code used in the actual deployment. Since Webots does not support software-in-the-loop and integration with Crazyflie firmware, a few modifications were made to allow the testing of the actual code intended for Crazyflie deployment within the simulation environment.
-          </p>
-  
-          <p>
-            A Webots controller was developed to interface the simulated hardware, including sensors and motors, with the MSBA algorithm. The navigation architecture of the simulated Crazyflie is shown in Figure 7.1. 
-            The controller code, available in this <a href="https://github.com/CDE-4301-ASI-401/Webots_CF2/blob/main/controllers/SGBA_Controller/SGBA_Controller.c" target="_blank">GitHub repository</a>, processes sensor data from the simulated Crazyflie and feeds it to the MSBA algorithm. Using these inputs, the MSBA script calculates the necessary velocity in the x and y directions and the yaw rate required to achieve the desired motion. This information is then passed back to the Webots controller, which initializes the Bitcraze-developed PID flight controller to determine the required individual motor velocities. Finally, the Webots controller applies these motor velocities to control the Crazyflie's movement, allowing it to execute the MSBA strategy in the simulated environment.
-          </p>
-  
-          <image-full tag="image" source="./assets/section-7/figure_7_1_navigation_architecture_diagram_of_simulated_crazyflie.png"
-          subtitle="Figure 7.1: Navigation Architecture Diagram of Simulated Crazyflie"></image-full>
+
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_1_enclosed_space.png"
+          subtitle="Figure 6.1: Enclosed space (4m by 5m) set up to test Crazyflie SLAM performance"></image-component>
+
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_2_occupacy_map.png"
+          subtitle="Figure 6.2: Occupancy map produced by single Crazyflie when its back TOF sensor was obstructed"></image-component>
+
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_3_router.png"
+          subtitle="Figure 6.3: Obstructed TOF sensor on Crazyflie’s Mult-Ranger deck"></image-component>
+
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_4_1_occupacy_map.png"
+          subtitle="Figure 6.4: (a) Occupancy map produced by Crazyflie performing wall-following"></image-component>
+
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_4_2_occupacy_map.png"
+          subtitle="Figure 6.4: (b) Occupancy map produced by Crazyflie performing wall-following"></image-component>
+
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_4_3_occupacy_map.png"
+          subtitle="Figure 6.4: (c) Occupancy map produced by Crazyflie performing wall-following"></image-component>
         
         </div>
   
         <div id="sub-section-6-header-2">
           <h3>6.2 Implementation of MSBA</h3>
 
-          <msba-configuration subtitle="Table 4.0: MSBA Configuration of Simulated Crazyflies in Webots">
-            <div id="msba-configuration"></div>
-          </msba-configuration>
 
-          <br><br>
 
-          <image-component tag="image" source="./assets/section-7/figure_7_2_path_of_3_crazyflie_simulated_in_webots.png"
-          subtitle="
-          Figure 7.2: Path of 3 Crazyflie Simulated in Webots Using the Configuration in Table 4.0 (Green) Crazyflie 1 Path; (Pink) Crazyflie 2 Path; (Blue) Crazyflie 3 Path
-          "></image-component>
-
-          <br><br>
-
-          <video-component tag="video" source="https://www.youtube.com/embed/nrzu8jDMEnc?si=CZcKq72jN3VzLVef"
-          subtitle="Figure 7.3: Video of Swarm of 3 Crazyflies Performing MSBA in Webots"></video-component>
-          
+       
 
           <div id="sub-section-6-header-2-header-1">
             <h4>6.2.1 Drone Guidance to the Unknown Area</h4>
+
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_6_desired_paths.png"
+          subtitle="Figure 6.6: Desired paths of Group 1 and Group 2 drones to navigate from Start Area to the Unknown Area"></image-component>
 
           </div>
 
