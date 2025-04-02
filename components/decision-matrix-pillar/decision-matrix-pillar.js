@@ -51,4 +51,4 @@ class TableComponent extends HTMLElement {
   }
 }
 
-customElements.define("decison-matrix-pillar", TableComponent);
+customElements.define("decision-matrix-pillar", TableComponent);
