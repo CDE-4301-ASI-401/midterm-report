@@ -483,15 +483,26 @@
 
       <div id="section-header-2" class="section" style="display: none;">
         <h2>2. Selected Drone Platform </h2>
-
+          <p>
+            Given the project’s scope, an off-the-shelf drone platform was used in this project as building custom drones is complex and impractical. The selection of the drone platform for autonomous search and rescue missions was based on size and weight, modularity, sensor capabilities, cost, and availability. The ideal platform should be ultra-lightweight to support scalability in swarm applications. It should also be highly modular in both hardware and software, featuring swappable parts for ease of maintenance and open-source software to provide flexibility in developing solutions. The drone should be equipped with sensor suites that enable localization, obstacle detection, and avoidance capabilities. 
+            The drone platforms considered were DJI Tello, Bitcraze Crazyflie 2.1+, and DEXI Drone – Level III. The selection matrix for the drone development platform selection is in Appendix A.
+          </p>
       <div id="sub-section-2-header-1">
         <h3>2.1 Hardware: BitCraze Crazyflie</h3>
-
+        <p>
+          The Bitcraze Crazyflie 2.1+ was selected as the development platform for this project due to its superior lightweight design, modularity, and extensive sensor compatibility. 
+        </p>
 
         <image-component tag="image" source="assets\section-2-selected-drone-platform\figure_2_1_bitcraze_crazyflie.png"
         subtitle="Figure 2.1: Bitcraze Crazyflie 2.1+ Drone Development Platform"></image-component>
+        <p>
+          A key advantage of the Crazyflie is its open-source framework, which includes the Crazyflie firmware, the cflib Python library, and compatibility with ROS2 via the Crazyswarm2 package. The Crazyflie also supports onboard autonomy using the Crazyflie App Layer, allowing mission-specific algorithms to run directly on the drone without requiring continuous external communication.
+        </p>
 
-
+        <p>
+          In terms of hardware modularity, Bitcraze has an extensive ecosystem, providing various expansion decks that enhances its sensing and navigation capabilities. In this project, we will work with Crazyflie equipped with the Flow Deck, Multi-ranger Deck and AI Deck. The Flow Deck contains Time-of-Flight (ToF) sensor for measuring distance to the ground and an optical flow sensor to measure velocity, enabling localization. The Multi-ranger Deck consists of five ToF sensors positioned to measure distances in the front, back, left, right, and up direction, enabling obstacle detection and avoidance. Finally, the AI Deck includes a monochrome camera (HM01B0), an onboard MCU chip (GAP8), and ESP32, which allows for onboard image processing along with Wi-Fi connectivity for real-time data transfer and remote communication.
+        </p>
+        
         <image-full tag="image" source="assets\section-2-selected-drone-platform\figure_2_2_expansion_decks.png"
         subtitle="Figure 2.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-full>
         <br><br>
@@ -504,7 +515,12 @@
       <div id="sub-section-2-header-2">
         <h3>2.2 Drone Software and Development</h3>
         <p>
-          Depending on system requirements, the Crazyflie can be interfaced through multiple frameworks, including the native Bitcraze Crazyflie framework, ROS, or a range of external frameworks developed by the open-source community. Each option offers unique capabilities, allowing flexibility based on the project’s specific needs. In this project, Ubuntu 22.04 and ROS2 Humble (Figure 2.5) are used to develop the subsystems as they are the most widely supported development environments.
+          Crazyflie runs on the Bitcraze Crazyflie firmware, which is written in C and is fully open source. It includes an app layer that allow users to add custom code directly to the Crazyflie, making it the entry point for implementing decentralized autonomous capabilities. The app layer contains a set of APIs such as the Deck API that allows scripts running onboard to access sensor data like Multi-ranger Deck’s distance data, odometry data from   the Flow Deck, etc. (Bitcraze, 2024)  
+        </p>
+
+        <p>
+          For centralized solutions, the Crazyflie can be integrated with ROS2 using the Crazyswarm2 Python package. This enables high-level control for multi-drone coordination via cflib, Python library that facilitates communication and control through Crazyradio, a long-range open USB radio dongle. In addition, the Crazyswarm2 package also enable the Ground Control Station (GCS) to access Crazyflie sensor data through the various ROS2 topics.
+          The development workstations are equipped with ROS2 Humble, running on Ubuntu 22.04 to support software development.
         </p>
 
       </div>
@@ -514,11 +530,13 @@
     <br />
 
       <div id="section-header-3" class="section" style="display: none;">
-          <h2>3 Mission Strategy</h2>
+          <h2>3 Search Strategy</h2>
           <p>
             With the vastly different Arena layout this year, our mission strategy also must change accordingly. The main 
             areas of consideration are the search strategy to use, object detection methods and use of navigation aids. 
           </p>
+          <image-component tag="image" source="./assets/section-3-mission-strategy/figure_3_1_comparison_search.png"
+          subtitle="Figure 3.1: A Comparison between Mapped and Mapless Search Strategy"></image-component>
 
           <div id="sub-section-3-header-1">
               <h3>3.1 Search Strategy</h3>
@@ -608,11 +626,17 @@
       <div id="section-header-4" class="section" style="display: none;">
       <h2>4. Object Detection (Shu Hui)</h2>
 
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_1_hardware.png"
+
+    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_1_hardware.png"
     subtitle="Figure 4.1: Hardware for Object Detection"></image-component>
+    
 
     <div id="sub-section-4-header-1">
       <h3>4.1 Object Selection</h3>
+
+      <image-component tag="image" source="./assets/section-4-obj-detection/table_2_decision matrix.png"
+      subtitle="Table 2.0 : Decision Matrix for Target and Danger Zone Selection "></image-component>
+
           <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_2_objects.png"
     subtitle="Figure 4.2: Regular/Bonus Victims, Danger Markers and Navigation Aids"></image-component>
 
@@ -631,6 +655,11 @@
         <h3>4.3 Offboard Detection</h3>
     <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_4_camera_mount_angles.png"
     subtitle="Figure 4.3: Camera Mount Angles"></image-component>
+
+        <video-component 
+            source="https://www.youtube.com/embed/No0juLGqdLo" 
+            subtitle="Figure 4.3: Video of Object Detection for One Crazyflie">
+        </video-component>
 
     </div>
 
@@ -654,6 +683,21 @@
     <div id="sub-section-4-header-5">
       <h3>4.5 External System Optimisation</h3>
 
+      <video-component 
+      source="https://www.youtube.com/embed/3d6A9wGV5tY" 
+      subtitle="Figure 4.9: Video of One Drone Successfully Reversing">
+  </video-component>
+
+  <video-component 
+      source="https://www.youtube.com/embed/TYLihQFfpwo" 
+      subtitle="Figure 4.10: Video Swarm Ignoring (Danger Zone)">
+  </video-component>
+
+  <video-component 
+      source="https://www.youtube.com/embed/RThMP-MyErE" 
+      subtitle="Figure 4.11: Video of Swarm Detection (Victim Marker)">
+  </video-component>
+
     <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_12_router.png"
     subtitle="Figure 4.12: Old Router Setup and Modified Router Setup"></image-component>
 
@@ -666,52 +710,146 @@
 
       <div id="section-header-5" class="section" style="display: none;">
           <h2>5. Known Search Area (Yan Yew)</h2>
-
+            <p>
+              The Known Search Area in the Playing Field presents a structured environment where positions of static obstacles like Inner Walls are known. This information can be leveraged to preplan drone paths, ensuring complete coverage of the Known Search Area. This knowledge of the layout complements well with a mapless search strategy. 
+            </p>
+            <p>
+              Compared to a mapped approach, which relies on a complete map or Simultaneous Localization and Mapping (SLAM), a mapless approach is significantly less computationally demanding and simpler to implement. A mapped strategy requires substantial processing power for SLAM and adds complexity, as the maps generated by each drone in the swarm must be merged and transmitted back to the drones, often via a GCS, which introduces a single point of failure. While normally mapless strategy does not inherently guarantee full coverage, since in this case the obstacle layout in the Known Search Area is known, optimization of search strategy to maximize coverage is possible hence a mapless approach would be a better option.
+            </p>
+            <p>
+              To ensure a robust and scalable strategy, a decentralized strategy is adopted, where each drone operates independently without relying on centralized communication. This is achieved by writing the writing the navigation and decision-making code in C and flashing it directly onto the Crazyflie firmware.
+            </p>
+            <p>
+              This section details the implementation of decentralized Modified Swarm Bug Algorithm (MSBA). Additionally, this section discusses the use of simulation in optimizing the search algorithm parameters, and key features like multi-airways for collision avoidance, and reverse commands to define search boundaries.
+            </p>
       <div id="sub-section-5-header-1">
         <h3>5.1 Selection of Search Algorithms</h3>
+          
+          <p>
+            The decentralized mapless search algorithms considered were Parallel Sweep Search, MSBA, and Pre-planned Flight Paths. These algorithms were shortlisted because they do not require a map, rely on heuristic that can easily be implemented onboard of the drones to form a decentralized system, and can be implemented in a multi-agent system like a drone swarm.
+          </p>
+          <p>
+            Parallel Sweep Search is a search strategy that is commonly used in the maritime industry in search and rescue mission. Using multiple ship vessels to search a large area when location of search target is unknown. The search algorithm involves making the drones move in parallel, evenly spaced lanes that are offset to one another. When encounter a wall, the drone will perform wall-following around the obstacle until it returns to its original planned path then resume the sweep search. 
+          </p>
 
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_1_parallel_sweep_search.png"
           subtitle="Figure 5.1: Desired Paths of Two Drones Performing Parallel Sweep Search"></image-component>
 
+          <p>
+            The MSBA is an adaptation of the Swarm Gradient Bug Algorithm (SGBA) developed by TU Delft. This algorithm follows an identical heuristic as bug algorithm where the drone would travel in a specific heading, then encountered an obstacle it performs wall-follow around it until its original heading is free of obstacle. This algorithm is explained in detail in Section 5.2. 
+          </p>
+          <p>
+            The pre-planned flight path strategy involves programming a series of predefined movements for each drone before deployment, which is possible because of the environment being known. For example, as illustrated in Figure 5.2, if we want the drone to reach point X, the drone will be programmed to fly forward. When obstacle is detected by the front ToF sensor, the drone should turn right and continue forward until it detects another obstacle using the front ToF sensor.
+          </p>
+
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_2_pre_planned_flight_path.png"
           subtitle="Figure 5.2: Pre-planned flight path strategy: Diagram illustrating the drone’s movement from the start area to point X. "></image-component>
-
-      </div>
+          <p>
+            The decentralized mapless strategies shortlisted above are then evaluated using a weighted decision matrix. The main factors to consider were (1) search coverage, (2) adaptability, (3) exploration speed, and (4) implementation complexity. For each of these strategies, the search strategies are given a score out of 3 for how well it performs.
+          </p>
+          <p>
+            Table 4.0: Evaluation of Parallel Sweep Search, Modified Swarm Bug Algorithm, and Pre-planned Flight Path Search Strategies
+          </p>
+          <image-component tag="image" source="./assets/section-5-known-area/table_4_decision_matrix_search.png" subtitle=""></image-component>
+          <p>
+            Search coverage evaluates the ability of the algorithm to cover the entire search area. A higher coverage indicates a more effective exploration to search for victim markers in the Playing Field. This criterion is assigned the highest weight because the competition’s scoring criteria is based on the number of victim markers rescued. A higher coverage increases the likelihood for the swarm drone to locate these victim markers placed throughout the Playing Field. Parallel Sweep Search is given the highest score because theoretically with multiple drones offset to each other, the swarm will be able to cover the entire search Playing Field. MSBA and pre-planned flight path both can provide high search coverage but due to the heuristic, they won’t perform better than Parallel Sweep Search.
+          </p>
+          <p>
+            Reliability concerns with the predictability, repeatability, and robustness of the strategies. High reliability is important because the competition only allows each team to perform two runs, so a reliable solution should be used to ensure consistent performance during the competition. Parallel Sweep Search is given the lowest score because it depends heavily on localization and precise pathing. Based on a drift test conducted on the flow deck, the uncertainty in the localization the optical flow sensor is ±10 %, which is not precise. MSBA is given the highest score because it depends on heuristic that utilizes the ToF distance sensors, which are highly precise. The pre-planned flight path is given a similar high score of 3 for a similar reason.
+          </p>
+          <p>
+            Adaptability is defined as the ability for the algorithm to maintain consistent search coverage performance in environments with different obstacle sizes. Although the layout of the obstacles in the Known Search Area is known, the dimensions of these obstacles are not. An algorithm that is highly adaptable should be able to maintain consistent behaviour, ensuring reliable search coverage across various obstacle configurations. MSBA is the most adaptable because it allows the drones to react to obstacles and adjust their behaviour accordingly. Parallel Sweep Search can handle obstacle with wall-following behaviour. However, it can be prone to failure if the dimensions of certain walls exceed the range considered during the planning phase. The pre-planned flight path has the lowest adaptability because the flight paths must be tailored to specific Playing Field configurations.
+          </p>
+          <p>
+            Exploration speed is the amount of time it would require for the swarm drone to search a fixed area. This criterion is given the lowest weight because the runtime of the drones is not a scoring criterion but instead used as a tiebreaker. The Parallel Sweep Search is the slowest because of the sweep pattern that drones need to trace. MSBA and the pre-planned strategies are given the highest score of 3 because the drones follow paths that generally lead from the start area to the end of the Playing Field without the need for backtracking.
+          </p>
+          <p>
+            Based on decision matrix evaluation above, MSBA stands out as the most well-rounded search strategy. MSBA excels in reliability, adaptability, and exploration speed, making it the most suitable approach for the swarm drone search mission. Its ability to respond to obstacles dynamically and adjust its behaviour accordingly allows it to maintain consistent performance across different environments, particularly in the Known Search Area with its unpredictable obstacle dimensions.
+          </p>
+        </div>
 
       <div id="sub-section-5-header-2">
       <h3>5.2 Modified Swarm Bug Algorithm</h3>
-
+          <p>
+            MSBA is a heuristic algorithm governed by a few simple rule-based behaviour as illustrated in Figure 5.3. After take-off, the drone rotates to its preferred heading and then moves forward in that direction. Upon detecting an obstacle, it initiates wall-following until its preferred heading is clear of obstacles.
+          </p>
+          <p>
+            To prevent the Crazyflie from getting trapped in an indefinite loop, a loop detection mechanism is implemented. This mechanism modifies the preferred heading when the drone is detected to be stuck. When the Crazyflie encounters an obstacle and begins wall-following, it records the hit point using odometry data from the Flow Deck. If the drone moves toward the same hit point again, the loop detection mechanism is triggered, adjusting the navigation path to break the loop. 
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_3_MSBA.png"
           subtitle="Figure 5.3: Visualization of MSBA"></image-component>
-
+          <p>
+            The performance of MSBA is determined by the coverage, speed, and reliability of the swarm drones. Ideally, the swarm would cover all the Known Search Area as fast as possible, and reliably by having reproducible results and zero collisions among the drones. The performance greatly relies on key parameters such as flight speed, altitude, wall-following direction, corresponding wall-following distance. Wall-following direction refers to the side of the wall that the drones use as a guide while navigating. Wall-following direction refers to the relative position of the wall that a drone maintains while navigating. A left wall-following direction means the drone keeps the wall to its left as it moves, while a right wall-following direction means the drone keeps the wall to its right.
+          </p>
       </div>
 
       <div id="sub-section-5-header-3">
-        <h3>5.3 Initial Proposal Strategy Using MSBA</h3>          
+        <h3>5.3 Initial Proposal Strategy Using MSBA</h3>
+          <p>
+            The team has allocated a total of 10 drones to search the Known Search Area. To obtain the optimal parameters, the ideal paths of the 10 drones to maximize coverage are first planned in accordance with the heuristic of the algorithm. Then the parameters required to achieve the corresponding flight paths are then determined by working backwards. 
+          </p>          
+          <p>
+            The strategy to perform search in the Known Search Area is illustrated in Figure 5.4. It involves deploying the drones on the left side of the Playing Field, ensuring they reach designated dispersion points—Point A, Point B, and Point C, which the drones will then fan out in their respective preferred headings. Each dispersion point is assigned three drones. To guide the drones to their respective dispersion points, they will follow a wall-following manoeuvre around Wall 1, Wall 2, and Wall 3 before dispersing into the search area. 
+          </p>
+          <p>
+            The flight altitude of all drones is set to 0.3 m because real-life test flight at that height provided great flight stability. The speed of drones is set to 0.4 m/s as it is the optimal speed for stable flight performance after performing real-life testing which will be explained in later section in Section 5.6. This speed also ensures reliable AprilTag detection as tested by the Object Detection system (Section 4.4).
+          </p>
         <image-component tag="image" source="./assets/section-5-known-area/figure_5_4_maximise_coverage.png"
           subtitle="Figure 5.4: Strategy to maximise search coverage using 9 drones running MSBA"></image-component>
-
+          <p>
+            For intra-drone collision avoidance strategy to prevent drone-to-drone collisions, a two-lane method was implemented. Depending on the direction of wall-following, the drones would maintain different distance to walls to create two separate lanes. Extensive real-world testing a small-scale Playing Field, along with simulations, confirmed the reliability of this strategy, provided that the drones are correctly positioned at the starting area The optimal wall distances were determined to be 0.6 m for drones performing left wall-following and 1.2 m for those performing right wall-following, as illustrated in Figure 5.5 below.
+          </p>
+          <p>
+            Additionally, the loop detection transformation angle was set to be 90 ° instead of the 180 ° proposed in the original SGBA to prevent drones from travelling straight back to the starting area. The transformation angles depend on the drones' wall-following direction and follow the right-hand rule convention: drones assigned to right wall-following adjust their preferred heading by +90 °, while those following the left wall adjust by -90 °.
+          </p>
+          <p>
+            Since all the drones must take off within two waves, to ensure the drones reach their respective dispersion points safely without collision, drones belong to Point B will first take off, followed by drones that travel to Point A and Point C. This configuration will also prevent drone collisions by ensuring Point B drones to be in the forefront, followed by Point C and Point A drones that will be unlikely to collide with one another as they travel in opposite directions.
+          </p>
+          <p>
+            The drone configurations in the Start Area to guide the 3 separate drone groups to dispersion points A, B, C is shown below in Figure 5.5. Each drone is also assigned wall-following direction of either left or right. Drone 1, 2, 3 will first take off and travel to Point A, then followed by Drone 4, 5, 6 to Point C and Drone 7, 8, 9 to Point A. The drones in each group are arranged in a "V" formation. Reason being because based on real-life swarm drone testing, maintaining a clear LOS in the forward direction is crucial, especially during take-off. If a drone detects another drone directly in front of it, it will automatically initiate wall-following mode, potentially disrupting the planned dispersion sequence. 
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_5_initial_configuration.png"
           subtitle="Figure 5.5: Initial configurations of drones in the start area"></image-component>
       </div>
 
       <div id="sub-section-5-header-4">
         <h3>5.4 Simulation to Evaluate Search Strategy</h3>
-
-
+          <p>
+            To validate, evaluate and further optimize the above proposed strategy, extensive testing is required. Performing small scale tests by recreating subsections of the Playing Field is not possible because it is difficult to predict the state of the drones at the boundaries of the subsections. Full-scale is also not feasible because of the space constraints at Studio 1. Therefore, a simulation environment was created. 
+          </p>
+          <p>
+            Beyond addressing space limitations, simulation enables rapid troubleshooting of search algorithms and fine-tuning of parameters without the need to physically redeploy the code onto the drones every time a change is made. Webots was used as simulator because it allows individual robot in the environment to execute is own C code, which mirrors the actual implementation of the decentralized search strategy using MSBA. A key consideration in developing this simulation environment was ensuring that the same code deployed onto the drone firmware could be tested within the simulation.
+          </p>
+          <p>
+            To create a decentralized system, the MSBA scripts are all running onboard of Crazyflie. The scripts are all compiled on the development workspace before flashing onto the drone using Crazyradio. This will write the scripts within the app layer in the Crazyflie firmware. When the drone starts up, the firmware will execute the scripts inside the app layer, which then have access to all the deck sensor APIs, enabling the drones to operate autonomously without the need for centralized control.
+          </p>
 
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_6_firmware_onboard.png"
           subtitle="Figure 5.6: Architecture diagram of firmware on board of real Crazyflie"></image-component>
-
+          <p>
+            While Webots provides an excellent platform for simulating robots running onboard scripts, it does not support the Crazyflie firmware, or the identical Deck API used in the actual Crazyflie hardware. As a result, to integrate MSBA with the Webots simulation, an interface is required to bridge the gap between MSBA and the simulation environment. This interface allows the MSBA to access the necessary sensor readings, such as distance data from virtual sensors, and provides a means for the Webots robot to receive output from the MSBA, ensuring that the drone's behaviour in the simulation mirrors that of the actual Crazyflie system.
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_7_firmware_webots.png"
           subtitle="Figure 5.7: Architecture diagram of simulated Crazyflie in Webots"></image-component>
-
+          <p>
+            The full Webots repository that contains the simulation environment and controller code can be found here https://github.com/CDE-4301-ASI-401/Webots_CF2.
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_8_webots_simulation_environment.png"
           subtitle="Figure 5.8: Webots Simulation Environment"></image-component>
-
+          <p>
+            The competition search environment was first recreated in Webots as shown in Figure 5.8, with the static obstacles being placed according to the Playing Field layout illustrated in the competition challenge booklet while conforming to the minimum distance. Each box represents a 1 m by 1 m area. <i>Note that the orientation of the top-down view differs from the previous figures. The view in this figure is rotated clockwise by 90 °</i>.
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_1_simulation.png"
           subtitle="Figure 5.9: (a) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutes"></image-component>
-
+          <p>
+            The performance of the search strategy was then evaluated by simulating the drones in different Playing Field configurations. The drone paths after 4 minutes of simulation are plotted and compared using the drones position data stored in csv files and Matplotlib. The percentage of search coverage is also determined by counting the box which the swarm drone’s paths crossed in the Known Search Area overlayed in Figure 5.5. 
+          </p>
+          <p>
+            In all the configurations tested, the drone swarm was able to cover most of the Known Search Area collectively, consistently achieving a search coverage above 80%. However, there are a few blind spots that would be miss by the drones. Notably, the area in corners. Figure 5.9 shows the results from 3 of the simulations performed, as well as the blind spots. In addition, in certain scenarios, some drones will travel into the Pillar Area, which is undesired.
+          </p>
+          <p>
+            After multiple simulations, the two-lanes collision avoidance strategy proved reliable, as no collisions occurred beyond the initial take-off phase where drones fly to their respective dispersion points. Drone-to-drone collisions were only observed between drones in the same group, primarily due to insufficient spacing between drones in the Start Area.
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_2_simulation.png"
           subtitle="Figure 5.9: (b) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutesp"></image-component>
 
@@ -724,23 +862,72 @@
 
       <div id="sub-section-5-header-5">
         <h3>5.5 Improvements to MSBA</h3>
-        
+          <p>
+            To address blind spots in the corners of walls, two wall-following (WF) drones will be deployed to cover these areas, as identified in the simulation. To prevent these WF drones from interfering with the paths of the MSBA drones, these WF drones will be fly at a higher altitude of 0.55 m, 0.25 m higher than the altitude of MSBA drones. At this altitude, the effect of downwash on the MSBA drones flying below the WF drones is minimal and has no significant impact on image detection as tested (Section 4.4). 
+          </p>
+          <p>
+            A total of ten drones are assigned to search the Known Search Area. Since only nine drones were initially used to test the MSBA search strategy, an additional tenth drone will be introduced to perform WF along the outer perimeter of the Playing Field, while drone number nine will be reassigned to WF as well. These drones will maintain a wall-following distance of 0.5 m to handle cases where object markers are placed in the corners. With the addition of a new drone and the reassignment of one drone to WF, the search coverage increased to over 90 %, calculated using the same method described previously.
+          </p>
+          <p>
+            To address the scenario where drones cross into the Pillar Area like the fourth figure in Figure 5.9, a reverse function was implemented in MSBA to enable the drones to perform 180 degrees turn and continue searching within the Known Search Area. To facilitate this mechanism, two April Tag Navigation Aids will be placed at the border between Known Search Area and Pillar Area. When an MSBA drone in the Known Search Area detects them, the Mission Planner will broadcast a reverse command packet to the detecting drone. Upon receiving this packet, the drone will adjust its preferred heading by 180 degrees, ensuring it remains within the designated search area.
+          </p>
       </div>
 
       <div id="sub-section-5-header-6">
         <h3>5.6 Real Life Testing</h3>
-
+          <p>
+            To validate the MSBA implementation and further optimize flight parameters, a series of real-world tests were conducted in three different environments, where 1 m by 1 m cardboards are used to create wall obstacles:
+          </p>
+          <ol>
+            <li>Small-scale tests in the studio</li>
+            <li>Medium-scale tests in a seminar room at E7 </li>
+            <li>Full-scale tests in RC4 Hall  </li>
+          </ol>
+          <p>
+            Initially, most tests were small-scale tests conducted in E2A Studio 1 to optimize individual drone flight stability by tuning flight parameters such as wall-following distance, flight speed, and altitude. Prior to creating the simulation environment, these small-scale tests provided the optimum flight parameters for the MSBA drones which was later used in the simulation.  The small-scale test also enabled the reverse function to be tested by manually issuing the reverse command packet before integrating it with the Mission Planner system.
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_11_small_scale_test.png"
-          subtitle="Figure 5.11:. Small-scale test environment in E2A Studio 1"></image-component>
-
+          subtitle="Figure 5.11: Small-scale test environment in E2A Studio 1"></image-component>
+          <p>
+            A key issue observed when testing the WF drones was that they had difficulty turning around thin wall edges of the L-shaped free-floating wall in the Known Search Area. When turning around these edges, the drones would lose track of the wall edges due to the narrow field of view of the side ToF sensor. To mitigate this, 2 wall guards are used as Navigation Aids. These Navigation Aids are created by creating a trifold using a corrugated board and are used by slotting them around the wall edges of the L-shaped wall. By effectively increasing the wall-thickness around the wall edges, the WF performance is significantly improved.
+          </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_12_wall_guard.png"
           subtitle="Figure 5.12: Wall-guard navigation aid used to increase thickness of wall edges"></image-component>
-
+          <p>
+            Subsequently, medium-scale tests were performed in E7 seminar rooms. With a larger space, subsections of the Known Search Area were recreated to test the behaviour of swarm clusters (around 3 to 5 drones). These tests validated the Webots simulation, as the drones’ behaviour and paths closely matched those generated in the simulation. However, they also revealed challenges unique to executing the MSBA search strategy in the real-world.
+          </p>
+          <p>
+            The MSBA drones’ paths were highly dependent on their initial configuration in the Start Area. During the first few tests, the MSBA drones often deviated from the intended path due to inaccurate initial orientation when placed at the Start Area. In some cases, this resulted in the drones failing to reach reaching the dispersion zone in the Known Search Area, as they miss the walls that would have guided them correctly. Additionally, when drones were placed too close to one another, they either exhibited erratic after detecting the drone in front as a wall obstacle or, in worse the worst case, collided with the drones ahead.
+          </p>
+          <p>
+            Unlike in simulation, where drone placements are accurate and precise, the initial medium-scale tests revealed the significant impact of human error on overall search coverage. To mitigate deviations in the initial preferred heading of MSBA drones, laser pointers were used to align them correctly in the Start Area. Furthermore, to prevent drones from being too close to one another, they were spaced farther apart to fully utilize the large Start Area.
+          </p>
+          <p>
+            Finally, full-scale tests were conducted in RC4. The 20m-by-20m competition Playing Field was recreated to evaluate the performance of the entire swarm drone Initially, the drones exhibited poor localization, drifting, sudden accelerations, and jerky movements due to the venue’s reflective flooring. This issue is discussed in detail in Section 9. To mitigate this problem, all drones were flown at a higher altitude—MSBA drones were raised from 0.3m to 0.5m, while WF drones were increased from 0.55m to 0.75m. During these tests, the drones closely followed the same paths as their simulated counterparts in Webots.
+          </p>
       </div>
 
       <div id="sub-section-5-header-7">
         <h3>5.7 Final MSBA Configurations</h3>
-        
+        <p>
+          After conducting the series of real-world tests, the set of flight parameters for Known Search Area drones performing MSBA and wall-following were determined. 
+        </p>
+        <p>
+          Table 5.0. Key parameters of drones performing MSBA and WF in the Search Area during actual competition
+        </p>
+        <image-component tag="image" source="./assets/section-5-known-area/table_5_known_config.png" subtitle=""></image-component>
+        <br><br> 
+        <image-component tag="image" source="./assets/section-5-known-area/figure_5_14_final_known_start_area_config.png"
+          subtitle="Figure 5.14. Drone position and orientation at the Start Area to execute the MSBA search strategy"></image-component>
+        <p>
+          During the actual competition, three regular victims were placed within the Known Search Area for rescue. It should be noted that the placement of Victim and Danger Markers varied between Run 1 and Run 2. The take-off sequence and navigation to the dispersion points worked as intended. However, further drone behaviour could not be directly observed as the competition Playing Field was off-limits during the mission runs. The final results for the Known Search Area are outlined in Table 6.0.
+        </p>
+        <p>
+          Table 6.0. Number of victims rescued in the Known Area
+        </p>
+        <p>
+          In the first run, two out of three regular victims were successfully rescued. However, before the run began, the wall-guard Navigation Aid, which was designed to increase the thickness of the wall edges, was mistakenly left out and not placed around the L-shaped wall in the Known Search Area. This issue was rectified before the second run, and during this run, all of the regular victims were rescued. However, since the victim placements differed between runs, it was not conclusive whether the victim missed in Run 1 was located near the L-shaped wall. Without the Navigation Aid in place, the wall-following drone was unable to reach it.
+        </p>
       </div>
 
     </div>
@@ -781,8 +968,7 @@
 
 
 
-       
-
+  
           <div id="sub-section-6-header-2-header-1">
             <h4>6.2.1 Drone Guidance to the Unknown Area</h4>
 
@@ -1012,18 +1198,56 @@
       
       <h2>References</h2>
       <ul style="list-style-type: decimal; padding: 0; margin: 0; text-align: justify;">
-        <li>
-          Bitcraze. (2021). AI-deck monocrome camera module. Bitcraze Store. https://store.bitcraze.io/products/ai-deck-monocrome-camera-module
-        </li>
-        <li>
-          Leong, W. L. W. (2023). GitHub - williamleong/aideck-gap8-examples at dev/william. GitHub. https://github.com/williamleong/aideck-gap8-examples/tree/dev/william
-        </li>
-        <li>
-          McGuire, K., Christophe De Wagter, Tuyls, K., Kappen, H. J., & Guido, G. C. H. E. (2019). Minimal navigation solution for a swarm of tiny flying robots to explore an unknown environment. Science Robotics, 4(35). https://doi.org/10.1126/scirobotics.aaw9710
-        </li>
-        <li>
-          Robotics Knowledgebase. (2022, April 26). Comparison of Fiducial Markers. Robotics Knowledgebase. https://roboticsknowledgebase.com/wiki/sensing/fiducial-markers/#apriltag
-        </li>
+
+         <li>
+          Loco explorer bundle—Crazyflie 2.1+. (n.d.). Bitcraze Store. Retrieved 29 March 2025, from https://store.bitcraze.io/products/loco-explorer-bundle
+         </li>
+         <li>
+          Maximum range for loco positioning | Bitcraze. (n.d.). Retrieved 29 March 2025, from https://www.bitcraze.io/documentation/system/positioning/max-range-loco/
+         </li>
+         <li>
+          Comparison of fiducial markers. (2022, April 26). Robotics Knowledgebase. https://roboticsknowledgebase.com/wiki/sensing/fiducial-markers/
+         </li>
+         <li>
+          Aideck-gap8-examples/examples/other/wifi-img-streamer at master · bitcraze/aideck-gap8-examples. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/bitcraze/aideck-gap8-examples/tree/master/examples/other/wifi-img-streamer
+         </li>
+         <li>
+          AprilRobotics/apriltag. (2025). [C]. AprilRobotics. https://github.com/AprilRobotics/apriltag
+         </li>
+         <li>
+          Freertos+posix—FreertosTM. (n.d.). Retrieved 29 March 2025, from https://freertos.org/Documentation/03-Libraries/05-FreeRTOS-labs/03-FreeRTOS-plus-POSIX/00-FreeRTOS-Plus-POSIX
+         </li>
+         <li>
+          Tl-nus-cfs/ai_deck_wrapper. (2023). [Python]. TL@NUS Centre For Flight Sciences. https://github.com/TL-NUS-CFS/ai_deck_wrapper
+         </li>
+         <li>
+          Rauch, C. (2025). Christianrauch/apriltag_ros [C++]. https://github.com/christianrauch/apriltag_ros
+         </li>
+         <li>
+          Rauch, C. (2025). Christianrauch/apriltag_msgs [CMake]. https://github.com/christianrauch/apriltag_msgs
+         </li>
+         <li>
+          Github—Cde-4301-asi-401/missionplanner. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner
+         </li>
+         <li>
+          GitHub—Williamleong/aideck-gap8-examples at dev/william. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/williamleong/aideck-gap8-examples
+         </li>
+         <li>
+          Release 2025.02 · bitcraze/aideck-esp-firmware. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/bitcraze/aideck-esp-firmware/releases/tag/2025.02
+         </li>
+         <li>
+          BigQuad deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/bigquad-deck/
+         </li>
+         <li>
+          Prototyping deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/prototyping-deck/
+         </li>
+         <li>
+          MissionPlanner/mission_planner/kill_all.py at main · CDE-4301-ASI-401/MissionPlanner. (n.d.-a). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner/blob/main/mission_planner/kill_all.py
+         </li>
+         <li>
+          MissionPlanner/mission_planner/mission_script.py at main · CDE-4301-ASI-401/MissionPlanner. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner/blob/main/mission_planner/mission_script.py
+         </li>
+
       </ul>
     </div>
 
