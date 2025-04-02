@@ -33,6 +33,10 @@
 
   <script type="module" src="./components/decision-matrix-pillar/decision-matrix-pillar.js"></script>
 
+  <script type="module" src="./components/rc4-test-scores/rc4-test-scores.js"></script>
+
+  <script type="module" src="./components/actual-test-scores/actual-test-scores.js"></script>
+
   <script type="module" src="./components/image/image-component.js"></script>
 
   <script type="module" src="components/image/image-full.js"></script>
@@ -148,7 +152,9 @@
             <a href="#sub-section-7-header-5">7.5 Optimising for Search and Rescue</a>
             <ul type="none">
               <li><a href="#sub-section-7-header-5-header-1">7.5.1 Sliding to the Side When Near a Pillar</a></li>
-              <li><a href="#sub-section-7-header-5-header-2">7.5.2 Navigation Aid to Reverse at the End of the Pillar Area</a></li>
+              <li><a href="#sub-section-7-header-5-header-3">7.5.2 Optimising the speed of the drones</a></li>
+              <li><a href="#sub-section-7-header-5-header-3">7.5.3 Navigation Aid to Reverse at the End of the Pillar Area</a></li>
+              <li><a href="#sub-section-7-header-5-header-3">7.5.4 Straight line vs Zig-Zag path</a></li>
             </ul>
           </li> 
           <li><a href="#sub-section-7-header-6">7.6 Full Algorithm</a></li>
@@ -1043,9 +1049,11 @@
           <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_6_strat_C.png"
           subtitle="Figure 7.6: Description of Search Strategy C"></image-component>
+          <br/>
+          <decision-matrix-pillar subtitle="Table 7.6: Comparison of three search strategies considered">
+            <div id="decision-matrix-pillar"></div>
+          </decision-matrix-pillar>
           </div>
-        </div>
-
         <div id="sub-section-7-header-4">
           <h3>7.4 Testing of Victim placement</h3>
           In the Pillar Area, targets were placed in different locations and the algorithm tested to ascertain the effectiveness of it to pick up the targets.
@@ -1158,6 +1166,9 @@
         In the RC4 MPSH, we first started by testing the algorithms without image streaming (no target detection). This allowed us to ascertain the feasibility of our search strategies and collision avoidance first.
         Later, we had a total of three runs testing the overall performance of the drone swarm with image streaming on to enable target detection and rescue of Victim Markers. The score of our three runs were:
         <br/><br/>
+        <rc4-test-scores subtitle="Table 9.1: Test Scores in RC4">
+          <div id="rc4-test-scores"></div>
+        </rc4-test-scores>
         <br/>
         Run 3 was the best of all runs taken, where three Victim Markers were rescued (of which one is bonus) while none of the Danger Zones were within 1m of the drones after landing.
         <br/>
@@ -1199,11 +1210,16 @@
         We were given two runs to test our drone swarm system with the better of the two runs taken as the final score. A total of 5 Victim Markers (of possible 8 as given in the rules) were used on the actual day, and likewise 3 Danger Zones (of possible 4) were used. The location of the Victim Markers and Danger Zones were not made known to us before placing our drones down and were only placed in the Playing Field after deciding on the placement of drones in the Playing Field. We only knew that the two Bonus Victims would be placed in the Pillar and Unknown Search Areas (one each) while the rest of the Regular Victims could be placed anywhere in the Playing Field.
         <br/>
         In the actual Playing Field, the performance of our drone swarm was like that exhibited on our final run at RC4 (conducted one week prior to the event) but with greater stability as the carpeted floor allowed the drones to fly in a much more stable manner. The results of the two runs are as follows:
-        <br/>
+        <br/><br/>
+        <actual-test-scores subtitle="Table 9.2: Actual test scores @ SAFMC 2025">
+          <div id="actual-test-scores"></div>
+        </actual-test-scores>
+        <br/><br/>
         Run 2 was taken as the final score given that it was the better of two runs. Given that we were able to rescue all but one Victim marker, we can conclude that our test environment was a good gauge of the actual Playing Field, with our search strategies and target detection working as intended in the actual competition.
-        <br/>
+        <br/><br/>
+        <image-component tag="image" source="./assets/section-9-full-scale-testing/team_photo.jpg"
+                         subtitle="Figure 9.2: Successful SAFMC 2025!"></image-component>
       </div>
-
     </div>
 
     <br />
