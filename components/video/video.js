@@ -17,9 +17,14 @@ class Video extends HTMLElement {
   }
 
   render() {
+
+    const mutedSource = this.source.includes("?") 
+    ? `${this.source}&mute=1` 
+    : `${this.source}?mute=1`;
+
     const div = document.createElement("div");
     div.innerHTML = `
-    <iframe id="${this.tag}" width="100%" src="${this.source}"
+    <iframe id="${this.tag}" width="100%" src="${mutedSource}"
       allowfullscreen></iframe>
     <sub>${this.subtitle}</sub>
     <style>
