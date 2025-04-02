@@ -1,14 +1,14 @@
 new gridjs.Grid({
-  columns: ["Solution", "A", "B", "C"],
+  columns: ["", "Run 1", "Run 2", "Run 3"],
   data: [
-    ["Loop avoidance?", "No", "Yes", "Yes"],
-    ["Maintains course?", "Yes", "Yes", "Yes"],
-    ["Avoids collision?", "Yes", "Yes", "Yes"],
-    ["Predictable flight path?", "No", "No", "Yes"],
+    ["Victims Rescued (+5)", "0/6", "1/6", "2/6"],
+    ["Bonus Victims Rescued (+15)", "0/2", "1/2", "1/2"],
+    ["Danger Zones landed near (-3)", "0/4", "0/4", "0/4"],
+    ["Total Score", "0", "20", "25"],
   ],
-}).render(document.getElementById("decision-matrix-pillar"));
+}).render(document.getElementById("rc4-test-scores"));
 
-class DecisionMatrixPillar extends HTMLElement {
+class Rc4TestScores extends HTMLElement {
   static get observedAttributes() {
     return ["subtitle"];
   }
@@ -51,4 +51,4 @@ class DecisionMatrixPillar extends HTMLElement {
   }
 }
 
-customElements.define("decision-matrix-pillar", DecisionMatrixPillar);
+customElements.define("rc4-test-scores", Rc4TestScores);

@@ -33,6 +33,10 @@
 
   <script type="module" src="./components/decision-matrix-pillar/decision-matrix-pillar.js"></script>
 
+  <script type="module" src="./components/rc4-test-scores/rc4-test-scores.js"></script>
+
+  <script type="module" src="./components/actual-test-scores/actual-test-scores.js"></script>
+
   <script type="module" src="./components/image/image-component.js"></script>
 
   <script type="module" src="components/image/image-full.js"></script>
@@ -143,14 +147,17 @@
           <li><a href="#sub-section-7-header-1">7.1 Introduction to the Pillar Area</a></li>
           <li><a href="#sub-section-7-header-2">7.2 Mock-Up of the Pillar Area</a></li>
           <li><a href="#sub-section-7-header-3">7.3 Testing of Search Strategies Within</a></li>
+          <li><a href="#sub-section-7-header-4">7.4 Testing of Victim placement</a></li>
           <li>
-            <a href="#sub-section-7-header-4">7.4 Optimising for Search and Rescue</a>
+            <a href="#sub-section-7-header-5">7.5 Optimising for Search and Rescue</a>
             <ul type="none">
-              <li><a href="#sub-section-7-header-4-header-1">7.4.1 Sliding to the Side When Near a Pillar</a></li>
-              <li><a href="#sub-section-7-header-4-header-2">7.4.2 Navigation Aid to Reverse at the End of the Pillar Area</a></li>
+              <li><a href="#sub-section-7-header-5-header-1">7.5.1 Sliding to the Side When Near a Pillar</a></li>
+              <li><a href="#sub-section-7-header-5-header-3">7.5.2 Optimising the speed of the drones</a></li>
+              <li><a href="#sub-section-7-header-5-header-3">7.5.3 Navigation Aid to Reverse at the End of the Pillar Area</a></li>
+              <li><a href="#sub-section-7-header-5-header-3">7.5.4 Straight line vs Zig-Zag path</a></li>
             </ul>
           </li> 
-          <li><a href="#sub-section-7-header-5">7.5 Full Algorithm</a></li>
+          <li><a href="#sub-section-7-header-6">7.6 Full Algorithm</a></li>
         </ul>
       </li>
   
@@ -997,71 +1004,112 @@
 
       <div id="section-header-7" class="section" style="display: none;">
           <h2>7. Pillar Area (Matthew)</h2>
-
+        Another new feature of SAFMC 2025 is the addition of the Pillar Area. This area of the playing field has no Inner Walls and only Pillars to form the obstacles that the drones must navigate across.
         <div id="sub-section-7-header-1">
           <h3>7.1 Introduction to the Pillar Area</h3>
-
+          In the Pillar Area, there are no Inner Walls within to navigate around. This would mean that a different strategy from that used in the Known and Unknown Search Areas would be needed for the drone to navigate it and search for Victim Markers.
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_1_pillar_area.png"
           subtitle="Figure 7.1: Pillar Area"></image-component>
-
         </div>
-
         <div id="sub-section-7-header-2">
+          <br/>
           <h3>7.2 Mock-Up of the Pillar Area</h3>
-
+          To test the Pillar Area, we need to build a mock-up of 8 Pillars in the area for our drones to navigate through. This was achieved using Styrofoam boards, which were tested to ensure that the drones can detect them while flying and can also fly in a stable manner near them. Both were found to be satisfactory with our Crazyflie drones. The dimensions of the pillar are about 30cm in diameter, close to the competition specification of 40cm. The height of the pillar are about 30-40cm, tall enough for our initially planned flying altitude of 30cm.
+          <br/>
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_2_mock_pillars.png"
           subtitle="Figure 7.2: Mock Pillars Used in The Arena, Left Was Wrapped with Paper to Get the Right Pillar on The Right Image"></image-component>
-
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_3_testing_pillar_area.jpg"
           subtitle="Figure 7.3: Testing Of Pillar Area in IDP Studio 1 (Mention Height of The Chair / Chair + Pillar Combo)"></image-component>
+          <br/>Later, the flying height was adjusted to 80cm which was found to be more robust and reliable. To support this new flying height, pillars were placed on chairs as seen in Fig 7.3 that were about 75cm in height. The pillar would now be in the range of 75 – 115cm off the ground.
 
         </div>
-
         <div id="sub-section-7-header-3">
           <h3>7.3 Testing of Search Strategies Within</h3>
-
+          Without Inner Walls to follow, the search strategy relies on using the Pillars to localise the path of the drones as it flies within the area. A few methods were considered:
+          <br/>
+          A.	Using the MSBA wall following algorithm, but with changes to its speed
+          <br/>
+          One method explored was to use the same MSBA wall following algorithm with the speed reduced to 0.2 m/s. This worked on the theory that the drone would interpret the Pillars as walls till it comes to free space again, where it would return to its original heading. However, it was found that the drones would follow the Pillar’s circumference as a wall and end up going in an infinite loop.
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_4_strat_A.png"
           subtitle="Figure 7.4: Description of Search Strategy A"></image-component>
-
+          <br/>
+          B.	Using an algorithm that follows the preferred direction till meeting a Pillar, avoiding it by following the circumference
+          <br/>
+          This method would involve having the drone first fly forward (which is its preferred direction) until it encounters a Pillar head-on, at which time it would avoid the Pillar by flying in a circular path following the walls of the Pillar. It would then resume its original heading after doing so in the new lane that it has corrected its flight path to. However, it tends to drift and cut the Pillar while doing so.
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_5_strat_B.png"
           subtitle="Figure 7.5: Description of Search Strategy B"></image-component>
-
+          <br/>
+          C.	Using an algorithm that follows the preferred direction till meeting a Pillar, and avoids by turning on the spot
+          <br/>
+          Similarly to method B, the drones would fly in the preferred direction until it meets a Pillar head on. However, unlike the previous method, it would turn on the spot to the left or right by 90 ° and move for a short distance before turning back by another 90 ° to resume its flight in the original heading. This would avoid it cutting the Pillar while doing its “avoidance”, and is a solution developed together with David Chong, an Undergraduate Research Experience (UREx) student working alongside us on our project.
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_6_strat_C.png"
           subtitle="Figure 7.6: Description of Search Strategy C"></image-component>
-
-          <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Crazyflies Hovering Between New Styrofoam Blocks"></video-component>
-
-          <decison-matrix-pillar subtitle="Table 4.0: Decision Matrix for Pillar Area Strategy">
-            <div id="decison-matrix-pillar"></div>
-          </decison-matrix-pillar>    
-
-        </div>
-        
+          <br/>
+          <decision-matrix-pillar subtitle="Table 7.6: Comparison of three search strategies considered">
+            <div id="decision-matrix-pillar"></div>
+          </decision-matrix-pillar>
+          </div>
         <div id="sub-section-7-header-4">
-          <h3>7.4 Test of Crazyflie in the Pillar Area</h3>
+          <h3>7.4 Testing of Victim placement</h3>
+          In the Pillar Area, targets were placed in different locations and the algorithm tested to ascertain the effectiveness of it to pick up the targets.
+          <br/>
+          1.	Target in free space
+          <br/>
+          Targets are placed in the middle of the pillar area in free space. Drones are seen to be able to detect and rescue these victims
+          <br/>
+          2.	Target in front of the pillar
+          <br/>
+          Another configuration involved placing the target directly in front of the pillar. Similarly to the one in free space, the drones had no issues picking up the victims in front of the pillar.
+          <br/>
+          3.	Target behind the pillar
+          <br/>
+          This was the hardest in theory to pick up since the drone would not be able to see the victim till it comes close to the target for the camera to pick it up. However, the drones were able to pick up and rescue the victims in the tests that we did. A failsafe however can be considered to increase the likelihood of rescuing the victim if it is not seen the first time that the drone passes through it.
+          <br/>
+        </div>
 
-          <video-component tag="video" source="https://www.youtube.com/embed/-OyrP666mzA?si=ktmBxre95ZHss4CD" subtitle="Figure 6.4: Video of Results of Tests"></video-component>
-
-
-          <div id="sub-section-7-header-4-header-1">
-            <h4>7.4.1 Sliding to the Side When Near a Pillar</h4>
+        <div id="sub-section-7-header-5">
+          <h3>7.5 Optimising for Search and Rescue</h3>
+          While Solution C was chosen as the ideal search strategy, further optimisations were made to maximise the coverage and reliability of the algorithm while minimising the search time. To achieve this, a few strategies were employed:
+          <br/>
+          <div id="sub-section-7-header-5-header-1">
+            <h4>7.5.1 Sliding to the Side When Near a Pillar</h4>
+            While the search strategy relies on avoiding a Pillar if it comes head-on to a Pillar, drift in the drone’s path can lead to it coming too close to Pillars on its side. A novel strategy was then employed for the drone to “slide” to the side should it come close to the Pillars, which would allow it to avoid collision with the Pillars while simultaneously maintaining the original heading of its flight path.
+            <video-component tag="video" source="https://www.youtube.com/embed/X_Eua5u_tts?si=fUMhbO6se7Xcpaq0" subtitle="Figure 7.4: Video of drone sliding to the side when too close to the Pillar"></video-component>
           </div>
 
-          <div id="sub-section-7-header-4-header-2">
-            <h4>7.4.2 Navigation Aid to Reverse at the End of the Pillar Area</h4>
+          <div id="sub-section-7-header-5-header-2">
+            <h4>7.5.2 Optimising the speed of the drones</h4>
+            Another parameter that we sought to optimise was the speed of the drones while flying within the pillar zone. Flying faster would mean that we are able to complete the mission in a quicker time, but would also increase the chance of crashing into pillars due to either slow or non-detection of the pillars while flying. This happens as the drones do require a processing time between detecting the pillars and avoiding it, and flying too fast would mean that the drones would crash into pillars before they are able to avoid it. Flying too slowly however would cause the mission to take too much time to complete.
+            <br/>
+            A speed of 0.5m/s was initially chosen. However, this was too fast leading to frequent crashes with drones. 0.2m/s was found to work well, but too slow. 0.25m/s was later found to be the optimal speed balancing speed with reliability of the algorithm.
+            <br/>
+          </div>
 
+          <div id="sub-section-7-header-5-header-3">
+            <h4>7.5.3 Navigation Aid to Reverse at the End of the Pillar Area</h4>
+            Given the Pillar drones are optimised to carry out search and rescue in the Pillar Area, it should spend the duration of the mission searching the Pillar Area instead of drifting to other zones. Navigation Aids are therefore used at the end of the Pillar Area to send a command to reverse, which is like that employed in the Known Search Area. This would keep the drones “within” this area where it is best suited to search and capture targets that may have been placed directly behind a Pillar and missed in the first run.
             <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_8_reverse.png"
             subtitle="Figure 7.8: Reverse"></image-component>
 
           </div>
+          <div id="sub-section-7-header-5-header-4">
+            <h4>7.5.4 Straight line vs Zig-Zag path</h4>
+            The last parameter that we considered was whether the drone should fly in a straight-line path or a zig-zag one (as seen in the images below):
+            <br/>
+            By following a zig-zag path, we can increase the field of view of the camera with an intent to increase the reliability of target detection. However, this comes at the cost of more frequent crashes and an unpredictable flight path. After our testing, we found that this was not a good change and a straight line path would be more desirable given the trade-offs.
+          </div>
         </div>
 
-        <div id="sub-section-7-header-5">
-          <h3>7.5 Full Algorithm</h3>
-
+        <div id="sub-section-7-header-6">
+          <h3>7.6 Full Algorithm</h3>
+          Putting all together, we now have the following algorithm for search and rescue within the Playing Field. (put in the rest of the ways we tested the rescue / scenarios of victim position) + speed test
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_9_1_full_algo.png"
           subtitle="Figure 7.9: Full Algorithm"></image-component>
-
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_9_2_full_algo.png"
           subtitle="Figure 7.9: Full Algorithm"></image-component>
 
@@ -1073,7 +1121,7 @@
 
       <div id="section-header-8" class="section" style="display: none;">
         <h2>8. Mission Planning (Shu Hui)</h2>
-  
+
 
     <div id="sub-section-8-header-1">
         <h3>8.1 Optimisation of Take-off Sequence</h3>
@@ -1103,50 +1151,84 @@
 
   <br />
   <br />
-  
+
       <div id="section-header-9" class="section" style="display: none;">
           <h2>9. Full-Scale Systems Testing</h2>
 
-       
+
       <div id="sub-section-9-header-1">
           <h3>9.1 Testing in Residential College 4 Multi-Purpose Sports Hall</h3>
-
+        To ascertain the accuracy and reliability of our overall search strategy, we conducted our full-scale testing at the Multi-Purpose Sports Hall of Residential College 4 (RC4 MPSH). RC4 MPSH’s dimensions was about 20 m x 20 m, providing a good approximation of the actual competition layout. This was also the first chance for us to test the search strategies for the Known, Unknown and Pillar search Areas all at once.
+        <br/><br/>
         <image-component tag="image" source="./assets/section-9-full-scale-testing/figure_9_1_full_scale_rc4.jpg"
         subtitle="Figure 9.1: Full-Scale Testing Carried Out at RC4 MPSH"></image-component>
-  
+        <br/>
+        In the RC4 MPSH, we first started by testing the algorithms without image streaming (no target detection). This allowed us to ascertain the feasibility of our search strategies and collision avoidance first.
+        Later, we had a total of three runs testing the overall performance of the drone swarm with image streaming on to enable target detection and rescue of Victim Markers. The score of our three runs were:
+        <br/><br/>
+        <rc4-test-scores subtitle="Table 9.1: Test Scores in RC4">
+          <div id="rc4-test-scores"></div>
+        </rc4-test-scores>
+        <br/>
+        Run 3 was the best of all runs taken, where three Victim Markers were rescued (of which one is bonus) while none of the Danger Zones were within 1m of the drones after landing.
+        <br/>
+        Originally, we were not able to rescue any victims and score points as we faced a range of issues that hindered our drone swarm’s performance. These are described more in detail below, including how they were resolved as we improved in each run.
+        <br/>
+
       <div id="sub-section-9-header-1-header-1">
         <h4>9.1.1 Network and Bandwidth Issues</h4>
+        The original plan was to set up one central computer to manage all drones in the Playing Field, and it would do so on one Wi-Fi network with 3 routers. This would be up to 20 drones managed on one central system. While this was not an issue with individual system testing using up to 10 drones, it did not perform well with 20 at once which could have been due to overloading of the bandwidth. Drones would often either not connect to the Wi-Fi or do so then disconnect mid-flight. Once the Wi-Fi disconnects, the drones can no longer send images from the camera to the central system to process which means that it would not be able to rescue any victims.
+        <br/>
+        Eventually, a decision was made to change de-link the network into 3 separate components that would be controlled by 3 separate computers. This worked much better and gave us the assurance that the system would be reliable moving into the competition day.
+
 
       </div>
- 
+
       <div id="sub-section-9-header-1-header-2">
         <h4>9.1.2 Different Performance of the Drones in Different Conditions</h4>
+        Moving to RC4 MPSH, there were a few changes in conditions. First, the floor posed new challenges as it was shinier than the one seen in our IDP studio. This led to undefined behaviour of the drones, including speed-ups and inconsistent altitude observed. The drones were therefore not able to rescue Victim Markers or did so inconsistently, given that the speed varied drastically mid-flight.
+        <br/>
+        To counter this, we had to vary the distance of the drones to ensure the stable performance of them within the RC4 MPSH. By flying them higher, this would allow us to counter the effect of the reflective surface given that the drones are further from the ground.  By increasing the altitude from the original 30 cm to 80 cm, the drones were seen to perform in a much more stable manner. It could then fly in a much more predictable fashion allowing a more reliable search and rescue.
+        <br/>
+
 
       </div>
 
-      
+
       <div id="sub-section-9-header-1-header-3">
         <h4>9.1.3 Overall Analysis</h4>
-
+        The conditions faced at RC4 MPSH were starkly different from that seen in individual component testing both due to the environment as well as the scale. It was therefore fortunate that we started the process early in Week 4, going to RC4 MPSH for a total of 4 times, which allowed us ample time to resolve the issues faced before going for the competition. The conditions at the actual competition, as described in the next paragraph, were found to be highly like that in the test here.
+        <br/>
       </div>
-  
+
       </div>
 
       <div id="sub-section-9-header-2">
-          <h3>9.2 Optimisation of Kill and Landing Sequence</h3>
-
-  
+          <h3>9.2 Competition Day</h3>
+        On the 17th of March 2025, our team participated in SAFMC 2025 held at the Singapore Expo. This was the “final” full scale test with our full system being run all together.
+        <br/>
+        We were given two runs to test our drone swarm system with the better of the two runs taken as the final score. A total of 5 Victim Markers (of possible 8 as given in the rules) were used on the actual day, and likewise 3 Danger Zones (of possible 4) were used. The location of the Victim Markers and Danger Zones were not made known to us before placing our drones down and were only placed in the Playing Field after deciding on the placement of drones in the Playing Field. We only knew that the two Bonus Victims would be placed in the Pillar and Unknown Search Areas (one each) while the rest of the Regular Victims could be placed anywhere in the Playing Field.
+        <br/>
+        In the actual Playing Field, the performance of our drone swarm was like that exhibited on our final run at RC4 (conducted one week prior to the event) but with greater stability as the carpeted floor allowed the drones to fly in a much more stable manner. The results of the two runs are as follows:
+        <br/><br/>
+        <actual-test-scores subtitle="Table 9.2: Actual test scores @ SAFMC 2025">
+          <div id="actual-test-scores"></div>
+        </actual-test-scores>
+        <br/><br/>
+        Run 2 was taken as the final score given that it was the better of two runs. Given that we were able to rescue all but one Victim marker, we can conclude that our test environment was a good gauge of the actual Playing Field, with our search strategies and target detection working as intended in the actual competition.
+        <br/><br/>
+        <image-component tag="image" source="./assets/section-9-full-scale-testing/team_photo.jpg"
+                         subtitle="Figure 9.2: Successful SAFMC 2025!"></image-component>
       </div>
-
     </div>
-   
+
     <br />
     <br />
 
       <div id="section-header-10" class="section" style="display: none;">
           <h2>10. Conclusion and Future Work</h2>
 
-        <div id="sub-section-9-header-1">
+        <div id="sub-section-10-header-1">
             <h3>10.1 Smart Stuff</h3>
         </div>
       </div>
