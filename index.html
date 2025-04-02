@@ -482,15 +482,26 @@
 
       <div id="section-header-2" class="section" style="display: none;">
         <h2>2. Selected Drone Platform </h2>
-
+          <p>
+            Given the project’s scope, an off-the-shelf drone platform was used in this project as building custom drones is complex and impractical. The selection of the drone platform for autonomous search and rescue missions was based on size and weight, modularity, sensor capabilities, cost, and availability. The ideal platform should be ultra-lightweight to support scalability in swarm applications. It should also be highly modular in both hardware and software, featuring swappable parts for ease of maintenance and open-source software to provide flexibility in developing solutions. The drone should be equipped with sensor suites that enable localization, obstacle detection, and avoidance capabilities. 
+            The drone platforms considered were DJI Tello, Bitcraze Crazyflie 2.1+, and DEXI Drone – Level III. The selection matrix for the drone development platform selection is in Appendix A.
+          </p>
       <div id="sub-section-2-header-1">
         <h3>2.1 Hardware: BitCraze Crazyflie</h3>
-
+        <p>
+          The Bitcraze Crazyflie 2.1+ was selected as the development platform for this project due to its superior lightweight design, modularity, and extensive sensor compatibility. 
+        </p>
 
         <image-component tag="image" source="assets\section-2-selected-drone-platform\figure_2_1_bitcraze_crazyflie.png"
         subtitle="Figure 2.1: Bitcraze Crazyflie 2.1+ Drone Development Platform"></image-component>
+        <p>
+          A key advantage of the Crazyflie is its open-source framework, which includes the Crazyflie firmware, the cflib Python library, and compatibility with ROS2 via the Crazyswarm2 package. The Crazyflie also supports onboard autonomy using the Crazyflie App Layer, allowing mission-specific algorithms to run directly on the drone without requiring continuous external communication.
+        </p>
 
-
+        <p>
+          In terms of hardware modularity, Bitcraze has an extensive ecosystem, providing various expansion decks that enhances its sensing and navigation capabilities. In this project, we will work with Crazyflie equipped with the Flow Deck, Multi-ranger Deck and AI Deck. The Flow Deck contains Time-of-Flight (ToF) sensor for measuring distance to the ground and an optical flow sensor to measure velocity, enabling localization. The Multi-ranger Deck consists of five ToF sensors positioned to measure distances in the front, back, left, right, and up direction, enabling obstacle detection and avoidance. Finally, the AI Deck includes a monochrome camera (HM01B0), an onboard MCU chip (GAP8), and ESP32, which allows for onboard image processing along with Wi-Fi connectivity for real-time data transfer and remote communication.
+        </p>
+        
         <image-full tag="image" source="assets\section-2-selected-drone-platform\figure_2_2_expansion_decks.png"
         subtitle="Figure 2.2: Expansion Decks: (Left) AI Deck, (Middle) Flow Deck, (Right) Multi-ranger Deck"></image-full>
         <br><br>
@@ -503,7 +514,12 @@
       <div id="sub-section-2-header-2">
         <h3>2.2 Drone Software and Development</h3>
         <p>
-          Depending on system requirements, the Crazyflie can be interfaced through multiple frameworks, including the native Bitcraze Crazyflie framework, ROS, or a range of external frameworks developed by the open-source community. Each option offers unique capabilities, allowing flexibility based on the project’s specific needs. In this project, Ubuntu 22.04 and ROS2 Humble (Figure 2.5) are used to develop the subsystems as they are the most widely supported development environments.
+          Crazyflie runs on the Bitcraze Crazyflie firmware, which is written in C and is fully open source. It includes an app layer that allow users to add custom code directly to the Crazyflie, making it the entry point for implementing decentralized autonomous capabilities. The app layer contains a set of APIs such as the Deck API that allows scripts running onboard to access sensor data like Multi-ranger Deck’s distance data, odometry data from   the Flow Deck, etc. (Bitcraze, 2024)  
+        </p>
+
+        <p>
+          For centralized solutions, the Crazyflie can be integrated with ROS2 using the Crazyswarm2 Python package. This enables high-level control for multi-drone coordination via cflib, Python library that facilitates communication and control through Crazyradio, a long-range open USB radio dongle. In addition, the Crazyswarm2 package also enable the Ground Control Station (GCS) to access Crazyflie sensor data through the various ROS2 topics.
+          The development workstations are equipped with ROS2 Humble, running on Ubuntu 22.04 to support software development.
         </p>
 
       </div>
