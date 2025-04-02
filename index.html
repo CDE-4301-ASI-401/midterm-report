@@ -143,14 +143,15 @@
           <li><a href="#sub-section-7-header-1">7.1 Introduction to the Pillar Area</a></li>
           <li><a href="#sub-section-7-header-2">7.2 Mock-Up of the Pillar Area</a></li>
           <li><a href="#sub-section-7-header-3">7.3 Testing of Search Strategies Within</a></li>
+          <li><a href="#sub-section-7-header-4">7.4 Testing of Victim placement</a></li>
           <li>
-            <a href="#sub-section-7-header-4">7.4 Optimising for Search and Rescue</a>
+            <a href="#sub-section-7-header-5">7.5 Optimising for Search and Rescue</a>
             <ul type="none">
-              <li><a href="#sub-section-7-header-4-header-1">7.4.1 Sliding to the Side When Near a Pillar</a></li>
-              <li><a href="#sub-section-7-header-4-header-2">7.4.2 Navigation Aid to Reverse at the End of the Pillar Area</a></li>
+              <li><a href="#sub-section-7-header-5-header-1">7.5.1 Sliding to the Side When Near a Pillar</a></li>
+              <li><a href="#sub-section-7-header-5-header-2">7.5.2 Navigation Aid to Reverse at the End of the Pillar Area</a></li>
             </ul>
           </li> 
-          <li><a href="#sub-section-7-header-5">7.5 Full Algorithm</a></li>
+          <li><a href="#sub-section-7-header-6">7.6 Full Algorithm</a></li>
         </ul>
       </li>
   
@@ -811,26 +812,26 @@
 
       <div id="section-header-7" class="section" style="display: none;">
           <h2>7. Pillar Area (Matthew)</h2>
-
+        Another new feature of SAFMC 2025 is the addition of the Pillar Area. This area of the playing field has no Inner Walls and only Pillars to form the obstacles that the drones must navigate across.
         <div id="sub-section-7-header-1">
           <h3>7.1 Introduction to the Pillar Area</h3>
-
+          In the Pillar Area, there are no Inner Walls within to navigate around. This would mean that a different strategy from that used in the Known and Unknown Search Areas would be needed for the drone to navigate it and search for Victim Markers.
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_1_pillar_area.png"
           subtitle="Figure 7.1: Pillar Area"></image-component>
-
         </div>
-
         <div id="sub-section-7-header-2">
+          <br/>
           <h3>7.2 Mock-Up of the Pillar Area</h3>
-
+          To test the Pillar Area, we need to build a mock-up of 8 Pillars in the area for our drones to navigate through. This was achieved using Styrofoam boards, which were tested to ensure that the drones can detect them while flying and can also fly in a stable manner near them. Both were found to be satisfactory with our Crazyflie drones. The dimensions of the pillar are about 30cm in diameter, close to the competition specification of 40cm. The height of the pillar are about 30-40cm, tall enough for our initially planned flying altitude of 30cm.
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_2_mock_pillars.png"
           subtitle="Figure 7.2: Mock Pillars Used in The Arena, Left Was Wrapped with Paper to Get the Right Pillar on The Right Image"></image-component>
-
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_3_testing_pillar_area.jpg"
           subtitle="Figure 7.3: Testing Of Pillar Area in IDP Studio 1 (Mention Height of The Chair / Chair + Pillar Combo)"></image-component>
+          <br/>Later, the flying height was adjusted to 80cm which was found to be more robust and reliable. To support this new flying height, pillars were placed on chairs as seen in Fig xx that were about 75cm in height. The pillar would now be in the range of 75 – 115cm off the ground.
 
         </div>
-
         <div id="sub-section-7-header-3">
           <h3>7.3 Testing of Search Strategies Within</h3>
 
@@ -842,27 +843,22 @@
 
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_6_strat_C.png"
           subtitle="Figure 7.6: Description of Search Strategy C"></image-component>
+        </div>
 
-          <video-component tag="video" source="https://www.youtube.com/embed/OxNeZHhW-sI?si=wiNocZl1OFRdu_7x" subtitle="Figure 6.3: Video of Crazyflies Hovering Between New Styrofoam Blocks"></video-component>
-
-          <decison-matrix-pillar subtitle="Table 4.0: Decision Matrix for Pillar Area Strategy">
-            <div id="decison-matrix-pillar"></div>
-          </decison-matrix-pillar>    
-
+        <div id="sub-section-7-header-4">
+          <h3>7.4 Testing of Victim placement</h3>
         </div>
         
-        <div id="sub-section-7-header-4">
-          <h3>7.4 Test of Crazyflie in the Pillar Area</h3>
-
-          <video-component tag="video" source="https://www.youtube.com/embed/-OyrP666mzA?si=ktmBxre95ZHss4CD" subtitle="Figure 6.4: Video of Results of Tests"></video-component>
-
-
-          <div id="sub-section-7-header-4-header-1">
-            <h4>7.4.1 Sliding to the Side When Near a Pillar</h4>
+        <div id="sub-section-7-header-5">
+          <h3>7.5 Optimising for Search and Rescue</h3>
+          <div id="sub-section-7-header-5-header-1">
+            <h4>7.5.1 Sliding to the Side When Near a Pillar</h4>
+            While the search strategy relies on avoiding a Pillar if it comes head-on to a Pillar, drift in the drone’s path can lead to it coming too close to Pillars on its side. A novel strategy was then employed for the drone to “slide” to the side should it come close to the Pillars, which would allow it to avoid collision with the Pillars while simultaneously maintaining the original heading of its flight path.
+            <video-component tag="video" source="https://www.youtube.com/embed/X_Eua5u_tts?si=fUMhbO6se7Xcpaq0" subtitle="Figure 7.4: Video of drone sliding to the side when too close to the Pillar"></video-component>
           </div>
 
-          <div id="sub-section-7-header-4-header-2">
-            <h4>7.4.2 Navigation Aid to Reverse at the End of the Pillar Area</h4>
+          <div id="sub-section-7-header-5-header-2">
+            <h4>7.5.2 Navigation Aid to Reverse at the End of the Pillar Area</h4>
 
             <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_8_reverse.png"
             subtitle="Figure 7.8: Reverse"></image-component>
@@ -870,8 +866,8 @@
           </div>
         </div>
 
-        <div id="sub-section-7-header-5">
-          <h3>7.5 Full Algorithm</h3>
+        <div id="sub-section-7-header-6">
+          <h3>7.6 Full Algorithm</h3>
 
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_9_1_full_algo.png"
           subtitle="Figure 7.9: Full Algorithm"></image-component>
