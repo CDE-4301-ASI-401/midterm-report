@@ -99,7 +99,8 @@
           <li><a href="#sub-section-3-header-2">3.2 Onboard Object Detection</a></li>
           <li><a href="#sub-section-3-header-3">3.3 Offboard Object Detection</a></li>
           <li><a href="#sub-section-3-header-4">3.4 Optimising Detection Parameters for the Drone</a></li>
-          <li><a href="#sub-section-3-header-5">3.5 External System Optimisation</a></li>
+          <li><a href="#sub-section-3-header-5">3.5 Upgrades to Firmware</a></li>
+          <li><a href="#sub-section-3-header-6">3.6 External System Optimisation</a></li>
         </ul>
       </li>
 
@@ -127,14 +128,14 @@
       </li>
 
       <li>
-        <a href="#section-header-6" onclick="showSection('section-header-6')">6. UnKnown Search Area (Yan Yew)</a>
+        <a href="#section-header-6" onclick="showSection('section-header-6')">6. Unknown Search Area (Yan Yew)</a>
         <ul type="none">
           <li><a href="#sub-section-6-header-1">6.1 Feasibility Testing of Simulatanous Mapping and Localisation</a></li>
             <li>
             <a href="#sub-section-6-header-2">6.2 Implementation of MSBA</a>
             <ul type="none">
-              <li><a href="#sub-section-6-header-2-header-1">6.2.1 Drone Guidance to the Unknown Area</a></li>
-              <li><a href="#sub-section-6-header-2-header-2">6.2.2 MSBA for Searching the Unknown Area</a></li>
+              <li><a href="#sub-section-6-header-2-header-1">6.2.1 Drone Guidance to the Unknown Search Area</a></li>
+              <li><a href="#sub-section-6-header-2-header-2">6.2.2 MSBA for Searching the Unknown Search Area</a></li>
             </ul>
           </li>     
           <li><a href="#sub-section-6-header-3">6.3 Integration with Mission Planner</a></li>
@@ -149,7 +150,7 @@
           <li><a href="#sub-section-7-header-1">7.1 Introduction to the Pillar Area</a></li>
           <li><a href="#sub-section-7-header-2">7.2 Mock-Up of the Pillar Area</a></li>
           <li><a href="#sub-section-7-header-3">7.3 Testing of Search Strategies Within</a></li>
-          <li><a href="#sub-section-7-header-4">7.4 Testing of Victim placement</a></li>
+          <li><a href="#sub-section-7-header-4">7.4 Testing of Victim Placement</a></li>
           <li>
             <a href="#sub-section-7-header-5">7.5 Optimising for Search and Rescue</a>
             <ul type="none">
@@ -308,7 +309,7 @@
       <div id="sub-section-1-header-2">
         <h3>1.2 Playing Field</h3>
         <p>
-          Figure 1.1 shows how the Playing Field may look like, which is not drawn to scale. Furthermore, the Danger Zones, Regular Victims and Bonus Victims may not be placed exactly where it is depicted in Figure XX. Teams are given two runs for the challenge. There is a maximum of two simultaneous take-offs in each run. For each run, the placement of Danger Zones, Regular Victims and Bonus Victims may change.
+          Figure 1.1 shows how the Playing Field may look like, which is not drawn to scale. Furthermore, the Danger Zones, Regular Victims and Bonus Victims may not be placed exactly where it is depicted in Figure 1.1. Teams are given two runs for the challenge. There is a maximum of two simultaneous take-offs in each run. For each run, the placement of Danger Zones, Regular Victims and Bonus Victims may change.
         </p>
 
         <image-component tag="image" source="./assets/section-1-safmc2025/figure_1_1_SAFMC_2025_playing_field.png"
@@ -386,7 +387,7 @@
         subtitle="Figure 1.6: Scoring Process (Rescue Victims)"></image-component>
         
         <p>
-          To rescue a Victim, the Crazyflie needs to land within a 1 m radius of the Line of Sight (LOS) of the Regular Victim or a Bonus Victim (Figure 1.9). No obstacles are allowed within the Line of Sight.
+          To rescue a Victim, the Crazyflie needs to land within a 1 m radius of the Line of Sight (LOS) of the Regular Victim or a Bonus Victim (Figure 1.6). No obstacles are allowed within the Line of Sight.
           </p>
         
           <p>
@@ -442,12 +443,12 @@
       <div id="sub-section-1-header-7">
         <h3>1.7 SAFMC 2025 vs SAFMC 2024</h3>
 
-        <comparison-safmc subtitle="Table 1.0: Comparison of Competition Rules for SAFMC 2024 and SAFMC 2025">
+        <comparison-safmc subtitle="Table 1.1: Comparison of Competition Rules for SAFMC 2024 and SAFMC 2025">
           <div id="comparison-safmc"></div>
         </comparison-safmc>
 
         <p>
-          Table 1.0 shows an overview of the differences in the Competition Rules for SAFMC 2024 and SAFMC 2025.
+          Table 1.1 shows an overview of the differences in the Competition Rules for SAFMC 2024 and SAFMC 2025.
         </p>
         <p>
           For SAFMC 2025, an Unknown Search Area is introduced, in which the layout of the Unknown Search Area will remain undisclosed throughout the Competition Day Mission. Additionally, the layout of the Known Search Area will only be disclosed on the Competition Day Mission. In contrast, for SAFMC 2024, the layout of the entire Arena was only disclosed on the Competition Day Mission.
@@ -493,7 +494,7 @@
             Given the project’s scope, an off-the-shelf drone platform was used in this project as building custom drones is complex and impractical. The selection of the drone platform for autonomous search and rescue missions was based on size and weight, modularity, sensor capabilities, cost, and availability. The ideal platform should be ultra-lightweight to support scalability in swarm applications. It should also be highly modular in both hardware and software, featuring swappable parts for ease of maintenance and open-source software to provide flexibility in developing solutions. The drone should be equipped with sensor suites that enable localization, obstacle detection, and avoidance capabilities. 
           </p>
           <p>
-            The drone platforms considered were DJI Tello, Bitcraze Crazyflie 2.1+, and DEXI Drone – Level III. The selection matrix for the drone development platform selection is in Appendix A.
+            The drone platforms considered were DJI Tello, Bitcraze Crazyflie 2.1+, and DEXI Drone – Level III. The selection matrix for the drone development platform selection is in <i>Appendix A</i>.
           </p>
       <div id="sub-section-2-header-1">
         <h3>2.1 Hardware: BitCraze Crazyflie</h3>
@@ -511,7 +512,7 @@
         <p>
           Bitcraze has an extensive ecosystem, providing various expansion decks that enhances its sensing and navigation capabilities. The hardware modularity of the Crazyflie is leveraged by incorporating specific expansion decks, each chosen to fulfil a critical functional requirement for autonomous flight and interaction:
         </p>
-        <ul>
+        <ul style="text-align: justify;">
             <li><strong>AI Deck (Figure 2.2, Left):</strong> 
               This deck serves two important purposes. Firstly, its onboard monochrome camera (HM01B0) is the primary sensor for visual object detection (identifying AprilTags representing Victim Markers, Danger Zones, or Navigation Aids). Secondly, its integrated ESP32 module provides essential Wi-Fi connectivity, enabling image streaming to the GCS for processing and facilitating command/telemetry exchange. Furthermore, the GAP8 MCU offers potential for future onboard image processing and supports decentralized strategies.
             </li>
@@ -552,22 +553,16 @@
       <p>
         The Object Detection Subsystem involves the detection of objects such as Victim Markers, Danger Zones and Navigation Aids. Upon the detection of Victim Markers, land commands are transmitted via CPX (Crazyflie Packet eXchange) from the GCS to the drones. Similarly, upon the detection of Navigation Aids, the respective predefined Search Strategies will be “activated” after receiving commands from the GCS. In contrast, ignore commands is transmitted upon the detection of Danger Zones.
       </p>
-    <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_1_hardware.png"
-    subtitle="Figure 3.1: Hardware for Object Detection"></image-component>
-    
-    <p>
-      The hardware for the object detection subsystem (Figure 1.4) composes of several components that work together to enable efficient object detection.
-    </p>
 
     <div id="sub-section-3-header-1">
       <h3>3.1 Object Selection</h3>
 
     <p>
-      A decision matrix was created to aid the object selection decision (Table 2.0). Objects refer to Navigation Aids, Victim Markers and Danger Zones, weighing factors crucial for competition success under tight time constraints.
+      A decision matrix was created to aid the object selection decision (Table 3.1). Objects refer to Navigation Aids, Victim Markers and Danger Zones, weighing factors crucial for competition success under tight time constraints.
     </p>
 
-      <image-component tag="image" source="./assets/section-3-obj-detection/table_3_1_decision matrix.png"
-      subtitle="Table 3.1 : Decision Matrix for Target and Danger Zone Selection "></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/table_3_1_decision matrix.png"
+      subtitle="Table 3.1 : Decision Matrix for Target and Danger Zone Selection "></image-full>
 
       <p>
         Given the project timeline and the breadth of subsystems required (Navigation Aids, Search Strategies, Mission Planning), solutions demanding extensive development time or complex integration were heavily penalized. Reliability was weighted lowest at this initial selection stage, assuming implementation quality would determine final reliability. Depending on the target type, the approach for object detection varies significantly.
@@ -579,13 +574,13 @@
         Another possible approach we want to investigate was using Bitcraze’s Loco Positioning Deck which uses Ultra-wideband system to detect Loco Positioning anchors. However, the Loco Positioning System is expensive (Bitcraze, n.d.), with maximum detection range of 8 m to 10 m indoors (Bitcraze, n.d.). The Loco Positioning System was not feasible for a 20 m x 20 m playing field, as it would require multiple Loco Positioning anchors (to act as Navigation Aids) scattered throughout the field. Additionally, competition rules states that Navigation Aids may be electronic but both Danger Zones and Victim Markers must not be electronic. With our Crazyflie drones already upgraded with three decks, the male header pins are too short to accommodate an additional deck.
       </p>
       <p>
-        The object chosen is AprilTags (Figure 4.2). AprilTags are visual fiducial markers used in applications such as camera calibration. AprilTags are chosen because it is more accurate than other markers such as WhyCon (Robotics Knowledgebase, n.d.). They meet the non-electronic requirement for Victim Markers and Danger Zones, are cheap, easy to create/print, and reliable under varying lighting conditions (compared to simple colour/shape detection). It allows calculation of the exact position, orientation and identity of a marker relative to a camera. Furthermore, it allows the user to specify a list of markers to detect and have existing ROS support.
+        The object chosen is AprilTags (Figure 3.2). AprilTags are visual fiducial markers used in applications such as camera calibration. AprilTags are chosen because it is more accurate than other markers such as WhyCon (Robotics Knowledgebase, n.d.). They meet the non-electronic requirement for Victim Markers and Danger Zones, are cheap, easy to create/print, and reliable under varying lighting conditions (compared to simple colour/shape detection). It allows calculation of the exact position, orientation and identity of a marker relative to a camera. Furthermore, it allows the user to specify a list of markers to detect and have existing ROS support.
       </p>
       <p>
         AprilTags are used as Victim Markers for SAFMC 2024 and SAFMC 2025. For SAFMC 2025, they are markers for Danger Zones and Navigation Aids. An exploration of on-board and off-board detection of AprilTags is then conducted.
       </p>
-      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_2_objects.png"
-    subtitle="Figure 3.2: Regular/Bonus Victims, Danger Markers and Navigation Aids"></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/figure_3_1_objects.png"
+    subtitle="Figure 3.1: Regular/Bonus Victims, Danger Markers and Navigation Aids"></image-full>
 
       <p>
         Competition rules state that the Navigation Aids must have the maximum base dimensions of 1 m x 1 m with no specified height. As the height of the Navigation Aids was not specified, we chose to make Nav Aids thin floor markers. This decision is influenced by the observation that the Flow Deck is very sensitive to floor texture and lighting conditions. Increasing the height of the Navigation Aids makes the drone fly higher momentarily to accommodate the height of the Navigation Aid when it is detected, which can disrupt the velocity estimation and localisation accuracy of the Flow Deck. Furthermore, we avoided mounting Navigation Aids on wall as the detection distance is too small, and the Multi-ranger Deck will just detect the Navigation Aid as a wall and not trigger the desired drone behaviour.
@@ -604,7 +599,7 @@
         To overcome these limitations and achieve a fully autonomous swarm that complements the decentralised search approach, an onboard object detection approach, meaning onboard image processing of the detected Victim Markers, was explored. The goal was to process images and detect AprilTags directly on the drone, reducing Wi-Fi traffic to only essential data.
       </p>
       <p>
-        A comparison of the advantages of on-board image processing and off-board image processing in Table 3.0.
+        A comparison of the advantages of on-board image processing and off-board image processing in Table 3.2.
       </p>
       
       <comparison-image-processing subtitle="Table 3.2: Advantages between On-board Processing and Off-board Processing (Bitcraze, n.d.)">
@@ -634,10 +629,10 @@
         </p>
         <video-component 
         source="https://www.youtube.com/embed/No0juLGqdLo" 
-        subtitle="Figure 3.3: Video of Object Detection for One Crazyflie">
+        subtitle="Figure 3.2: Video of Object Detection for One Crazyflie">
     </video-component>
         <p>
-          The test for object detection (Figure 4.3) was conducted in the Computer Vision room at Temasek Laboratories. In this test, the Crazyflie takes off to search for one Victim Marker autonomously. The Crazyflie flies over the Danger Zone (AprilTag in the middle of the room) and rescuing the victim (AprilTag at the end of the room). The Search Algorithm used in this test was Modified Swarm Bug Algorithm. The angle of the camera mount was 45°.
+          The test for object detection (Figure 3.2) was conducted in the Computer Vision room at Temasek Laboratories. In this test, the Crazyflie takes off to search for one Victim Marker autonomously. The Crazyflie flies over the Danger Zone (AprilTag in the middle of the room) and rescuing the victim (AprilTag at the end of the room). The Search Algorithm used in this test was Modified Swarm Bug Algorithm. The angle of the camera mount was 45°.
         </p>
         <p>
           This test confirms that the Crazyflie successfully maintains a distance within the 1 m radius of the Victim Marker, achieves a successful rescue by landing near the Victim Marker, and accurately detects the Danger Zone without landing within it.
@@ -649,13 +644,13 @@
     </div>
 
     <div id="sub-section-3-header-4">
-      <h3>4.4 Optimising Detection Distance for the Drone</h3>
+      <h3>3.4 Optimising Detection Distance for the Drone</h3>
 
       <p>
         The camera mount holding the HM01B0 monochrome camera module is fixed at 45° below the horizontal.
       </p>
-      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_4_camera_mount_angles.png"
-      subtitle="Figure 3.4: Camera Mount Angles"></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/figure_3_3_camera_mount_angles.png"
+      subtitle="Figure 3.3: Camera Mount Angles"></image-full>
       <p>
         Off-board processing inherently introduces latency between image capture, transmission, GCS processing, and command execution. This delay can cause the drone to overshoot the target, landing further away from the Victim Marker than desired, even if still within the 1 m LOS radius. The detection distance is not ideal. As such, tests to optimise the height and speed of the drones was conducted in IDP Studio 1 to decrease the detection distance, However, increasing the speeds and the altitudes lead to a decrease in image resolution due to motion blur, which negatively impacts detection accuracy. As such, a balance must be struck between the height, speed and image resolution of the drones to maintain detection accuracy.
       </p>
@@ -663,31 +658,35 @@
         The test was conducted by varying the speed of the drone by 0.1 m/s while taking the average of two detection distance readings.
       </p>
       <p>
-        The vertical distance between the detected AprilTag and the drone generally decrease as the speed increase (Figure 4.5). However, after increasing the speed beyond 0.5 m/s, there is only a marginal improvement in detection distance. Furthermore, to strike a balance between the drone speed and the turning speed, which is the drone's overall speed scaled down by half when the drone is rotating at a corner, 0.4 m/s was determined as the drone speed.
+        The vertical distance between the detected AprilTag and the drone generally decrease as the speed increase (Figure 3.4). However, after increasing the speed beyond 0.5 m/s, there is only a marginal improvement in detection distance. Furthermore, to strike a balance between the drone speed and the turning speed, which is the drone's overall speed scaled down by half when the drone is rotating at a corner, 0.4 m/s was determined as the drone speed.
       </p>
       <p>
         The turning speed of the drone when it is rotating at a corner is 0.2 m/s, which serves as a basis for the Pillar drones’ speed when navigating around the Pillars.
       </p>
 
-      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_5_graph_distance_vs_speed.png"
-      subtitle="Figure 3.5: Graph of Vertical Distance from AprilTag (cm) vs Speed (m/s)"></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/figure_3_4_graph_distance_vs_speed.png"
+      subtitle="Figure 3.4: Graph of Vertical Distance from AprilTag (cm) vs Speed (m/s)"></image-full>
       
       <p>
         The second test was conducted by varying the height (attitude) of the drone by 0.1 m while taking the average of two detection distance readings.
       </p>
       <p>
-        The vertical distance between the detected AprilTag and the drone generally increase as the height increase (Figure 4.6), up to a height of 60 cm. The height of the drone was initially decided as 30 cm as the detection distance is the shortest. However, in the RC4 MPSH, the floor surface was very reflective and shiny, which interfered with the velocity estimation of the Flow Deck and the detection accuracy of the camera. The drones had to fly higher to 50 cm to increase the detection accuracy. Beyond 90 cm, the drone will not detect AprilTags.
+        The vertical distance between the detected AprilTag and the drone generally increase as the height increase (Figure 3.5), up to a height of 60 cm. The height of the drone was initially decided as 30 cm as the detection distance is the shortest. However, in the RC4 MPSH, the floor surface was very reflective and shiny, which interfered with the velocity estimation of the Flow Deck and the detection accuracy of the camera. The drones had to fly higher to 50 cm to increase the detection accuracy. Beyond 90 cm, the drone will not detect AprilTags.
       </p>
       
-      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_6_graph_distance_vs_height.png"
-      subtitle="Figure 3.6: Graph of Vertical Distance from AprilTag (cm) vs Height (m)"></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/figure_3_5_graph_distance_vs_height.png"
+      subtitle="Figure 3.5: Graph of Vertical Distance from AprilTag (cm) vs Height (m)"></image-full>
       <p>
         To counteract the system latency caused by image transmission, GCS processing amd CPX command, a fixed delay was introduced in the <i>mission_planner.py</i> script after a Victim Marker is detected but before the land command is sent. This allows the drone to fly slightly further, positioning itself more directly over the Victim Marker by the time the land command executes. The test involved repeatedly flying the drones with the delay implemented and then taking the average results to determine the most effective delay time. 1 second delay was chosen. Without delay, the detection distance will be 63.5 cm.
       </p>
 
-      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_7_landing_distance.png"
-      subtitle="Figure 3.7: Detection Distance With Delay Implemented"></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/figure_3_6_landing_distance.png"
+      subtitle="Figure 3.6: Detection Distance With Delay Implemented"></image-full>
 
+    </div>
+
+    <div id="sub-section-3-header-5">
+      <h3>3.5 Upgrade to Firmware</h3>
       <p>
         Due to issues such as delayed image transmission for a swarm, network robustness issues, and repeated drone disconnections, it was imperative that performance improvements measures be taken.
       </p>
@@ -695,11 +694,11 @@
         The GAP8 on the AI-Deck was flashed with Wi-Fi Video Streamer example (Bitcraze, n.d.) using a JTAG providing streaming raw images capability from the GAP8 to the GCS. However, streaming RAW files presents several disadvantages: the RAW images is larger than the lossy JPEG image format and needs to be processed by the GAP8, leading to processing time and visible lags. Streaming RAW images from multiple drones simultaneously quickly saturated the Wi-Fi bandwidth, leading to the lag, disconnections, and scalability issues observed by the 2024 team and in our initial multi-drone tests.
       </p>
       <p>
-        Figure 4.8 below shows the differences between the original image streaming firmware and the updated lossy JPEG image streaming firmware. The test was conducted in a well-lit room
+        Figure 3.7 below shows the differences between the original image streaming firmware and the updated lossy JPEG image streaming firmware. The test was conducted in a well-lit room
       </p>
 
-      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_8_original_vs_updated_image_streaming.png"
-      subtitle="Figure 3.8: Original Image Streaming Firmware (Left)  and Updated Image streaming Firmware (Right)"></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/figure_3_7_original_vs_updated_image_streaming.png"
+      subtitle="Figure 3.7: Original Image Streaming Firmware (Left)  and Updated Image streaming Firmware (Right)"></image-full>
 
       <p>
         A modified image streaming firmware (Leong, n.d.) that streams Lossy JPEG images and included an autoexposure feature was flashed onto the GAP8. The frame rate is increased to 7 to 8 Frames per seconds (FPS) and the image quality and streaming efficiency improved.
@@ -708,12 +707,12 @@
         This solved our issues marginally. For a swarm of more than twelve stationary drones, there was still delayed image transmission and repeated drones’ disconnections. When a swarm of nineteen drones was tested, only eight drones managed to continuously fly and stream simultaneously at any time. We experimented with reducing the frame rate to ~3.7 FPS to lessen the packet load further. This did not yield significant stability improvements in our tests and potentially risked missing tags during faster movements, so we reverted to the higher ~7-8 FPS rate provided by the JPEG firmware, deciding instead to focus on external network and communication optimization.
       </p>
       <p>
-        Further firmware-level optimizations included upgrading the ESP32 Wi-Fi firmware (Bitcraze, n.d.) for potentially better TCP throughput and buffer management, and updating the NRF51 firmware (Bitcraze, n.d.) for improved Crazyradio link startup reliability. These provided marginal gains but did not fully resolve the large-swarm communication bottleneck, necessitating architectural changes.</p>
-
+        Further firmware-level optimizations included upgrading the ESP32 Wi-Fi firmware (Bitcraze, n.d.) for potentially better TCP throughput and buffer management, and updating the NRF51 firmware (Bitcraze, n.d.) for improved Crazyradio link startup reliability. These provided marginal gains but did not fully resolve the large-swarm communication bottleneck, necessitating architectural changes.
+      </p>
     </div>
 
-    <div id="sub-section-3-header-5">
-      <h3>3.5 External System Optimisation</h3>
+    <div id="sub-section-3-header-6">
+      <h3>3.6 External System Optimisation</h3>
       <p>
         The SAFMC 2025 strategy required frequent CPX communication for:
       </p>
@@ -727,27 +726,27 @@
         Due to the heavy reliance on commands sent using the Crazyradio Dongle this year, the Crazyradio throws a lot of errors when a swarm encounters the AprilTags.
       </p>
       <p>
-        The SAFMC 2024 team used only three Crazyradio dongles and assigned static radio/channel IDs. This limited architecture struggled even with their simpler mission, as noted in their reports. For SAFMC 2025, the need to potentially send unique commands to multiple drones simultaneously, when several drones detect different Navigation Aids concurrently quickly overloaded the limited Crazyradio. Early swarm tests showed frequent CPX errors and command failures when multiple drones detected AprilTags around the same time, whereas single-drone tests worked well (FIgure 4.9).
+        The SAFMC 2024 team used only three Crazyradio dongles and assigned static radio/channel IDs. This limited architecture struggled even with their simpler mission, as noted in their reports. For SAFMC 2025, the need to potentially send unique commands to multiple drones simultaneously, when several drones detect different Navigation Aids concurrently quickly overloaded the limited Crazyradio. Early swarm tests showed frequent CPX errors and command failures when multiple drones detected AprilTags around the same time, whereas single-drone tests worked well (FIgure 3.8).
       </p>
       <video-component 
       source="https://www.youtube.com/embed/3d6A9wGV5tY" 
-      subtitle="Figure 3.9: Video of One Drone Successfully Reversing">
+      subtitle="Figure 3.8: Video of One Drone Successfully Reversing">
       </video-component>
       <p>
         To solve this issue, our team increased the number of Crazyradio Dongles from 3 to 7. Instead of static assignments, we implemented a dynamic Crazyradio management system within the <i>mission_planner</i>. When a command needs to be sent to a drone, the system checks for an available (idle) Crazyradio dongle. If the primary assigned dongle is busy, it iterates through the pool of available dongles until it finds one free to transmit the CPX packet. This dynamic allocation prevents commands from being dropped due to a single busy radio and is a key improvement over the static SAFMC 2024 approach, enabling more reliable swarm communication under heavy load.
       </p>
       <p>
-        Successful swarm scenarios using this enhanced setup showed multiple drones correctly ignoring Danger Zones, landing at Victim Markers, or reacting to Navigation Aids simultaneously or in quick succession, which was not reliably achievable with the previous architecture.(Figures 4.10 and 4.11) 
+        Successful swarm scenarios using this enhanced setup showed multiple drones correctly ignoring Danger Zones, landing at Victim Markers, or reacting to Navigation Aids simultaneously or in quick succession, which was not reliably achievable with the previous architecture.(Figures 3.9 and 3.10) 
       </p>
 
       <video-component 
       source="https://www.youtube.com/embed/TYLihQFfpwo" 
-      subtitle="Figure 3.10: Video Swarm Ignoring (Danger Zone)">
+      subtitle="Figure 3.9: Video Swarm Ignoring (Danger Zone)">
   </video-component>
 
   <video-component 
       source="https://www.youtube.com/embed/RThMP-MyErE" 
-      subtitle="Figure 3.11: Video of Swarm Detection (Victim Marker)">
+      subtitle="Figure 3.10: Video of Swarm Detection (Victim Marker)">
   </video-component>
       <p>
         Initially, SAFMC 2024 team daisy chained two slave routers to a single master router but still faced issues. For SAFMC 2025, we increased the number of GCS laptops from one to three, with one GCS laptops in charge of one area in the Playing Field. Each GCS ran its own instance of the ROS detection nodes and MissionPlanner, communicating with its assigned drones via Wi-Fi for image streaming and its share of the Crazyradio dongles (for CPX commands). While introducing complexity in coordination which were handled via mission pre-planning and drone assignments, this approach offered significant advantages. Each GCS handled image processing and detection for fewer drones around 6 to 7 instead of 19 drones. The Wi-Fi load was distributed across multiple access points and network interfaces. Furthermore, the failure of one GCS would not necessarily bring down the entire swarm.
@@ -756,8 +755,8 @@
         This setup was effective. Even though background noise was a potential factor during all our tests, this setup made it easier track the movement of each drone and the image streaming performance improved drastically. Only one to two drones per GCS laptops facing repeated disconnections during our tests at RC4 MPSH. On SAFMC 2025 competition day, all nineteen drones streamed images to their GCS successfully without disconnections or freezing.
       </p>
 
-      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_12_router.png"
-      subtitle="Figure 3.12: Old Router Setup and Modified Router Setup"></image-component>
+      <image-full tag="image" source="./assets/section-3-obj-detection/figure_3_11_router.png"
+      subtitle="Figure 3.11: Old Router Setup and Modified Router Setup"></image-full>
 
     </div>
 
@@ -876,7 +875,7 @@
             The strategy to perform search in the Known Search Area is illustrated in Figure 5.4. It involves deploying the drones on the left side of the Playing Field, ensuring they reach designated dispersion points—Point A, Point B, and Point C, which the drones will then fan out in their respective preferred headings. Each dispersion point is assigned three drones. To guide the drones to their respective dispersion points, they will follow a wall-following manoeuvre around Wall 1, Wall 2, and Wall 3 before dispersing into the search area. 
           </p>
           <p>
-            The flight altitude of all drones is set to 0.3 m because real-life test flight at that height provided great flight stability. The speed of drones is set to 0.4 m/s as it is the optimal speed for stable flight performance after performing real-life testing which will be explained in later section in Section 5.6. This speed also ensures reliable AprilTag detection as tested by the Object Detection system (Section 4.4).
+            The flight altitude of all drones is set to 0.3 m because real-life test flight at that height provided great flight stability. The speed of drones is set to 0.4 m/s as it is the optimal speed for stable flight performance after performing real-life testing which will be explained in later section in Section 5.6. This speed also ensures reliable AprilTag detection as tested by the Object Detection system (Section 3.4).
           </p>
         <image-component tag="image" source="./assets/section-5-known-area/figure_5_4_maximise_coverage.png"
           subtitle="Figure 5.4: Strategy to maximise search coverage using 9 drones running MSBA"></image-component>
@@ -942,13 +941,13 @@
       <div id="sub-section-5-header-5">
         <h3>5.5 Improvements to MSBA</h3>
           <p>
-            To address blind spots in the corners of walls, two wall-following (WF) drones will be deployed to cover these areas, as identified in the simulation. To prevent these WF drones from interfering with the paths of the MSBA drones, these WF drones will be fly at a higher altitude of 0.55 m, 0.25 m higher than the altitude of MSBA drones. At this altitude, the effect of downwash on the MSBA drones flying below the WF drones is minimal and has no significant impact on image detection as tested (Section 4.4). 
+            To address blind spots in the corners of walls, two wall-following (WF) drones will be deployed to cover these areas, as identified in the simulation. To prevent these WF drones from interfering with the paths of the MSBA drones, these WF drones will be fly at a higher altitude of 0.55 m, 0.25 m higher than the altitude of MSBA drones. At this altitude, the effect of downwash on the MSBA drones flying below the WF drones is minimal and has no significant impact on image detection as tested (Section 3.4). 
           </p>
           <p>
             A total of ten drones are assigned to search the Known Search Area. Since only nine drones were initially used to test the MSBA search strategy, an additional tenth drone will be introduced to perform WF along the outer perimeter of the Playing Field, while drone number nine will be reassigned to WF as well. These drones will maintain a wall-following distance of 0.5 m to handle cases where object markers are placed in the corners. With the addition of a new drone and the reassignment of one drone to WF, the search coverage increased to over 90 %, calculated using the same method described previously.
           </p>
           <p>
-            To address the scenario where drones cross into the Pillar Area like the fourth figure in Figure 5.9, a reverse function was implemented in MSBA to enable the drones to perform 180 degrees turn and continue searching within the Known Search Area. To facilitate this mechanism, two April Tag Navigation Aids will be placed at the border between Known Search Area and Pillar Area. When an MSBA drone in the Known Search Area detects them, the Mission Planner will broadcast a reverse command packet to the detecting drone. Upon receiving this packet, the drone will adjust its preferred heading by 180 degrees, ensuring it remains within the designated search area.
+            To address the scenario where drones cross into the Pillar Area like the fourth figure in Figure 5.9, a reverse function was implemented in MSBA to enable the drones to perform 180 ° turn and continue searching within the Known Search Area. To facilitate this mechanism, two April Tag Navigation Aids will be placed at the border between Known Search Area and Pillar Area. When an MSBA drone in the Known Search Area detects them, the Mission Planner will broadcast a reverse command packet to the detecting drone. Upon receiving this packet, the drone will adjust its preferred heading by 180 °, ensuring it remains within the designated search area.
           </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_10.png"
           subtitle="Figure 5.10: Placements of two Navigation Aids at the border between Known Search Area and Pillar Area"></image-component>
@@ -984,7 +983,7 @@
             Unlike in simulation, where drone placements are accurate and precise, the initial medium-scale tests revealed the significant impact of human error on overall search coverage. To mitigate deviations in the initial preferred heading of MSBA drones, laser pointers were used to align them correctly in the Start Area. Furthermore, to prevent drones from being too close to one another, they were spaced farther apart to fully utilize the large Start Area.
           </p>
           <p>
-            Finally, full-scale tests were conducted in RC4. The 20m-by-20m competition Playing Field was recreated to evaluate the performance of the entire swarm drone Initially, the drones exhibited poor localization, drifting, sudden accelerations, and jerky movements due to the venue’s reflective flooring. This issue is discussed in detail in Section 9. To mitigate this problem, all drones were flown at a higher altitude—MSBA drones were raised from 0.3m to 0.5m, while WF drones were increased from 0.55m to 0.75m. During these tests, the drones closely followed the same paths as their simulated counterparts in Webots.
+            Finally, full-scale tests were conducted in RC4. The 20 m-by-20 m competition Playing Field was recreated to evaluate the performance of the entire swarm drone Initially, the drones exhibited poor localization, drifting, sudden accelerations, and jerky movements due to the venue’s reflective flooring. This issue is discussed in detail in Section 9. To mitigate this problem, all drones were flown at a higher altitude—MSBA drones were raised from 0.3 m to 0.5 m, while WF drones were increased from 0.55 m to 0.75 m. During these tests, the drones closely followed the same paths as their simulated counterparts in Webots.
           </p>
           <image-component tag="image" source="./assets/section-5-known-area/figure_5_13_full-scale_test_Known_Area.png"
           subtitle="Figure 5.13: Full-scale testing of Known Search Area drones "></image-component>
@@ -1006,7 +1005,7 @@
           During the actual competition, three regular victims were placed within the Known Search Area for rescue. It should be noted that the placement of Victim and Danger Markers varied between Run 1 and Run 2. The take-off sequence and navigation to the dispersion points worked as intended. However, further drone behaviour could not be directly observed as the competition Playing Field was off-limits during the mission runs. The final results for the Known Search Area are outlined in Table 6.0.
         </p>
         <p>
-          Table 6.0. Number of victims rescued in the Known Area
+          Table 6.0. Number of victims rescued in the Known Search Area
         </p>
         <image-component tag="image" source="./assets/section-5-known-area/table_6_Known_area_rescues.png" subtitle=""></image-component>
  
@@ -1089,12 +1088,12 @@
             Due to the poor performance of SLAM using multiple drones, it was decided to implement MSBA for the Unknown Search Area drones to ensure sufficient tests can be conducted before the competition. Six drones are assigned to the Unknown Search Area (drone number 4, 5, 6, 7, 8, 9), the three even-numbered drones (4, 6, and 8) will enter from the top opening of the Unknown Search Area while the remaining odd-numbered drones (5, 7, and 9) will enter from the right opening, this will help maximising search coverage as the drones will be more spread out, and to tackle the possibility of the Unknown Search Area consisting two subsections that are only accessible through the two separate openings.
           </p>
           <div id="sub-section-6-header-3-header-1">
-            <h4>6.3.1 Drone Guidance to the Unknown Area</h4>
+            <h4>6.3.1 Drone Guidance to the Unknown Search Area</h4>
             <p>
               To get to the openings to the right and top of the Unknown Search Area, the drone will travel through the passageway between the Unknown Search Area right outer wall and the pillars. The right opening will be referred to as Entrance 1, and the top opening will be referred to as Entrance 2. The 3 drones that will enter from Entrance 1 belong to Group 1 and the other 3 drones that enter from Entrance 2 belong to Group 2. 
             </p>
             <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_6_desired_paths.png"
-            subtitle="Figure 6.7: Desired paths of Group 1 and Group 2 drones to navigate from Start Area to the Unknown Area"></image-component>
+            subtitle="Figure 6.7: Desired paths of Group 1 and Group 2 drones to navigate from Start Area to the Unknown Search Area"></image-component>
             <p>
               The desired paths of Group 1 and Group 2 drones are first considered from Start Area to the respecting Unknown Search Area openings as illustrated in Figure 6.1 above. There are 3 waypoints along the path from the Start Area to Entrance 2 (orange arrow in Figure 6.1) where key events take place. When a drone reaches point A, it should continue moving forward if it belongs to 2, otherwise turn left into Entrance 1 and begin searching the Unknown Search Area. At point B, the drones should turn left and continue moving forward. At point C, the drones should turn left into the Unknown Search Area and start searching for victim markers.
             </p>
@@ -1114,19 +1113,19 @@
           </div>
 
           <div id="sub-section-6-header-2-header-2">
-            <h4>6.3.2 MSBA for Searching the Unknown Area</h4>
+            <h4>6.3.2 MSBA for Searching the Unknown Search Area</h4>
               <p>
                 Like the MSBA drones in the Known Search Area, these six Unknown Search Area drones have the same set of parameters to be optimized. Without knowledge of the obstacle layout in the area, the six drones will be evenly distributed to maximize search coverage, as shown in Figure 6.8. The preferred angles for each drone are relative to the forward direction, using the right-hand convention.
               </p>
               <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_8_unknown_preferred_directions.png"
-            subtitle="Figure 6.8: Preferred direction of MSBA drones after entering Unknown Area"></image-component>
+            subtitle="Figure 6.8: Preferred direction of MSBA drones after entering Unknown Search Area"></image-component>
               <p>
                 To ensure the drones remain within the Unknown Search Area, Navigation Aids placed at the Unknown Search Area openings will be used to guide them. When a drone detects these Navigation Aids, the GCS will issue the corresponding radio command packet to the drone. Once the drones have entered the Unknown Search Area and are on a path to exit, they will again detect these Navigation Aids. Upon receiving the radio command packet from the GCS, the drones' preferred direction will be adjusted to keep them within the boundaries of the Unknown Search Area. The optimal position of Navigation Aids after extensive real-world testing are shown in Figure 6.8.
               </p>
               <image-component tag="image" source="./assets/section-6-unknown-area/Algorithm_3.png"
             subtitle=""></image-component>
             <p>
-              Real-world testing with various transformation values revealed that a 135-degree transformation is the most optimal. While changing the preferred heading by 180 degrees would be the most effective way to keep the drones within the Unknown Search Area, it would not improve search coverage, as the drone would simply retrace its path in the opposite direction. A 90-degree transformation is not used, as it can cause the drone to exit the Unknown Search Area when approached at certain angles.
+              Real-world testing with various transformation values revealed that a 135 ° transformation is the most optimal. While changing the preferred heading by 180 ° would be the most effective way to keep the drones within the Unknown Search Area, it would not improve search coverage, as the drone would simply retrace its path in the opposite direction. A 90 ° transformation is not used, as it can cause the drone to exit the Unknown Search Area when approached at certain angles.
             </p>
             <p>
               The Unknown Search Area drones will adapt a similar intra-drone collision avoidance strategy as the Known Search Area drones, by flying the two groups of drones at different distance to wall and altitude. Group 1 drones will fly at 0.75 m, while group 2 drones will fly at 0.5 m. Due to the absence of wall-following drones covering area in wall corners, the drones will fly slightly closer to the wall compared to the MSBA drones in the Known Search Area. Group 1 drones (5, 7, 9) will perform left wall-following 0.4 m from the wall, group 2 drones (4, 6, 8) will perform right wall-following 1.0 m from the wall. All the drones will fly with the same maximum speed of 0.4 m/s.
@@ -1154,30 +1153,30 @@
             Firstly, small-scale tests were conducted in E2A Studio 1 to optimize the MSBA parameters such as wall distance during wall-following. The algorithm to guide drones into the Unknown Search Area was also extensively tested by manually issuing radio command to the drones. 
           </p>
           <p>
-            After integration with Mission Planner, the autonomous navigation of two drones to the Unknown Search Area could be tested. This enabled the optimization of drone orientation in the Start Area. It is crucial to ensure the drones can detect the Navigation Aids and reach the correct opening. In the first few tests, the drones were often mis-orientation, which created paths that deviated away from the navigation, resulting in the Unknown Search Area drones crossing into the Pillar Area. 
+            After integration with Mission Planner, the autonomous navigation of two drones to the Unknown Search Area could be tested. This enabled the optimization of drone orientation in the Start Area. It is crucial to ensure the drones can detect the Navigation Aids and reach the correct opening. In the first few tests, the drones were often mis-orientation, which created paths that deviated away from the Navigation Aids, resulting in the Unknown Search Area drones crossing into the Pillar Area. 
           </p>
           <p>
             Then, medium-scale tests were performed in E7 seminar room. With a larger space, two-third of the Unknown Search Area could be constructed, and all six Unknown Search Area drones could be tested simultaneously. However, due to some drones unable to stream images, a maximum of four drones was tested simultaneously across all the medium-scale tests. With a larger swarm drone, the tests revealed the weakness of this strategy – reliance on image streaming. Visual feedback is essential in guiding the drones into the Unknown Search Area and keeping them within the Unknown Search Area. During the tests, the Wi-Fi connection of the drones was intermittent, leading to windows of time without image feedback. When these periods overlap with drones approaching the Navigation Aid, this will result in them missing the entrances and entering the Known Search Area at the top of the Playing Field. This is problematic because it means the drones will not be able to search the Unknown Search Area, and in the worst case, create risk of collisions with the Known Search Area drones. 
           </p>
           <p>
-            Understanding the significance of reliable Wi-Fi connectivity in executing the search strategy for Unknown Search Area, the team worked closely together to optimize the Wi-Fi network for the swarm drone and was able to mitigate the intermittent Wi-Fi connectivity. This was explained in detail in Section 4.5.
+            Understanding the significance of reliable Wi-Fi connectivity in executing the search strategy for Unknown Search Area, the team worked closely together to optimize the Wi-Fi network for the swarm drone and was able to mitigate the intermittent Wi-Fi connectivity. This was explained in detail in Section 3.5.
           </p>
           <p>
-            Finally, full-scale tests were performed with the other subsystems in a competition-scale Playing Field. All six drones assigned to search the Unknown Area was tested. Through these tests, the positions of the navigation aids were optimized to guide the drones to the entrances while ensuring them to be detected to prevent the drones from exiting the area.  
+            Finally, full-scale tests were performed with the other subsystems in a competition-scale Playing Field. All six drones assigned to search the Unknown Search Area was tested. Through these tests, the positions of the Navigation Aids were optimized to guide the drones to the entrances while ensuring them to be detected to prevent the drones from exiting the area.  
           </p>
           <p>
             During the competition, one bonus victim was placed in the Unknown Search Area. The position of the bonus victim changes across the two runs. At the end, we were unable to rescue the one bonus victim in both runs.
           </p>
           <p>
-            Table 8.0. Number of victims rescued in the Unknown Area
+            Table 8.0. Number of victims rescued in the Unknown Search Area
           </p>
           <image-component tag="image" source="./assets/section-6-unknown-area/table_8_unknown_results.png"
             subtitle=""></image-component>
           <p>
-            In the first run, only one of the six MSBA drones successfully entered the Unknown Search Area through the top opening. During setup, one drone experienced issues streaming images back to the GCS and was retired before the run. At take-off, another drone failed to lift off. Of the four remaining drones that took off, two drifted significantly, leading to a mid-air collision. Among the two drones that remained airborne, one successfully entered the Unknown Area through the top opening, while the other deviated from the navigation tag at the right opening and crossed into the Pillar Area and Known Area.
+            In the first run, only one of the six MSBA drones successfully entered the Unknown Search Area through the top opening. During setup, one drone experienced issues streaming images back to the GCS and was retired before the run. At take-off, another drone failed to lift off. Of the four remaining drones that took off, two drifted significantly, leading to a mid-air collision. Among the two drones that remained airborne, one successfully entered the Unknown Search Area through the top opening, while the other deviated from the Navigation Aid at the right opening and crossed into the Pillar Area and Known Search Area.
           </p>
           <p>
-            For the second run, to mitigate drifting during take-off, the extra April Tags brought to the competition were used as launch platforms by placing the drones on top of the tags. While this method had been used by the previous team, our own testing showed it had negligible impact on take-off performance. The second run deployed only four out of six drones: the same drone that failed to stream images in the first run was retired again, and the drone that failed to take off was also removed. This adjustment created more vertical spacing between the drones, reducing the risk of mid-air collisions. With this configuration, two drones successfully entered the Unknown Search Area, while the remaining two flew past the Navigation Aids and veered into the Known and Pillar Area.
+            For the second run, to mitigate drifting during take-off, the extra April Tags brought to the competition were used as launch platforms by placing the drones on top of the AprilTags. While this method had been used by the previous team, our own testing showed it had negligible impact on take-off performance. The second run deployed only four out of six drones: the same drone that failed to stream images in the first run was retired again, and the drone that failed to take off was also removed. This adjustment created more vertical spacing between the drones, reducing the risk of mid-air collisions. With this configuration, two drones successfully entered the Unknown Search Area, while the remaining two flew past the Navigation Aids and veered into the Known and Pillar Area.
           </p>
 
         </div>
@@ -1214,10 +1213,7 @@
 
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_3_testing_pillar_area.jpg"
           subtitle="Figure 7.3: Testing Of Pillar Area in IDP Studio 1 (Mention Height of The Chair / Chair + Pillar Combo)"></image-component>
-          <br/>
-        <p>
-          Later, the flying height was adjusted to 80cm which was found to be more robust and reliable. To support this new flying height, pillars were placed on chairs as seen in Fig 7.3 that were about 75cm in height. The pillar would now be in the range of 75 – 115cm off the ground.
-        </p>
+          <br/>Later, the flying height was adjusted to 80cm which was found to be more robust and reliable. To support this new flying height, pillars were placed on chairs as seen in Fig 7.3 that were about 75cm in height. The pillar would now be in the range of 75 – 115cm off the ground.
 
         </div>
         <div id="sub-section-7-header-3">
@@ -1258,18 +1254,12 @@
 
         <div id="sub-section-7-header-4">
           <h3>7.4 Testing of Victim placement</h3>
-        <p>
           In the Pillar Area, targets were placed in different locations and the algorithm tested to ascertain the effectiveness of it to pick up the targets.
           <br/>
-          1.	Target in free space
+          1.	Victim Marker in free space
           <br/>
-          Targets are placed in the middle of the pillar area in free space. Drones are seen to be able to detect and rescue these victims
+          Victim Marker are placed in the middle of the Pillar Area in free space. Drones are seen to be able to detect and rescue these victims
           <br/>
-        </p>
-          <image-component tag="image" source="./assets/section-7-pillar-area/victim_free_space.png"
-                           subtitle="Figure 7.4.1: Victim in free space in the pillar area"></image-component>
-          <br/>
-        <p>
           2.	Target in front of the pillar
           <br/>
           Another configuration involved placing the target directly in front of the pillar. Similarly to the one in free space, the drones had no issues picking up the victims in front of the pillar.
@@ -1279,7 +1269,7 @@
                            subtitle="Figure 7.4.2: Victim in front of the pillar"></image-component>
         <p>
           <br/>
-          3.	Target behind the pillar
+          3.	Target behind the Pillar
           <br/>
           This was the hardest in theory to pick up since the drone would not be able to see the victim till it comes close to the target for the camera to pick it up. However, the drones were able to pick up and rescue the victims in the tests that we did. A failsafe however can be considered to increase the likelihood of rescuing the victim if it is not seen the first time that the drone passes through it.
           <br/>
@@ -1373,8 +1363,8 @@
     <div id="sub-section-8-header-1">
         <h3>8.1 Optimisation of Take-off Sequence</h3>
 
-        <image-component tag="image" source="./assets/section-8-mission-planning/figure_8_1_take_off_sequence.png"
-        subtitle="Figure 8.1: Take-off Sequence"></image-component>
+        <image-full tag="image" source="./assets/section-8-mission-planning/figure_8_1_take_off_sequence.png"
+        subtitle="Figure 8.1: Take-off Sequence"></image-full>
 
         <p>
           Drones assigned to channel 60 will take-off first, followed by drones assigned to channel 80 after a 15 s delay (Figure 8.1). 15 s was chosen to clearly differentiate the take-offs of the group of drones and to prevent collisions and overcrowding at the Start Area. As previously mentioned, with a limited number of Crazyradio dongles connected to GCSs, the 15 s allows for time to minimise radio traffic by the Crazyradio dongles.
@@ -1416,8 +1406,8 @@
         <p>
           Task allocation, take-off, landing, and behaviour-triggering commands based on GCS processing of images or were sent from the GCSs to the drones using the CPX protocol via the dynamically managed pool of Crazyradio dongles.
         </p>
-        <image-component tag="image" source="./assets/section-8-mission-planning/figure_8_2_communication_gcs_drones.png"
-        subtitle="Figure 8.2: Communication Between the GCS and Drones"></image-component>
+        <image-full tag="image" source="./assets/section-8-mission-planning/figure_8_2_communication_gcs_drones.png"
+        subtitle="Figure 8.2: Communication Between the GCS and Drones"></image-full>
         <p>
           The detection process (Figure 8.3) begins with a take-off command issued via CPX from the GCS, followed by a check of the drone’s status to ensure it is ready for the mission. Once in the air, the drone continuously scans its surroundings for AprilTags, while continuously streaming image to the GCS via Wi-Fi. The GCS processes the image of the detected AprilTag and classifies the detected AprilTags as a Victim Marker or a Danger Zone or Navigation Aid.
         </p>
@@ -1427,8 +1417,8 @@
         <p>
           If no AprilTags are detected during the flight, the drone keeps scanning its environment until the GCS identifies an AprilTag.
         </p>
-        <image-component tag="image" source="./assets/section-8-mission-planning/figure_8_3_detection_chart.png"
-        subtitle="Figure 8.3: Detection Chart"></image-component>
+        <image-full tag="image" source="./assets/section-8-mission-planning/figure_8_3_detection_chart.png"
+        subtitle="Figure 8.3: Detection Chart"></image-full>
 
   </div>
 
@@ -1540,8 +1530,6 @@
           <div id="actual-test-scores"></div>
         </actual-test-scores>
         <br/><br/>
-
-      <p>
         Run 2 was taken as the final score given that it was the better of two runs. Given that we were able to rescue all but one Victim marker, we can conclude that our test environment was a good gauge of the actual Playing Field, with our search strategies and target detection working as intended in the actual competition.
         <br/><br/>
       </p>
@@ -1587,8 +1575,8 @@
           By adopting ETH’s custom hardware (Figure 10.3 and Figure 10.4) and SLAM solution (ETH-PBL, n.d.) the team would gain access to a wider range of algorithms for optimizing search strategies. For example, multi-agent frontier search could be implemented to improve exploration of the Unknown Search Area. Additionally, having an accurate map enables adaptive search strategies, allowing drones to assess real-time coverage, adjust their paths dynamically, and coordinate more effectively to avoid redundant exploration.
         </p>
 
-        <image-component tag="image" source="./assets/section-10-future-work/figure_10_3_eth_1.png"
-        subtitle="Figure 10.3: ETH Implementation"></image-component>
+        <image-full tag="image" source="./assets/section-10-future-work/figure_10_3_eth_1.png"
+        subtitle="Figure 10.3: ETH Implementation"></image-full>
 
         <image-component tag="image" source="./assets/section-10-future-work/figure_10_4_eth_2.jpg"
         subtitle="Figure 10.4: ETH Implementation"></image-component>
