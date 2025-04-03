@@ -835,18 +835,17 @@
           <p>
             While Webots provides an excellent platform for simulating robots running onboard scripts, it does not support the Crazyflie firmware, or the identical Deck API used in the actual Crazyflie hardware. As a result, to integrate MSBA with the Webots simulation, an interface is required to bridge the gap between MSBA and the simulation environment. This interface allows the MSBA to access the necessary sensor readings, such as distance data from virtual sensors, and provides a means for the Webots robot to receive output from the MSBA, ensuring that the drone's behaviour in the simulation mirrors that of the actual Crazyflie system.
           </p>
-          <image-component tag="image" source="./assets/section-5-known-area/figure_5_7_firmware_webots.png"
-          subtitle="Figure 5.7: Architecture diagram of simulated Crazyflie in Webots"></image-component>
           <p>
             The full Webots repository that contains the simulation environment and controller code can be found here https://github.com/CDE-4301-ASI-401/Webots_CF2.
           </p>
-          <image-component tag="image" source="./assets/section-5-known-area/figure_5_8_webots_simulation_environment.png"
-          subtitle="Figure 5.8: Webots Simulation Environment"></image-component>
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_7_firmware_webots.png"
+          subtitle="Figure 5.7: Architecture diagram of simulated Crazyflie in Webots"></image-component>
           <p>
             The competition search environment was first recreated in Webots as shown in Figure 5.8, with the static obstacles being placed according to the Playing Field layout illustrated in the competition challenge booklet while conforming to the minimum distance. Each box represents a 1 m by 1 m area. <i>Note that the orientation of the top-down view differs from the previous figures. The view in this figure is rotated clockwise by 90 °</i>.
           </p>
-          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_1_simulation.png"
-          subtitle="Figure 5.9: (a) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutes"></image-component>
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_8_webots_simulation_environment.png"
+          subtitle="Figure 5.8: Webots Simulation Environment"></image-component>
+          
           <p>
             The performance of the search strategy was then evaluated by simulating the drones in different Playing Field configurations. The drone paths after 4 minutes of simulation are plotted and compared using the drones position data stored in csv files and Matplotlib. The percentage of search coverage is also determined by counting the box which the swarm drone’s paths crossed in the Known Search Area overlayed in Figure 5.5. 
           </p>
@@ -856,14 +855,10 @@
           <p>
             After multiple simulations, the two-lanes collision avoidance strategy proved reliable, as no collisions occurred beyond the initial take-off phase where drones fly to their respective dispersion points. Drone-to-drone collisions were only observed between drones in the same group, primarily due to insufficient spacing between drones in the Start Area.
           </p>
-          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_2_simulation.png"
-          subtitle="Figure 5.9: (b) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutesp"></image-component>
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_Webots_Simulation.png"
+          subtitle="Figure 5.9: Simulated paths of drones performing MSBA in a full-scale arena after 4 minutes"></image-component>
 
-          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_3_simulation.png"
-          subtitle="Figure 5.9: (c) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutes"></image-component>
-
-          <image-component tag="image" source="./assets/section-5-known-area/figure_5_9_4_simulation.png"
-          subtitle="Figure 5.9:(d) Simulated paths of drones performing MSBA in a full-scale arena after 5 minutes"></image-component>
+          
       </div>
 
       <div id="sub-section-5-header-5">
@@ -877,6 +872,8 @@
           <p>
             To address the scenario where drones cross into the Pillar Area like the fourth figure in Figure 5.9, a reverse function was implemented in MSBA to enable the drones to perform 180 degrees turn and continue searching within the Known Search Area. To facilitate this mechanism, two April Tag Navigation Aids will be placed at the border between Known Search Area and Pillar Area. When an MSBA drone in the Known Search Area detects them, the Mission Planner will broadcast a reverse command packet to the detecting drone. Upon receiving this packet, the drone will adjust its preferred heading by 180 degrees, ensuring it remains within the designated search area.
           </p>
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_10.png"
+          subtitle="Figure 5.10: Placements of two Navigation Aids at the border between Known Search Area and Pillar Area"></image-component>
       </div>
 
       <div id="sub-section-5-header-6">
@@ -911,6 +908,8 @@
           <p>
             Finally, full-scale tests were conducted in RC4. The 20m-by-20m competition Playing Field was recreated to evaluate the performance of the entire swarm drone Initially, the drones exhibited poor localization, drifting, sudden accelerations, and jerky movements due to the venue’s reflective flooring. This issue is discussed in detail in Section 9. To mitigate this problem, all drones were flown at a higher altitude—MSBA drones were raised from 0.3m to 0.5m, while WF drones were increased from 0.55m to 0.75m. During these tests, the drones closely followed the same paths as their simulated counterparts in Webots.
           </p>
+          <image-component tag="image" source="./assets/section-5-known-area/figure_5_13_full-scale_test_Known_Area.png"
+          subtitle="Figure 5.13: Full-scale testing of Known Search Area drones "></image-component>
       </div>
 
       <div id="sub-section-5-header-7">
@@ -931,6 +930,8 @@
         <p>
           Table 6.0. Number of victims rescued in the Known Area
         </p>
+        <image-component tag="image" source="./assets/section-5-known-area/table_6_Known_area_rescues.png" subtitle=""></image-component>
+ 
         <p>
           In the first run, two out of three regular victims were successfully rescued. However, before the run began, the wall-guard Navigation Aid, which was designed to increase the thickness of the wall edges, was mistakenly left out and not placed around the L-shaped wall in the Known Search Area. This issue was rectified before the second run, and during this run, all of the regular victims were rescued. However, since the victim placements differed between runs, it was not conclusive whether the victim missed in Run 1 was located near the L-shaped wall. Without the Navigation Aid in place, the wall-following drone was unable to reach it.
         </p>
@@ -943,59 +944,163 @@
 
       <div id="section-header-6" class="section" style="display: none;">
         <h2>6. Unknown Search Area (Yan Yew)</h2>
-
-      
+          <p>
+            The Unknown Search Area is an 8 m by 8 m area situated in the centre of the Playing Field accessible through two entrances/exits to the right and at the top of the area. Unlike the Known Search Area and Pillar Areas that are easily accessible after crossing the Start Area, drones searching the Unknown Search Area need to first reach either entrances to the Unknown Search Area, then start searching the areas. 
+          </p>
+          <p>
+            A mapped approach was initially explored to ensure full coverage of the Unknown Search Area. This would require drones to perform SLAM to generate occupancy grids of the environment, enabling the use of search strategies such as frontier-based exploration, where all drones assigned to the Unknown Search Area would simultaneously map and search, or path planning algorithms, where a subset of drones focuses on mapping and marking victim locations while the rest are dedicated to rescue operations. In this approach, once victims are detected, a path planning algorithm would determine the optimal route and direct the rescue drones accordingly.
+          </p>
+          <p>
+            This section documents the feasibility tests conducted on the mapped approach and the challenges encountered, ultimately leading to the adoption of MSBA for searching the Unknown Search Area. Initial experiments involved performing SLAM using the multi-ranger deck onboard the Crazyflie to generate occupancy grids. However, due to sensor range limitation and poor localization, SLAM proved unreliable for real-time mapping and navigation. These constraints made frontier-based exploration and path planning strategies impractical. Given these limitations, the MSBA originally designed for the Known Search Area was adapted for the Unknown Search Area drones as well. 
+          </p>
   
         <div id="sub-section-6-header-1">
-          <h3>6.1  Feasibility Resting of Simulatanous Mapping and Localisation</h3>
-
+          <h3>6.1  Feasibility Resting of Mapping Hardware</h3>
+            <p>
+              A centralized approach using ROS2 was chosen to perform SLAM due to the limited computation resources available on the STM onboard the Crazyflie. This approach provided scalability and ease of implementation, as it can be easily integrated with the Mission Planner, which also operates on ROS2. This approach would also allow us to leverage on existing tools and libraries for SLAM. To implement SLAM on a swarm of drones, each individual drone needs to produce an accurate map. These individual occupancy maps can then be merged to create a single, complete map.
+            </p>
+            <p>
+              The performance of SLAM using a single Crazyflie was first tested using the Crazyflie ROS2 Multiranger package. This multi-ranger package uses the Crazyswarm2 package to collect sensor data from the Crazyflie via the Crazyradio, which is then used to construct an occupancy map. 
+            </p>
+            <p>
+              For testing, a 4m by 5m enclosed space was set up in the E2A Studio. A single Crazyflie was deployed to perform SLAM while following the walls within the enclosed space. Upon completing a full loop and returning to its starting position, the drone was terminated, and the resulting map was evaluated.
+            </p>
           <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_1_enclosed_space.png"
           subtitle="Figure 6.1: Enclosed space (4m by 5m) set up to test Crazyflie SLAM performance"></image-component>
-
+          <p>
+            During the initial tests, the maps produced by the drone was poor that did not remotely match the ground truth. In one of the runs, it was observed that when the drone performed SLAM, it was leaving an “occupied” trail in Figure 6.2. Upon inspection, it was discovered that the ToF sensors on the multi-ranger deck can be obstructed by the AI deck located below it, as shown in Figure 6.2. After lifting the multi-ranger up to ensure the ToF sensors are unobstructed and cleaning the ToF sensors, this single Crazyflie was able to consistently produce accurate map.
+          </p>
           <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_2_occupacy_map.png"
           subtitle="Figure 6.2: Occupancy map produced by single Crazyflie when its back TOF sensor was obstructed"></image-component>
-
-          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_3_router.png"
+          <br><br>
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_3_obstructed_tof.png"
           subtitle="Figure 6.3: Obstructed TOF sensor on Crazyflie’s Mult-Ranger deck"></image-component>
-
-          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_4_1_occupacy_map.png"
-          subtitle="Figure 6.4: (a) Occupancy map produced by Crazyflie performing wall-following"></image-component>
-
-          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_4_2_occupacy_map.png"
-          subtitle="Figure 6.4: (b) Occupancy map produced by Crazyflie performing wall-following"></image-component>
-
-          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_4_3_occupacy_map.png"
-          subtitle="Figure 6.4: (c) Occupancy map produced by Crazyflie performing wall-following"></image-component>
-        
+          <br><br>
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_4_SLAM_Single_Crazyflie.png"
+          subtitle="Figure 6.4: Occupancy map produced by Crazyflie performing wall-following"></image-component>
+          <p>
+            With a single Crazyflie producing a reliable SLAM map, the next step was to evaluate multi-drone SLAM by merging occupancy maps from multiple Crazyflies. To achieve this, the ROS2 Merge Map package was integrated into the system. This ROS2 node subscribes to multiple map topics and publishes a single merged occupancy map, allowing the GCS to construct a complete map of the environment. The final implementation can be found in Github repository.
+          </p>
+          <p>
+            To test the multi-drone SLAM and map merging implementation, two Crazyflies were deployed in a 4 m by 4m enclosed space, performing SLAM while wall-following in opposite directions. Initially, after both drones completed their first loop, the merged map was accurate and closely matched the actual environment. However, as the drones continued to complete additional loops, the mapped environment began to drift over time, leading to misalignment in the final merged map (Figure 6.X). This issue was attributed to drift in the individual Crazyflie’s optical flow sensor readings. As the drones continued wall-following around the enclosed space, positional errors accumulated significantly, causing increasing discrepancies between the mapped and actual environments.
+          </p>
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_5_Two_Crazyflie_SLAM_environment.png"
+          subtitle="Figure 6.5:Test environment to evaluate the performance of Crazyflie SLAM using onboard multi-ranger deck"></image-component>
+          <br><br>
+          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_6_merge_map.png"
+          subtitle="Figure 6.6: Merge map generated by two drones performing wall-following around enclosed space in Figure 6.5 "></image-component>
+          <p>
+            To mitigate map drift in multi-drone SLAM, proper loop closure detection must be implemented. Loop closure detection works by extracting features from the current sensor data and comparing them with previous sensor data. If a match is found, a loop closure constraint is placed in the SLAM map, reducing cumulative error (Nashed, 2020). 
+          </p>
+          <p>
+            However, implementing loop closure detection requires a large amount of data to overcome inherent sensor noise. This is not feasible with the ToF sensors on the Crazyflie due to their narrow field of view. Sparse sensing is a niche research area in SLAM that aims to improve performance using limited sensor data. One study suggests leveraging fast convex optimization techniques to implement loop closure detection (Latif et al., 2017). However, without any publication on actual implementation, integration such method to Crazyflie will require too much time and resources. 
+          </p>
+          <p>
+            ETH-PBL recently developed Nano Swarm Mapping, a decentralized solution tailors for nano drones like the Crazyflie. Unlike a centralized SLAM solution which relies on a GCS to process sensor data and construct maps, this solution enables each drone to independently perform scanning of environment onboard using ToF sensors, then broadcasting the scans and poses to the “main drone”, a drone within the swarm that is assigned to collect the scan data, perform SLAM finally broadcasting the results back to the swarm. To mitigate the effect of drifts, the researchers designed a modified multi-ranger deck which features ToF sensors with wider FOV and was able to implement loop closure detection (Friess et al., 2024). Despite its advantages, adopting this solution was not feasible due to the requirement of modified multi-ranger that was not readily accessible.
+          </p>
         </div>
   
         <div id="sub-section-6-header-2">
-          <h3>6.2 Implementation of MSBA</h3>
+          <h3>6.2 Feasibility Testing of Mapping Software</h3>
+        
+        </div>
 
 
-
-  
-          <div id="sub-section-6-header-2-header-1">
-            <h4>6.2.1 Drone Guidance to the Unknown Area</h4>
-
-          <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_6_desired_paths.png"
-          subtitle="Figure 6.6: Desired paths of Group 1 and Group 2 drones to navigate from Start Area to the Unknown Area"></image-component>
-
+        <div id="sub-section-6-header-3">
+          <p>
+            Due to the poor performance of SLAM using multiple drones, it was decided to implement MSBA for the Unknown Search Area drones to ensure sufficient tests can be conducted before the competition. Six drones are assigned to the Unknown Search Area (drone number 4, 5, 6, 7, 8, 9), the three even-numbered drones (4, 6, and 8) will enter from the top opening of the Unknown Search Area while the remaining odd-numbered drones (5, 7, and 9) will enter from the right opening, this will help maximising search coverage as the drones will be more spread out, and to tackle the possibility of the Unknown Search Area consisting two subsections that are only accessible through the two separate openings.
+          </p>
+          <div id="sub-section-6-header-3-header-1">
+            <h4>6.3.1 Drone Guidance to the Unknown Area</h4>
+            <p>
+              To get to the openings to the right and top of the Unknown Search Area, the drone will travel through the passageway between the Unknown Search Area right outer wall and the pillars. The right opening will be referred to as Entrance 1, and the top opening will be referred to as Entrance 2. The 3 drones that will enter from Entrance 1 belong to Group 1 and the other 3 drones that enter from Entrance 2 belong to Group 2. 
+            </p>
+            <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_6_desired_paths.png"
+            subtitle="Figure 6.7: Desired paths of Group 1 and Group 2 drones to navigate from Start Area to the Unknown Area"></image-component>
+            <p>
+              The desired paths of Group 1 and Group 2 drones are first considered from Start Area to the respecting Unknown Search Area openings as illustrated in Figure 6.1 above. There are 3 waypoints along the path from the Start Area to Entrance 2 (orange arrow in Figure 6.1) where key events take place. When a drone reaches point A, it should continue moving forward if it belongs to 2, otherwise turn left into Entrance 1 and begin searching the Unknown Search Area. At point B, the drones should turn left and continue moving forward. At point C, the drones should turn left into the Unknown Search Area and start searching for victim markers.
+            </p>
+            <p>
+              To achieve the desired paths, Navigation Aids will be placed on point A, B, and B, which will be referred to Tag A, Tag B, and Tag C respectively. Whenever these tags are seen by the drones, a radio command unique to the Navigation Aid will be issued to that drone. At the Start Area, all the Unknown Search Area drones will be lined up with point A and B being straight forward to them. 
+            </p>
+            <p>
+              According to Figure 6.7, there are three unique possible motions that the drones would perform to enter the Unknown Search Area, namely (1) Continue straight forward, (2) Turn left, then continue straight forward, and (3) Turn left, move forward, and begin search. The pseudocode is shown in Algorithm 1, which is implemented in SGBA.c. 
+            </p>
+            <image-component tag="image" source="./assets/section-6-unknown-area/Algorithm_1.png"
+            subtitle=""></image-component>
+            <p>
+              Since in Mission Planner there is only an only a one-to-one mapping of radio command to Navigation Aid. The logic to initiate the correct motion when received a radio command needs to be handled by the drone. For example, when a Group 1 drone received a radio command that corresponds to Tag A, it needs to initiate motion (3) Turn left, move forward, and begin search. Whereas a Group 2 drone receiving the same radio command should initiate motion (1) Continue straight forward. The pseudocode is included in Algorithm 2, which is implemented in state_machine.c.
+            </p>
+            <image-component tag="image" source="./assets/section-6-unknown-area/Algorithm_2.png"
+            subtitle=""></image-component>
           </div>
 
           <div id="sub-section-6-header-2-header-2">
-            <h4>6.2.2 MSBA for Searching the Unknown Area</h4>
-
+            <h4>6.3.2 MSBA for Searching the Unknown Area</h4>
+              <p>
+                Like the MSBA drones in the Known Search Area, these six Unknown Search Area drones have the same set of parameters to be optimized. Without knowledge of the obstacle layout in the area, the six drones will be evenly distributed to maximize search coverage, as shown in Figure 6.8. The preferred angles for each drone are relative to the forward direction, using the right-hand convention.
+              </p>
+              <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_8_unknown_preferred_directions.png"
+            subtitle="Figure 6.8: Preferred direction of MSBA drones after entering Unknown Area"></image-component>
+              <p>
+                To ensure the drones remain within the Unknown Search Area, Navigation Aids placed at the Unknown Search Area openings will be used to guide them. When a drone detects these Navigation Aids, the GCS will issue the corresponding radio command packet to the drone. Once the drones have entered the Unknown Search Area and are on a path to exit, they will again detect these Navigation Aids. Upon receiving the radio command packet from the GCS, the drones' preferred direction will be adjusted to keep them within the boundaries of the Unknown Search Area. The optimal position of Navigation Aids after extensive real-world testing are shown in Figure 6.8.
+              </p>
+              <image-component tag="image" source="./assets/section-6-unknown-area/Algorithm_3.png"
+            subtitle=""></image-component>
+            <p>
+              Real-world testing with various transformation values revealed that a 135-degree transformation is the most optimal. While changing the preferred heading by 180 degrees would be the most effective way to keep the drones within the Unknown Search Area, it would not improve search coverage, as the drone would simply retrace its path in the opposite direction. A 90-degree transformation is not used, as it can cause the drone to exit the Unknown Search Area when approached at certain angles.
+            </p>
+            <p>
+              The Unknown Search Area drones will adapt a similar intra-drone collision avoidance strategy as the Known Search Area drones, by flying the two groups of drones at different distance to wall and altitude. Group 1 drones will fly at 0.75 m, while group 2 drones will fly at 0.5 m. Due to the absence of wall-following drones covering area in wall corners, the drones will fly slightly closer to the wall compared to the MSBA drones in the Known Search Area. Group 1 drones (5, 7, 9) will perform left wall-following 0.4 m from the wall, group 2 drones (4, 6, 8) will perform right wall-following 1.0 m from the wall. All the drones will fly with the same maximum speed of 0.4 m/s.
+            </p>
+            <p>
+              Table 7.0. MSBA parameters of Unknown Search Area drones
+            </p>
+            <image-component tag="image" source="./assets/section-6-unknown-area/table_7_unknown_final_msba_parameters.png"
+            subtitle=""></image-component>
+            <p>
+              The Unknown Search Area MSBA drones will be lined up in the Start Area in the order of 4, 6, 8, 5, 7, 9. To mitigate the risk of collisions during take-off, the drones will be spaced equally apart, with both groups of drones taking off in separate wave. Group 2 drones (4, 6 ,8) will take off in the first wave to enter the top opening of Unknown Search Area, whilst the group 1 drones (5, 7, 9) will take off in the second wave, entering the Unknown Search Area from the right opening. 
+            </p>
+            <image-component tag="image" source="./assets/section-6-unknown-area/figure_6_9_unknown_start_config.png"
+            subtitle="Figure 6.9: Configurations of Unknown Search Area drones in Start Area"></image-component>
           </div>
         </div>
   
-        <div id="sub-section-6-header-3">
-          <h3>6.3 Integration with Mission Planner</h3>
-
-        </div>
 
         <div id="sub-section-6-header-4">
-          <h3>6.4 Real Life Testing</h3>
+          <h3>6.4 Real-World Testing</h3>
+          <p>
+            Real-world testing is a critical phase in validating the effectiveness of the search strategy, ensuring that the drones can perform as expected in a variety of conditions. Small, medium and full-scale tests were conducted throughout the development process to ensure the functionalities work as intended.
+          </p>
+          <p>
+            Firstly, small-scale tests were conducted in E2A Studio 1 to optimize the MSBA parameters such as wall distance during wall-following. The algorithm to guide drones into the Unknown Search Area was also extensively tested by manually issuing radio command to the drones. 
+          </p>
+          <p>
+            After integration with Mission Planner, the autonomous navigation of two drones to the Unknown Search Area could be tested. This enabled the optimization of drone orientation in the Start Area. It is crucial to ensure the drones can detect the Navigation Aids and reach the correct opening. In the first few tests, the drones were often mis-orientation, which created paths that deviated away from the navigation, resulting in the Unknown Search Area drones crossing into the Pillar Area. 
+          </p>
+          <p>
+            Then, medium-scale tests were performed in E7 seminar room. With a larger space, two-third of the Unknown Search Area could be constructed, and all six Unknown Search Area drones could be tested simultaneously. However, due to some drones unable to stream images, a maximum of four drones was tested simultaneously across all the medium-scale tests. With a larger swarm drone, the tests revealed the weakness of this strategy – reliance on image streaming. Visual feedback is essential in guiding the drones into the Unknown Search Area and keeping them within the Unknown Search Area. During the tests, the Wi-Fi connection of the drones was intermittent, leading to windows of time without image feedback. When these periods overlap with drones approaching the Navigation Aid, this will result in them missing the entrances and entering the Known Search Area at the top of the Playing Field. This is problematic because it means the drones will not be able to search the Unknown Search Area, and in the worst case, create risk of collisions with the Known Search Area drones. 
+          </p>
+          <p>
+            Understanding the significance of reliable Wi-Fi connectivity in executing the search strategy for Unknown Search Area, the team worked closely together to optimize the Wi-Fi network for the swarm drone and was able to mitigate the intermittent Wi-Fi connectivity. This was explained in detail in Section 4.5.
+          </p>
+          <p>
+            Finally, full-scale tests were performed with the other subsystems in a competition-scale Playing Field. All six drones assigned to search the Unknown Area was tested. Through these tests, the positions of the navigation aids were optimized to guide the drones to the entrances while ensuring them to be detected to prevent the drones from exiting the area.  
+          </p>
+          <p>
+            During the competition, one bonus victim was placed in the Unknown Search Area. The position of the bonus victim changes across the two runs. At the end, we were unable to rescue the one bonus victim in both runs.
+          </p>
+          <p>
+            Table 8.0. Number of victims rescued in the Unknown Area
+          </p>
+          <image-component tag="image" source="./assets/section-6-unknown-area/table_8_unknown_results.png"
+            subtitle=""></image-component>
+          <p>
+            In the first run, only one of the six MSBA drones successfully entered the Unknown Search Area through the top opening. During setup, one drone experienced issues streaming images back to the GCS and was retired before the run. At take-off, another drone failed to lift off. Of the four remaining drones that took off, two drifted significantly, leading to a mid-air collision. Among the two drones that remained airborne, one successfully entered the Unknown Area through the top opening, while the other deviated from the navigation tag at the right opening and crossed into the Pillar Area and Known Area.
+          </p>
+          <p>
+            For the second run, to mitigate drifting during take-off, the extra April Tags brought to the competition were used as launch platforms by placing the drones on top of the tags. While this method had been used by the previous team, our own testing showed it had negligible impact on take-off performance. The second run deployed only four out of six drones: the same drone that failed to stream images in the first run was retired again, and the drone that failed to take off was also removed. This adjustment created more vertical spacing between the drones, reducing the risk of mid-air collisions. With this configuration, two drones successfully entered the Unknown Search Area, while the remaining two flew past the Navigation Aids and veered into the Known and Pillar Area.
+          </p>
 
         </div>
 
