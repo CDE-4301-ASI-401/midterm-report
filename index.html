@@ -1411,15 +1411,15 @@
       <h3>8.3 Communication Between the Ground Control Station and Drones</h3>
 
         <p>
-          With reference to Figure 8.3, The ESP32 chip on the AI Deck streamed compressed JPEG images via TCP sockets over Wi-Fi directly to the drone's assigned GCS (figure 8.3).
+          With reference to Figure 8.2, The ESP32 chip on the AI Deck streamed compressed JPEG images via TCP sockets over Wi-Fi directly to the drone's assigned GCS.
         </p>
         <p>
           Task allocation, take-off, landing, and behaviour-triggering commands based on GCS processing of images or were sent from the GCSs to the drones using the CPX protocol via the dynamically managed pool of Crazyradio dongles.
         </p>
-        <image-component tag="image" source="./assets/section-8-mission-planning/figure_8_3_communication_gcs_drones.png"
-        subtitle="Figure 8.3: Communication Between the GCS and Drones"></image-component>
+        <image-component tag="image" source="./assets/section-8-mission-planning/figure_8_2_communication_gcs_drones.png"
+        subtitle="Figure 8.2: Communication Between the GCS and Drones"></image-component>
         <p>
-          The detection process (Figure 8.4) begins with a take-off command issued via CPX from the GCS, followed by a check of the drone’s status to ensure it is ready for the mission. Once in the air, the drone continuously scans its surroundings for AprilTags, while continuously streaming image to the GCS via Wi-Fi. The GCS processes the image of the detected AprilTag and classifies the detected AprilTags as a Victim Marker or a Danger Zone or Navigation Aid.
+          The detection process (Figure 8.3) begins with a take-off command issued via CPX from the GCS, followed by a check of the drone’s status to ensure it is ready for the mission. Once in the air, the drone continuously scans its surroundings for AprilTags, while continuously streaming image to the GCS via Wi-Fi. The GCS processes the image of the detected AprilTag and classifies the detected AprilTags as a Victim Marker or a Danger Zone or Navigation Aid.
         </p>
         <p>
           If the GCS “recognizes” a Victim Marker, it marks the Victim Marker as "Detected" in the Mission Planner. The GCS will then issue a land command via CPX to the drone and allowing the drone to land in front of the Victim Marker. Conversely, if the detected AprilTag is a Danger Zone, the GCS records the ID of that Danger Zone. The drone continues to fly and avoids landing in that area. If a Navigation Aid is detected, the GCS triggers a behaviour (reverse, turn, change search pattern) by sending appropriate CPX commands for that Navigation Aid.
@@ -1427,8 +1427,8 @@
         <p>
           If no AprilTags are detected during the flight, the drone keeps scanning its environment until the GCS identifies an AprilTag.
         </p>
-        <image-component tag="image" source="./assets/section-8-mission-planning/figure_8_4_detection_chart.png"
-        subtitle="Figure 8.4: Detection Chart"></image-component>
+        <image-component tag="image" source="./assets/section-8-mission-planning/figure_8_3_detection_chart.png"
+        subtitle="Figure 8.3: Detection Chart"></image-component>
 
   </div>
 
@@ -1445,12 +1445,13 @@
           <h3>9.1 Testing in Residential College 4 Multi-Purpose Sports Hall</h3>
         <p>
         To ascertain the accuracy and reliability of our overall search strategy, we conducted our full-scale testing at the Multi-Purpose Sports Hall of Residential College 4 (RC4 MPSH). RC4 MPSH’s dimensions was about 20 m x 20 m, providing a good approximation of the actual competition layout. This was also the first chance for us to test the search strategies for the Known, Unknown and Pillar search Areas all at once.
-        <br/><br/>
         </p>
+        <br/><br/>
 
         <image-component tag="image" source="./assets/section-9-full-scale-testing/figure_9_1_full_scale_rc4.jpg"
         subtitle="Figure 9.1: Full-Scale Testing Carried Out at RC4 MPSH"></image-component>
         <br/>
+
         <p>
         In the RC4 MPSH, we first started by testing the algorithms without image streaming (no target detection). This allowed us to ascertain the feasibility of our search strategies and collision avoidance first.
         Later, we had a total of three runs testing the overall performance of the drone swarm with image streaming on to enable target detection and rescue of Victim Markers. The score of our three runs were:
@@ -1460,6 +1461,7 @@
         <rc4-test-scores subtitle="Table 9.1: Test Scores in RC4">
           <div id="rc4-test-scores"></div>
         </rc4-test-scores>
+
         <br/>
 
         <image-component tag="image" source="./assets/section-9-full-scale-testing/pillar_victim_rescued.png"
@@ -1474,6 +1476,7 @@
         Originally, we were not able to rescue any victims and score points as we faced a range of issues that hindered our drone swarm’s performance. These are described more in detail below, including how they were resolved as we improved in each run.
         <br/>
       </p>
+
       <div id="sub-section-9-header-1-header-1">
         <h4>9.1.1 Network and Bandwidth Issues</h4>
       <p>
@@ -1486,6 +1489,7 @@
 
       <div id="sub-section-9-header-1-header-2">
         <h4>9.1.2 Different Performance of the Drones in Different Conditions</h4>
+        
       <p>
         Moving to RC4 MPSH, there were a few changes in conditions. First, the floor posed new challenges as it was shinier than the one seen in our IDP studio. This led to undefined behaviour of the drones, including speed-ups and inconsistent altitude observed. The drones were therefore not able to rescue Victim Markers or did so inconsistently, given that the speed varied drastically mid-flight.
         <br/>
@@ -1509,6 +1513,7 @@
 
       <div id="sub-section-9-header-2">
           <h3>9.2 Competition Day</h3>
+
         <p>
           On the 17th of March 2025, our team participated in SAFMC 2025 held at the Singapore Expo. This was the “final” full scale test with our full system being run all together.
         <br/>
@@ -1517,6 +1522,7 @@
         <image-component tag="image" source="./assets/section-9-full-scale-testing/setup.png"
                          subtitle="Figure 9.2: Set up @ SAFMC 2025"></image-component>
         <br/><br/>
+        
       <p>
         We were given two runs to test our drone swarm system with the better of the two runs taken as the final score. A total of 5 Victim Markers (of possible 8 as given in the rules) were used on the actual day, and likewise 3 Danger Zones (of possible 4) were used. The location of the Victim Markers and Danger Zones were not made known to us before placing our drones down and were only placed in the Playing Field after deciding on the placement of drones in the Playing Field. We only knew that the two Bonus Victims would be placed in the Pillar and Unknown Search Areas (one each) while the rest of the Regular Victims could be placed anywhere in the Playing Field.
         <br/><br/>
@@ -1524,11 +1530,12 @@
 
         <image-component tag="image" source="./assets/section-9-full-scale-testing/actual-pillar.png"
                          subtitle="Figure 9.3: Pillar Area in the actual arena"></image-component>
+       <p> 
         <br/><br/>
-      <p>
         In the actual Playing Field, the performance of our drone swarm was like that exhibited on our final run at RC4 (conducted one week prior to the event) but with greater stability as the carpeted floor allowed the drones to fly in a much more stable manner. The results of the two runs are as follows:
         <br/><br/>
       </p>
+
         <actual-test-scores subtitle="Table 9.3: Actual test scores @ SAFMC 2025">
           <div id="actual-test-scores"></div>
         </actual-test-scores>
@@ -1538,6 +1545,7 @@
         Run 2 was taken as the final score given that it was the better of two runs. Given that we were able to rescue all but one Victim marker, we can conclude that our test environment was a good gauge of the actual Playing Field, with our search strategies and target detection working as intended in the actual competition.
         <br/><br/>
       </p>
+        
         <image-component tag="image" source="./assets/section-9-full-scale-testing/team_photo.jpg"
                          subtitle="Figure 9.2: Successful SAFMC 2025!"></image-component>
       </div>
@@ -1554,11 +1562,19 @@
           <p>
             While the overall drone swarm was effective in its search operation in the competition arena, several challenges were encountered. Addressing these limitations presents opportunities for future improvements, enhancing the robustness and performance of the system in terms of time, reliability and coverage.
           </p>
+        
         <div id="sub-section-10-header-1">
             <h3>10.1 Expanding Drone Capabilities</h3>
           <p>
-            The key disadvantage our team face is that our current drone lacks sufficient space for additional expansion decks, which limits our exploration opportunities. Yet, due to the critical functional requirements our current decks fulfils for autonomous flight and navigation, we cannot remove decks that we currently use. As such, an alternative approach is to use the BigQuad deck (Bitcraze, n.d.) to build a larger platform that can accommodate more expansion decks. This would provide greater flexibility for integrating additional sensors and modules, enhancing the drone’s overall functionality. With the increased capacity on the Crazyflie, we could explore the prototyping deck (Bitcraze, n.d.), which allows for the integration of custom hardware, including the ability to solder a Bluetooth chip on it and other capacities (See Section 10.2). 
+            The key disadvantage our team face is that our current drone lacks sufficient space for additional expansion decks, which limits our exploration opportunities. Yet, due to the critical functional requirements our current decks fulfils for autonomous flight and navigation, we cannot remove decks that we currently use. As such, an alternative approach is to use the BigQuad deck (Figure 10.1) (Bitcraze, n.d.) to build a larger platform that can accommodate more expansion decks. This would provide greater flexibility for integrating additional sensors and modules, enhancing the drone’s overall functionality. With the increased capacity on the Crazyflie, we could explore the prototyping deck (Figure 10.2)(Bitcraze, n.d.), which allows for the integration of custom hardware, including the ability to solder a Bluetooth chip on it and other capacities (See Section 10.2). 
           </p>
+
+          <image-component tag="image" source="./assets/section-10-future-work/figure_10_1_big_quad.jpg"
+          subtitle="Figure 10.1: Big Quad Deck"></image-component>
+
+          <image-component tag="image" source="./assets/section-10-future-work/figure_10_2_prototyping_deck.jpg"
+          subtitle="Figure 10.2: Prototyping Deck"></image-component>
+
         </div>
 
         <div id="sub-section-10-header-2">
@@ -1566,9 +1582,17 @@
         <p>
           Based on our experience and observations of other teams during the competition, decentralized solutions significantly enhance the reliability of a drone swarm. Implementing a mapped solution for the Unknown Search Area greatly improves search coverage. However, one limitation that prevented us from adopting such a strategy was hardware constraints. The ETH-PBL lab overcame the poor performance of SLAM by procuring a custom ToF sensor deck and implementing state-of-the-art SLAM features, such as loop closure detection.
         </p>
+          
         <p>
-          By adopting ETH’s custom hardware and SLAM solution (ETH-PBL, n.d.) the team would gain access to a wider range of algorithms for optimizing search strategies. For example, multi-agent frontier search could be implemented to improve exploration of the Unknown Search Area. Additionally, having an accurate map enables adaptive search strategies, allowing drones to assess real-time coverage, adjust their paths dynamically, and coordinate more effectively to avoid redundant exploration.
+          By adopting ETH’s custom hardware (Figure 10.3 and Figure 10.4) and SLAM solution (ETH-PBL, n.d.) the team would gain access to a wider range of algorithms for optimizing search strategies. For example, multi-agent frontier search could be implemented to improve exploration of the Unknown Search Area. Additionally, having an accurate map enables adaptive search strategies, allowing drones to assess real-time coverage, adjust their paths dynamically, and coordinate more effectively to avoid redundant exploration.
         </p>
+
+        <image-component tag="image" source="./assets/section-10-future-work/figure_10_3_eth_1.png"
+        subtitle="Figure 10.3: ETH Implementation"></image-component>
+
+        <image-component tag="image" source="./assets/section-10-future-work/figure_10_4_eth_2.jpg"
+        subtitle="Figure 10.4: ETH Implementation"></image-component>
+        
         <p>
           Furthermore, with a mapped solution, drones would be able to navigate to the Unknown Search Area more reliably without relying on a series of pre-planned motions that need to be executed precisely. Instead of depending on fixed movement sequences that need to be execute timely and precisely, drones could make real-time adjustments based on their perceived environment, reducing the risk of errors due to minor deviations or unexpected obstacles. This would also make the system more robust against disturbances, such as drift, communication delays, or intermittent sensor data, ultimately improving overall mission success.
         </p>
@@ -1583,7 +1607,6 @@
 
       <div id="appendices" class="section" style="display: none;">
           <h2>Appendix A: Decision Matrix for Selection of Drone Development Platform</h2>
-
 
           <drone_platform_selection subtitle="">
             <div id="drone_platform_selection"></div>
@@ -1628,7 +1651,7 @@
     <div id="references" class="section" style="display: none;">
       
       <h2>References</h2>
-      <ul style="list-style-type: decimal; padding: 0; margin: 0; text-align: justify;">
+      <ul style="text-align: justify;">
 
         <li>
           Aideck-gap8-examples/examples/other/wifi-img-streamer at master · bitcraze/aideck-gap8-examples. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/bitcraze/aideck-gap8-examples/tree/master/examples/other/wifi-img-streamer
