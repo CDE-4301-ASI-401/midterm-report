@@ -1167,16 +1167,24 @@
           <br/>
           Targets are placed in the middle of the pillar area in free space. Drones are seen to be able to detect and rescue these victims
           <br/>
+          <image-component tag="image" source="./assets/section-7-pillar-area/victim_free_space.png"
+                           subtitle="Figure 7.4.1: Victim in free space in the pillar area"></image-component>
+          <br/>
           2.	Target in front of the pillar
           <br/>
           Another configuration involved placing the target directly in front of the pillar. Similarly to the one in free space, the drones had no issues picking up the victims in front of the pillar.
+          <br/>
+          <image-component tag="image" source="./assets/section-7-pillar-area/victim_front_pillar.png"
+                           subtitle="Figure 7.4.2: Victim in front of the pillar"></image-component>
           <br/>
           3.	Target behind the pillar
           <br/>
           This was the hardest in theory to pick up since the drone would not be able to see the victim till it comes close to the target for the camera to pick it up. However, the drones were able to pick up and rescue the victims in the tests that we did. A failsafe however can be considered to increase the likelihood of rescuing the victim if it is not seen the first time that the drone passes through it.
           <br/>
+          <image-component tag="image" source="./assets/section-7-pillar-area/victim_behind_pillar.png"
+                           subtitle="Figure 7.4.3: Victim behind the pillar"></image-component>
+          <br/>
         </div>
-
         <div id="sub-section-7-header-5">
           <h3>7.5 Optimising for Search and Rescue</h3>
           While Solution C was chosen as the ideal search strategy, further optimisations were made to maximise the coverage and reliability of the algorithm while minimising the search time. To achieve this, a few strategies were employed:
@@ -1206,18 +1214,29 @@
             <h4>7.5.4 Straight line vs Zig-Zag path</h4>
             The last parameter that we considered was whether the drone should fly in a straight-line path or a zig-zag one (as seen in the images below):
             <br/>
+            <image-component tag="image" source="./assets/section-7-pillar-area/straight-vs-zigzag.png"
+                             subtitle="Figure 7.9: Straight-line vs Zig-zag flight path"></image-component>
+            <br/>
             By following a zig-zag path, we can increase the field of view of the camera with an intent to increase the reliability of target detection. However, this comes at the cost of more frequent crashes and an unpredictable flight path. After our testing, we found that this was not a good change and a straight line path would be more desirable given the trade-offs.
           </div>
         </div>
 
         <div id="sub-section-7-header-6">
           <h3>7.6 Full Algorithm</h3>
-          Putting all together, we now have the following algorithm for search and rescue within the Playing Field. (put in the rest of the ways we tested the rescue / scenarios of victim position) + speed test
+          Putting all together, we now have the following algorithm for search and rescue within the Playing Field for a single drone.
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_9_1_full_algo.png"
-          subtitle="Figure 7.9: Full Algorithm"></image-component>
+          subtitle="Figure 7.10: Full Algorithm"></image-component>
+          <br/>
+          Based on our testing as seen in Figure 7.11, 3 drones flying with this algorithm are needed to achieve full search coverage of the pillar area while remaining robust and reliable. Any fewer drones would cause some search areas to be left uncovered, while allocating more drones may increase the chance of drone-to-drone collisions which would be counterproductive.
+          <br/>
           <image-component tag="image" source="./assets/section-7-pillar-area/figure_7_9_2_full_algo.png"
-          subtitle="Figure 7.9: Full Algorithm"></image-component>
-
+          subtitle="Figure 7.11: Full Algorithm"></image-component>
+          <br/>
+          A video of the pillar test with 3 drones can be seen here:
+          <br/>
+          <br/>
+          <video-component tag="video" source="https://www.youtube.com/embed/3jxxZiSw0ME?si=RA4qgXhqMRl-FVWZ" subtitle="Figure 7.12: Video of pillar test with 3 drones"></video-component>
         </div>
     </div>
 
