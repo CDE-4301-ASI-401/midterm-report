@@ -189,7 +189,8 @@
       <li>
         <a href="#section-header-10" onclick="showSection('section-header-10')">10. Conclusion and Future Work</a>
         <ul type="none">
-          <li><a href="#sub-section-10-header-1">10.1 Smart stuff</a></li>
+          <li><a href="#sub-section-10-header-1">10.1 Expanding Drone Capabilities</a></li>
+          <li><a href="#sub-section-10-header-2">10.Decentralized Distributed SLAM</a></li>
         </ul>
       </li>
   
@@ -1516,10 +1517,34 @@
 
       <div id="section-header-10" class="section" style="display: none;">
           <h2>10. Conclusion and Future Work</h2>
-
+          <p>
+            Using Bitcraze’s Crazyflie as the drone platform, our team developed a 20-drone swarm for an indoor search and rescue mission in Category E of SAFMC 2025. To detect objects such as Victim Markers, Danger Zones, and Navigation Aids, the AI deck was integrated to provide the drones with visual capabilities. To optimize the search process, the 20 m by 20 m search arena was divided into three distinct regions: the Known Search Area, Unknown Search Area, and Pillar Area, enabling the development of specialized strategies tailored to each zone.
+          </p>
+          <p>
+            While the overall drone swarm was effective in its search operation in the competition arena, several challenges were encountered. Addressing these limitations presents opportunities for future improvements, enhancing the robustness and performance of the system in terms of time, reliability and coverage.
+          </p>
         <div id="sub-section-10-header-1">
-            <h3>10.1 Smart Stuff</h3>
+            <h3>10.1 Expanding Drone Capabilities</h3>
+          <p>
+            The key disadvantage our team face is that our current drone lacks sufficient space for additional expansion decks, which limits our exploration opportunities. Yet, due to the critical functional requirements our current decks fulfils for autonomous flight and navigation, we cannot remove decks that we currently use. As such, an alternative approach is to use the BigQuad deck (Bitcraze, n.d.) to build a larger platform that can accommodate more expansion decks. This would provide greater flexibility for integrating additional sensors and modules, enhancing the drone’s overall functionality. With the increased capacity on the Crazyflie, we could explore the prototyping deck (Bitcraze, n.d.), which allows for the integration of custom hardware, including the ability to solder a Bluetooth chip on it and other capacities (See Section 10.2). 
+          </p>
         </div>
+
+        <div id="sub-section-10-header-2">
+          <h3>10.2. Decentralized Distributed SLAM </h3>
+        <p>
+          Based on our experience and observations of other teams during the competition, decentralized solutions significantly enhance the reliability of a drone swarm. Implementing a mapped solution for the Unknown Search Area greatly improves search coverage. However, one limitation that prevented us from adopting such a strategy was hardware constraints. The ETH-PBL lab overcame the poor performance of SLAM by procuring a custom ToF sensor deck and implementing state-of-the-art SLAM features, such as loop closure detection.
+        </p>
+        <p>
+          By adopting ETH’s custom hardware and SLAM solution (ETH-PBL, n.d.) the team would gain access to a wider range of algorithms for optimizing search strategies. For example, multi-agent frontier search could be implemented to improve exploration of the Unknown Search Area. Additionally, having an accurate map enables adaptive search strategies, allowing drones to assess real-time coverage, adjust their paths dynamically, and coordinate more effectively to avoid redundant exploration.
+        </p>
+        <p>
+          Furthermore, with a mapped solution, drones would be able to navigate to the Unknown Search Area more reliably without relying on a series of pre-planned motions that need to be executed precisely. Instead of depending on fixed movement sequences that need to be execute timely and precisely, drones could make real-time adjustments based on their perceived environment, reducing the risk of errors due to minor deviations or unexpected obstacles. This would also make the system more robust against disturbances, such as drift, communication delays, or intermittent sensor data, ultimately improving overall mission success.
+        </p>
+        <p>
+          However, implementing this solution requires sufficient space on the drone to accommodate the additional deck.
+        </p>
+      </div>
       </div>
 
     <br />
@@ -1622,7 +1647,16 @@
          <li>
           MissionPlanner/mission_planner/mission_script.py at main · CDE-4301-ASI-401/MissionPlanner. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner/blob/main/mission_planner/mission_script.py
          </li>
-
+         <li>
+          BigQuad deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/bigquad-deck/
+         </li>
+         <li>
+          Prototyping deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/prototyping-deck/
+         </li>
+         <li>
+          ETH-PBL. (n.d.). Nano Swarm Mapping [GitHub repository]. GitHub. Retrieved April 3, 2025, from https://github.com/ETH-PBL/Nano_Swarm_Mapping
+         </li>
+         
       </ul>
     </div>
 
