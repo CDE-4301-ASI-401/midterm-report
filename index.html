@@ -91,23 +91,24 @@
         </ul>
       </li>
   
+  
       <li>
-        <a href="#section-header-3" onclick="showSection('section-header-3')">3. Mission Strategy</a>
+          <a href="#section-header-3" onclick="showSection('section-header-3')">3. Object Detection (Shu Hui)</a>
         <ul type="none">
-          <li><a href="#sub-section-3-header-1">3.1 Search Strategy</a></li>
-          <li><a href="#sub-section-3-header-2">3.2 Object Detection</a></li>
-          <li><a href="#sub-section-3-header-3">3.3 Navigation Aids</a></li>
-          <li><a href="#sub-section-3-header-4">3.4 Key Areas of Development</a></li>
+          <li><a href="#sub-section-3-header-1">3.1 Object Selection</a></li>
+          <li><a href="#sub-section-3-header-2">3.2 Onboard Object Detection</a></li>
+          <li><a href="#sub-section-3-header-3">3.3 Offboard Object Detection</a></li>
+          <li><a href="#sub-section-3-header-4">3.4 Optimising Detection Parameters for the Drone</a></li>
+          <li><a href="#sub-section-3-header-5">3.5 External System Optimisation</a></li>
         </ul>
       </li>
-       <li>
-          <a href="#section-header-4" onclick="showSection('section-header-4')">4. Object Detection (Shu Hui)</a>
+
+      <li>
+        <a href="#section-header-4" onclick="showSection('section-header-4')">4. Mission Strategy</a>
         <ul type="none">
-          <li><a href="#sub-section-4-header-1">4.1 Object Selection</a></li>
-          <li><a href="#sub-section-4-header-2">4.2 Onboard Object Detection</a></li>
-          <li><a href="#sub-section-4-header-3">4.3 Offboard Object Detection</a></li>
-          <li><a href="#sub-section-4-header-4">4.4 Optimising Detection Parameters for the Drone</a></li>
-          <li><a href="#sub-section-4-header-5">4.5 External System Optimisation</a></li>
+          <li><a href="#sub-section-4-header-1">4.1 Search Strategy</a></li>
+          <li><a href="#sub-section-4-header-2">4.2 Object Detection</a></li>
+          <li><a href="#sub-section-4-header-3">4.3 Navigation Aids</a></li>
         </ul>
       </li>
 
@@ -128,7 +129,7 @@
       <li>
         <a href="#section-header-6" onclick="showSection('section-header-6')">6. UnKnown Search Area (Yan Yew)</a>
         <ul type="none">
-          <li><a href="#sub-section-6-header-1">6.1 Feasibility Resting of Simulatanous Mapping and Localisation</a></li>
+          <li><a href="#sub-section-6-header-1">6.1 Feasibility Testing of Simulatanous Mapping and Localisation</a></li>
             <li>
             <a href="#sub-section-6-header-2">6.2 Implementation of MSBA</a>
             <ul type="none">
@@ -190,7 +191,7 @@
         <a href="#section-header-10" onclick="showSection('section-header-10')">10. Conclusion and Future Work</a>
         <ul type="none">
           <li><a href="#sub-section-10-header-1">10.1 Expanding Drone Capabilities</a></li>
-          <li><a href="#sub-section-10-header-2">10.Decentralized Distributed SLAM</a></li>
+          <li><a href="#sub-section-10-header-2">10.2 Decentralized Distributed SLAM</a></li>
         </ul>
       </li>
   
@@ -547,120 +548,26 @@
     <br />
 
       <div id="section-header-3" class="section" style="display: none;">
-          <h2>3 Search Strategy</h2>
-          <p>
-            With the vastly different Arena layout this year, our mission strategy also must change accordingly. The main 
-            areas of consideration are the search strategy to use, object detection methods and use of navigation aids. 
-          </p>
-          <image-component tag="image" source="./assets/section-3-mission-strategy/figure_3_1_comparison_search.png"
-          subtitle="Figure 3.1: A Comparison between Mapped and Mapless Search Strategy"></image-component>
-
-          <div id="sub-section-3-header-1">
-              <h3>3.1 Search Strategy</h3>
-              <p>
-                With the introduction of an entirely new Arena which can be split into 3 main areas – namely the Known Search Area,
-                Unknown Search Area and Pillar Area, there is a need to test and decide what search strategies to opt for. 
-                </p>
-            
-              <p>
-                Last year’s search strategy was an unmapped, decentralized strategy (differences between strategies will be elaborated on in section 4.1), 
-                and it did work and were able to complete the search the fastest amongst the teams that participated last year.  
-              </p>
-
-              <p>
-                However, they did not win the first place as their approach lacked novelty, and did not use the hardware available to 
-                them to its fullest potential. Therefore, they lost marks in the team live presentation and eventually came in second.
-              </p>
-            
-              <p>
-              Hence, we will be exploring both mapped and unmapped strategies and possibly use a combination of them due to the variety 
-              of obstacles present, to improve the overall efficiency and novelty of the search strategy employed.
-              </p>
-          </div>
-
-          <div id="sub-section-3-header-2">
-              <h3>3.2 Object Detection</h3>
-              <p>
-                The introduction of new obstacles does not only require a revamp of the search strategy, but also a revised approach on the 
-                object detection methods. With the presence of an Unknown Search Area, Danger Zones and Pillar Obstacles, we will need to re-evalute our current 
-                object detection method and explore other methods before finalising on the method that is best suited for our use case. 
-              </p>    
-          </div>
-
-          <div id="sub-section-3-header-3">
-              <h3>3.3 Navigation Aids</h3>
-              <p>
-                With the presence of new obstacles, the use of Navigation Aids to help us in our search of the Victims Markers varies significantly. 
-                There are many more use cases for navigations aids this year, especially in more tricky areas like the Unknown Seach Area and the Pillar Area. 
-              </p>
-
-              <p>
-                However, the number of Navigation Aids remain the same as last year, despite there being 3 distinct challenges unlike only 1 last year. 
-                We will evaluate on the most effective way to use the navigation aids, as well as what kind of items are we using. We will then need to 
-                test and decide the most effective way to use these Navigation Aids. 
-              </p>    
-          </div>
-
-          <div id="sub-section-3-header-4">
-              <h3>3.4 Key Areas of Development</h3>
-              <p>
-                Our goal is to complete the mission in the quickest time possible while using novel and superior methods for our mission. Therefore, we have 
-                split the key areas of development into the 4 roles below.  
-              </p>
-
-              <scope-of-work subtitle="Table 2.0: Scope of Work">
-                <div id="scope-of-work"></div>
-              </scope-of-work>
-      
-              <p>
-              Table 2.0 shows the designation of roles for the development of the various sub-systems.
-              </p>
-
-              <p>
-                The search strategy sub team will be exploring 2 mapping strategies while enhancing the unmapped strategy used last year as we the mapped approach 
-                is more difficult to implement and hence will be awarded more marks in the team presentation.  
-              </p>
-
-              <p>
-                The object detection sub team will be improving on the object detection method used last year as it was inaccurate and slow. Exploration of new methods 
-                such as object classification using neural networks will be done simultaneously.   
-              </p>
-
-              <p>
-                The obstacle detection and avoidance sub team will investigate strategies used to detect and avoid the new obstacles present, which are the Pillar Obstacles.   
-              </p>
-
-              <p>
-                The simulation sub team will investigate the use of simulation to simulate various search algorithms to improve testing efficiency.   
-              </p>
-          </div>
-
-    </div>
-
-    <br />
-    <br />
-
-      <div id="section-header-4" class="section" style="display: none;">
-      <h2>4. Object Detection (Shu Hui)</h2>
+      <h2>3. Object Detection (Shu Hui)</h2>
       <p>
         The Object Detection Subsystem involves the detection of objects such as Victim Markers, Danger Zones and Navigation Aids. Upon the detection of Victim Markers, land commands are transmitted via CPX (Crazyflie Packet eXchange) from the GCS to the drones. Similarly, upon the detection of Navigation Aids, the respective predefined Search Strategies will be “activated” after receiving commands from the GCS. In contrast, ignore commands is transmitted upon the detection of Danger Zones.
       </p>
-    <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_1_hardware.png"
-    subtitle="Figure 4.1: Hardware for Object Detection"></image-component>
+    <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_1_hardware.png"
+    subtitle="Figure 3.1: Hardware for Object Detection"></image-component>
     
     <p>
       The hardware for the object detection subsystem (Figure 1.4) composes of several components that work together to enable efficient object detection.
     </p>
 
-    <div id="sub-section-4-header-1">
-      <h3>4.1 Object Selection</h3>
+    <div id="sub-section-3-header-1">
+      <h3>3.1 Object Selection</h3>
 
     <p>
       A decision matrix was created to aid the object selection decision (Table 2.0). Objects refer to Navigation Aids, Victim Markers and Danger Zones, weighing factors crucial for competition success under tight time constraints.
     </p>
 
-      <image-component tag="image" source="./assets/section-4-obj-detection/table_2_decision matrix.png"
-      subtitle="Table 2.0 : Decision Matrix for Target and Danger Zone Selection "></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/table_3_1_decision matrix.png"
+      subtitle="Table 3.1 : Decision Matrix for Target and Danger Zone Selection "></image-component>
 
       <p>
         Given the project timeline and the breadth of subsystems required (Navigation Aids, Search Strategies, Mission Planning), solutions demanding extensive development time or complex integration were heavily penalized. Reliability was weighted lowest at this initial selection stage, assuming implementation quality would determine final reliability. Depending on the target type, the approach for object detection varies significantly.
@@ -677,8 +584,8 @@
       <p>
         AprilTags are used as Victim Markers for SAFMC 2024 and SAFMC 2025. For SAFMC 2025, they are markers for Danger Zones and Navigation Aids. An exploration of on-board and off-board detection of AprilTags is then conducted.
       </p>
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_2_objects.png"
-    subtitle="Figure 4.2: Regular/Bonus Victims, Danger Markers and Navigation Aids"></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_2_objects.png"
+    subtitle="Figure 3.2: Regular/Bonus Victims, Danger Markers and Navigation Aids"></image-component>
 
       <p>
         Competition rules state that the Navigation Aids must have the maximum base dimensions of 1 m x 1 m with no specified height. As the height of the Navigation Aids was not specified, we chose to make Nav Aids thin floor markers. This decision is influenced by the observation that the Flow Deck is very sensitive to floor texture and lighting conditions. Increasing the height of the Navigation Aids makes the drone fly higher momentarily to accommodate the height of the Navigation Aid when it is detected, which can disrupt the velocity estimation and localisation accuracy of the Flow Deck. Furthermore, we avoided mounting Navigation Aids on wall as the detection distance is too small, and the Multi-ranger Deck will just detect the Navigation Aid as a wall and not trigger the desired drone behaviour.
@@ -688,8 +595,8 @@
       </p>
     </div>
 
-    <div id="sub-section-4-header-2">
-      <h3>4.2 Onboard Detection</h3>
+    <div id="sub-section-3-header-2">
+      <h3>3.2 Onboard Detection</h3>
       <p>
         The SAFMC 2024 team used an off-board object detection approach with one GCS. They faced significant challenges such as delayed image transmission for a swarm, network robustness issues, and repeated drone disconnections, even on the Competition Day itself.
       </p>
@@ -700,7 +607,7 @@
         A comparison of the advantages of on-board image processing and off-board image processing in Table 3.0.
       </p>
       
-      <comparison-image-processing subtitle="Table 3.0: Advantages between On-board Processing and Off-board Processing (Bitcraze, n.d.)">
+      <comparison-image-processing subtitle="Table 3.2: Advantages between On-board Processing and Off-board Processing (Bitcraze, n.d.)">
         <div id="comparison-image-processing"></div>
       </comparison-image-processing>    
     
@@ -720,14 +627,14 @@
       </p>
     </div>
 
-    <div id="sub-section-4-header-3">
-        <h3>4.3 Offboard Detection</h3>
+    <div id="sub-section-3-header-3">
+        <h3>3.3 Offboard Detection</h3>
         <p>
           For off-board detection, four repositories were found online (TL-NUS-CFS, 2023, Rauch, 2025, Rauch, 2025 and CDE-4301-ASI-401, n.d.). <i>ai_deck_wrapper</i> enables image streaming and integrates with <i>apriltag_ros</i> which handles AprilTag detection. <i>apriltag_msgs</i> defines the message type for communication between the AI deck wrapper node and the AprilTag node. The primary repository we worked with is the MissionPlanner, which supports the implementation of our mission strategy.
         </p>
         <video-component 
         source="https://www.youtube.com/embed/No0juLGqdLo" 
-        subtitle="Figure 4.3: Video of Object Detection for One Crazyflie">
+        subtitle="Figure 3.3: Video of Object Detection for One Crazyflie">
     </video-component>
         <p>
           The test for object detection (Figure 4.3) was conducted in the Computer Vision room at Temasek Laboratories. In this test, the Crazyflie takes off to search for one Victim Marker autonomously. The Crazyflie flies over the Danger Zone (AprilTag in the middle of the room) and rescuing the victim (AprilTag at the end of the room). The Search Algorithm used in this test was Modified Swarm Bug Algorithm. The angle of the camera mount was 45°.
@@ -741,14 +648,14 @@
 
     </div>
 
-    <div id="sub-section-4-header-4">
+    <div id="sub-section-3-header-4">
       <h3>4.4 Optimising Detection Distance for the Drone</h3>
 
       <p>
         The camera mount holding the HM01B0 monochrome camera module is fixed at 45° below the horizontal.
       </p>
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_4_camera_mount_angles.png"
-      subtitle="Figure 4.4: Camera Mount Angles"></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_4_camera_mount_angles.png"
+      subtitle="Figure 3.4: Camera Mount Angles"></image-component>
       <p>
         Off-board processing inherently introduces latency between image capture, transmission, GCS processing, and command execution. This delay can cause the drone to overshoot the target, landing further away from the Victim Marker than desired, even if still within the 1 m LOS radius. The detection distance is not ideal. As such, tests to optimise the height and speed of the drones was conducted in IDP Studio 1 to decrease the detection distance, However, increasing the speeds and the altitudes lead to a decrease in image resolution due to motion blur, which negatively impacts detection accuracy. As such, a balance must be struck between the height, speed and image resolution of the drones to maintain detection accuracy.
       </p>
@@ -762,8 +669,8 @@
         The turning speed of the drone when it is rotating at a corner is 0.2 m/s, which serves as a basis for the Pillar drones’ speed when navigating around the Pillars.
       </p>
 
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_5_graph_distance_vs_speed.png"
-      subtitle="Figure 4.5: Graph of Vertical Distance from AprilTag (cm) vs Speed (m/s)"></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_5_graph_distance_vs_speed.png"
+      subtitle="Figure 3.5: Graph of Vertical Distance from AprilTag (cm) vs Speed (m/s)"></image-component>
       
       <p>
         The second test was conducted by varying the height (attitude) of the drone by 0.1 m while taking the average of two detection distance readings.
@@ -772,14 +679,14 @@
         The vertical distance between the detected AprilTag and the drone generally increase as the height increase (Figure 4.6), up to a height of 60 cm. The height of the drone was initially decided as 30 cm as the detection distance is the shortest. However, in the RC4 MPSH, the floor surface was very reflective and shiny, which interfered with the velocity estimation of the Flow Deck and the detection accuracy of the camera. The drones had to fly higher to 50 cm to increase the detection accuracy. Beyond 90 cm, the drone will not detect AprilTags.
       </p>
       
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_6_graph_distance_vs_height.png"
-      subtitle="Figure 4.6: Graph of Vertical Distance from AprilTag (cm) vs Height (m)"></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_6_graph_distance_vs_height.png"
+      subtitle="Figure 3.6: Graph of Vertical Distance from AprilTag (cm) vs Height (m)"></image-component>
       <p>
         To counteract the system latency caused by image transmission, GCS processing amd CPX command, a fixed delay was introduced in the <i>mission_planner.py</i> script after a Victim Marker is detected but before the land command is sent. This allows the drone to fly slightly further, positioning itself more directly over the Victim Marker by the time the land command executes. The test involved repeatedly flying the drones with the delay implemented and then taking the average results to determine the most effective delay time. 1 second delay was chosen. Without delay, the detection distance will be 63.5 cm.
       </p>
 
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_7_landing_distance.png"
-      subtitle="Figure 4.7: Detection Distance With Delay Implemented"></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_7_landing_distance.png"
+      subtitle="Figure 3.7: Detection Distance With Delay Implemented"></image-component>
 
       <p>
         Due to issues such as delayed image transmission for a swarm, network robustness issues, and repeated drone disconnections, it was imperative that performance improvements measures be taken.
@@ -791,8 +698,8 @@
         Figure 4.8 below shows the differences between the original image streaming firmware and the updated lossy JPEG image streaming firmware. The test was conducted in a well-lit room
       </p>
 
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_8_original_vs_updated_image_streaming.png"
-      subtitle="Figure 4.8: Original Image Streaming Firmware (Left)  and Updated Image streaming Firmware (Right)"></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_8_original_vs_updated_image_streaming.png"
+      subtitle="Figure 3.8: Original Image Streaming Firmware (Left)  and Updated Image streaming Firmware (Right)"></image-component>
 
       <p>
         A modified image streaming firmware (Leong, n.d.) that streams Lossy JPEG images and included an autoexposure feature was flashed onto the GAP8. The frame rate is increased to 7 to 8 Frames per seconds (FPS) and the image quality and streaming efficiency improved.
@@ -805,8 +712,8 @@
 
     </div>
 
-    <div id="sub-section-4-header-5">
-      <h3>4.5 External System Optimisation</h3>
+    <div id="sub-section-3-header-5">
+      <h3>3.5 External System Optimisation</h3>
       <p>
         The SAFMC 2025 strategy required frequent CPX communication for:
       </p>
@@ -824,7 +731,7 @@
       </p>
       <video-component 
       source="https://www.youtube.com/embed/3d6A9wGV5tY" 
-      subtitle="Figure 4.9: Video of One Drone Successfully Reversing">
+      subtitle="Figure 3.9: Video of One Drone Successfully Reversing">
       </video-component>
       <p>
         To solve this issue, our team increased the number of Crazyradio Dongles from 3 to 7. Instead of static assignments, we implemented a dynamic Crazyradio management system within the <i>mission_planner</i>. When a command needs to be sent to a drone, the system checks for an available (idle) Crazyradio dongle. If the primary assigned dongle is busy, it iterates through the pool of available dongles until it finds one free to transmit the CPX packet. This dynamic allocation prevents commands from being dropped due to a single busy radio and is a key improvement over the static SAFMC 2024 approach, enabling more reliable swarm communication under heavy load.
@@ -835,12 +742,12 @@
 
       <video-component 
       source="https://www.youtube.com/embed/TYLihQFfpwo" 
-      subtitle="Figure 4.10: Video Swarm Ignoring (Danger Zone)">
+      subtitle="Figure 3.10: Video Swarm Ignoring (Danger Zone)">
   </video-component>
 
   <video-component 
       source="https://www.youtube.com/embed/RThMP-MyErE" 
-      subtitle="Figure 4.11: Video of Swarm Detection (Victim Marker)">
+      subtitle="Figure 3.11: Video of Swarm Detection (Victim Marker)">
   </video-component>
       <p>
         Initially, SAFMC 2024 team daisy chained two slave routers to a single master router but still faced issues. For SAFMC 2025, we increased the number of GCS laptops from one to three, with one GCS laptops in charge of one area in the Playing Field. Each GCS ran its own instance of the ROS detection nodes and MissionPlanner, communicating with its assigned drones via Wi-Fi for image streaming and its share of the Crazyradio dongles (for CPX commands). While introducing complexity in coordination which were handled via mission pre-planning and drone assignments, this approach offered significant advantages. Each GCS handled image processing and detection for fewer drones around 6 to 7 instead of 19 drones. The Wi-Fi load was distributed across multiple access points and network interfaces. Furthermore, the failure of one GCS would not necessarily bring down the entire swarm.
@@ -849,13 +756,39 @@
         This setup was effective. Even though background noise was a potential factor during all our tests, this setup made it easier track the movement of each drone and the image streaming performance improved drastically. Only one to two drones per GCS laptops facing repeated disconnections during our tests at RC4 MPSH. On SAFMC 2025 competition day, all nineteen drones streamed images to their GCS successfully without disconnections or freezing.
       </p>
 
-      <image-component tag="image" source="./assets/section-4-obj-detection/figure_4_12_router.png"
-      subtitle="Figure 4.12: Old Router Setup and Modified Router Setup"></image-component>
+      <image-component tag="image" source="./assets/section-3-obj-detection/figure_3_12_router.png"
+      subtitle="Figure 3.12: Old Router Setup and Modified Router Setup"></image-component>
 
     </div>
 
     </div>
+    
+
+    </br></br>
       
+    <div id="section-header-4" class="section" style="display: none;">
+      <h2>4. Search Strategy</h2>
+      <image-component tag="image" source="./assets/section-4-mission-strategy/figure_4_1_comparison_search.png"
+      subtitle="Figure 4.1: A Comparison between Mapped and Mapless Search Strategy"></image-component>
+
+      <div id="sub-section-4-header-1">
+          <h3>4.1 Search Strategy</h3>
+  
+        
+
+      </div>
+
+      <div id="sub-section-4-header-2">
+          <h3>4.2 Object Detection</h3>
+
+      </div>
+
+      <div id="sub-section-4-header-3">
+          <h3>4.3 Navigation Aids</h3>
+
+      </div>
+
+</div>
     <br />
     <br />
 
@@ -1100,7 +1033,7 @@
           </p>
   
         <div id="sub-section-6-header-1">
-          <h3>6.1  Feasibility Resting of Mapping Hardware</h3>
+          <h3>6.1  Feasibility Testing of Mapping Hardware</h3>
             <p>
               A centralized approach using ROS2 was chosen to perform SLAM due to the limited computation resources available on the STM onboard the Crazyflie. This approach provided scalability and ease of implementation, as it can be easily integrated with the Mission Planner, which also operates on ROS2. This approach would also allow us to leverage on existing tools and libraries for SLAM. To implement SLAM on a swarm of drones, each individual drone needs to produce an accurate map. These individual occupancy maps can then be merged to create a single, complete map.
             </p>
@@ -1599,63 +1532,63 @@
       <h2>References</h2>
       <ul style="list-style-type: decimal; padding: 0; margin: 0; text-align: justify;">
 
-         <li>
-          Loco explorer bundle—Crazyflie 2.1+. (n.d.). Bitcraze Store. Retrieved 29 March 2025, from https://store.bitcraze.io/products/loco-explorer-bundle
-         </li>
-         <li>
-          Maximum range for loco positioning | Bitcraze. (n.d.). Retrieved 29 March 2025, from https://www.bitcraze.io/documentation/system/positioning/max-range-loco/
-         </li>
-         <li>
-          Comparison of fiducial markers. (2022, April 26). Robotics Knowledgebase. https://roboticsknowledgebase.com/wiki/sensing/fiducial-markers/
-         </li>
-         <li>
+        <li>
           Aideck-gap8-examples/examples/other/wifi-img-streamer at master · bitcraze/aideck-gap8-examples. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/bitcraze/aideck-gap8-examples/tree/master/examples/other/wifi-img-streamer
-         </li>
-         <li>
+        </li>
+        <li>
           AprilRobotics/apriltag. (2025). [C]. AprilRobotics. https://github.com/AprilRobotics/apriltag
-         </li>
-         <li>
-          Freertos+posix—FreertosTM. (n.d.). Retrieved 29 March 2025, from https://freertos.org/Documentation/03-Libraries/05-FreeRTOS-labs/03-FreeRTOS-plus-POSIX/00-FreeRTOS-Plus-POSIX
-         </li>
-         <li>
-          Tl-nus-cfs/ai_deck_wrapper. (2023). [Python]. TL@NUS Centre For Flight Sciences. https://github.com/TL-NUS-CFS/ai_deck_wrapper
-         </li>
-         <li>
-          Rauch, C. (2025). Christianrauch/apriltag_ros [C++]. https://github.com/christianrauch/apriltag_ros
-         </li>
-         <li>
-          Rauch, C. (2025). Christianrauch/apriltag_msgs [CMake]. https://github.com/christianrauch/apriltag_msgs
-         </li>
-         <li>
-          Github—Cde-4301-asi-401/missionplanner. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner
-         </li>
-         <li>
-          GitHub—Williamleong/aideck-gap8-examples at dev/william. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/williamleong/aideck-gap8-examples
-         </li>
-         <li>
-          Release 2025.02 · bitcraze/aideck-esp-firmware. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/bitcraze/aideck-esp-firmware/releases/tag/2025.02
-         </li>
-         <li>
+        </li>
+        <li>
           BigQuad deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/bigquad-deck/
-         </li>
-         <li>
-          Prototyping deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/prototyping-deck/
-         </li>
-         <li>
-          MissionPlanner/mission_planner/kill_all.py at main · CDE-4301-ASI-401/MissionPlanner. (n.d.-a). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner/blob/main/mission_planner/kill_all.py
-         </li>
-         <li>
-          MissionPlanner/mission_planner/mission_script.py at main · CDE-4301-ASI-401/MissionPlanner. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner/blob/main/mission_planner/mission_script.py
-         </li>
-         <li>
+        </li>
+        <li>
           BigQuad deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/bigquad-deck/
-         </li>
-         <li>
-          Prototyping deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/prototyping-deck/
-         </li>
-         <li>
+        </li>
+        <li>
+          Comparison of fiducial markers. (2022, April 26). Robotics Knowledgebase. https://roboticsknowledgebase.com/wiki/sensing/fiducial-markers/
+        </li>
+        <li>
           ETH-PBL. (n.d.). Nano Swarm Mapping [GitHub repository]. GitHub. Retrieved April 3, 2025, from https://github.com/ETH-PBL/Nano_Swarm_Mapping
-         </li>
+        </li>
+        <li>
+          Freertos+posix—FreertosTM. (n.d.). Retrieved 29 March 2025, from https://freertos.org/Documentation/03-Libraries/05-FreeRTOS-labs/03-FreeRTOS-plus-POSIX/00-FreeRTOS-Plus-POSIX
+        </li>
+        <li>
+          GitHub—Williamleong/aideck-gap8-examples at dev/william. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/williamleong/aideck-gap8-examples
+        </li>
+        <li>
+          Github—Cde-4301-asi-401/missionplanner. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner
+        </li>
+        <li>
+          Loco explorer bundle—Crazyflie 2.1+. (n.d.). Bitcraze Store. Retrieved 29 March 2025, from https://store.bitcraze.io/products/loco-explorer-bundle
+        </li>
+        <li>
+          Maximum range for loco positioning | Bitcraze. (n.d.). Retrieved 29 March 2025, from https://www.bitcraze.io/documentation/system/positioning/max-range-loco/
+        </li>
+        <li>
+          MissionPlanner/mission_planner/kill_all.py at main · CDE-4301-ASI-401/MissionPlanner. (n.d.-a). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner/blob/main/mission_planner/kill_all.py
+        </li>
+        <li>
+          MissionPlanner/mission_planner/mission_script.py at main · CDE-4301-ASI-401/MissionPlanner. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/CDE-4301-ASI-401/MissionPlanner/blob/main/mission_planner/mission_script.py
+        </li>
+        <li>
+          Prototyping deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/prototyping-deck/
+        </li>
+        <li>
+          Prototyping deck | Bitcraze. (n.d.). Retrieved 2 April 2025, from https://www.bitcraze.io/products/prototyping-deck/
+        </li>
+        <li>
+          Rauch, C. (2025). Christianrauch/apriltag_msgs [CMake]. https://github.com/christianrauch/apriltag_msgs
+        </li>
+        <li>
+          Rauch, C. (2025). Christianrauch/apriltag_ros [C++]. https://github.com/christianrauch/apriltag_ros
+        </li>
+        <li>
+          Release 2025.02 · bitcraze/aideck-esp-firmware. (n.d.). GitHub. Retrieved 29 March 2025, from https://github.com/bitcraze/aideck-esp-firmware/releases/tag/2025.02
+        </li>
+        <li>
+          Tl-nus-cfs/ai_deck_wrapper. (2023). [Python]. TL@NUS Centre For Flight Sciences. https://github.com/TL-NUS-CFS/ai_deck_wrapper
+        </li>
          
       </ul>
     </div>
